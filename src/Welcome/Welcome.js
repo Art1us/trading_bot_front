@@ -3,18 +3,12 @@ import "./Welcome.css";
 
 function Welcome() {
   return (
-    <div className="welcome_wrapper">
-      <div className="welcome__section">
-        <div className="section">
-          <div className="login__text text">
-            <h1>Login</h1>
-          </div>
-        </div>
-        <div className="section">
-          <div className="register__text text">
-            <h1>Register</h1>
-          </div>
-        </div>
+    <div className="welcome__container">
+      <div className="welcome__button">
+        <h1 className="text">Login</h1>
+      </div>
+      <div className="welcome__button">
+        <h1 className="text">Register</h1>
       </div>
     </div>
   );
