@@ -6,6 +6,7 @@
   margin: 0 auto;
   align-items: center;
   max-width: 1000px;
+  text-align: center;
 }
 
 .welcome__button:hover {
@@ -14,12 +15,11 @@
 }
 
 .welcome__button {
-  width: 100%;
-  max-width: 700px;
+ 
   background-color: wheat;
   padding: 10vh 10vh;
-  width: 300px;
-  border-radius: 7%;
+  width: 237px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
