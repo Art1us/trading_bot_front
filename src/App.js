@@ -5,14 +5,12 @@ import Welcome from "./components/Welcome/Welcome";
 import MainPage from "./pages/MainPage/MainPage";
 import ExchangePage from "./pages/ExchangePage/ExchangePage";
 
-
 function App() {
   return (
-
     <BrowserRouter>
-    <Header/>
+      <Header />
       <Routes>
-        <Route path="/" element={<Welcome/>} />
+        <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<>Auth</>} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/exchange" element={<ExchangePage />} />
