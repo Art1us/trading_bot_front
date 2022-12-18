@@ -16,7 +16,7 @@ export default function Login() {
             <input type="text" class="login__form__input" />
           </label>
         </div>
-        <div className="btn__login btn__login__yellow">Sign in</div>
+        <div className="btn__login btn__login__violet">Sign in</div>
         <div className="btn__login btn__login__grey">Create new account</div>
       </form>
     </div>
