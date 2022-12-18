@@ -1,4 +1,4 @@
-.newExchangeCard {
+.addExchangeCard {
     width: 180px;
     height: 280px;
     border-radius: 20px;
@@ -12,12 +12,12 @@
     transition: transform 0.1s ease-in;
 }
 
-.newExchangeCard:hover {
+.addExchangeCard:hover {
     background-color: rgb(228, 228, 228);
     transform: scale(1.03);
 }
 
-.newExchangeCard--empty {
+.addExchangeCard--empty {
     font-size: 64px;
     color: gray;
 }
