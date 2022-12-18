@@ -53,17 +53,17 @@
 }
 
 .btn__login__yellow {
-  background-color: rgb(255, 232, 27);
+  background-color: rgb(145, 63, 221);
 }
 
 .btn__login__yellow:hover {
-  background-color: rgb(239, 215, 3);
+  background-color: rgb(131, 43, 214);
 }
 
 .btn__login__grey {
-  background-color: rgb(202, 199, 199);
+  background-color: rgb(228, 228, 228);
 }
 
 .btn__login__grey:hover {
-  background-color: rgb(176, 173, 173);
+  background-color: rgb(217, 215, 215);
 }
