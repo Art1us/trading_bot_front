@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard";
 import ExchangeCardEdit from "../../components/ExchangeCards/ExchangeCardEdit/ExchangeCardEdit";
-import NewExchangeCard from "../../components/ExchangeCards/NewExchangeCard/NewExchangeCard";
+import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard";
 import "./MainPage.css";
 
 function MainPage() {
@@ -26,7 +26,7 @@ function MainPage() {
             content={{ name: "Binance", id: 3, img: "binance.png" }}
             setShowModal={setShowModal}
           />
-          <NewExchangeCard setShowModal={setShowModal} />
+          <AddExchangeCard setShowModal={setShowModal} />
         </div>
       </div>
     </main>
