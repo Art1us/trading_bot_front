@@ -1,24 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard";
 import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard";
-import EditExchangeModal from '../../components/ExchangeCardModals/EditExchangeModal/EditExchangeModal'
-import NewExchangeModal from '../../components/ExchangeCardModals/NewExchangeModal/NewExchangeModal'
+import EditExchangeModal from "../../components/ExchangeCardModals/EditExchangeModal/EditExchangeModal";
+import NewExchangeModal from "../../components/ExchangeCardModals/NewExchangeModal/NewExchangeModal";
 import "./MainPage.css";
-
-import { Context } from "../../Context";
 
 function MainPage() {
   const [showEditModal, setShowEditModal] = useState(false);
-  const [showNewModal, setShowNewModal] = useState(false)
-
-  const { exchangesList } = useContext(Context);
-
-  console.log(exchangesList);
+  const [showNewModal, setShowNewModal] = useState(false);
 
   return (
     <main className="main">
-      {showEditModal && <EditExchangeModal setShowEditModal={setShowEditModal}/>}
-      {showNewModal && <NewExchangeModal setShowNewModal={setShowNewModal}/>}
+      {showEditModal && (
+        <EditExchangeModal setShowEditModal={setShowEditModal} />
+      )}
+      {showNewModal && <NewExchangeModal setShowNewModal={setShowNewModal} />}
       <div className="main__container">
         <div className="main__titleContainer">
           <h2>Выбрать биржу</h2>

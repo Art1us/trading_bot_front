@@ -20,12 +20,12 @@ function ContextProvider({ children }) {
         }
 
         const data = await response.json();
-        //setExchangesList(data)
+        setExchangesList(data);
       } catch (error) {
         console.log(error);
       }
     }
-    getExchangesList()
+    getExchangesList();
   }, []);
 
   return (
