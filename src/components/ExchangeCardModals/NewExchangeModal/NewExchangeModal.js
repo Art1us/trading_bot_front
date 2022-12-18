@@ -18,7 +18,24 @@ function NewExchangeModal({ setShowNewModal }) {
             return <option key={item.id}>{item.name}</option>;
           })}
         </select>
+        <form class="form">
+        <div class="form__col">
+          <div class="form__row">
+            <label class="form__block">
+              <div class="form__title">Имя</div>
+              <input type="text" class="form__input" />
+            </label>
+            <label class="form__block">
+              <div class="form__title">Телефон</div>
+              <input type="text" class="form__input" />
+            </label>
+          </div>
+        </div>
+        <button>Save</button>
+      </form>
+
       </div>
+   
     </div>
   );
 }
