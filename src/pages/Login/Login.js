@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import "./Login.css";
 
 export default function Login() {
@@ -23,7 +24,9 @@ export default function Login() {
               />
             </label>
           </div>
-          <button className="login__signInBtn">Sign in</button>
+          <Link to="/main" style={{ textDecoration: "none" }}>
+            <button className="login__signInBtn">Sign in</button>
+          </Link>
           <button className="login__createAccBtn">Create a new account</button>
         </form>
       </div>

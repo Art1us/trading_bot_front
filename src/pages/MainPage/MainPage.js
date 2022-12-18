@@ -19,7 +19,6 @@ function MainPage() {
     <main className="main">
       {showEditModal && <EditExchangeModal setShowEditModal={setShowEditModal}/>}
       {showNewModal && <NewExchangeModal setShowNewModal={setShowNewModal}/>}
-    
       <div className="main__container">
         <div className="main__titleContainer">
           <h2>Выбрать биржу</h2>

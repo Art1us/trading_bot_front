@@ -18,3 +18,8 @@
 .header__burger, .header__help{
     cursor: pointer;
 }
+
+.header h2{
+    color: black;
+    cursor: pointer;
+}
