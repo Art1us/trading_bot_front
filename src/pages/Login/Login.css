@@ -9,7 +9,6 @@
   justify-content: center;
   height: 100%;
   align-items: center;
-
 }
 
 .login__form {
@@ -55,7 +54,6 @@
 
 .login__signInBtn:hover{
   background-color: rgb(221, 221, 221);
-
 }
 
 .login__createAccBtn {
