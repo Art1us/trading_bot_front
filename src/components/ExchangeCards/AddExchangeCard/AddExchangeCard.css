@@ -1,0 +1,23 @@
+.addExchangeCard {
+    width: 180px;
+    height: 280px;
+    border-radius: 20px;
+    margin-right: 20px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s ease-in;
+}
+
+.addExchangeCard:hover {
+    background-color: rgb(228, 228, 228);
+    transform: scale(1.03);
+}
+
+.addExchangeCard--empty {
+    font-size: 64px;
+    color: gray;
+}
