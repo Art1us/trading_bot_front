@@ -1,31 +1,73 @@
 .editExchangeModal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 2px #666;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: whitesmoke;
-    z-index: 3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  z-index: 3;
 }
 
 .editExchangeModal__inner {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 290px;
-    margin: auto;
-    height: 420px;
-    width: 350px;
-    background-color: white;
-    color:black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 290px;
+  margin: auto;
+  height: 420px;
+  width: 350px;
+  background-color: white;
+  color: black;
 }
 
 .editExchangeModal__cross {
-    color: black;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
+
+.editExchangeModal__container {
+  border: 1px solid red;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.editExchangeModal__formContainer {
+  width: 300px;
+  height: 100%;
+}
+
+.editExchangeModal__keyForm {
+  border: 1px solid green;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.editExchangeModal__keyFormInput--publicKey{
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+}
+
+.editExchangeModal__keyFormInput--secretKey{
+   border: 1px solid blue;
+   display: flex;
+   flex-direction: column;
+}
+
+

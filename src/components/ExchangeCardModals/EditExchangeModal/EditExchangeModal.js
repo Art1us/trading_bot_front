@@ -10,7 +10,25 @@ function EditExchangeModal({ setShowEditModal }) {
           className="editExchangeModal__cross"
           onClick={() => setShowEditModal(false)}
         />
-        EditExchangeModal
+        <div className="editExchangeModal__container">
+          <div className="editExchangeModal__title">
+            <h2>Binance</h2>
+          </div>
+          <div className="editExchangeModal__formContainer">
+            <form className="editExchangeModal__keyForm">
+              <div className="editExchangeModal__keyFormInput--publicKey">
+                <label htmlFor="">Public Key</label>
+                <input type="text" />
+              </div>
+              <div className="editExchangeModal__keyFormInput--secretKey">
+                <label htmlFor="">Secret Key</label>
+                <input type="text" />
+              </div>
+              <button className="editExchangeModal__saveBtn">Save</button>
+              <button className="editExchangeModal__deleteBtn">Delete</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
