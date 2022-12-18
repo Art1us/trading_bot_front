@@ -4,8 +4,8 @@ import "./Login.css";
 export default function Login() {
   return (
     <div className="login__wrapper">
-      <form class="form">
-        <div className="form__login__title">Sign-in</div>
+      <form class="login__form">
+        <div className="login__form__title">Sign-in</div>
         <div class="form__row">
           <label class="form__block">
             <div class="form__title">E-mail</div>
