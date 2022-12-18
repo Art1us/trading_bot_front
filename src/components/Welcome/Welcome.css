@@ -4,7 +4,7 @@
 }
 
 .welcome__container {
-  max-width: 900px;
+  max-width: 700px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -19,10 +19,13 @@
 
 .welcome__button {
   background-color: royalblue;
-  padding: 9% 0;
-  width: 237px;
+  height: 200px;
+  width: 260px;
   border-radius: 10px;
   cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcome__buttonText {
