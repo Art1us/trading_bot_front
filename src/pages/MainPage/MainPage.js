@@ -4,20 +4,18 @@ import ExchangeCardEdit from "../../components/ExchangeCards/ExchangeCardEdit/Ex
 import NewExchangeCard from "../../components/ExchangeCards/NewExchangeCard/NewExchangeCard";
 import "./MainPage.css";
 
-import {Context} from "../../Context";
+import { Context } from "../../Context";
 
 function MainPage() {
-
   const [showModal, setShowModal] = useState(false);
 
-  const {exchangesList} = useContext(Context)
+  const { exchangesList } = useContext(Context);
 
-  console.log(exchangesList)
-
+  console.log(exchangesList);
 
   return (
     <main className="main">
-      {showModal && <ExchangeCardEdit setShowModal={setShowModal}/>}
+      {showModal && <ExchangeCardEdit setShowModal={setShowModal} />}
       <div className="main__container">
         <div className="main__titleContainer">
           <h2>Выбрать биржу</h2>
