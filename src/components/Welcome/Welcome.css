@@ -1,6 +1,6 @@
 .welcome{
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px);  
 }
 
 .welcome__container {
@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 .welcome__button:hover {
