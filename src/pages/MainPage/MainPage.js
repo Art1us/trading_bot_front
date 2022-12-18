@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard";
 import ExchangeCardEdit from "../../components/ExchangeCards/ExchangeCardEdit/ExchangeCardEdit";
 import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard";
 import "./MainPage.css";
 
+import { Context } from "../../Context";
+
 function MainPage() {
   const [showModal, setShowModal] = useState(false);
+
+  const { exchangesList } = useContext(Context);
+
+  console.log(exchangesList);
+
   return (
     <main className="main">
-      {showModal && <ExchangeCardEdit setShowModal={setShowModal}/>}
+      {showModal && <ExchangeCardEdit setShowModal={setShowModal} />}
       <div className="main__container">
         <div className="main__titleContainer">
           <h2>Выбрать биржу</h2>
