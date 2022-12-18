@@ -1,23 +1,24 @@
-.welcome__container {
-  width: 100%;
-  display: flex;
+.welcome{
+  width: 100vw;
+  height: calc(100vh - 60px);
+}
 
+.welcome__container {
+  max-width: 900px;
+  height: 100%;
+  display: flex;
   justify-content: space-between;
-  margin: 0 auto;
   align-items: center;
-  max-width: 800px;
   text-align: center;
-  margin-top: 10%;
+  margin: 0 auto;
 }
 
 .welcome__button:hover {
   background-color: rgb(14, 14, 159);
-  /* text-shadow: 2px 2px red; */
 }
 
 .welcome__button {
- 
-  background-color: rgb(69, 69, 249);
+  background-color: royalblue;
   padding: 9% 0;
   width: 237px;
   border-radius: 10px;
