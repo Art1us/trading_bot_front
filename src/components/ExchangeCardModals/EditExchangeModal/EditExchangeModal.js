@@ -18,14 +18,16 @@ function EditExchangeModal({ setShowEditModal }) {
             <form className="editExchangeModal__keyForm">
               <div className="editExchangeModal__keyFormInput--publicKey">
                 <label htmlFor="">Public Key</label>
-                <input type="text" />
+                <input type="text" placeholder="Enter your public key" />
               </div>
               <div className="editExchangeModal__keyFormInput--secretKey">
                 <label htmlFor="">Secret Key</label>
-                <input type="text" />
+                <input type="text" placeholder="Enter your Secret Key"/>
               </div>
-              <button className="editExchangeModal__saveBtn">Save</button>
-              <button className="editExchangeModal__deleteBtn">Delete</button>
+              <div className="editExchangeModal_formBtn">
+                <button className="editExchangeModal__saveBtn">Save</button>
+                <button className="editExchangeModal__deleteBtn">Delete</button>
+              </div>
             </form>
           </div>
         </div>
