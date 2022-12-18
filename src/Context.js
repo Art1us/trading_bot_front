@@ -6,6 +6,7 @@ function ContextProvider({ children }) {
   const EXCHANGES_LIST = "/exchange_list";
 
   const [exchangesList, setExchangesList] = useState([]);
+  const [userExchanges, setUserExchanges] = useState([]);
 
   useEffect(() => {
     async function getExchangesList() {
@@ -29,7 +30,11 @@ function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ exchangesList }}>{children}</Context.Provider>
+    <Context.Provider
+      value={{ exchangesList, userExchanges, setUserExchanges }}
+    >
+      {children}
+    </Context.Provider>
   );
 }
 
