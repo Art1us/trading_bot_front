@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ExchangeCard.css";
 import {BiPencil} from 'react-icons/bi'
 
-function ExchangeCard({ content,setShowModal }) {
+function ExchangeCard({ content,setShowEditModal }) {
 
   const [hovered, setHovered] =useState(false) 
 
@@ -14,7 +14,7 @@ function ExchangeCard({ content,setShowModal }) {
   }
 
   function editClickHandler(){
-    setShowModal(true)
+    setShowEditModal(true)
   }
 
  

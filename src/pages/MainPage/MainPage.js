@@ -1,13 +1,15 @@
 import React, { useState, useContext } from "react";
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard";
-import ExchangeCardEdit from "../../components/ExchangeCards/ExchangeCardEdit/ExchangeCardEdit";
 import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard";
+import EditExchangeModal from '../../components/ExchangeCardModals/EditExchangeModal/EditExchangeModal'
+import NewExchangeModal from '../../components/ExchangeCardModals/NewExchangeModal/NewExchangeModal'
 import "./MainPage.css";
 
 import { Context } from "../../Context";
 
 function MainPage() {
-  const [showModal, setShowModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showNewModal, setShowNewModal] = useState(false)
 
   const { exchangesList } = useContext(Context);
 
@@ -15,7 +17,9 @@ function MainPage() {
 
   return (
     <main className="main">
-      {showModal && <ExchangeCardEdit setShowModal={setShowModal} />}
+      {showEditModal && <EditExchangeModal setShowEditModal={setShowEditModal}/>}
+      {showNewModal && <NewExchangeModal setShowNewModal={setShowNewModal}/>}
+    
       <div className="main__container">
         <div className="main__titleContainer">
           <h2>Выбрать биржу</h2>
@@ -23,17 +27,17 @@ function MainPage() {
         <div className="main__cardsContainer">
           <ExchangeCard
             content={{ name: "Binance", id: 1, img: "binance.png" }}
-            setShowModal={setShowModal}
+            setShowEditModal={setShowEditModal}
           />
           <ExchangeCard
             content={{ name: "Binance", id: 2, img: "binance.png" }}
-            setShowModal={setShowModal}
+            setShowEditModal={setShowEditModal}
           />
           <ExchangeCard
             content={{ name: "Binance", id: 3, img: "binance.png" }}
-            setShowModal={setShowModal}
+            setShowEditModal={setShowEditModal}
           />
-          <AddExchangeCard setShowModal={setShowModal} />
+          <AddExchangeCard setShowNewModal={setShowNewModal} />
         </div>
       </div>
     </main>
