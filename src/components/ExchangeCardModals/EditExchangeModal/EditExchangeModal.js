@@ -22,7 +22,7 @@ function EditExchangeModal({ setShowEditModal }) {
               </div>
               <div className="editExchangeModal__keyFormInput--secretKey">
                 <label htmlFor="">Secret Key</label>
-                <input type="text" placeholder="Enter your Secret Key"/>
+                <input type="password" placeholder="Enter your Secret Key"/>
               </div>
               <div className="editExchangeModal_formBtn">
                 <button className="editExchangeModal__saveBtn">Save</button>

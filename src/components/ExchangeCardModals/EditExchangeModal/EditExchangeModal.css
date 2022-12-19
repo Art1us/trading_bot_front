@@ -91,14 +91,15 @@ input {
   width: 140px;
   height: 30px;
   border-radius: 5px;
-  background-color: rgb(132, 220, 1);
-  border: 1px solid rgb(132, 220, 1);
+  background-color: transparent;
+  border: 2px solid royalblue;
   font-weight: 700;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .editExchangeModal__saveBtn:hover{
-    background-color: rgb(107, 177, 1);
+    background-color: whitesmoke;
 }
 
 .editExchangeModal__deleteBtn {
@@ -109,8 +110,9 @@ input {
   border: 1px solid red;
   font-weight: 700;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .editExchangeModal__deleteBtn:hover{
-    background-color: rgb(190, 0, 0);
+    background-color: rgb(214, 1, 1);
 }
