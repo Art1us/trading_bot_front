@@ -14,11 +14,11 @@
 }
 
 .welcome__button:hover {
-  background-color: rgb(14, 14, 159);
+  background-color: var(--hover-btn-color);
 }
 
 .welcome__button {
-  background-color: royalblue;
+  background-color: var(--secondary-color);
   height: 200px;
   width: 260px;
   border-radius: 10px;

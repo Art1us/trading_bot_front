@@ -14,6 +14,6 @@ function EditExchangeModal({ setShowEditModal }) {
       </div>
     </div>
   );
-}
+} 
 
 export default EditExchangeModal;

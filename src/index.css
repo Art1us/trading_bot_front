@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root{
+  --main-bg-color: white;
+  --second-bg-color: whitesmoke;
+  --primary-color:black;
+  --secondary-color: royalblue;
+  --hover-btn-color: rgb(14, 14, 159);
+}
+
 img {
   max-width: 100%
 }
