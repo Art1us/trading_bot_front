@@ -48,6 +48,7 @@ function NewExchangeModal({ setShowNewModal }) {
             <label class="newExchangeModal__formBlock">
               <div class="newExchangeModal__formTitle">Public Key</div>
               <input
+                placeholder="Enter your public key"
                 type="text"
                 class="newExchangeModal__formInput"
                 value={newExchange.publicKey}
@@ -59,8 +60,9 @@ function NewExchangeModal({ setShowNewModal }) {
             <label class="newExchangeModal__formBlock">
               <div class="newExchangeModal__formTitle">Secret Key</div>
               <input
+                placeholder="Enter your secret key"
                 type="text"
-                class="newExchangeModal__formInput"
+                className="newExchangeModal__formInput"
                 value={newExchange.secretKey}
                 onChange={(e) =>
                   setNewExchange({ ...newExchange, secretKey: e.target.value })
