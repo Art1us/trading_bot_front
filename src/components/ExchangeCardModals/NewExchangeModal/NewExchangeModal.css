@@ -44,29 +44,33 @@
 }
 
 .newExchangeModal__formTitle {
-    font-size: 30px;
-    font-weight:400;    
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 4px;
 }
 
 .newExchangeModal__formInput {
-    width: 100%;
-    margin-bottom: 2px;
-    height: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 28px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-.newExchangeModal__formTitle {
-  margin-bottom: 5px;
+.newExchangeModal__formInput::placeholder { 
+  font-size: 16px;
 }
 
 .newExchangeModal__saveBtn {
   margin-top: 58px;
-  height: 37px;
-  font-size: 19px;
+  height: 30px;
+  font-size: 17px;
   background-color: rgb(60, 60, 235);
   color: white;
+  cursor: pointer;
+  border: transparent;
 }
 
 .newExchangeModal__saveBtn:hover {
   background-color: rgb(13, 13, 153);
-} 
-
+}
