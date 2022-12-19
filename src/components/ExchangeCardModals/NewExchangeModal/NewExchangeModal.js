@@ -61,7 +61,7 @@ function NewExchangeModal({ setShowNewModal }) {
               <div className="newExchangeModal__formTitle">Secret Key</div>
               <input
                 placeholder="Enter your secret key"
-                type="text"
+                type="password"
                 className="newExchangeModal__formInput"
                 value={newExchange.secretKey}
                 onChange={(e) =>
