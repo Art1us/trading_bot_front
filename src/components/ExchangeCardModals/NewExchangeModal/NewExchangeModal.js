@@ -4,8 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./NewExchangeModal.css";
 
 function NewExchangeModal({ setShowNewModal }) {
-  const { exchangesList, userExchanges, setUserExchanges } =
-    useContext(Context);
+  const { exchangesList, setUserExchanges } = useContext(Context);
   const [newExchange, setNewExchange] = useState({
     exchangeName: "",
     publicKey: "",
@@ -15,7 +14,6 @@ function NewExchangeModal({ setShowNewModal }) {
   function clickHandler() {
     setUserExchanges((prev) => [...prev, newExchange]);
     setShowNewModal(false);
-    console.log(userExchanges);
   }
 
   return (
@@ -40,7 +38,7 @@ function NewExchangeModal({ setShowNewModal }) {
                   })
                 }
               >
-                <option>---</option>
+                <option></option>
                 {exchangesList.map((item) => {
                   return <option key={item.id}>{item.name}</option>;
                 })}
@@ -52,15 +50,22 @@ function NewExchangeModal({ setShowNewModal }) {
               <input
                 type="text"
                 class="newExchangeModal__formInput"
-                value={newExchange.public}
+                value={newExchange.publicKey}
                 onChange={(e) =>
-                  setNewExchange({ ...newExchange, public: e.target.value })
+                  setNewExchange({ ...newExchange, publicKey: e.target.value })
                 }
               />
             </label>
             <label class="newExchangeModal__formBlock">
               <div class="newExchangeModal__formTitle">Secret Key</div>
-              <input type="text" class="newExchangeModal__formInput" />
+              <input
+                type="text"
+                class="newExchangeModal__formInput"
+                value={newExchange.secretKey}
+                onChange={(e) =>
+                  setNewExchange({ ...newExchange, secretKey: e.target.value })
+                }
+              />
             </label>
           </div>
           <button className="newExchangeModal__saveBtn" onClick={clickHandler}>
