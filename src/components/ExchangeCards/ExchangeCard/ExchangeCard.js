@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ExchangeCard.css";
 import { BiPencil } from "react-icons/bi";
 
-function ExchangeCard({ content, setShowEditModal }) {
+function ExchangeCard({ name, img, setShowEditModal }) {
   const [hovered, setHovered] = useState(false);
 
   function mouseEnterHandler() {
@@ -32,12 +32,12 @@ function ExchangeCard({ content, setShowEditModal }) {
         )}
         <div className="exchangeCard__logo">
           <img
-            src={require(`../../../assets/pictures/exchangeLogos/${content.img}`)}
+            src={require(`../../../assets/pictures/exchangeLogos/${img}`)}
             alt=""
           />
         </div>
         <div className="exchangeCard__title">
-          <h3>{content.name}</h3>
+          <h3>{name}</h3>
         </div>
         <div className="exchangeCard__info">
           <div className="exchangeCard__currencyInfo">

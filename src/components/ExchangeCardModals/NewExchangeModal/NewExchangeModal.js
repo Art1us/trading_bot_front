@@ -4,8 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./NewExchangeModal.css";
 
 function NewExchangeModal({ setShowNewModal }) {
-  const { exchangesList, userExchanges, setUserExchanges } =
-    useContext(Context);
+  const { exchangesList, setUserExchanges } = useContext(Context);
   const [newExchange, setNewExchange] = useState({
     exchangeName: "",
     publicKey: "",
@@ -15,7 +14,6 @@ function NewExchangeModal({ setShowNewModal }) {
   function clickHandler() {
     setUserExchanges((prev) => [...prev, newExchange]);
     setShowNewModal(false);
-    console.log(userExchanges);
   }
 
   return (
@@ -40,7 +38,7 @@ function NewExchangeModal({ setShowNewModal }) {
                   })
                 }
               >
-                <option>---</option>
+                <option></option>
                 {exchangesList.map((item) => {
                   return <option key={item.id}>{item.name}</option>;
                 })}
@@ -53,9 +51,9 @@ function NewExchangeModal({ setShowNewModal }) {
                 placeholder="Enter your public key"
                 type="text"
                 class="newExchangeModal__formInput"
-                value={newExchange.public}
+                value={newExchange.publicKey}
                 onChange={(e) =>
-                  setNewExchange({ ...newExchange, public: e.target.value })
+                  setNewExchange({ ...newExchange, publicKey: e.target.value })
                 }
               />
             </label>
@@ -64,7 +62,11 @@ function NewExchangeModal({ setShowNewModal }) {
               <input
                 placeholder="Enter your secret key"
                 type="text"
-                class="newExchangeModal__formInput"
+                className="newExchangeModal__formInput"
+                value={newExchange.secretKey}
+                onChange={(e) =>
+                  setNewExchange({ ...newExchange, secretKey: e.target.value })
+                }
               />
             </label>
           </div>

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../../Context";
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard";
 import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard";
 import EditExchangeModal from "../../components/ExchangeCardModals/EditExchangeModal/EditExchangeModal";
@@ -8,6 +9,8 @@ import "./MainPage.css";
 function MainPage() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showNewModal, setShowNewModal] = useState(false);
+
+  const { userExchanges } = useContext(Context);
 
   return (
     <main className="main">
@@ -20,18 +23,19 @@ function MainPage() {
           <h2>Выбрать биржу</h2>
         </div>
         <div className="main__cardsContainer">
-          <ExchangeCard
-            content={{ name: "Binance", id: 1, img: "binance.png" }}
-            setShowEditModal={setShowEditModal}
-          />
-          <ExchangeCard
-            content={{ name: "Binance", id: 2, img: "binance.png" }}
-            setShowEditModal={setShowEditModal}
-          />
-          <ExchangeCard
-            content={{ name: "Binance", id: 3, img: "binance.png" }}
-            setShowEditModal={setShowEditModal}
-          />
+          {!!userExchanges.length &&
+            userExchanges.map((exch, index) => {
+              const { exchangeName, id } = exch;
+              return (
+                <ExchangeCard
+                  key={index}
+                  name={exchangeName}
+                  id={id}
+                  img="binance.png"
+                  setShowEditModal={setShowEditModal}
+                />
+              );
+            })}
           <AddExchangeCard setShowNewModal={setShowNewModal} />
         </div>
       </div>
