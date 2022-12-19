@@ -41,11 +41,11 @@ function ExchangeCard({ content, setShowEditModal }) {
         </div>
         <div className="exchangeCard__info">
           <div className="exchangeCard__currencyInfo">
-            <p>BUSD:</p>
+            <p className="exchangeCard__currencyInfo--text">BUSD:</p>
             <p className="exchangeCard__currencyInfo--green">+228%</p>
           </div>
           <div className="exchangeCard__currencyInfo">
-            <p>BNB:</p>
+            <p className="exchangeCard__currencyInfo--text">BNB:</p>
             <p className="exchangeCard__currencyInfo--red">-322%</p>
           </div>
         </div>
