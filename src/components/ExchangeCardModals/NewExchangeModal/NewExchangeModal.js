@@ -28,7 +28,7 @@ function NewExchangeModal({ setShowNewModal }) {
           onClick={() => setShowNewModal(false)}
         />
 
-        <form className="newExchangeModal__form" autocomplete="off">
+        <form className="newExchangeModal__form" autoComplete="off">
           <div className="newExchangeModal__formCol">
             <label className="newExchangeModal__formBlock">
               <div className="newExchangeModal__formTitle">
@@ -56,7 +56,7 @@ function NewExchangeModal({ setShowNewModal }) {
               <input
                 placeholder="Enter your public key"
                 type="text"
-                autocomplete="off"
+                autoComplete="off"
                 className="newExchangeModal__formInput"
                 value={newExchange.publicKey}
                 onChange={(e) =>
@@ -69,7 +69,7 @@ function NewExchangeModal({ setShowNewModal }) {
               <input
                 placeholder="Enter your secret key"
                 type="password"
-                autocomplete="off"
+                autoComplete="off"
                 className="newExchangeModal__formInput"
                 value={newExchange.secretKey}
                 onChange={(e) =>
