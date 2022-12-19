@@ -50,7 +50,7 @@ function NewExchangeModal({ setShowNewModal }) {
               <input
                 placeholder="Enter your public key"
                 type="text"
-                class="newExchangeModal__formInput"
+                className="newExchangeModal__formInput"
                 value={newExchange.publicKey}
                 onChange={(e) =>
                   setNewExchange({ ...newExchange, publicKey: e.target.value })
