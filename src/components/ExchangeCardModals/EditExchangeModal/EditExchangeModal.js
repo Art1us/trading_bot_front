@@ -17,7 +17,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
       ];
     });
     setShowEditModal(false);
-  }
+  } 
 
   function deleteClickHandler() {
     setUserExchanges((prev) => [
