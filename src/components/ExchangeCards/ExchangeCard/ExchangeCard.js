@@ -52,19 +52,11 @@ function ExchangeCard(props) {
           <div className="exchangeCard__title">
             <h3>{exchangeName}</h3>
           </div>
-          <div>
-            {" "}
-            PublicKey:{publicKey.slice(0, 8)}
-            {publicKey.length > 8 ? "..." : ""}
-          </div>
-          <div className="exchangeCard__info">
-            <div className="exchangeCard__currencyInfo">
-              <p className="exchangeCard__currencyInfo--text">BUSD:</p>
-              <p className="exchangeCard__currencyInfo--green">+228%</p>
-            </div>
-            <div className="exchangeCard__currencyInfo">
-              <p className="exchangeCard__currencyInfo--text">BNB:</p>
-              <p className="exchangeCard__currencyInfo--red">-322%</p>
+          <div className="exchangeCard__curentinfo">
+            <div className="exchangeCard__currencyInfo--text">Your public key:</div>
+            <div className="exchangeCard__currencyInfo--number">
+              {publicKey.slice(0, 8)}
+              {publicKey.length > 8 ? "..." : ""}
             </div>
           </div>
         </div>
