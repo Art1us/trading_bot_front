@@ -49,7 +49,7 @@ function NewExchangeModal({ setShowNewModal }) {
               <div className="newExchangeModal__formTitle">Public Key</div>
               <input
                 placeholder="Enter your public key"
-                type="text"
+                type="text "autocomplete="off"
                 className="newExchangeModal__formInput"
                 value={newExchange.publicKey}
                 onChange={(e) =>
