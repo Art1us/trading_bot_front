@@ -1,15 +1,15 @@
 .editExchangeModal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 2px #666;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: whitesmoke;
-    z-index: 3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  z-index: 3;
 }
 
 .editExchangeModal__inner {
@@ -26,6 +26,93 @@
     color:black;
 } 
 
+
 .editExchangeModal__cross {
-    color: black;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.editExchangeModal__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.editExchangeModal__formContainer {
+  width: 300px;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.editExchangeModal__keyForm {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.editExchangeModal__keyFormInput--publicKey {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 16;
+}
+
+.editExchangeModal__keyFormInput--secretKey {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 16;
+}
+
+input {
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-top: 2px;
+  padding-left: 5px;
+}
+
+.editExchangeModal_formBtn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.editExchangeModal__saveBtn {
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid royalblue;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editExchangeModal__saveBtn:hover{
+    background-color: whitesmoke;
+}
+
+.editExchangeModal__deleteBtn {
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: red;
+  border: 1px solid red;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editExchangeModal__deleteBtn:hover{
+    background-color: rgb(214, 1, 1);
 }
