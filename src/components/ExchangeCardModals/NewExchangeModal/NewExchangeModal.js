@@ -63,7 +63,7 @@ function NewExchangeModal({ setShowNewModal }) {
               <input type="text" class="newExchangeModal__formInput" />
             </label>
           </div>
-          <button className="newExchangeModal__btn" onClick={clickHandler}>
+          <button className="newExchangeModal__saveBtn" onClick={clickHandler}>
             Save
           </button>
         </form>
