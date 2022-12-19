@@ -26,10 +26,10 @@ function NewExchangeModal({ setShowNewModal }) {
           onClick={() => setShowNewModal(false)}
         />
 
-        <form class="newExchangeModal__form">
-          <div class="newExchangeModal__formCol">
-            <label class="newExchangeModal__formBlock">
-              <div class="newExchangeModal__formTitle">Select Exchanges</div>
+        <form className="newExchangeModal__form">
+          <div className="newExchangeModal__formCol">
+            <label className="newExchangeModal__formBlock">
+              <div className="newExchangeModal__formTitle">Select Exchanges</div>
               <select
                 className="newExchangeModal__formInput"
                 value={newExchange.exchangeName}
@@ -47,8 +47,8 @@ function NewExchangeModal({ setShowNewModal }) {
               </select>
             </label>
 
-            <label class="newExchangeModal__formBlock">
-              <div class="newExchangeModal__formTitle">Public Key</div>
+            <label className="newExchangeModal__formBlock">
+              <div className="newExchangeModal__formTitle">Public Key</div>
               <input
                 placeholder="Enter your public key"
                 type="text"
@@ -59,12 +59,12 @@ function NewExchangeModal({ setShowNewModal }) {
                 }
               />
             </label>
-            <label class="newExchangeModal__formBlock">
-              <div class="newExchangeModal__formTitle">Secret Key</div>
+            <label className ="newExchangeModal__formBlock">
+              <div className="newExchangeModal__formTitle">Secret Key</div>
               <input
                 placeholder="Enter your secret key"
                 type="text"
-                class="newExchangeModal__formInput"
+                className="newExchangeModal__formInput"
               />
             </label>
           </div>
