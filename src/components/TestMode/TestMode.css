@@ -1,0 +1,73 @@
+.testMode {
+    max-width: 1200px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.testMode__container {
+    width: 900px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testMode__description {
+    width: 500px;
+    font-size: 14px;
+    color: grey;
+}
+
+.testMode__formContainer {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+
+.testMode__dateForm {
+    width: 500px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.testMode__dateForm input {
+    height: 35px;
+    margin-top: 5px;
+}
+
+.testMode__dateForm label {
+    margin-left: 0px;
+    font-weight: bold;
+}
+
+.testMode__dateFormInput--from,
+.testMode__dateFormInput--to {
+    width: 31%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.testMode__startBtn {
+    width: 31%;
+    margin-left: auto;
+    margin-right: 0;
+    color: white;
+    background-color: royalblue;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.testMode__startBtn:hover {
+    background-color: rgb(61, 98, 210);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+}

@@ -1,3 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --main-bg-color: white;
+  --second-bg-color: whitesmoke;
+  --primary-color:black;
+  --secondary-color: royalblue;
+  --hover-btn-color: rgb(14, 14, 159);
+}
+
+img {
+  max-width: 100%
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
