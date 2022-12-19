@@ -93,6 +93,6 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
       </div>
     </div>
   );
-}
+} 
 
 export default EditExchangeModal;

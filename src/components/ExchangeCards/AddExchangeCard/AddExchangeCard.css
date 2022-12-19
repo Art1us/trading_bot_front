@@ -3,7 +3,7 @@
     height: 280px;
     border-radius: 20px;
     margin-right: 20px;
-    background-color: whitesmoke;
+    background-color: var(--second-bg-color);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     justify-content: center;
@@ -19,5 +19,5 @@
 
 .addExchangeCard--empty {
     font-size: 64px;
-    color: gray;
+    color: rgba(128, 128, 128, 0.533);
 }
