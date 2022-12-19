@@ -1,49 +1,72 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .newExchangeModal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 2px #666;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: whitesmoke;
-    z-index: 3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  z-index: 3;
 }
 
 .newExchangeModal__inner {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 290px;
-    margin: auto;
-    height: 420px;
-    width: 350px;
-    background-color: white;
-    color: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 290px;
+  margin: auto;
+  height: 420px;
+  width: 350px;
+  background-color: white;
+  color: black;
 }
 
 .newExchangeModal__cross {
-    color: black;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 65px 54px;
-    width: 100%;
-    
+.newExchangeModal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 50px 0 50px;
+  width: 100%;
 }
 
-.form__block {
-    width: 100%;
+.newExchangeModal__formTitle {
+    font-size: 30px;
+    font-weight:400;    
 }
+
+.newExchangeModal__formInput {
+    width: 100%;
+    margin-bottom: 2px;
+    height: 30px;
+}
+
+.newExchangeModal__formTitle {
+  margin-bottom: 5px;
+}
+
+.newExchangeModal__btn {
+  margin-top: 58px;
+  height: 37px;
+  font-size: 19px;
+  background-color: rgb(60, 60, 235);
+  color: white;
+}
+
+.newExchangeModal__btn:hover {
+  background-color: rgb(13, 13, 153);
+} 
+
