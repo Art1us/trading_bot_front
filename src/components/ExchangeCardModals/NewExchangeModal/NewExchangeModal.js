@@ -13,29 +13,30 @@ function NewExchangeModal({ setShowNewModal }) {
           className="newExchangeModal__cross"
           onClick={() => setShowNewModal(false)}
         />
-        <select>
-          {exchangesList.map((item) => {
-            return <option key={item.id}>{item.name}</option>;
-          })}
-        </select>
-        <form class="form">
-        <div class="form__col">
-          <div class="form__row">
-            <label class="form__block">
-              <div class="form__title">Имя</div>
-              <input type="text" class="form__input" />
-            </label>
-            <label class="form__block">
-              <div class="form__title">Телефон</div>
-              <input type="text" class="form__input" />
-            </label>
+        <form class="newExchangeModal__form">
+          <label class="newExchangeModal__formBlock">
+            <div class="newExchangeModal__formTitle">Select Exchanges</div>
+            <select className="newExchangeModal__formInput">
+              {exchangesList.map((item) => {
+                return <option key={item.id}>{item.name}</option>;
+              })}
+            </select>
+          </label>
+          <div class="newExchangeModal__formCol">
+            <div class="newExchangeModal__formRow">
+              <label class="newExchangeModal__formBlock">
+                <div class="newExchangeModal__formTitle">Public Key</div>
+                <input type="text" class="newExchangeModal__formInput" />
+              </label>
+              <label class="newExchangeModal__formBlock">
+                <div class="newExchangeModal__formTitle">Secret Key</div>
+                <input type="text" class="newExchangeModal__formInput" />
+              </label>
+            </div>
           </div>
-        </div>
-        <button>Save</button>
-      </form>
-
+          <button className="newExchangeModal__btn">Save</button>
+        </form>
       </div>
-   
     </div>
   );
 }

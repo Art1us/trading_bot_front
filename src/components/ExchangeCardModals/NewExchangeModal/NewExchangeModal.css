@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .newExchangeModal {
     position: fixed;
     top: 0;
@@ -31,4 +34,16 @@
     position: absolute;
     top: 10px;
     right: 10px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 65px 54px;
+    width: 100%;
+    
+}
+
+.form__block {
+    width: 100%;
 }
