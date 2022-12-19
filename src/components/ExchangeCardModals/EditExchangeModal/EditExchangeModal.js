@@ -15,7 +15,7 @@ function EditExchangeModal({ setShowEditModal }) {
             <h2>Binance</h2>
           </div>
           <div className="editExchangeModal__formContainer">
-            <form className="editExchangeModal__keyForm">
+            <form className="editExchangeModal__keyForm" autoComplete="off">
               <div className="editExchangeModal__keyFormInput--publicKey">
                 <label htmlFor="">Public Key</label>
                 <input type="text" placeholder="Enter your public key" />
