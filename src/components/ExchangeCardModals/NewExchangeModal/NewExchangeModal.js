@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../../../Context";
 import { AiOutlineClose } from "react-icons/ai";
 import "./NewExchangeModal.css";
+import { v4 as uuidv4 } from "uuid";
 
 function NewExchangeModal({ setShowNewModal }) {
   const { exchangesList, setUserExchanges } = useContext(Context);
@@ -9,9 +10,12 @@ function NewExchangeModal({ setShowNewModal }) {
     exchangeName: "",
     publicKey: "",
     secretKey: "",
+    id: uuidv4(),
   });
 
-  function clickHandler() {
+  function clickHandler(e) {
+    e.preventDefault();
+    if (!newExchange.exchangeName) return;
     setUserExchanges((prev) => [...prev, newExchange]);
     setShowNewModal(false);
   }
