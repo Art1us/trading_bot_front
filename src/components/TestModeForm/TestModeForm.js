@@ -1,9 +1,7 @@
 import React from "react";
 
-function TestModeForm() {
-
-   
-    
+function TestModeForm({date, setDate}) {
+  
   return (
     <div className="testMode__formContainer">
       <form className="testMode__dateForm">

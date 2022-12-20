@@ -30,7 +30,7 @@ function TestMode() {
         <div className="testMode__title">
           <h2>Select date range</h2>
         </div>
-        <TestModeForm />
+        <TestModeForm date={date} setDate={setDate} />
         {showGraphs && <TestModeGraphs />}
       </div>
     </div>
