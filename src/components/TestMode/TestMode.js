@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import TestModeGraphs from "../TestModeGraphs/TestModeGraphs";
+
 import "./TestMode.css";
 
 function TestMode() {
+  const [showGraphs, setShowGraphs] = useState(false);
   const [date, setDate] = useState({
     from: "",
     to: "",
@@ -9,11 +12,16 @@ function TestMode() {
 
   function sumbitHandler(e) {
     e.preventDefault();
-    console.log(date)
+    
+    if (!date.from || !date.to) return;
+
+    console.log(date);
+    /* Take this date and set up the chart with it */
     setDate({
       from: "",
       to: "",
-    })
+    });
+    setShowGraphs(true);
   }
 
   return (
@@ -51,6 +59,7 @@ function TestMode() {
             was working during selected date period.
           </p>
         </div>
+        {showGraphs && <TestModeGraphs />}
       </div>
     </div>
   );
