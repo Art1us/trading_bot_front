@@ -1,0 +1,9 @@
+.botChart{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.botChart__title{
+    margin-bottom: 10px;
+}
