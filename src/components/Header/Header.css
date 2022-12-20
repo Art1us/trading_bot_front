@@ -32,6 +32,10 @@
   margin-right: 20px;
 }
 
+.header__elments-item--right:hover {
+background-color: rgb(199, 199, 199);
+}
+
 .header__elments-item--right:last-child {
   margin-right: 0;
 }
