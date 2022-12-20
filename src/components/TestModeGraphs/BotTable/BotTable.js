@@ -1,53 +1,41 @@
 import React from "react";
-import './BotTable.css'
+import "./BotTable.css";
+import data from '../botInfoTestData'
 
-const myData = [
-  {
-    name: "London",
-    temperature: "50F",
-  },
-  {
-    name: "New York",
-    temperature: "33F",
-  },
-  {
-    name: "San Francisco",
-    temperature: "44F",
-  },
-  {
-    name: "Munich",
-    temperature: "66F",
-  },
-];
 
 function Row(props) {
-  const { name, temperature } = props;
+  const { name, profit, height } = props;
 
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{temperature}</td>
+    <tr className="botTable__row">
+      <td className="botTable__cell">{name}</td>
+      <td className="botTable__cell">{profit}</td>
+      <td className="botTable__cell">{height}</td>
     </tr>
   );
 }
 
-function BotTable(props) {
+function BotTable() {
   return (
-    <div className="botTable">
+    <table className="botTable">
       <thead>
         <tr>
-          <th>The table header</th>
-          <th>The table header</th>
+          <th className="botTable__header">Name</th>
+          <th className="botTable__header">Profit</th>
+          <th className="botTable__header">Height</th>
         </tr>
       </thead>
-      <table>
-        <tbody>
-          {myData.map((row, index) => (
-            <Row key={index} name={row.name} temperature={row.temperature} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+      <tbody>
+        {data.map((row, index) => (
+          <Row
+            key={index}
+            name={row.name}
+            profit={row.profit}
+            height={row.height}
+          />
+        ))}
+      </tbody>
+    </table>
   );
 }
 
