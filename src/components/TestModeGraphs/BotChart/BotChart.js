@@ -8,6 +8,7 @@ import {
   Tooltip,
 } from "recharts";
 import CustomTooltip from "./CustomTooltip/CustomTooltip";
+import './BotChart.css'
 
 function BotChart() {
   const data = [
@@ -18,7 +19,7 @@ function BotChart() {
     { name: "Page E", uv: 200, pv: 2400, amt: 2400, height: 228 },
   ];
   return (
-    <LineChart width={900} height={400} data={data}>
+    <LineChart width={900} height={400} data={data} className='botChart'>
       <Line type="monotone" dataKey="uv" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="name" />

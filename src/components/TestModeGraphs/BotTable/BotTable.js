@@ -33,7 +33,7 @@ function Row(props) {
 
 function BotTable(props) {
   return (
-    <div>
+    <div className="botTable">
       <thead>
         <tr>
           <th>The table header</th>
