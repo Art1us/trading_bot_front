@@ -1,25 +1,32 @@
-.header{
-    width: 100vw;
-    border-bottom: 1px solid rgb(228, 228, 228);
-    background-color: whitesmoke;
+.header {
+  width: 100vw;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  background-color: whitesmoke;
 }
 
-.header__container{
-    width:100%;
-    max-width: 1200px;
-    margin:0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:10px 20px;
-    height: 55px;
+.header__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 55px;
 }
 
-.header__burger, .header__help{
-    cursor: pointer;
+.header__logo img {
+  margin-top: 5px;
+  cursor: pointer;
+  width: 100px;
 }
 
-.header h2{
-    color: black;
-    cursor: pointer;
+.header__help {
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.header h2 {
+  color: black;
+  cursor: pointer;
 }
