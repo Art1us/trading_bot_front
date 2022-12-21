@@ -15,9 +15,13 @@ function Header() {
         <Link to="/" style={{ textDecoration: "none" }}>
           <h2 className="header__title">Trading Bot</h2>
         </Link>
-        <div className="header__elements">
-          <RiGlobalLine className="header__elments-item--right" />
-          <RxHamburgerMenu className="header__elments-item--right" />
+        <div className="header__elements ">
+          <div className="hover__elements">
+          <RiGlobalLine className="header__elments-item--right hover" />
+          </div>
+          <div className="hover__elements">
+          <RxHamburgerMenu className="header__elments-item--right hover" />
+          </div>
         </div>
       </div>
     </header>

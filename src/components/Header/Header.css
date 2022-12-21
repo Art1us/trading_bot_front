@@ -20,6 +20,7 @@
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
+  
 }
 
 .header__title {
@@ -28,13 +29,26 @@
   text-align: center;
 }
 
-.header__elments-item--right {
-  margin-right: 20px;
+.hover__elements {
+  margin-right: 10px;
+  width: 45px;
+  height: 35px;
+  
+
 }
 
 .header__elments-item--right:hover {
-background-color: rgb(199, 199, 199);
+  background-color: rgb(199, 199, 199);
+  border-radius: 50%;
+margin-right: 10px;
+  width: 30px;
+  height: 30px;
 }
+
+/* .header__elments-item--right:hover {
+background-color: rgb(199, 199, 199);
+border-radius: 50%;
+} */
 
 .header__elments-item--right:last-child {
   margin-right: 0;
