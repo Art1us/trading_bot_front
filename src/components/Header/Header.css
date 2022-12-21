@@ -15,6 +15,41 @@
   height: 55px;
 }
 
+
+.header__elements {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__title {
+  color: black;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header__elments-item--right {
+  height: 20px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__elements--hover {
+  background-color: transparent;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__elements--hover:hover {
+  background-color: rgb(199, 199, 199);
+}
+
 .header__logo img {
   margin-top: 5px;
   cursor: pointer;
