@@ -17,10 +17,10 @@ function Header() {
         </Link>
         <div className="header__elements ">
           <div className="hover__elements">
-          <RiGlobalLine className="header__elments-item--right hover" />
+          <RiGlobalLine className="header__elments-item--right" />
           </div>
           <div className="hover__elements">
-          <RxHamburgerMenu className="header__elments-item--right hover" />
+          <RxHamburgerMenu className="header__elments-item--right" />
           </div>
         </div>
       </div>
