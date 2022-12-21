@@ -15,10 +15,10 @@ function Header() {
           <h2 className="header__title">Trading Bot</h2>
         </Link>
         <div className="header__elements ">
-          <div className="heade__elements--hover">
+          <div className="header__elements--hover">
           <RiGlobalLine className="header__elments-item--right" />
           </div>
-          <div className="heade__elements--hover">
+          <div className="header__elements--hover">
           <RxHamburgerMenu className="header__elments-item--right" />
           </div>
         </div>
