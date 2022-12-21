@@ -1,6 +1,7 @@
 .exchangePage {
     height: calc(100vh - 60px);
     width: 100vw;
+    overflow-x:hidden;
 }
 
 .exchangePage__container {

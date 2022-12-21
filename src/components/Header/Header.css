@@ -15,6 +15,7 @@
   height: 55px;
 }
 
+
 .header__elements {
   cursor: pointer;
   display: flex;
@@ -47,4 +48,19 @@
 
 .header__elements--hover:hover {
   background-color: rgb(199, 199, 199);
+
+.header__logo img {
+  margin-top: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.header__help {
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.header h2 {
+  color: black;
+  cursor: pointer;
 }

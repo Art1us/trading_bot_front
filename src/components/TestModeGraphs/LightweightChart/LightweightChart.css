@@ -1,0 +1,17 @@
+.lightweightChart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+}
+
+.tv-lightweight-charts {
+    flex: 1;
+    height: 100%;
+}
