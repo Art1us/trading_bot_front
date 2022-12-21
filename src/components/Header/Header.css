@@ -35,7 +35,7 @@
   align-items: center;
 }
 
-.heade__elements--hover{
+.header__elements--hover{
   background-color:transparent;
   border-radius: 50%;
   height: 30px;
