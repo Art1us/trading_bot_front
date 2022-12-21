@@ -41,6 +41,7 @@ function TestMode() {
                   setDate((prev) => ({ ...prev, from: e.target.value }))
                 }
               />
+              <p className="incorrectInputMsg">*Select date</p>
             </div>
             <div className="testMode__dateFormInput--to">
               <label htmlFor="">To:</label>
@@ -51,6 +52,7 @@ function TestMode() {
                   setDate((prev) => ({ ...prev, to: e.target.value }))
                 }
               />
+              <p className="incorrectInputMsg">*Select date</p>
             </div>
             <input type="submit" className="testMode__startBtn" value="Test" />
           </form>
