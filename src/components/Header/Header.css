@@ -36,8 +36,8 @@
   align-items: center;
 }
 
-.header__elements--hover{
-  background-color:transparent;
+.header__elements--hover {
+  background-color: transparent;
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -48,6 +48,7 @@
 
 .header__elements--hover:hover {
   background-color: rgb(199, 199, 199);
+}
 
 .header__logo img {
   margin-top: 5px;
