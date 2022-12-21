@@ -64,7 +64,7 @@
   font-size: 16;
 }
 
-.editExchangeModal__keyFormInput--title{
+.editExchangeModal__keyFormInput--title {
   font-size: 18px;
   font-weight: bold;
 }
@@ -76,7 +76,7 @@
   font-size: 16;
 }
 
-input {
+.editExchangeModal__keyFormInput {
   height: 35px;
   border-radius: 5px;
   border: 1px solid grey;

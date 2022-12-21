@@ -53,7 +53,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
                 <input
                   type="text"
                   placeholder="Enter your public key"
-                  className="incorrectInput"
+                  className="editExchangeModal__keyFormInput incorrectInput"
                   value={editedExchange.publicKey}
                   onChange={(e) =>
                     setEditedExchange((prev) => ({
@@ -76,7 +76,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
                 <input
                   type="password"
                   placeholder="Enter your Secret Key"
-                  className="incorrectInput"
+                  className="editExchangeModal__keyFormInput incorrectInput"
                   value={editedExchange.secretKey}
                   onChange={(e) =>
                     setEditedExchange((prev) => ({
