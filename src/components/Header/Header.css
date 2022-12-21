@@ -35,7 +35,7 @@
   align-items: center;
 }
 
-.hover__elements {
+.heade__elements--hover{
   background-color:transparent;
   border-radius: 50%;
   height: 30px;
@@ -45,6 +45,6 @@
   align-items: center;
 }
 
-.hover__elements:hover {
+.heade__elements--hover:hover {
   background-color: rgb(199, 199, 199);
 }
