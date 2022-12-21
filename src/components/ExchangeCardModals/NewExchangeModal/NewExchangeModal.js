@@ -27,7 +27,6 @@ function NewExchangeModal({ setShowNewModal }) {
           className="newExchangeModal__cross"
           onClick={() => setShowNewModal(false)}
         />
-
         <form className="newExchangeModal__form" autoComplete="off">
           <div className="newExchangeModal__formCol">
             <label className="newExchangeModal__formBlock">
@@ -35,7 +34,7 @@ function NewExchangeModal({ setShowNewModal }) {
                 Select Exchanges
               </div>
               <select
-                className="newExchangeModal__formInput"
+                className="newExchangeModal__formInput incorrectInput"
                 value={newExchange.exchangeName}
                 onChange={(e) =>
                   setNewExchange({
@@ -49,20 +48,25 @@ function NewExchangeModal({ setShowNewModal }) {
                   return <option key={item.id}>{item.name}</option>;
                 })}
               </select>
+              <p className="incorrectInputAlarm incorrectInputMsg">
+                *Please select your exchange!
+              </p>
             </label>
-
             <label className="newExchangeModal__formBlock">
               <div className="newExchangeModal__formTitle">Public Key</div>
               <input
                 placeholder="Enter your public key"
                 type="text"
                 autoComplete="off"
-                className="newExchangeModal__formInput"
+                className="newExchangeModal__formInput incorrectInput"
                 value={newExchange.publicKey}
                 onChange={(e) =>
                   setNewExchange({ ...newExchange, publicKey: e.target.value })
                 }
               />
+              <p className="incorrectInputAlarm incorrectInputMsg">
+                *Please enter your public key!
+              </p>
             </label>
             <label className="newExchangeModal__formBlock">
               <div className="newExchangeModal__formTitle">Secret Key</div>
@@ -70,12 +74,15 @@ function NewExchangeModal({ setShowNewModal }) {
                 placeholder="Enter your secret key"
                 type="password"
                 autoComplete="off"
-                className="newExchangeModal__formInput"
+                className="newExchangeModal__formInput incorrectInput"
                 value={newExchange.secretKey}
                 onChange={(e) =>
                   setNewExchange({ ...newExchange, secretKey: e.target.value })
                 }
               />
+              <p className="incorrectInputAlarm incorrectInputMsg">
+                *Please enter your secret key!
+              </p>
             </label>
           </div>
           <button className="newExchangeModal__saveBtn" onClick={clickHandler}>

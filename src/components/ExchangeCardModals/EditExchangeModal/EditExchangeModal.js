@@ -17,7 +17,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
       ];
     });
     setShowEditModal(false);
-  } 
+  }
 
   function deleteClickHandler() {
     setUserExchanges((prev) => [
@@ -44,10 +44,16 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
           <div className="editExchangeModal__formContainer">
             <form className="editExchangeModal__keyForm" autoComplete="off">
               <div className="editExchangeModal__keyFormInput--publicKey">
-                <label htmlFor="">Public Key</label>
+                <label
+                  htmlFor=""
+                  className="editExchangeModal__keyFormInput--title"
+                >
+                  Public Key
+                </label>
                 <input
                   type="text"
                   placeholder="Enter your public key"
+                  className="editExchangeModal__keyFormInput incorrectInput"
                   value={editedExchange.publicKey}
                   onChange={(e) =>
                     setEditedExchange((prev) => ({
@@ -56,12 +62,21 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
                     }))
                   }
                 />
+                <p className="incorrectInputMsg">
+                  *Please enter your public key!
+                </p>
               </div>
               <div className="editExchangeModal__keyFormInput--secretKey">
-                <label htmlFor="">Secret Key</label>
+                <label
+                  htmlFor=""
+                  className="editExchangeModal__keyFormInput--title"
+                >
+                  Secret Key
+                </label>
                 <input
                   type="password"
                   placeholder="Enter your Secret Key"
+                  className="editExchangeModal__keyFormInput incorrectInput"
                   value={editedExchange.secretKey}
                   onChange={(e) =>
                     setEditedExchange((prev) => ({
@@ -70,6 +85,9 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
                     }))
                   }
                 />
+                <p className="incorrectInputMsg">
+                  *Please enter your secret key!
+                </p>
               </div>
               <div className="editExchangeModal_formBtn">
                 <button
@@ -93,6 +111,6 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
       </div>
     </div>
   );
-} 
+}
 
 export default EditExchangeModal;
