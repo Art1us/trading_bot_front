@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import inputs from "./inputsData";
 import FormInput from "../../components/FormInput/FormInput";
 import "./Login.css";
@@ -10,9 +9,9 @@ export default function Login() {
     password: "",
   });
 
-  const [isIncorrect, setIsIncorrect] = useState({
-    email: false,
-    password: false,
+  const [errorMessages, setErrorMessages] = useState({
+    email: "",
+    password: "",
   });
 
   const [isDirty, setIsDirty] = useState({
@@ -25,20 +24,31 @@ export default function Login() {
   }
 
   useEffect(() => {
-    const updatedFormErrors = {};
-
     inputs.forEach((item) => {
-      if (
-        !isDirty[item.name] ||
-        new RegExp(item.pattern).test(formValues[item.name])
-      ) {
-        updatedFormErrors[item.name] = false;
+      function getError() {
+        for (let error of item.errors) {
+          if (
+            error.condition &&
+            new RegExp(error.condition).test(formValues[item.name])
+          ) {
+            return error.message;
+          }
+
+          if (
+            error.pattern &&
+            !new RegExp(error.pattern).test(formValues[item.name])
+          ) {
+            return error.message;
+          }
+        }
+      }
+
+      if (isDirty[item.name] && getError()) {
+        setErrorMessages((prev) => ({ ...prev, [item.name]: getError() }));
       } else {
-        updatedFormErrors[item.name] = true;
+        setErrorMessages((prev) => ({ ...prev, [item.name]: "" }));
       }
     });
-
-    setIsIncorrect(updatedFormErrors);
   }, [formValues, isDirty]);
 
   function submitHandler(e) {
@@ -46,7 +56,7 @@ export default function Login() {
 
     setIsDirty({ email: true, password: true });
 
-    if (isIncorrect.email || isIncorrect.password) return;
+    if (errorMessages.email || errorMessages.password) return;
 
     console.log(formValues);
   }
@@ -62,7 +72,7 @@ export default function Login() {
                 key={input.id}
                 {...input}
                 onChange={onChange}
-                isIncorrect={isIncorrect}
+                errorMessage={errorMessages[input.name]}
                 setIsDirty={setIsDirty}
                 value={formValues[input.name]}
               />

@@ -7,17 +7,15 @@ function FormInput({
   errorMessage,
   onChange,
   onBlur,
-  isIncorrect,
   setIsDirty,
   name,
   pattern,
   ...inputProps
 }) {
-
   return (
     <div className={className}>
       <input
-        className={`${inputClassName} ${isIncorrect[name] ? "incorrectInput" : ""}`}
+        className={`${inputClassName} ${errorMessage ? "incorrectInput" : ""}`}
         name={name}
         {...inputProps}
         onChange={onChange}
@@ -27,9 +25,9 @@ function FormInput({
       />
       <p
         className="incorrectInputMsg"
-        style={{ display: isIncorrect[name] ? "block" : "none" }}
+        style={{ display: errorMessage ? "block" : "none" }}
       >
-        {errorMessage}
+        *{errorMessage}
       </p>
     </div>
   );
