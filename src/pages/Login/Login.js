@@ -1,67 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import inputs from "./inputsData";
-import FormInput from "../../components/FormInput/FormInput";
+import React from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import useForm from "../../hooks/useForm";
 
-export default function Login() {
+function Login() {
+  const inputs = [
+    {
+      id: 1,
+      name: "email",
+      type: "text",
+      placeholder: "Email",
+      className: "login__formBlock",
+      inputClassName: "login__formInput",
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter your email!",
+        },
+        {
+          pattern:
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
+            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
+          message: "Please enter a valid email",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "password",
+      type: "text",
+      placeholder: "Password",
+      className: "login__formBlock",
+      inputClassName: "login__formInput",
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter your password!",
+        },
+        {
+          condition: "^(.{1,7})$",
+          message: "Your password is too short!",
+        },
+        {
+          condition: "^[A-Za-z0-9]*$",
+          message: "Please include at least one special character",
+        },
+        {
+          condition: "^[^A-Z]+$",
+          message: "Please include an uppercase letter",
+        },
+        {
+          condition: "^[^a-z]+$",
+          message: "Please include an lowercase letter",
+        },
+        {
+          condition: "^[^0-9]+$",
+          message: "Please include a digit",
+        },
+      ],
+    },
+  ];
+
   const navigate = useNavigate();
-
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [errorMessages, setErrorMessages] = useState({
-    email: "",
-    password: "",
-  });
-  const [isDirty, setIsDirty] = useState({
-    email: "",
-    password: "",
-  });
-
-  useEffect(() => {
-    inputs.forEach((item) => {
-      function getError() {
-        for (let error of item.errors) {
-          if (
-            error.condition &&
-            new RegExp(error.condition).test(formValues[item.name])
-          ) {
-            return error.message;
-          }
-
-          if (
-            error.pattern &&
-            !new RegExp(error.pattern).test(formValues[item.name])
-          ) {
-            return error.message;
-          }
-        }
-      }
-
-      if (isDirty[item.name] && getError()) {
-        setErrorMessages((prev) => ({ ...prev, [item.name]: getError() }));
-      } else {
-        setErrorMessages((prev) => ({ ...prev, [item.name]: "" }));
-      }
-    });
-  }, [formValues, isDirty]);
-
-  function onChange(e) {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
-  }
+  const { inputComponents, isSubmitInvalid } = useForm(inputs);
 
   function submitHandler(e) {
     e.preventDefault();
-    
-    if (!isDirty.email || !isDirty.password) {
-      setIsDirty({ email: true, password: true });
-      return;
-    }
-    if (errorMessages.email || errorMessages.password) return;
-
+    if (isSubmitInvalid()) return;
     navigate("/main");
   }
 
@@ -70,18 +75,7 @@ export default function Login() {
       <div className="login__container">
         <form className="login__form" onSubmit={submitHandler}>
           <div className="login__formTitle">Sign-in</div>
-          <div>
-            {inputs.map((input) => (
-              <FormInput
-                key={input.id}
-                {...input}
-                onChange={onChange}
-                errorMessage={errorMessages[input.name]}
-                setIsDirty={setIsDirty}
-                value={formValues[input.name]}
-              />
-            ))}
-          </div>
+          <div>{inputComponents}</div>
           <button className="login__signInBtn">Sign in</button>
           <button type="button" className="login__createAccBtn">
             Create a new account
@@ -91,3 +85,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;
