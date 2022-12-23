@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import inputs from "./inputsData";
 import FormInput from "../../components/FormInput/FormInput";
 import "./Login.css";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
 
   const [errorMessages, setErrorMessages] = useState({
-    email: "",
-    password: "",
+    email: "error",
+    password: "error",
   });
-
   const [isDirty, setIsDirty] = useState({
     email: false,
     password: false,
   });
-
-  function onChange(e) {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
-  }
 
   useEffect(() => {
     inputs.forEach((item) => {
@@ -51,14 +49,20 @@ export default function Login() {
     });
   }, [formValues, isDirty]);
 
+  function onChange(e) {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  }
+  console.log(errorMessages);
   function submitHandler(e) {
     e.preventDefault();
-
-    setIsDirty({ email: true, password: true });
-
+    
+    if (!isDirty.email || !isDirty.password) {
+      setIsDirty({ email: true, password: true });
+      return;
+    }
     if (errorMessages.email || errorMessages.password) return;
 
-    console.log(formValues);
+    navigate("/main");
   }
 
   return (

@@ -1,6 +1,6 @@
 export default [
   {
-    id: 3,
+    id: 1,
     name: "email",
     type: "text",
     placeholder: "Email",
@@ -18,9 +18,9 @@ export default [
     ],
   },
   {
-    id: 4,
+    id: 2,
     name: "password",
-    type: "password",
+    type: "text",
     placeholder: "Password",
     className: "login__formBlock",
     inputClassName: "login__formInput",
