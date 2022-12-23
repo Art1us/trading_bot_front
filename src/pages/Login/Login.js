@@ -13,12 +13,12 @@ export default function Login() {
   });
 
   const [errorMessages, setErrorMessages] = useState({
-    email: "error",
-    password: "error",
+    email: "",
+    password: "",
   });
   const [isDirty, setIsDirty] = useState({
-    email: false,
-    password: false,
+    email: "",
+    password: "",
   });
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Login() {
   function onChange(e) {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   }
-  console.log(errorMessages);
+
   function submitHandler(e) {
     e.preventDefault();
     

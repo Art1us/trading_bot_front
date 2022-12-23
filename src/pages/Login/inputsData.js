@@ -20,7 +20,7 @@ export default [
   {
     id: 2,
     name: "password",
-    type: "text",
+    type: "password",
     placeholder: "Password",
     className: "login__formBlock",
     inputClassName: "login__formInput",
