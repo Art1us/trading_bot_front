@@ -24,13 +24,7 @@ function NewExchangeModal({ setShowNewModal }) {
       errors: [
         {
           condition: "^s*$",
-          message: "Please enter your email!",
-        },
-        {
-          pattern:
-            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
-            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
-          message: "Please enter a valid email",
+          message: "Please select your exchange!",
         },
       ],
     },
@@ -48,13 +42,11 @@ function NewExchangeModal({ setShowNewModal }) {
       errors: [
         {
           condition: "^s*$",
-          message: "Please enter your email!",
+          message: "Please enter your public key!",
         },
         {
-          pattern:
-            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
-            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
-          message: "Please enter a valid email",
+          condition: "^(.{1,7})$",
+          message: "Please enter a valid public key!",
         },
       ],
     },
@@ -72,13 +64,11 @@ function NewExchangeModal({ setShowNewModal }) {
       errors: [
         {
           condition: "^s*$",
-          message: "Please enter your email!",
+          message: "Please enter your secret key!",
         },
         {
-          pattern:
-            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
-            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
-          message: "Please enter a valid email",
+          condition: "^(.{1,7})$",
+          message: "Please enter a valid secret key!",
         },
       ],
     },
@@ -86,7 +76,7 @@ function NewExchangeModal({ setShowNewModal }) {
 
   const { inputComponents, isSubmitInvalid, formValues } = useForm(inputs);
 
-  function clickHandler(e) {
+  function submitHandler(e) {
     e.preventDefault();
     if (isSubmitInvalid()) return;
     setUserExchanges((prev) => [...prev, { ...formValues, id: uuidv4() }]);
@@ -100,11 +90,9 @@ function NewExchangeModal({ setShowNewModal }) {
           className="newExchangeModal__cross"
           onClick={() => setShowNewModal(false)}
         />
-        <form className="newExchangeModal__form" autoComplete="off">
+        <form className="newExchangeModal__form" onSubmit={submitHandler}>
           <div className="newExchangeModal__formCol">{inputComponents}</div>
-          <button className="newExchangeModal__saveBtn" onClick={clickHandler}>
-            Save
-          </button>
+          <button className="newExchangeModal__saveBtn">Save</button>
         </form>
       </div>
     </div>

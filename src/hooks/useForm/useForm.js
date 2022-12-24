@@ -3,11 +3,12 @@ import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 
 function useForm(inputs) {
+  
   const initialFormValues = {};
   inputs.forEach((input) => {
     initialFormValues[input.name] = "";
   });
-  
+
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const [errorMessages, setErrorMessages] = useState(initialFormValues);
@@ -43,15 +44,28 @@ function useForm(inputs) {
   }, [formValues, isDirty]);
 
   function isSubmitInvalid() {
-    if (!isDirty.email || !isDirty.password) {
-      setIsDirty({ email: true, password: true });
+    const dirtyInputs = Object.values(isDirty).filter((i) => !!i === false);
+
+    if (dirtyInputs.length) {
+      const newIsDirty = {};
+      Object.keys(isDirty).forEach((key) => {
+        newIsDirty[key] = true;
+      });
+
+      setIsDirty({ ...newIsDirty });
       return true;
     }
-    if (errorMessages.email || errorMessages.password) return true;
+
+    const errors = Object.values(errorMessages).filter((i) => !!i === true);
+    if (errors.length) return true;
   }
 
   function onChange(e) {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  }
+
+  function onBlur(e) {
+    setIsDirty((prev) => ({ ...prev, [e.target.name]: true }));
   }
 
   const inputComponents = inputs.map((input) =>
@@ -66,6 +80,9 @@ function useForm(inputs) {
         errorMessage={errorMessages[input.name]}
         setIsDirty={setIsDirty}
         onChange={onChange}
+        onBlur={() => {
+          setIsDirty((prev) => ({ ...prev, [input.name]: true }));
+        }}
         value={formValues[input.name]}
         list={input.list}
       />
@@ -79,8 +96,8 @@ function useForm(inputs) {
         inputClassName={input.inputClassName}
         className={input.className}
         onChange={onChange}
+        onBlur={onBlur}
         errorMessage={errorMessages[input.name]}
-        setIsDirty={setIsDirty}
         value={formValues[input.name]}
       />
     )

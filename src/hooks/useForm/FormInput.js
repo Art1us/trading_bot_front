@@ -6,7 +6,7 @@ function FormInput({
   inputClassName,
   errorMessage,
   onChange,
-  setIsDirty,
+  onBlur,
   name,
   type,
   placeholder,
@@ -20,9 +20,7 @@ function FormInput({
         placeholder={placeholder}
         type={type}
         onChange={onChange}
-        onBlur={(e) => {
-          setIsDirty((prev) => ({ ...prev, [name]: true }));
-        }}
+        onBlur={onBlur}
       />
       <p
         className="incorrectInputMsg"
