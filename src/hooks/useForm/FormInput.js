@@ -10,6 +10,7 @@ function FormInput({
   name,
   type,
   placeholder,
+  value
 }) {
   return (
     <div className={className}>
@@ -21,6 +22,7 @@ function FormInput({
         type={type}
         onChange={onChange}
         onBlur={onBlur}
+        value={value}
       />
       <p
         className="incorrectInputMsg"

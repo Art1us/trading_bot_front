@@ -1,19 +1,70 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./EditExchangeModal.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { Context } from "../../../Context";
+import useForm from "../../../hooks/useForm/useForm";
 
 function EditExchangeModal({ setShowEditModal, exchangeData }) {
-  const { exchange } = exchangeData;
+  const inputs = [
+    {
+      id: 1,
+      name: "publicKey",
+      type: "text",
+      placeholder: "Enter your public key",
+      className: "login__formBlock",
+      inputClassName: "newExchangeModal__formInput",
+      label: {
+        className: "newExchangeModal__formTitle",
+        text: "Public key",
+      },
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter your public key!",
+        },
+        {
+          condition: "^(.{1,7})$",
+          message: "Please enter a valid public key!",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "secretKey",
+      type: "password",
+      placeholder: "Enter your secret key",
+      className: "login__formBlock",
+      inputClassName: "newExchangeModal__formInput",
+      label: {
+        className: "newExchangeModal__formTitle",
+        text: "Secret key",
+      },
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter your secret key!",
+        },
+        {
+          condition: "^(.{1,7})$",
+          message: "Please enter a valid secret key!",
+        },
+      ],
+    },
+  ];
 
-  const [editedExchange, setEditedExchange] = useState(exchangeData);
   const { setUserExchanges } = useContext(Context);
+  const { exchange } = exchangeData;
+  const { inputComponents, isSubmitInvalid, formValues } = useForm(
+    inputs,
+    exchangeData
+  );
 
   function saveClickHandler() {
+    if (isSubmitInvalid()) return;
     setUserExchanges((prev) => {
       return [
         ...prev.filter((exch) => exch.id !== exchangeData.id),
-        editedExchange,
+        formValues,
       ];
     });
     setShowEditModal(false);
@@ -30,6 +81,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
     e.preventDefault();
     setShowEditModal(false);
   }
+
   return (
     <div className="editExchangeModal">
       <div className="editExchangeModal__inner">
@@ -43,52 +95,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
           </div>
           <div className="editExchangeModal__formContainer">
             <form className="editExchangeModal__keyForm" autoComplete="off">
-              <div className="editExchangeModal__keyFormInput--publicKey">
-                <label
-                  htmlFor=""
-                  className="editExchangeModal__keyFormInput--title"
-                >
-                  Public Key
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter your public key"
-                  className="editExchangeModal__keyFormInput incorrectInput"
-                  value={editedExchange.publicKey}
-                  onChange={(e) =>
-                    setEditedExchange((prev) => ({
-                      ...prev,
-                      publicKey: e.target.value,
-                    }))
-                  }
-                />
-                <p className="incorrectInputMsg">
-                  *Please enter your public key!
-                </p>
-              </div>
-              <div className="editExchangeModal__keyFormInput--secretKey">
-                <label
-                  htmlFor=""
-                  className="editExchangeModal__keyFormInput--title"
-                >
-                  Secret Key
-                </label>
-                <input
-                  type="password"
-                  placeholder="Enter your Secret Key"
-                  className="editExchangeModal__keyFormInput incorrectInput"
-                  value={editedExchange.secretKey}
-                  onChange={(e) =>
-                    setEditedExchange((prev) => ({
-                      ...prev,
-                      secretKey: e.target.value,
-                    }))
-                  }
-                />
-                <p className="incorrectInputMsg">
-                  *Please enter your secret key!
-                </p>
-              </div>
+              {inputComponents}
               <div className="editExchangeModal_formBtn">
                 <button
                   type="button"

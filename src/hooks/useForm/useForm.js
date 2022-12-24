@@ -2,19 +2,28 @@ import React, { useEffect, useState } from "react";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
 
-function useForm(inputs) {
-  
-  const initialFormValues = {};
+function useForm(inputs, values) {
+  const initialFormValues = values ? { ...values } : {};
+  if (!values) {
+    inputs.forEach((input) => {
+      initialFormValues[input.name] = "";
+    });
+  }
+
+  const initialFormErrors = {};
   inputs.forEach((input) => {
-    initialFormValues[input.name] = "";
+    initialFormErrors[input.name] = "";
   });
 
+  const initialFormIsDirty = {}
+  inputs.forEach((input)=>{
+    initialFormIsDirty[input.name] = values ? true : false;
+  })
+
   const [formValues, setFormValues] = useState(initialFormValues);
-
-  const [errorMessages, setErrorMessages] = useState(initialFormValues);
-
-  const [isDirty, setIsDirty] = useState(initialFormValues);
-
+  const [errorMessages, setErrorMessages] = useState(initialFormErrors);
+  const [isDirty, setIsDirty] = useState(initialFormIsDirty);
+  
   useEffect(() => {
     inputs.forEach((item) => {
       function getError() {
