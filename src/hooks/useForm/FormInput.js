@@ -13,7 +13,7 @@ function FormInput({
   value
 }) {
   return (
-    <div className={className}>
+    <div className={className} >
       {label && <div className={label.className}>{label.text}</div>}
       <input
         className={`${inputClassName} ${errorMessage ? "incorrectInput" : ""}`}
@@ -26,7 +26,7 @@ function FormInput({
       />
       <p
         className="incorrectInputMsg"
-        style={{ display: errorMessage ? "block" : "none" }}
+        style={{ display: errorMessage ? "block" : "none",zIndex:"3" }}
       >
         *{errorMessage}
       </p>
