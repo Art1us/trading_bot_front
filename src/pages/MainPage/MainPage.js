@@ -21,11 +21,11 @@ function MainPage() {
         <div className="main__cardsContainer">
           {!!userExchanges.length &&
             userExchanges.map((exch) => {
-              const { exchangeName , secretKey, publicKey, id} = exch;
+              const { exchange , secretKey, publicKey, id} = exch;
               return (
                 <ExchangeCard
                   key={id}
-                  exchangeName={exchangeName}
+                  exchange={exchange}
                   publicKey={publicKey}
                   secretKey={secretKey}
                   id={id}

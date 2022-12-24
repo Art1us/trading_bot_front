@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import useForm from "../../hooks/useForm";
+import useForm from "../../hooks/useForm/useForm";
 
 function Login() {
   const inputs = [

@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Context } from "../../../Context";
 
 function EditExchangeModal({ setShowEditModal, exchangeData }) {
-  const { exchangeName } = exchangeData;
+  const { exchange } = exchangeData;
 
   const [editedExchange, setEditedExchange] = useState(exchangeData);
   const { setUserExchanges } = useContext(Context);
@@ -39,7 +39,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
         />
         <div className="editExchangeModal__container">
           <div className="editExchangeModal__title">
-            <h2>{exchangeName}</h2>
+            <h2>{exchange}</h2>
           </div>
           <div className="editExchangeModal__formContainer">
             <form className="editExchangeModal__keyForm" autoComplete="off">
