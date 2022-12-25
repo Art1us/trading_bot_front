@@ -1,64 +1,17 @@
 import React from "react";
 import useForm from "../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
 function TestModeForm({ setShowGraphs }) {
-  const todayDate = new Date().toISOString().split("T")[0];
-  const twoYearsAgo = new Date(
-    new Date().setFullYear(new Date().getFullYear() - 2)
-  )
-    .toISOString()
-    .split("T")[0];
-
   function compareDates(from, to) {
     let date1 = new Date(from).getTime();
     let date2 = new Date(to).getTime();
-
+  
     if (date1 > date2) return true;
   }
 
-  const inputs = [
-    {
-      id: 1,
-      name: "dateFrom",
-      type: "date",
-      placeholder: "",
-      className: "testMode__dateFormInput",
-      inputClassName: "",
-      otherInputProps: { min: twoYearsAgo, max: todayDate },
-      label: {
-        className: "",
-        text: "From:",
-      },
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please enter date from!",
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: "dateTo",
-      type: "date",
-      placeholder: "",
-      className: "testMode__dateFormInput",
-      inputClassName: "",
-      otherInputProps: { min: twoYearsAgo, max: todayDate },
-      label: {
-        className: "",
-        text: "To:",
-      },
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please enter date to!",
-        },
-      ],
-    },
-  ];
-
   const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
-    useForm(inputs);
+    useForm(formInputsData);
 
   function handleSubmit(e) {
     e.preventDefault();

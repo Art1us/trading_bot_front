@@ -4,77 +4,14 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./NewExchangeModal.css";
 import { v4 as uuidv4 } from "uuid";
 import useForm from "../../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
 function NewExchangeModal({ setShowNewModal }) {
   const { exchangesList, setUserExchanges } = useContext(Context);
 
-  const inputs = [
-    {
-      id: 1,
-      name: "exchange",
-      type: "select",
-      list: exchangesList,
-      placeholder: "",
-      className: "login__formBlock",
-      inputClassName: "newExchangeModal__formInput",
-      label: {
-        className: "newExchangeModal__formTitle",
-        text: "Select Exchanges",
-      },
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please select your exchange!",
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: "publicKey",
-      type: "text",
-      placeholder: "Enter your public key",
-      className: "login__formBlock",
-      inputClassName: "newExchangeModal__formInput",
-      label: {
-        className: "newExchangeModal__formTitle",
-        text: "Public key",
-      },
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please enter your public key!",
-        },
-        {
-          condition: "^(.{1,7})$",
-          message: "Please enter a valid public key!",
-        },
-      ],
-    },
-    {
-      id: 3,
-      name: "secretKey",
-      type: "password",
-      placeholder: "Enter your secret key",
-      className: "login__formBlock",
-      inputClassName: "newExchangeModal__formInput",
-      label: {
-        className: "newExchangeModal__formTitle",
-        text: "Secret key",
-      },
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please enter your secret key!",
-        },
-        {
-          condition: "^(.{1,7})$",
-          message: "Please enter a valid secret key!",
-        },
-      ],
-    },
-  ];
+  formInputsData[0].list = [...exchangesList]
 
-  const { inputComponents, isSubmitInvalid, formValues } = useForm(inputs);
+  const { inputComponents, isSubmitInvalid, formValues } = useForm(formInputsData);
 
   function submitHandler(e) {
     e.preventDefault();

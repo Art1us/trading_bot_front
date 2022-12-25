@@ -6,18 +6,18 @@ function useForm(inputs, values) {
   const initialFormValues = values ? { ...values } : {};
   if (!values) {
     inputs.forEach((input) => {
-      initialFormValues[input.name] = "";
+      initialFormValues[input.inputData.props.name] = "";
     });
   }
 
   const initialFormErrors = {};
   inputs.forEach((input) => {
-    initialFormErrors[input.name] = "";
+    initialFormErrors[input.inputData.props.name] = "";
   });
 
   const initialFormIsDirty = {};
   inputs.forEach((input) => {
-    initialFormIsDirty[input.name] = values ? true : false;
+    initialFormIsDirty[input.inputData.props.name] = values ? true : false;
   });
 
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -25,29 +25,39 @@ function useForm(inputs, values) {
   const [isDirty, setIsDirty] = useState(initialFormIsDirty);
 
   useEffect(() => {
-    inputs.forEach((item) => {
+    inputs.forEach((input) => {
       function getError() {
-        for (let error of item.errors) {
+        for (let error of input.errors) {
           if (
             error.condition &&
-            new RegExp(error.condition).test(formValues[item.name])
+            new RegExp(error.condition).test(
+              formValues[input.inputData.props.name]
+            )
           ) {
             return error.message;
           }
 
           if (
             error.pattern &&
-            !new RegExp(error.pattern).test(formValues[item.name])
+            !new RegExp(error.pattern).test(
+              formValues[input.inputData.props.name]
+            )
           ) {
             return error.message;
           }
         }
       }
 
-      if (isDirty[item.name] && getError()) {
-        setErrorMessages((prev) => ({ ...prev, [item.name]: getError() }));
+      if (isDirty[input.inputData.props.name] && getError()) {
+        setErrorMessages((prev) => ({
+          ...prev,
+          [input.inputData.props.name]: getError(),
+        }));
       } else {
-        setErrorMessages((prev) => ({ ...prev, [item.name]: "" }));
+        setErrorMessages((prev) => ({
+          ...prev,
+          [input.inputData.props.name]: "",
+        }));
       }
     });
   }, [formValues, isDirty]);
@@ -87,38 +97,33 @@ function useForm(inputs, values) {
   }
 
   const inputComponents = inputs.map((input) =>
-    input.type === "select" ? (
+    input.element === "select" ? (
       <FormSelect
         key={input.id}
-        placeholder={input.placeholder}
-        label={input.label ? input.label : null}
-        name={input.name}
-        inputClassName={input.inputClassName}
-        className={input.className}
-        errorMessage={errorMessages[input.name]}
-        setIsDirty={setIsDirty}
-        onChange={onChange}
-        onBlur={() => {
-          setIsDirty((prev) => ({ ...prev, [input.name]: true }));
-        }}
-        value={formValues[input.name]}
-        list={input.list}
-      />
-    ) : (
-      <FormInput
-        key={input.id}
-        name={input.name}
-        type={input.type}
-        placeholder={input.placeholder}
-        label={input.label ? input.label : null}
-        inputClassName={input.inputClassName}
-        className={input.className}
-        otherInputProps={input.otherInputProps}
+        className={input.wrapperClassName}
+        inputClassName={input.inputData.className}
+        inputProps={{ ...input.inputData.props }}
+        label={input.labelData ? input.labelData : null}
+        errorMessage={errorMessages[input.inputData.props.name]}
         onChange={onChange}
         onBlur={onBlur}
-        errorMessage={errorMessages[input.name]}
-        value={formValues[input.name]}
+        value={formValues[input.inputData.props.name]}
+        list={input.list}
       />
+    ) : input.element === "input" ? (
+      <FormInput
+        key={input.id}
+        className={input.wrapperClassName}
+        inputClassName={input.inputData.className}
+        inputProps={{ ...input.inputData.props }}
+        label={input.labelData ? input.labelData : null}
+        errorMessage={errorMessages[input.inputData.props.name]}
+        onChange={onChange}
+        onBlur={onBlur}
+        value={formValues[input.inputData.props.name]}
+      />
+    ) : (
+      ""
     )
   );
 

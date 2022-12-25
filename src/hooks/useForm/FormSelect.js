@@ -1,22 +1,22 @@
 import React from "react";
 
 function FormSelect({
-  label,
-  inputClassName,
   className,
+  inputClassName,
+  inputProps,
+  label,
   errorMessage,
   onChange,
+  onBlur,
   value,
   list,
-  name,
-  onBlur,
 }) {
   return (
     <div className={className}>
       {label && <div className={label.className}>{label.text}</div>}
       <select
-        name={name}
         className={`${inputClassName} ${errorMessage ? "incorrectInput" : ""}`}
+        {...inputProps}
         value={value}
         onChange={onChange}
         onBlur={onBlur}

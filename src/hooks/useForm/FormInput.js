@@ -1,30 +1,24 @@
 import React from "react";
 
 function FormInput({
-  label,
   className,
   inputClassName,
+  inputProps,
+  label,
   errorMessage,
   onChange,
   onBlur,
-  name,
-  type,
-  placeholder,
   value,
-  otherInputProps,
 }) {
   return (
     <div className={className}>
       {label && <div className={label.className}>{label.text}</div>}
       <input
         className={`${inputClassName} ${errorMessage ? "incorrectInput" : ""}`}
-        name={name}
-        placeholder={placeholder}
-        type={type}
         onChange={onChange}
         onBlur={onBlur}
         value={value}
-        {...otherInputProps}
+        {...inputProps}
       />
       <p
         className="incorrectInputMsg"
