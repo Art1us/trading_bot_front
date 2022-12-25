@@ -5,7 +5,7 @@ import "./TestMode.css";
 
 function TestMode() {
   const [showGraphs, setShowGraphs] = useState(false);
-  
+
   return (
     <div className="testMode">
       <div className="testMode__container">

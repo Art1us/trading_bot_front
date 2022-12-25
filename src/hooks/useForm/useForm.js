@@ -15,15 +15,15 @@ function useForm(inputs, values) {
     initialFormErrors[input.name] = "";
   });
 
-  const initialFormIsDirty = {}
-  inputs.forEach((input)=>{
+  const initialFormIsDirty = {};
+  inputs.forEach((input) => {
     initialFormIsDirty[input.name] = values ? true : false;
-  })
+  });
 
   const [formValues, setFormValues] = useState(initialFormValues);
   const [errorMessages, setErrorMessages] = useState(initialFormErrors);
   const [isDirty, setIsDirty] = useState(initialFormIsDirty);
-  
+
   useEffect(() => {
     inputs.forEach((item) => {
       function getError() {
@@ -77,6 +77,15 @@ function useForm(inputs, values) {
     setIsDirty((prev) => ({ ...prev, [e.target.name]: true }));
   }
 
+  function displayCustomError(errorText) {
+    const newErrorMessages = {};
+    Object.keys({ ...errorMessages }).forEach((err) => {
+      newErrorMessages[err] = errorText;
+    });
+
+    setErrorMessages(newErrorMessages);
+  }
+
   const inputComponents = inputs.map((input) =>
     input.type === "select" ? (
       <FormSelect
@@ -104,6 +113,7 @@ function useForm(inputs, values) {
         label={input.label ? input.label : null}
         inputClassName={input.inputClassName}
         className={input.className}
+        otherInputProps={input.otherInputProps}
         onChange={onChange}
         onBlur={onBlur}
         errorMessage={errorMessages[input.name]}
@@ -112,7 +122,7 @@ function useForm(inputs, values) {
     )
   );
 
-  return { inputComponents, isSubmitInvalid, formValues };
+  return { inputComponents, isSubmitInvalid, formValues, displayCustomError };
 }
 
 export default useForm;

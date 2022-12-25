@@ -10,10 +10,11 @@ function FormInput({
   name,
   type,
   placeholder,
-  value
+  value,
+  otherInputProps,
 }) {
   return (
-    <div className={className} >
+    <div className={className}>
       {label && <div className={label.className}>{label.text}</div>}
       <input
         className={`${inputClassName} ${errorMessage ? "incorrectInput" : ""}`}
@@ -23,10 +24,11 @@ function FormInput({
         onChange={onChange}
         onBlur={onBlur}
         value={value}
+        {...otherInputProps}
       />
       <p
         className="incorrectInputMsg"
-        style={{ display: errorMessage ? "block" : "none",zIndex:"3" }}
+        style={{ display: errorMessage ? "block" : "none", zIndex: "3" }}
       >
         *{errorMessage}
       </p>

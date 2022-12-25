@@ -39,6 +39,7 @@
     height: 35px;
     margin-top: 5px;
     margin-bottom: 30px;
+    padding-left: 5px;
 }
 
 .testMode__dateForm label {
