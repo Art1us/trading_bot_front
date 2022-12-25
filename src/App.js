@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import ExchangePage from "./pages/ExchangePage/ExchangePage";
 import Login from "./pages/Login/Login";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/exchange" element={<ExchangePage />} />
       </Routes>
     </BrowserRouter>
+    
   );
 }
 
