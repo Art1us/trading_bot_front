@@ -15,7 +15,6 @@
   height: 55px;
 }
 
-
 .header__elements {
   cursor: pointer;
   display: flex;
@@ -64,4 +63,25 @@
 .header h2 {
   color: black;
   cursor: pointer;
+}
+
+.themeToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.header__toggle--day {
+  height: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.header__toggle--night {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  color: white;
+  font-size: 12px;
 }
