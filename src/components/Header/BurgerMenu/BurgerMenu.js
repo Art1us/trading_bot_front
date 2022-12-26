@@ -20,7 +20,7 @@ const BurgerMenu = ({
         </div>
         <ul className="burgerMenu__list">
           {burgerMenuItems.map((item) => (
-            <Link to={item.link} key={item.id} style={{ textDecoration: "none" }}>
+            <Link to={item.link} key={item.id} style={{ textDecoration: "none"}}>
               <li className="burgerMenu__item">
                 <p className="burgerMenu__paragraph">{item.value}</p>
               </li>

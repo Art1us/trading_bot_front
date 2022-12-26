@@ -33,6 +33,7 @@
   flex-direction: column;
   width: 100%;
   padding: 0px 20px;
+  margin-bottom: 25px;
 }
 
 .burgerMenu__list .BurgerMenu__item {
@@ -42,7 +43,7 @@
 .burgerMenu__item {
   list-style: none;
   text-decoration: none;
-  width: 100%;
+ 
   border-bottom: 1px solid rgba(22, 40, 110, 0.2);
   width: 100%;
   padding-bottom: 15px;
@@ -61,10 +62,5 @@
 .burgerMenu__paragraph {
   color: black;
   display: flex;
+ 
 }
-
-.burgerMenu__link:last-child{
-  margin-bottom: 25px;
-}
-
-
