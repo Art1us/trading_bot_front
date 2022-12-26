@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiGlobalLine } from "react-icons/ri";
@@ -10,8 +11,16 @@ import LanguageDropdown from "./LanguageDropdown/LanguageDropdown";
 import ReactSwitch from "react-switch";
 
 function Header() {
+  const [burgerMenuActive, setBurgerMenuActive] = useState(false);
   const [displayDropdown, setDisplayDropdown] = useState(false);
   const [theme, setTheme] = useState(false);
+
+  const burgerMenuItems = [
+    { id: 1, value: "Main", link: "#" },
+    { id: 2, value: "Service", link: "#" },
+    { id: 3, value: "Shop", link: "#" },
+    { id: 4, value: "About us", link: "#" },
+  ];
 
   function toggleTheme() {
     setTheme((curr) => !curr);
@@ -79,10 +88,18 @@ function Header() {
             )}
           </div>
           <div className="header__elements--hover">
-            <RxHamburgerMenu className="header__elments-item--right" />
+            <RxHamburgerMenu
+              className="header__elments-item--right"
+              onClick={() => setBurgerMenuActive((prev) => !prev)}
+            />
           </div>
         </div>
       </div>
+      <BurgerMenu
+        burgerMenuActive={burgerMenuActive}
+        setBurgerMenuActive={setBurgerMenuActive}
+        burgerMenuItems={burgerMenuItems}
+      />
     </header>
   );
 }
