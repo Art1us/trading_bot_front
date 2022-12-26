@@ -30,7 +30,7 @@ function LanguageDropdown({ setDisplayDropdown }) {
       onClick={(e) => e.stopPropagation()}
       onMouseLeave={mouseLeaveHandler}
     >
-      <span class="languageDropdown__topContainer--triangle"></span>
+      <span class="languageDropdown__topContainer--triangle languageDropdown__topContainer--triangleOuter"></span>
       <span className="languageDropdown__topContainer--triangle languageDropdown__topContainerBorder--triangle"></span>
       <div className="languageDropdown__container">
         <div className="languageDropdown__selectLanguageContainer">

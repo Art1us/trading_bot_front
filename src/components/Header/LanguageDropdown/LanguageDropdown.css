@@ -1,21 +1,31 @@
 .languageDropdown {
   position: absolute;
-  top: 50px;
+  top: 60px;
+  z-index: 2;
 }
 
 .languageDropdown__topContainer--triangle {
   position: absolute;
   top: -20px;
-  right: 60px;
+  right: 55px;
   width: 0;
   height: 0;
-  border-width: 10px;
+  border-width: 15px;
   border-style: solid;
   border-color: transparent transparent transparent transparent;
 }
+
 .languageDropdown__topContainerBorder--triangle {
-  top: -20px;
-  border-color: transparent transparent transparent transparent;
+  top: -25px;
+  border-color: transparent transparent white transparent;
+}
+
+.languageDropdown__topContainer--triangleOuter{
+  border-width: 20px;
+  top:-40px;
+  right: 50%;
+  transform: translateX(50%);
+  border-color: transparent transparent rgba(245, 245, 245, 0.3) transparent;
 }
 
 .languageDropdown__container {
@@ -23,9 +33,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--second-bg-color);
+  background-color: rgb(253, 253, 253);
+  border-bottom: 2px solid rgb(239.561, 239.561, 239.561);
+  border-radius: 5px;
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px -3px 8px 0px;
 }
 
 .languageDropdown__selectLanguageContainer {
