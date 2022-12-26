@@ -4,7 +4,6 @@ import russianLanguageImg from "../../../assets/pictures/languageFlags/russian-l
 import englishLanguageImg from "../../../assets/pictures/languageFlags/english-language.png";
 
 function LanguageDropdown({ setDisplayDropdown }) {
-  
   const languageDropdownRef = useRef();
 
   useEffect(() => {
@@ -31,6 +30,8 @@ function LanguageDropdown({ setDisplayDropdown }) {
       onClick={(e) => e.stopPropagation()}
       onMouseLeave={mouseLeaveHandler}
     >
+      <span class="languageDropdown__topContainer--triangle"></span>
+      <span className="languageDropdown__topContainer--triangle languageDropdown__topContainerBorder--triangle"></span>
       <div className="languageDropdown__container">
         <div className="languageDropdown__selectLanguageContainer">
           <div
