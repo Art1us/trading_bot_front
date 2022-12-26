@@ -1,23 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./BurgerMenu.css";
 import { AiOutlineClose } from "react-icons/ai";
 
-
-const BurgerMenu = ({ items, active, setActive }) => {
+const BurgerMenu = ({ items, burgerMenuActive, setBurgerMenuActive }) => {
   return (
-    <div className={active ? "menu active" : "menu"}>
-      <div className="menu__content" >
-        <div className="menu__header"onClick = {() => setActive(false)}> <AiOutlineClose/></div>
-        <ul>
+    <div className={burgerMenuActive ?  "BurgerMenu active" : "BurgerMenu"}>
+      <div className="BurgerMenu__content">
+        <div
+          className="BurgerMenu__header"
+          onClick={() => setBurgerMenuActive(false)}>
+          <AiOutlineClose />
+        </div>
+        <ul className="BurgerMenu__list" >
           {items.map((item) => (
-            <li>
-              <a href= {item.href}>{item.value}</a>
+            <li className="BurgerMenu__item" key={items.id} >
+              <Link className="BurgerMenu__link" link={item.link}> {item.value} </Link>
             </li>
           ))}
         </ul>
       </div>
-      </div>
-    
+    </div>
   );
 };
 

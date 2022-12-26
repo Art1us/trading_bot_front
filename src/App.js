@@ -10,7 +10,7 @@ import Login from "./pages/Login/Login";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
