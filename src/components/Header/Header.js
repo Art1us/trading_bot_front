@@ -8,11 +8,11 @@ import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
-  const burgerMenuitems  = [
-    { id:1, value: "Main", link: "#" },
-    { id:2, value: "Service", link: "#" },
-    { id:3, value: "Shop", link: "#" },
-    { id:4, value: "About us", link: "#" },
+  const burgerMenuitems = [
+    { id: 1, value: "Main", link: "#" },
+    { id: 2, value: "Service", link: "#" },
+    { id: 3, value: "Shop", link: "#" },
+    { id: 4, value: "About us", link: "#" },
   ];
   return (
     <header className="header">
@@ -32,7 +32,7 @@ function Header() {
           <div className="header__elements--hover">
             <RxHamburgerMenu
               className="header__elments-item--right"
-              onClick={() => setBurgerMenuActive((prevCount) => !prevCount)}
+              onClick={() => setBurgerMenuActive((prev) => !prev)}
             />
           </div>
         </div>
