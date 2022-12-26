@@ -87,10 +87,6 @@ function Header() {
               ""
             )}
           </div>
-
-          <div className="header__elements--hover">
-            <RiGlobalLine className="header__elments-item--right" />
-          </div>
           <div className="header__elements--hover">
             <RxHamburgerMenu
               className="header__elments-item--right"
