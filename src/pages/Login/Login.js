@@ -1,39 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import useForm from "../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
-export default function Login() {
+function Login() {
+  const navigate = useNavigate();
+  const { inputComponents, isSubmitInvalid } = useForm(formInputsData);
+
+  function submitHandler(e) {
+    e.preventDefault();
+    if (isSubmitInvalid()) return;
+    navigate("/main");
+  }
+
   return (
     <div className="login">
       <div className="login__container">
-        <form className="login__form">
+        <form className="login__form" onSubmit={submitHandler}>
           <div className="login__formTitle">Sign-in</div>
-          <div className="login__formRow">
-            <label className="login__formBlock">
-              <input
-                type="email"
-                className="login__formInput incorrectInput"
-                placeholder="Your Email"
-              />
-              <p className="incorrectInputMsg">*Please enter your email!</p>
-            </label>
-            <label className="login__formBlock">
-              <input
-                type="password"
-                className="login__formInput incorrectInput"
-                placeholder="Password"
-              />
-              <p className="incorrectInputMsg">
-                *Please enter your password!
-              </p>
-            </label>
-          </div>
-          <Link to="/main" style={{ textDecoration: "none" }}>
-            <button className="login__signInBtn">Sign in</button>
-          </Link>
-          <button className="login__createAccBtn">Create a new account</button>
+          <div>{inputComponents}</div>
+          <button className="login__signInBtn">Sign in</button>
+          <button type="button" className="login__createAccBtn">
+            Create a new account
+          </button>
         </form>
       </div>
     </div>
   );
 }
+
+export default Login;

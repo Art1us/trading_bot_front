@@ -30,9 +30,9 @@ code {
     monospace;
 }
 
-/* .incorrectInput{
+.incorrectInput {
   border-color: red !important;
-} */
+}
 
 .incorrectInputMsg {
   color: red;
@@ -40,5 +40,4 @@ code {
   margin-top: -30px;
   margin-bottom: 14px;
   padding-left: 5px;
-  display: none;
 }

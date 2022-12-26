@@ -1,30 +1,36 @@
 import React from "react";
+import useForm from "../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
-function TestModeForm({date, setDate}) {
+function TestModeForm({ setShowGraphs }) {
+  function compareDates(from, to) {
+    let date1 = new Date(from).getTime();
+    let date2 = new Date(to).getTime();
   
+    if (date1 > date2) return true;
+  }
+
+  const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
+    useForm(formInputsData);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (isSubmitInvalid()) return;
+
+    if (compareDates(formValues.dateFrom, formValues.dateTo)) {
+      displayCustomError("Please enter correct dates!");
+      return;
+    }
+
+    console.log(formValues);
+
+    setShowGraphs(true);
+  }
+
   return (
     <div className="testMode__formContainer">
-      <form className="testMode__dateForm">
-        <div className="testMode__dateFormInput--from">
-          <label htmlFor="">From:</label>
-          <input
-            type="date"
-            value={date.from}
-            onChange={(e) =>
-              setDate((prev) => ({ ...prev, from: e.target.value }))
-            }
-          />
-        </div>
-        <div className="testMode__dateFormInput--to">
-          <label htmlFor="">To:</label>
-          <input
-            type="date"
-            value={date.to}
-            onChange={(e) =>
-              setDate((prev) => ({ ...prev, to: e.target.value }))
-            }
-          />
-        </div>
+      <form className="testMode__dateForm" onSubmit={handleSubmit}>
+        {inputComponents}
         <input type="submit" className="testMode__startBtn" value="Test" />
       </form>
       <p className="testMode__description">

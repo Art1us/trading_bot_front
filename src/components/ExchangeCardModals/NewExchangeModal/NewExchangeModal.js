@@ -1,22 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../../Context";
 import { AiOutlineClose } from "react-icons/ai";
 import "./NewExchangeModal.css";
 import { v4 as uuidv4 } from "uuid";
+import useForm from "../../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
 function NewExchangeModal({ setShowNewModal }) {
   const { exchangesList, setUserExchanges } = useContext(Context);
-  const [newExchange, setNewExchange] = useState({
-    exchangeName: "",
-    publicKey: "",
-    secretKey: "",
-    id: uuidv4(),
-  });
 
-  function clickHandler(e) {
+  formInputsData[0].list = [...exchangesList]
+
+  const { inputComponents, isSubmitInvalid, formValues } = useForm(formInputsData);
+
+  function submitHandler(e) {
     e.preventDefault();
-    if (!newExchange.exchangeName) return;
-    setUserExchanges((prev) => [...prev, newExchange]);
+    if (isSubmitInvalid()) return;
+    setUserExchanges((prev) => [...prev, { ...formValues, id: uuidv4() }]);
     setShowNewModal(false);
   }
 
@@ -27,67 +27,9 @@ function NewExchangeModal({ setShowNewModal }) {
           className="newExchangeModal__cross"
           onClick={() => setShowNewModal(false)}
         />
-        <form className="newExchangeModal__form" autoComplete="off">
-          <div className="newExchangeModal__formCol">
-            <label className="newExchangeModal__formBlock">
-              <div className="newExchangeModal__formTitle">
-                Select Exchanges
-              </div>
-              <select
-                className="newExchangeModal__formInput incorrectInput"
-                value={newExchange.exchangeName}
-                onChange={(e) =>
-                  setNewExchange({
-                    ...newExchange,
-                    exchangeName: e.target.value,
-                  })
-                }
-              >
-                <option></option>
-                {exchangesList.map((item) => {
-                  return <option key={item.id}>{item.name}</option>;
-                })}
-              </select>
-              <p className="incorrectInputAlarm incorrectInputMsg">
-                *Please select your exchange!
-              </p>
-            </label>
-            <label className="newExchangeModal__formBlock">
-              <div className="newExchangeModal__formTitle">Public Key</div>
-              <input
-                placeholder="Enter your public key"
-                type="text"
-                autoComplete="off"
-                className="newExchangeModal__formInput incorrectInput"
-                value={newExchange.publicKey}
-                onChange={(e) =>
-                  setNewExchange({ ...newExchange, publicKey: e.target.value })
-                }
-              />
-              <p className="incorrectInputAlarm incorrectInputMsg">
-                *Please enter your public key!
-              </p>
-            </label>
-            <label className="newExchangeModal__formBlock">
-              <div className="newExchangeModal__formTitle">Secret Key</div>
-              <input
-                placeholder="Enter your secret key"
-                type="password"
-                autoComplete="off"
-                className="newExchangeModal__formInput incorrectInput"
-                value={newExchange.secretKey}
-                onChange={(e) =>
-                  setNewExchange({ ...newExchange, secretKey: e.target.value })
-                }
-              />
-              <p className="incorrectInputAlarm incorrectInputMsg">
-                *Please enter your secret key!
-              </p>
-            </label>
-          </div>
-          <button className="newExchangeModal__saveBtn" onClick={clickHandler}>
-            Save
-          </button>
+        <form className="newExchangeModal__form" onSubmit={submitHandler}>
+          <div className="newExchangeModal__formCol">{inputComponents}</div>
+          <button className="newExchangeModal__saveBtn">Save</button>
         </form>
       </div>
     </div>
