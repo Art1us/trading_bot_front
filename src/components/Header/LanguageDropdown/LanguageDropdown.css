@@ -1,0 +1,45 @@
+.languageDropdown {
+  position: absolute;
+  top: 60px;
+}
+
+.languageDropdown__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--second-bg-color);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.languageDropdown__selectLanguageContainer {
+  height: auto;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+.languageDropdown__languageImg {
+  width: 25px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.languageDropdown__languageRow {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.languageDropdown__languageRow:last-child {
+  margin-bottom: 0;
+}
+
+.languageDropdown__languageRow:hover {
+  color: var(--secondary-color);
+}
