@@ -8,7 +8,7 @@ import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
-  const items  = [
+  const burgerMenuitems  = [
     { id:1, value: "Main", link: "#" },
     { id:2, value: "Service", link: "#" },
     { id:3, value: "Shop", link: "#" },
@@ -40,7 +40,7 @@ function Header() {
       <BurgerMenu
         burgerMenuActive={burgerMenuActive}
         setBurgerMenuActive={setBurgerMenuActive}
-        items={items}
+        burgerMenuitems={burgerMenuitems}
       />
     </header>
   );
