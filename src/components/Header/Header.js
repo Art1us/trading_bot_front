@@ -39,17 +39,27 @@ function Header() {
             <ReactSwitch
               checked={theme}
               onChange={toggleTheme}
-              offColor="#fff"
-              onColor="#000"
-              onHandleColor="#fff"
-              offHandleColor="#000"
-              handleDiameter={17}
-              uncheckedIcon={<BsFillSunFill className="header__toggle--day" />}
-              checkedIcon={<BsFillMoonFill className="header__toggle--night" />}
+              offColor="#000"
+              onColor="#fff"
+              onHandleColor="#000"
+              offHandleColor="#fff"
+              handleDiameter={20}
+              uncheckedIcon={
+                <BsFillMoonFill className="header__toggleIcon--night" />
+              }
+              checkedIcon={
+                <BsFillSunFill className="header__toggleIcon--day" />
+              }
+              uncheckedHandleIcon={
+                <BsFillSunFill className="header__handleIcon--day" />
+              }
+              checkedHandleIcon={
+                <BsFillMoonFill className="header__handleIcon--night" />
+              }
               boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
               activeBoxShadow="0"
-              height={20}
-              width={40}
+              height={23}
+              width={45}
               className="react-switch"
               id="material-switch"
             />
