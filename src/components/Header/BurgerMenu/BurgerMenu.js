@@ -4,12 +4,13 @@ import "./BurgerMenu.css";
 import { AiOutlineClose } from "react-icons/ai";
 
 const BurgerMenu = ({
-  burgerMenuitems,
+  burgerMenuItems,
   burgerMenuActive,
   setBurgerMenuActive,
 }) => {
+ 
   return (
-    <div className={burgerMenuActive ? `burgerMenu active` : `burgerMenu`}>
+    <div className= {`burgerMenu ${burgerMenuActive ? "activeMenu" : ""}`}>
       <div className="burgerMenu__content">
         <div
           className="burgerMenu__header"
@@ -18,8 +19,8 @@ const BurgerMenu = ({
           <AiOutlineClose />
         </div>
         <ul className="burgerMenu__list">
-          {burgerMenuitems.map((item) => (
-            <Link to={item.link} key={item.id} className="burgerMenu__link">
+          {burgerMenuItems.map((item) => (
+            <Link to={item.link} key={item.id} style={{ textDecoration: "none" }}>
               <li className="burgerMenu__item">
                 <p className="burgerMenu__paragraph">{item.value}</p>
               </li>

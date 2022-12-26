@@ -9,7 +9,7 @@
   height: fit-content;
 }
 
-.burgerMenu.active {
+.activeMenu {
   transform: translateX(0%);
 }
 
@@ -24,7 +24,7 @@
 }
 
 .burgerMenu__list {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .burgerMenu__list {
@@ -35,12 +35,18 @@
   padding: 0px 20px;
 }
 
-.burgerMenu__list .BurgerMenu__item burgerMenu__link {
+.burgerMenu__list .BurgerMenu__item {
   margin: 10px 0;
 }
 
 .burgerMenu__item {
   list-style: none;
+  text-decoration: none;
+  width: 100%;
+  border-bottom: 1px solid rgba(22, 40, 110, 0.2);
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px; 
 }
 
 .burgerMenu__header {
@@ -57,14 +63,8 @@
   display: flex;
 }
 
-.burgerMenu__link {
-  text-decoration: none;
-  width: 100%;
-  border-bottom: 1px solid rgba(22, 40, 110, 0.2);
-  width: 100%;
-  padding-bottom: 15px;
+.burgerMenu__link:last-child{
+  margin-bottom: 25px;
 }
 
-.burgerMenu__link:last-child {
-  border-bottom: none;
-}
+
