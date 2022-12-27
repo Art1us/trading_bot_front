@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .login__container {
   display: flex;
   margin: 0 auto;

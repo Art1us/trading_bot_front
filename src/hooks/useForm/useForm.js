@@ -29,13 +29,21 @@ function useForm(inputs, values) {
       function getError() {
         for (let error of input.errors) {
           if (
+            error.equalsToInput &&
+            formValues[input.inputData.props.name] !==
+              formValues[error.equalsToInput]
+          ) {
+            return "Passwords don't match";
+          } //error if input not equals to other input
+
+          if (
             error.condition &&
             new RegExp(error.condition).test(
               formValues[input.inputData.props.name]
             )
           ) {
             return error.message;
-          }
+          } //error if matching condition
 
           if (
             error.pattern &&
@@ -44,7 +52,7 @@ function useForm(inputs, values) {
             )
           ) {
             return error.message;
-          }
+          } //error if not matching pattern
         }
       }
 
