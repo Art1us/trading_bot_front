@@ -9,17 +9,4 @@
     align-items: center;
 }
 
-.modeSelections__selection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-    margin-right: 10px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width: fit-content;
-    padding: 0 10px;
-    height: 90%;
-    cursor: pointer;
-}
 

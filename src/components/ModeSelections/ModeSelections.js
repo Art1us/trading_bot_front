@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../../Context";
+import {modesList, datesList} from './data'
 import "./ModeSelections.css";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSelection";
+
 function ModeSelections() {
+  const { strategiesList } = useContext(Context);
+  const [displayedDropdown, setDisplayedDropdown] = useState("0");
+
   return (
     <div className="modeSelections">
       <div className="modeSelections__container">
-        <div className="modeSelections__selection">
-          Test Mode <RiArrowDropDownLine fontSize={25} />
-        </div>
-        <div className="modeSelections__selection">
-          22/11/2023 - 22/12/2025 <RiArrowDropDownLine fontSize={25} />
-        </div>
-        <div className="modeSelections__selection">
-          Advanced Strategy <RiArrowDropDownLine fontSize={25} />
-        </div>
+        <CustomDropdownSelection
+          list={modesList}
+          id="mode"
+          displayedDropdown={displayedDropdown}
+          setDisplayedDropdown={setDisplayedDropdown}
+        />
+        <CustomDropdownSelection
+          list={datesList}
+          id="date"
+          displayedDropdown={displayedDropdown}
+          setDisplayedDropdown={setDisplayedDropdown}
+        />
+        <CustomDropdownSelection
+          list={strategiesList}
+          id="strategy"
+          displayedDropdown={displayedDropdown}
+          setDisplayedDropdown={setDisplayedDropdown}
+        />
       </div>
     </div>
   );

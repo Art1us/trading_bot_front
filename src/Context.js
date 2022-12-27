@@ -6,7 +6,20 @@ function ContextProvider({ children }) {
   const EXCHANGES_LIST = "/exchange_list";
 
   const [exchangesList, setExchangesList] = useState([]);
+  const [strategiesList, setStrategiesList] = useState( [
+    { id: 'str_adv1', name: "Advanced" },
+    { id: 'str_pro2', name: "Pro" },
+    { id: 'str_spr3', name: "Super" },
+    { id: 'str_xtr4', name: "Extra" },
+  ])
   const [userExchanges, setUserExchanges] = useState([]);
+  const [selectedBotSettings, setSelectedBotSettings] = useState({
+    mode: "",
+    dateTo: "",
+    dateFrom: "",
+    strategy: "",
+  });
+  console.log(selectedBotSettings)
 
   useEffect(() => {
     async function getExchangesList() {
@@ -31,7 +44,7 @@ function ContextProvider({ children }) {
 
   return (
     <Context.Provider
-      value={{ exchangesList, userExchanges, setUserExchanges }}
+      value={{ exchangesList, userExchanges, setUserExchanges, strategiesList,setStrategiesList, setSelectedBotSettings }}
     >
       {children}
     </Context.Provider>
