@@ -16,10 +16,11 @@ function Header() {
   const [theme, setTheme] = useState(false);
 
   const burgerMenuItems = [
-    { id: 1, value: "Main", link: "#" },
-    { id: 2, value: "Service", link: "#" },
-    { id: 3, value: "Shop", link: "#" },
-    { id: 4, value: "About us", link: "#" },
+    { id: 1, value: "Welcome", link: "/" },
+    { id: 2, value: "Login", link: "/login" },
+    { id: 3, value: "Main", link: "/main" },
+    { id: 4, value: "Exchange", link: "/exchange" },
+    { id: 5, value: "Registration", link: "/register" },
   ];
 
   function toggleTheme() {

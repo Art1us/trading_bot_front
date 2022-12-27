@@ -8,6 +8,7 @@ const BurgerMenu = ({
   burgerMenuActive,
   setBurgerMenuActive,
 }) => {
+
   const burgerMenuRef = useRef();
 
   useEffect(() => {
