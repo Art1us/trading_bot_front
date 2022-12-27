@@ -18,6 +18,7 @@ export default [
         placeholder: "",
         min: twoYearsAgo,
         max: todayDate,
+        autoFocus: true,
       },
     },
     labelData: {

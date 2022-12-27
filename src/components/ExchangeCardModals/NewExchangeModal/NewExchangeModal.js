@@ -9,9 +9,10 @@ import formInputsData from "./formInputsData/formInputsData";
 function NewExchangeModal({ setShowNewModal }) {
   const { exchangesList, setUserExchanges } = useContext(Context);
 
-  formInputsData[0].list = [...exchangesList]
+  formInputsData[0].list = [...exchangesList];
 
-  const { inputComponents, isSubmitInvalid, formValues } = useForm(formInputsData);
+  const { inputComponents, isSubmitInvalid, formValues } =
+    useForm(formInputsData);
 
   function submitHandler(e) {
     e.preventDefault();

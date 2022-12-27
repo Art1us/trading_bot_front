@@ -5,7 +5,12 @@ export default [
     element: "input",
     inputData: {
       className: "login__formInput",
-      props: { name: "email", type: "text", placeholder: "Email" },
+      props: {
+        name: "email",
+        type: "text",
+        placeholder: "Email",
+        autoFocus: true,
+      },
     },
     errors: [
       {
