@@ -32,6 +32,11 @@ function Header() {
     setDisplayDropdown((prev) => !prev);
   }
 
+  function burgerMenuClickHandler(e) {
+    e.stopPropagation();
+    setBurgerMenuActive((prev) => !prev);
+  }
+
   return (
     <header className="header">
       <div className="header__container">
@@ -90,7 +95,7 @@ function Header() {
           <div className="header__elements--hover">
             <RxHamburgerMenu
               className="header__elments-item--right"
-              onClick={() => setBurgerMenuActive((prev) => !prev)}
+              onClick={burgerMenuClickHandler}
             />
           </div>
         </div>
