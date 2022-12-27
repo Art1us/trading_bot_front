@@ -69,8 +69,12 @@ export default [
     },
     errors: [
       {
-        equalsTo: "password",
+        equalsToInput: "password",
         message: "Passwords don't match",
+      },
+      {
+        condition: "^s*$",
+        message: "Please confirm your password!",
       },
     ],
   },
