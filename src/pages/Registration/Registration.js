@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+import "./Registration.css";
 import { useNavigate, Link } from "react-router-dom";
 import useForm from "../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
@@ -18,12 +18,12 @@ function Login() {
     <div className="login">
       <div className="login__container">
         <form className="login__form" onSubmit={submitHandler}>
-          <div className="login__formTitle">Sign-in</div>
+          <div className="login__formTitle">Register</div>
           <div>{inputComponents}</div>
-          <button className="login__signInBtn">Sign in</button>
-          <Link to="/register" style={{ textDecoration: "none" }}>
+          <button className="login__signInBtn">Register</button>
+          <Link to="/login">
             <button type="button" className="login__createAccBtn">
-              Create a new account
+              Back to Login
             </button>
           </Link>
         </form>

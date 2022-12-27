@@ -11,7 +11,7 @@ function Welcome() {
             <h1 className="welcome__buttonText">Login</h1>
           </div>
         </Link>
-        <Link to="/login" style={{textDecoration: 'none'}}>
+        <Link to="/register" style={{textDecoration: 'none'}}>
           <div className="welcome__button">
             <h1 className="welcome__buttonText">Register</h1>
           </div>
