@@ -9,6 +9,7 @@ export default [
         name: "publicKey",
         type: "text",
         placeholder: "Enter your public key",
+        autoFocus: true,
       },
     },
     labelData: {
