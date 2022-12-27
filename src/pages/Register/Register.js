@@ -1,10 +1,10 @@
 import React from "react";
-import "./Registration.css";
+import "./Register.css";
 import { useNavigate, Link } from "react-router-dom";
 import useForm from "../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
 
-function Login() {
+function Register() {
   const navigate = useNavigate();
   const { inputComponents, isSubmitInvalid } = useForm(formInputsData);
 
@@ -32,4 +32,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

@@ -35,7 +35,7 @@ function useForm(inputs, values) {
             )
           ) {
             return error.message;
-          }
+          } //error if matching condition
 
           if (
             error.pattern &&
@@ -44,7 +44,14 @@ function useForm(inputs, values) {
             )
           ) {
             return error.message;
-          }
+          } //error if not matching pattern
+          
+          if (
+            error.equalsTo &&
+            formValues[input.inputData.props.name] !== formValues[error.equalsTo]
+          ) {
+            return "Passwords don't match"
+          } //error if input not equals to other input
         }
       }
 

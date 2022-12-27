@@ -21,7 +21,6 @@ function FormInput({
     } else {
       setIsPasswordFilled(false);
     }
-    console.log("rendered");
   }, [inputProps.type === "password" && value]);
 
   return (
