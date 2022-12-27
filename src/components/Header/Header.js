@@ -78,8 +78,7 @@ function Header() {
             <RiGlobalLine className="header__elments-item--right" />
             {displayDropdownActive ? (
               <LanguageDropdown
-                displayDropdown={displayDropdownActive}
-                setDisplayDropdown={setDisplayDropdownActive}
+                setDisplayDropdownActive={setDisplayDropdownActive}
               />
             ) : (
               ""
