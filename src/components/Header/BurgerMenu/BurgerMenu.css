@@ -43,11 +43,10 @@
 .burgerMenu__item {
   list-style: none;
   text-decoration: none;
- 
   border-bottom: 1px solid rgba(22, 40, 110, 0.2);
   width: 100%;
   padding-bottom: 15px;
-  padding-top: 15px; 
+  padding-top: 15px;
 }
 
 .burgerMenu__header {
@@ -62,5 +61,4 @@
 .burgerMenu__paragraph {
   color: black;
   display: flex;
- 
 }
