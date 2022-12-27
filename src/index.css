@@ -31,7 +31,11 @@ code {
 }
 
 .incorrectInput {
-  border-color: red !important;
+  border: 1px solid red !important;
+}
+
+.incorrectInput:focus {
+  border: 2px solid red !important;
 }
 
 .incorrectInputMsg {
