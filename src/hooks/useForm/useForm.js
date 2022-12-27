@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import FormInput from "./FormInput";
+import FormInput from "./FormInput/FormInput";
 import FormSelect from "./FormSelect";
 
 function useForm(inputs, values) {
