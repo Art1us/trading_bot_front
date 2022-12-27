@@ -12,16 +12,8 @@ import ReactSwitch from "react-switch";
 
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
-  const [displayDropdown, setDisplayDropdown] = useState(false);
+  const [displayDropdownActive, setDisplayDropdownActive] = useState(false);
   const [theme, setTheme] = useState(false);
-
-  const burgerMenuItems = [
-    { id: 1, value: "Welcome", link: "/" },
-    { id: 2, value: "Login", link: "/login" },
-    { id: 3, value: "Main", link: "/main" },
-    { id: 4, value: "Exchange", link: "/exchange" },
-    { id: 5, value: "Registration", link: "/register" },
-  ];
 
   function toggleTheme() {
     setTheme((curr) => !curr);
@@ -30,7 +22,7 @@ function Header() {
 
   function languageClickHandler(e) {
     e.stopPropagation();
-    setDisplayDropdown((prev) => !prev);
+    setDisplayDropdownActive((prev) => !prev);
   }
 
   function burgerMenuClickHandler(e) {
@@ -84,10 +76,10 @@ function Header() {
             onClick={languageClickHandler}
           >
             <RiGlobalLine className="header__elments-item--right" />
-            {displayDropdown ? (
+            {displayDropdownActive ? (
               <LanguageDropdown
-                displayDropdown={displayDropdown}
-                setDisplayDropdown={setDisplayDropdown}
+                displayDropdown={displayDropdownActive}
+                setDisplayDropdown={setDisplayDropdownActive}
               />
             ) : (
               ""
@@ -101,10 +93,10 @@ function Header() {
           </div>
         </div>
       </div>
+
       <BurgerMenu
         burgerMenuActive={burgerMenuActive}
         setBurgerMenuActive={setBurgerMenuActive}
-        burgerMenuItems={burgerMenuItems}
       />
     </header>
   );

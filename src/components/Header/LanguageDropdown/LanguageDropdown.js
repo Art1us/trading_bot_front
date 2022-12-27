@@ -6,6 +6,11 @@ import englishLanguageImg from "../../../assets/pictures/languageFlags/english-l
 function LanguageDropdown({ setDisplayDropdown }) {
   const languageDropdownRef = useRef();
 
+  const languageDropdownItems = [
+    { id: 1, value: "English", icon: russianLanguageImg },
+    { id: 2, value: "Russian", icon: englishLanguageImg },
+  ];
+
   useEffect(() => {
     function closeDropdown(e) {
       if (e.target !== languageDropdownRef.current) {
@@ -34,28 +39,20 @@ function LanguageDropdown({ setDisplayDropdown }) {
       <span className="languageDropdown__topContainer--triangle languageDropdown__topContainerBorder--triangle"></span>
       <div className="languageDropdown__container">
         <div className="languageDropdown__selectLanguageContainer">
-          <div
-            className="languageDropdown__languageRow"
-            onClick={() => setDisplayDropdown(false)}
-          >
-            <img
-              className="languageDropdown__languageImg"
-              src={englishLanguageImg}
-              alt="English"
-            />
-            <p className="languageDropdown__selectLanguage">English</p>
-          </div>
-          <div
-            className="languageDropdown__languageRow"
-            onClick={() => setDisplayDropdown(false)}
-          >
-            <img
-              className="languageDropdown__languageImg"
-              src={russianLanguageImg}
-              alt="russian"
-            />
-            <p className="languageDropdown__selectLanguage">Russian</p>
-          </div>
+          {languageDropdownItems.map((item) => (
+            <div
+              key={item.id}
+              className="languageDropdown__languageRow"
+              onClick={() => setDisplayDropdown(false)}
+            >
+              <img
+                className="languageDropdown__languageImg"
+                src={item.icon}
+                alt={item.value}
+              />
+              <p className="languageDropdown__selectLanguage">{item.value}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
