@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import "./BurgerMenu.css";
 import { AiOutlineClose } from "react-icons/ai";
 
-const BurgerMenu = ({
-  burgerMenuItems,
-  burgerMenuActive,
-  setBurgerMenuActive,
-}) => {
+function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
+  const burgerMenuItems = [
+    { id: 1, value: "Welcome", link: "/" },
+    { id: 2, value: "Login", link: "/login" },
+    { id: 3, value: "Main", link: "/main" },
+    { id: 4, value: "Exchange", link: "/exchange" },
+    { id: 5, value: "Registration", link: "/register" },
+  ];
 
   const burgerMenuRef = useRef();
 
@@ -30,11 +33,8 @@ const BurgerMenu = ({
       className={`burgerMenu ${burgerMenuActive ? "activeMenu" : ""}`}
     >
       <div className="burgerMenu__content">
-        <div
-          className="burgerMenu__header"
-          onClick={() => setBurgerMenuActive(false)}
-        >
-          <AiOutlineClose />
+        <div className="burgerMenu__header">
+          <AiOutlineClose onClick={() => setBurgerMenuActive(false)} />
         </div>
         <ul className="burgerMenu__list">
           {burgerMenuItems.map((item) => (
@@ -52,6 +52,6 @@ const BurgerMenu = ({
       </div>
     </div>
   );
-};
+}
 
 export default BurgerMenu;
