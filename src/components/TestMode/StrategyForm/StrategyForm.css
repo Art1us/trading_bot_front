@@ -1,0 +1,36 @@
+.strategyForm__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%;
+  margin-top: 20px;
+  background-color: whitesmoke;
+  padding: 20px;
+  align-items: center;
+  width: 25%;
+}
+
+.strategyForm__title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.strategyForm__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strategyForm__btn--btn {
+  width: 65%;
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+.strategyForm__btn--btn:hover {
+  background-color: rgb(14, 14, 159);
+}
