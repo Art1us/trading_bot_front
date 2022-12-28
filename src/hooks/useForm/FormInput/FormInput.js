@@ -8,7 +8,7 @@ function FormInput({
   inputClassName,
   inputProps,
   label,
-  errorMessage,
+  error,
   onChange,
   onBlur,
   value,
@@ -30,7 +30,7 @@ function FormInput({
       <div style={{ position: "relative" }} className={inputClassName}>
         <input
           className={`formInput__defaultInputStyles ${
-            errorMessage ? "incorrectInput" : ""
+            error.errorMessage ? "incorrectInput" : ""
           }`}
           onChange={onChange}
           onBlur={onBlur}
@@ -50,10 +50,10 @@ function FormInput({
         )}
       </div>
       <p
-        className="incorrectInputMsg"
-        style={{ display: errorMessage ? "block" : "none" }}
+        className={error.className ? error.className : "incorrectInputMsg"}
+        style={{ display: error.errorMessage ? "block" : "none" }}
       >
-        *{errorMessage}
+        *{error.errorMessage}
       </p>
     </div>
   );

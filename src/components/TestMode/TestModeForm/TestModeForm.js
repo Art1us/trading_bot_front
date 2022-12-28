@@ -1,5 +1,5 @@
 import React from "react";
-import useForm from "../../hooks/useForm/useForm";
+import useForm from "../../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
 
 function TestModeForm({ setShowGraphs, setShowDateForm, setSelectedDates }) {
