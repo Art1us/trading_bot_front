@@ -8,38 +8,35 @@ const twoYearsAgo = new Date(
 export default [
   {
     id: 1,
-    wrapperClassName: "testMode__dateFormInput",
+    wrapperClassName: "customData__dateFormInputWrapper",
     element: "input",
     inputData: {
-      className: "",
+      className: "customDateDropdown__dateInput",
       props: {
         name: "dateFrom",
         type: "date",
         placeholder: "",
         min: twoYearsAgo,
         max: todayDate,
-        autoFocus: true,
       },
     },
-    labelData: {
-      className: "",
-      text: "From:",
-    },
-    errorsData: {
+    errorsData:{
+      className: 'customDateDropdown__error',
       errors: [
         {
           condition: "^s*$",
-          message: "Please enter date from!",
+          message: "Please enter date",
         },
       ],
-    },
+    }
+    
   },
   {
     id: 2,
-    wrapperClassName: "testMode__dateFormInput",
+    wrapperClassName: "customData__dateFormInputWrapper",
     element: "input",
     inputData: {
-      className: "",
+      className: "customDateDropdown__dateInput",
       props: {
         name: "dateTo",
         type: "date",
@@ -48,17 +45,14 @@ export default [
         max: todayDate,
       },
     },
-    labelData: {
-      className: "",
-      text: "To:",
-    },
-    errorsData: {
+    errorsData:{
+      className: 'customDateDropdown__error',
       errors: [
         {
           condition: "^s*$",
-          message: "Please enter date to!",
+          message: "Please enter date",
         },
       ],
-    },
+    }
   },
 ];

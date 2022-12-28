@@ -27,7 +27,7 @@ function useForm(inputs, values) {
   useEffect(() => {
     inputs.forEach((input) => {
       function getError() {
-        for (let error of input.errors) {
+        for (let error of input.errorsData.errors) {
           if (
             error.equalsToInput &&
             formValues[input.inputData.props.name] !==
@@ -125,7 +125,10 @@ function useForm(inputs, values) {
         inputClassName={input.inputData.className}
         inputProps={{ ...input.inputData.props }}
         label={input.labelData ? input.labelData : null}
-        errorMessage={errorMessages[input.inputData.props.name]}
+        error={{
+          className: input.errorsData.className,
+          errorMessage: errorMessages[input.inputData.props.name],
+        }}
         onChange={onChange}
         onBlur={onBlur}
         value={formValues[input.inputData.props.name]}

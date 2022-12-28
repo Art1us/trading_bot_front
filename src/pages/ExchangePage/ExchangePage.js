@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ExchangePage.css";
 import TestMode from "../../components/TestMode/TestMode";
 import StartMode from "../../components/StartMode/StartMode";
+import ModeSelections from "../../components/ModeSelections/ModeSelections";
 
 function ExchangePage() {
   const [selectMode, setSelectMode] = useState("");
@@ -14,6 +15,7 @@ function ExchangePage() {
   return (
     <div className="exchangePage">
       <div className="exchangePage__container">
+        <ModeSelections />
         <div className="exchangePage__modes">
           <div
             className={`exchangePage__mode ${testModeSelected}`}
