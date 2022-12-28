@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { Context } from "../../Context";
-import "./CustomDropDownSelection.css";
-import CustomDropdownList from "../CustomDropdownList/CustomDropdownList";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import CustomDateDropdown from "../CustomDateDropdown/CustomDateDropdown";
 
-function CustomDropdownSelection({
+function CustomDateSelection({
   list,
   displayedDropdown,
   setDisplayedDropdown,
@@ -14,9 +13,9 @@ function CustomDropdownSelection({
   const [dropdownList, setDropdownList] = useState(list);
   const dropdownRef = useRef();
   const { setSelectedBotSettings } = useContext(Context);
-
+  
   useEffect(() => {
-    setSelectedBotSettings((prev) => ({ ...prev, [id]: dropdownList[0].name }));
+    setSelectedBotSettings((prev) => ({ ...prev, [id]: dropdownList[0] }));
   }, [dropdownList]);
 
   useEffect(() => {
@@ -41,6 +40,11 @@ function CustomDropdownSelection({
     }
   }
 
+  function converDate(date) {
+    const [year, month, day] = date.split("-");
+    return [month, day, year].join("/");
+  }
+
   return (
     <div
       className="customDropDownSelection"
@@ -49,16 +53,19 @@ function CustomDropdownSelection({
     >
       <div
         className="customDropDownSelection__selection"
-        style={{ width: width ? width : '200px'}}
+        style={{ width: width ? width : "200px" }}
       >
-        <p className="customDropDownSelection__text">{dropdownList[0].name}</p>
+        <p className="customDropDownSelection__text">
+          {converDate(dropdownList.dateFrom)} -{" "}
+          {converDate(dropdownList.dateTo)}
+        </p>
         <RiArrowDropDownLine
           fontSize={25}
           color={displayedDropdown === id ? "gray" : "inherit"}
         />
       </div>
       {displayedDropdown === id && (
-        <CustomDropdownList
+        <CustomDateDropdown
           dropdownList={dropdownList}
           setDropdownList={setDropdownList}
         />
@@ -67,4 +74,4 @@ function CustomDropdownSelection({
   );
 }
 
-export default CustomDropdownSelection;
+export default CustomDateSelection;

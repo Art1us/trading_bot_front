@@ -5,7 +5,7 @@ function CustomDropdownList({ dropdownList, setDropdownList }) {
 
   function clickHandler(item) {
     setDropdownList((prev) => {
-      const newDropdownList = prev.filter((li) => li.id !== item.id);
+      const newDropdownList = prev.filter((listItem) => listItem.id !== item.id);
       return [{ ...item }, ...newDropdownList];
     });
   }

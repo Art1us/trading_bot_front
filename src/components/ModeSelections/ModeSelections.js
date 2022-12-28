@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../Context";
-import {modesList, datesList} from './data'
+import { modesList, dates } from "./data";
 import "./ModeSelections.css";
 import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSelection";
+import CustomDateSelection from "../CustomDateSelection/CustomDateSelection";
 
 function ModeSelections() {
   const { strategiesList } = useContext(Context);
@@ -17,8 +18,9 @@ function ModeSelections() {
           displayedDropdown={displayedDropdown}
           setDisplayedDropdown={setDisplayedDropdown}
         />
-        <CustomDropdownSelection
-          list={datesList}
+        <CustomDateSelection
+          width="250px"
+          list={dates}
           id="date"
           displayedDropdown={displayedDropdown}
           setDisplayedDropdown={setDisplayedDropdown}

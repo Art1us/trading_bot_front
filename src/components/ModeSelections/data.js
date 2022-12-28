@@ -3,10 +3,6 @@ const modesList = [
     { id: 2, name: "Start Mode" },
   ];
 
-  const datesList = [
-    { id: 1, name: "22/11/2023 - 22/12/2025" },
-    { id: 2, name: "22/11/2023 - 22/12/2025" },
-    { id: 3, name: "22/11/2023 - 22/12/2025" },
-  ];
+  const dates = {dateFrom:"2022-12-13", dateTo:"2022-12-13"}
 
-  export {modesList, datesList}
+  export {modesList, dates}
