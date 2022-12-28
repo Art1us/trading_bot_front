@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FormInput.css";
+import "./InputErrorStyles.css";
 import PasswordEyeBtn from "../PasswordEyeBtn/PasswordEyeBtn";
 
 function FormInput({
