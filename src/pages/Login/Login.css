@@ -68,3 +68,7 @@
 .alarmMsg {
   position: relative;
 }
+
+.login__formLabel{
+  margin-bottom: 5px;
+}
