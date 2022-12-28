@@ -3,32 +3,19 @@ import "./ExchangePage.css";
 import TestMode from "../../components/TestMode/TestMode";
 import StartMode from "../../components/StartMode/StartMode";
 import ModeSelections from "../../components/ModeSelections/ModeSelections";
+import TestModeMain from "../../components/TestMode/TestModeMain/TestModeMain";
+import StartModeMain from "../../components/StartMode/StartModeMain/StartModeMain";
 
 function ExchangePage() {
   const [selectMode, setSelectMode] = useState("");
-
-  const testModeSelected =
-    selectMode === "test" ? "exchangePage__mode--selected" : "";
-  const startModeSelected =
-    selectMode === "start" ? "exchangePage__mode--selected" : "";
 
   return (
     <div className="exchangePage">
       <div className="exchangePage__container">
         <ModeSelections />
         <div className="exchangePage__modes">
-          <div
-            className={`exchangePage__mode ${testModeSelected}`}
-            onClick={() => setSelectMode("test")}
-          >
-            Test MODE
-          </div>
-          <div
-            className={`exchangePage__mode ${startModeSelected}`}
-            onClick={() => setSelectMode("start")}
-          >
-            Start MODE
-          </div>
+          <TestModeMain onClick={() => setSelectMode("test")} />
+          <StartModeMain onClick={() => setSelectMode("start")} />
         </div>
         <div className="exchangePage__body">
           {selectMode === "test" && <TestMode />}
