@@ -3,7 +3,7 @@ import "./LanguageDropdown.css";
 import russianLanguageImg from "../../../assets/pictures/languageFlags/russian-language.png";
 import englishLanguageImg from "../../../assets/pictures/languageFlags/english-language.png";
 
-function LanguageDropdown({ setDisplayDropdown }) {
+function LanguageDropdown({ setDisplayDropdownActive }) {
   const languageDropdownRef = useRef();
 
   const languageDropdownItems = [
@@ -14,7 +14,7 @@ function LanguageDropdown({ setDisplayDropdown }) {
   useEffect(() => {
     function closeDropdown(e) {
       if (e.target !== languageDropdownRef.current) {
-        setDisplayDropdown(false);
+        setDisplayDropdownActive(false);
       }
     }
     document.body.addEventListener("click", closeDropdown);
@@ -24,7 +24,7 @@ function LanguageDropdown({ setDisplayDropdown }) {
 
   function mouseLeaveHandler() {
     setTimeout(() => {
-      setDisplayDropdown(false);
+      setDisplayDropdownActive(false);
     }, 1000);
   }
 
@@ -43,7 +43,7 @@ function LanguageDropdown({ setDisplayDropdown }) {
             <div
               key={item.id}
               className="languageDropdown__languageRow"
-              onClick={() => setDisplayDropdown(false)}
+              onClick={() => setDisplayDropdownActive(false)}
             >
               <img
                 className="languageDropdown__languageImg"
