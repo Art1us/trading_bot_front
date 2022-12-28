@@ -7,7 +7,6 @@ function TestMode() {
   const [showGraphs, setShowGraphs] = useState(false);
   const [showDateForm, setShowDateForm] = useState(true);
   const [selectedDates, setSelectedDates] = useState({});
-  console.log(selectedDates);
 
   return (
     <div className="testMode">
