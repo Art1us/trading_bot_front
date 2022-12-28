@@ -12,6 +12,10 @@ const formInputsData = [
         autoFocus: true,
       },
     },
+    labelData: {
+      className: "login__formLabel",
+      text: "Email",
+    },
     errorsData: {
       errors: [
         {
@@ -34,6 +38,10 @@ const formInputsData = [
     inputData: {
       className: "login__formInput",
       props: { name: "password", type: "password", placeholder: "Password" },
+    },
+    labelData: {
+      className: "login__formLabel",
+      text: "Password",
     },
     errorsData: {
       errors: [
@@ -75,6 +83,10 @@ const formInputsData = [
         type: "password",
         placeholder: "Confirm Password",
       },
+    },
+    labelData: {
+      className: "login__formLabel",
+      text: "Confirm password",
     },
     errorsData: {
       errors: [
