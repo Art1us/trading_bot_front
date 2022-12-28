@@ -5,7 +5,7 @@ const twoYearsAgo = new Date(
   .toISOString()
   .split("T")[0];
 
-export default [
+const formInputsData = [
   {
     id: 1,
     wrapperClassName: "testMode__dateFormInput",
@@ -62,3 +62,5 @@ export default [
     },
   },
 ];
+
+export default formInputsData;

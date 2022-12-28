@@ -1,4 +1,4 @@
-export default [
+const formInputsData = [
   {
     id: 1,
     wrapperClassName: "login__formBlock",
@@ -56,6 +56,8 @@ export default [
           message: "Please enter a valid secret key!",
         },
       ],
-    }
+    },
   },
 ];
+
+export default formInputsData;

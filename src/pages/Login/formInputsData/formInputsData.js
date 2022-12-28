@@ -1,11 +1,16 @@
-export default [
+const formInputsData = [
   {
     id: 1,
     wrapperClassName: "login__formBlock",
     element: "input",
     inputData: {
       className: "login__formInput",
-      props: { name: "email", type: "text", placeholder: "Email", autoFocus: true },
+      props: {
+        name: "email",
+        type: "text",
+        placeholder: "Email",
+        autoFocus: true,
+      },
     },
     errorsData: {
       errors: [
@@ -60,3 +65,5 @@ export default [
     },
   },
 ];
+
+export default formInputsData;
