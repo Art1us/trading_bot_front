@@ -15,16 +15,18 @@ export default [
       className: "newExchangeModal__formTitle",
       text: "Public key",
     },
-    errors: [
-      {
-        condition: "^s*$",
-        message: "Please enter your public key!",
-      },
-      {
-        condition: "^(.{1,7})$",
-        message: "Please enter a valid public key!",
-      },
-    ],
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter your public key!",
+        },
+        {
+          condition: "^(.{1,7})$",
+          message: "Please enter a valid public key!",
+        },
+      ],
+    },
   },
   {
     id: 2,
@@ -42,15 +44,17 @@ export default [
       className: "newExchangeModal__formTitle",
       text: "Secret key",
     },
-    errors: [
-      {
-        condition: "^s*$",
-        message: "Please enter your secret key!",
-      },
-      {
-        condition: "^(.{1,7})$",
-        message: "Please enter a valid secret key!",
-      },
-    ],
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter your secret key!",
+        },
+        {
+          condition: "^(.{1,7})$",
+          message: "Please enter a valid secret key!",
+        },
+      ],
+    }
   },
 ];

@@ -24,12 +24,14 @@ export default [
       className: "",
       text: "From:",
     },
-    errors: [
-      {
-        condition: "^s*$",
-        message: "Please enter date from!",
-      },
-    ],
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter date from!",
+        },
+      ],
+    },
   },
   {
     id: 2,
@@ -49,11 +51,13 @@ export default [
       className: "",
       text: "To:",
     },
-    errors: [
-      {
-        condition: "^s*$",
-        message: "Please enter date to!",
-      },
-    ],
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter date to!",
+        },
+      ],
+    },
   },
 ];

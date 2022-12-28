@@ -16,7 +16,7 @@ function ExchangePage() {
     <div className="exchangePage">
       <div className="exchangePage__container">
         <ModeSelections />
-        {/* <div className="exchangePage__modes">
+        <div className="exchangePage__modes">
           <div
             className={`exchangePage__mode ${testModeSelected}`}
             onClick={() => setSelectMode("test")}
@@ -33,7 +33,7 @@ function ExchangePage() {
         <div className="exchangePage__body">
           {selectMode === "test" && <TestMode />}
           {selectMode === "start" && <StartMode />}
-        </div> */}
+        </div>
       </div>
     </div>
   );

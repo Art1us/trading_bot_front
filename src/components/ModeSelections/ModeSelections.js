@@ -8,6 +8,7 @@ import CustomDateSelection from "../CustomDateSelection/CustomDateSelection";
 function ModeSelections() {
   const { strategiesList } = useContext(Context);
   const [displayedDropdown, setDisplayedDropdown] = useState("0");
+  
 
   return (
     <div className="modeSelections">
@@ -20,7 +21,7 @@ function ModeSelections() {
         />
         <CustomDateSelection
           width="250px"
-          list={dates}
+          dates={dates}
           id="date"
           displayedDropdown={displayedDropdown}
           setDisplayedDropdown={setDisplayedDropdown}

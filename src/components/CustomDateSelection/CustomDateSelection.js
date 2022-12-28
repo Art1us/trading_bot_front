@@ -1,22 +1,26 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { Context } from "../../Context";
+import "./CustomDateSelection.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import CustomDateDropdown from "../CustomDateDropdown/CustomDateDropdown";
 
 function CustomDateSelection({
-  list,
+  dates,
   displayedDropdown,
   setDisplayedDropdown,
   width,
   id,
 }) {
-  const [dropdownList, setDropdownList] = useState(list);
+  const [selectedDates, setSelectedDates] = useState(dates);
   const dropdownRef = useRef();
   const { setSelectedBotSettings } = useContext(Context);
-  
+
   useEffect(() => {
-    setSelectedBotSettings((prev) => ({ ...prev, [id]: dropdownList[0] }));
-  }, [dropdownList]);
+    setSelectedBotSettings((prev) => ({
+      ...prev,
+      date: { from: selectedDates.dateFrom, to: selectedDates.dateTo },
+    }));
+  }, [selectedDates]);
 
   useEffect(() => {
     function outsideClickHandler(e) {
@@ -47,17 +51,17 @@ function CustomDateSelection({
 
   return (
     <div
-      className="customDropDownSelection"
+      className="customDateSelection"
       onClick={clickHandler}
       ref={dropdownRef}
     >
       <div
-        className="customDropDownSelection__selection"
+        className="customDateSelection__selection"
         style={{ width: width ? width : "200px" }}
       >
-        <p className="customDropDownSelection__text">
-          {converDate(dropdownList.dateFrom)} -{" "}
-          {converDate(dropdownList.dateTo)}
+        <p>
+          {converDate(selectedDates.dateFrom)} -{" "}
+          {converDate(selectedDates.dateTo)}
         </p>
         <RiArrowDropDownLine
           fontSize={25}
@@ -65,10 +69,7 @@ function CustomDateSelection({
         />
       </div>
       {displayedDropdown === id && (
-        <CustomDateDropdown
-          dropdownList={dropdownList}
-          setDropdownList={setDropdownList}
-        />
+        <CustomDateDropdown setSelectedDates={setSelectedDates} />
       )}
     </div>
   );
