@@ -5,14 +5,23 @@ import "./TestMode.css";
 
 function TestMode() {
   const [showGraphs, setShowGraphs] = useState(false);
+  const [showDateForm, setShowDateForm] = useState(true);
+  const [selectedDates, setSelectedDates] = useState({});
 
   return (
     <div className="testMode">
       <div className="testMode__container">
-        <div className="testMode__title">
-          <h2>Select date range</h2>
-        </div>
-        <TestModeForm setShowGraphs={setShowGraphs} />
+        {showDateForm ? (
+          <TestModeForm
+            setShowGraphs={setShowGraphs}
+            setShowDateForm={setShowDateForm}
+            setSelectedDates={setSelectedDates}
+          />
+        ) : (
+          <p>
+            From: {selectedDates.dateFrom} To: {selectedDates.dateTo}
+          </p>
+        )}
         {showGraphs && <TestModeGraphs />}
       </div>
     </div>
