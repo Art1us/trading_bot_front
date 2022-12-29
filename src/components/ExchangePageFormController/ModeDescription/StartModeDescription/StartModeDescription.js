@@ -1,11 +1,11 @@
 import React from "react";
-import "./StartModeMain.css";
+import "./StartModeDescription.css";
 
-function StartModeMain({ onClick }) {
+function StartModeDescription({ onClick }) {
   return (
-    <div className="startModeMain">
-      <h2 className="startModeMain__title">Start Mode</h2>
-      <div className="startModeMain__description">
+    <div className="StartModeDescription">
+      <h2 className="StartModeDescription__title">Start Mode</h2>
+      <div className="StartModeDescription__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum
         tincidunt tortor, vitae faucibus nisi varius at. Integer fringilla
         hendrerit lacus, at sagittis leo. Praesent pulvinar nisi ac massa ornare
@@ -21,11 +21,11 @@ function StartModeMain({ onClick }) {
         senectus et netus et malesuada fames ac turpis egestas. Nam porta nunc
         metus, nec ornare metus volutpat sed.
       </div>
-      <button className="startModeMain__button" onClick={onClick}>
+      <button className="StartModeDescription__button" onClick={onClick}>
         Select Start Mode
       </button>
     </div>
   );
 }
 
-export default StartModeMain;
+export default StartModeDescription;

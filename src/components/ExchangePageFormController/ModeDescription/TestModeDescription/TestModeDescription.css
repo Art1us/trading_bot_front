@@ -1,4 +1,4 @@
-.testModeMain {
+.testModeDescription {
     width: 48%;
     height: 100%;
     display: flex;
@@ -12,15 +12,15 @@
     padding: 20px;
 }
 
-.testModeMain__title {
+.testModeDescription__title {
     margin-bottom: 20px;
 }
 
-.testModeMain__description {
+.testModeDescription__description {
     margin-bottom: 20px;
 }
 
-.testModeMain__button {
+.testModeDescription__button {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -31,6 +31,6 @@
     font-weight: 600;
 }
 
-.testModeMain__button:hover {
+.testModeDescription__button:hover {
     background-color: var(--hover-btn-color);
 }

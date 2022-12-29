@@ -1,11 +1,11 @@
 import React from "react";
-import "./TestModeMain.css";
+import "./TestModeDescription.css";
 
-function TestModeMain({ onClick }) {
+function testModeDescription({ onClick }) {
   return (
-    <div className="testModeMain" >
-      <h2 className="testModeMain__title">Test Mode</h2>
-      <div className="testModeMain__description">
+    <div className="testModeDescription" >
+      <h2 className="testModeDescription__title">Test Mode</h2>
+      <div className="testModeDescription__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum
         tincidunt tortor, vitae faucibus nisi varius at. Integer fringilla
         hendrerit lacus, at sagittis leo. Praesent pulvinar nisi ac massa ornare
@@ -21,9 +21,9 @@ function TestModeMain({ onClick }) {
         senectus et netus et malesuada fames ac turpis egestas. Nam porta nunc
         metus, nec ornare metus volutpat sed.
       </div>
-      <button className="testModeMain__button" onClick={onClick}>Select Test Mode</button>
+      <button className="testModeDescription__button" onClick={onClick}>Select Test Mode</button>
     </div>
   );
 }
 
-export default TestModeMain;
+export default testModeDescription;

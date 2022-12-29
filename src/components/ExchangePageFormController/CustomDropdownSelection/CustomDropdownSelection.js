@@ -57,15 +57,15 @@ function CustomDropdownSelection({
 
   return (
     <div
-      className="customDropDownSelection"
+      className="customDropdownSelection"
       onClick={clickHandler}
       ref={dropdownRef}
     >
       <div
-        className="customDropDownSelection__container"
+        className="customDropdownSelection__container"
         style={{ width: width ? width : "200px" }}
       >
-        <p className="customDropDownSelection__text">{list[0]}</p>
+        <p className="customDropdownSelection__text">{list[0]}</p>
         <RiArrowDropDownLine
           fontSize={25}
           color={displayedDropdown === id ? "gray" : "inherit"}

@@ -1,4 +1,4 @@
-.startModeMain {
+.StartModeDescription {
     width: 48%;
     height: 100%;
     display: flex;
@@ -12,15 +12,15 @@
     padding: 20px;
 }
 
-.startModeMain__title {
+.StartModeDescription__title {
     margin-bottom: 20px;
 }
 
-.startModeMain__description {
+.StartModeDescription__description {
     margin-bottom: 20px;
 }
 
-.startModeMain__button {
+.StartModeDescription__button {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -31,6 +31,6 @@
     font-weight: 600;
 }
 
-.startModeMain__button:hover {
+.StartModeDescription__button:hover {
     background-color: rgb(185, 2, 2);
 }

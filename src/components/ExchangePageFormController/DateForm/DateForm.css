@@ -1,83 +1,75 @@
-.testMode {
-    max-width: 1200px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-  }
-  
-  .testMode__container {
-    width: 900px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .testMode__description {
-    margin-top: -10px;
-    width: 500px;
-    font-size: 14px;
-    color: grey;
-  }
-  
-  .testMode__formContainer {
-    background-color: white;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
-  }
-  
-  .testMode__dateForm {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .testMode__dateFormContainer {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-  }
-  
-  .testMode__dateFormContainer input {
-    height: 35px;
-    margin-top: 5px;
-    margin-bottom: 30px;
-    padding-left: 5px;
-  }
-  
-  .testMode__dateFormContainer label {
-    margin-left: 0px;
-    font-weight: bold;
-  }
-  
-  .testMode__dateFormInput {
-    width: 31%;
-    margin-right: 5px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  
-  .testMode__startBtn {
-    width: 31%;
-    margin-left: auto;
-    margin-right: 0;
-    color: white;
-    background-color: royalblue;
-    border: 0;
-    border-radius: 5px;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-  
-  .testMode__startBtn:hover {
-    background-color: rgb(61, 98, 210);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
-  }
+.dateForm__formContainer {
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  width: 600px;
+}
+
+.dateMode__form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateForm__title{
+  text-align: center;
+}
+
+.dateForm__inputsContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dateForm__description {
+  margin-top: -10px;
+  width: 500px;
+  font-size: 14px;
+  color: grey;
+}
+
+.dateForm__inputWrapper {
+  width: 31%;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dateForm__input {
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+}
+
+.dateForm__label {
+  margin-left: 0px;
+  font-weight: bold;
+}
+
+.dateForm__btn {
+  width: 31%;
+  margin-left: auto;
+  margin-right: 0;
+  color: white;
+  background-color: royalblue;
+  border: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+}
+
+.dateForm__btn:hover {
+  background-color: rgb(61, 98, 210);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+}

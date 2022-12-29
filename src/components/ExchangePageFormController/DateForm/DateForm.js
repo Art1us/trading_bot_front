@@ -32,15 +32,15 @@ function DateForm() {
   }
 
   return (
-    <div className="testMode__formContainer">
-      <form className="testMode__dateForm" onSubmit={handleSubmit}>
-        <h2>Select date range</h2>
-        <div className="testMode__dateFormContainer">
+    <div className="dateForm__formContainer">
+      <form className="dateForm__form" onSubmit={handleSubmit}>
+        <h2 className="dateForm__title">Select date range</h2>
+        <div className="dateForm__inputsContainer">
           {inputComponents}
-          <input type="submit" className="testMode__startBtn" value="Test" />
+          <input type="submit" className="dateForm__btn" value="Test" />
         </div>
       </form>
-      <p className="testMode__description">
+      <p className="dateForm__description">
         *When you push Start Button, you will see how bot would act if it was
         working during selected date period.
       </p>

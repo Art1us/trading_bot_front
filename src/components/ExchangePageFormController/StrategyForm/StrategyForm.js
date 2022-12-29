@@ -3,7 +3,7 @@ import { Context } from "../../../Context";
 import "./StrategyForm.css";
 
 function StrategyForm() {
-  const { selectedBotSettings, setSelectedBotSettings, BOT_OPTIONS } =
+  const { setSelectedBotSettings, BOT_OPTIONS } =
     useContext(Context);
   const [selected, setSelected] = useState(BOT_OPTIONS.strategy[0]);
 

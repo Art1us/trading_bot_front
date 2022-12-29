@@ -1,9 +1,9 @@
-.customDropDownSelection{
+.customDropdownSelection{
     position: relative;
     margin-right: 10px;
 }
 
-.customDropDownSelection__container {
+.customDropdownSelection__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
