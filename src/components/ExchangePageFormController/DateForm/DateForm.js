@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import './DateForm.css'
 import { Context } from "../../../Context";
 import useForm from "../../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
 
-function TestModeForm() {
+function DateForm() {
   function compareDates(from, to) {
     let date1 = new Date(from).getTime();
     let date2 = new Date(to).getTime();
@@ -47,4 +48,4 @@ function TestModeForm() {
   );
 }
 
-export default TestModeForm;
+export default DateForm;

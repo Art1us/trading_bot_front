@@ -1,18 +1,18 @@
 import React, {useContext} from "react";
 import { Context } from "../../../Context";
-import StartModeMain from "../../StartMode/StartModeMain/StartModeMain";
-import TestModeMain from "../../TestMode/TestModeMain/TestModeMain";
+import StartModeDescription from "../ModeDescription/StartModeDescription/StartModeDescription";
+import TestModeDescription from "../ModeDescription/TestModeDescription/TestModeDescription";
 
 function ModeSelection() {
   const {setSelectedBotSettings} = useContext(Context)
   return (
     <div className="exchangePage__modes">
-      <TestModeMain
+      <TestModeDescription
         onClick={() =>
           setSelectedBotSettings((prev) => ({ ...prev, mode: "test" }))
         }
       />
-      <StartModeMain
+      <StartModeDescription
         onClick={() =>
           setSelectedBotSettings((prev) => ({ ...prev, mode: "start" }))
         }

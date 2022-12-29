@@ -57,7 +57,7 @@ function CustomDropdownSelection({
       setDisplayedDropdown(id);
     }
   }
-
+  
   return (
     <div
       className="customDropDownSelection"

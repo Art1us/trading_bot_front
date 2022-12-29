@@ -1,12 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../Context";
 import ModeSelections from "./ModeSelections/ModeSelections";
-import StrategyForm from "../TestMode/StrategyForm/StrategyForm";
-import TestModeForm from "../TestMode/TestModeForm/TestModeForm";
+import StrategyForm from "./StrategyForm/StrategyForm";
+import DateForm from "./DateForm/DateForm";
 import ModeSelection from "./ModeSelection/ModeSelection";
 
 function ExchangePageFormController() {
-  const [formStep, setFormStep] = useState(0);
   const { selectedBotSettings } = useContext(Context);
   const { mode, date, strategy } = selectedBotSettings;
 
@@ -22,7 +21,7 @@ function ExchangePageFormController() {
         return (
           <>
             <ModeSelections formStep={1} />
-            <TestModeForm />
+            <DateForm />
           </>
         );
       case !strategy:

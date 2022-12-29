@@ -5,9 +5,9 @@ function CustomDropdownList({ dropdownList, setDropdownList }) {
   function clickHandler(item) {
     setDropdownList((prev) => {
       const newDropdownList = prev.filter(
-        (listItem) => listItem.id !== item.id
+        (listItem) => listItem !== item
       );
-      return [{ ...item }, ...newDropdownList];
+      return [item, ...newDropdownList];
     });
   }
 
