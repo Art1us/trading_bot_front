@@ -11,12 +11,8 @@ function TestMode() {
 
   return (
     <div className="testMode">
-      <StrategyForm />
-       <div className="testMode__container">
-        <div className="testMode__title">
-          <h2>Select date range</h2>
-        </div>
       <div className="testMode__container">
+        <StrategyForm />
         {showDateForm ? (
           <TestModeForm
             setShowGraphs={setShowGraphs}
@@ -28,9 +24,8 @@ function TestMode() {
             From: {selectedDates.dateFrom} To: {selectedDates.dateTo}
           </p>
         )}
-
         {showGraphs && <TestModeGraphs />}
-      </div> 
+      </div>
     </div>
   );
 }
