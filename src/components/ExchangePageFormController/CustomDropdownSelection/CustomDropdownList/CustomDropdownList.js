@@ -2,11 +2,12 @@ import React from "react";
 import "./CustomDropdownList.css";
 
 function CustomDropdownList({ dropdownList, setDropdownList }) {
-
   function clickHandler(item) {
     setDropdownList((prev) => {
-      const newDropdownList = prev.filter((listItem) => listItem.id !== item.id);
-      return [{ ...item }, ...newDropdownList];
+      const newDropdownList = prev.filter(
+        (listItem) => listItem !== item
+      );
+      return [item, ...newDropdownList];
     });
   }
 
@@ -15,10 +16,10 @@ function CustomDropdownList({ dropdownList, setDropdownList }) {
       {dropdownList.slice(1).map((item) => (
         <li
           className="customDropdownList__item"
-          key={item.id}
+          key={item}
           onClick={() => clickHandler(item)}
         >
-          {item.name}
+          {item}
         </li>
       ))}
     </ul>

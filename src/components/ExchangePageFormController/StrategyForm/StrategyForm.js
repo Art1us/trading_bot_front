@@ -1,13 +1,14 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../../../Context";
 import "./StrategyForm.css";
 
-const options = ["Standard", "Advanced", "Preliminary", "Intermediate"];
-
 function StrategyForm() {
-  const [selected, setSelected] = useState(options[0]);
+  const { selectedBotSettings, setSelectedBotSettings, BOT_OPTIONS } =
+    useContext(Context);
+  const [selected, setSelected] = useState(BOT_OPTIONS.strategy[0]);
 
   const submit = () => {
-    console.log(selected);
+    setSelectedBotSettings((prev) => ({ ...prev, strategy: selected }));
   };
 
   return (
@@ -18,9 +19,9 @@ function StrategyForm() {
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
       >
-        {options.map((value) => (
-          <option value={value} key={value}>
-            {value}
+        {BOT_OPTIONS.strategy.map((item) => (
+          <option value={item} key={item}>
+            {item}
           </option>
         ))}
       </select>
@@ -29,6 +30,6 @@ function StrategyForm() {
       </button>
     </div>
   );
-};
+}
 
 export default StrategyForm;

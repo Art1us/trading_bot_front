@@ -1,5 +1,5 @@
 import React from "react";
-import LightweightChart from "../TestModeGraphs/LightweightChart/LightweightChart";
+import LightweightChart from "./LightweightChart/LightweightChart";
 import BotChart from "./BotChart/BotChart";
 import BotTable from "./BotTable/BotTable";
 import "./TestModeGraphs.css";
