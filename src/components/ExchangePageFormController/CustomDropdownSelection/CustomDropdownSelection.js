@@ -62,7 +62,7 @@ function CustomDropdownSelection({
       ref={dropdownRef}
     >
       <div
-        className="customDropDownSelection__selection"
+        className="customDropDownSelection__container"
         style={{ width: width ? width : "200px" }}
       >
         <p className="customDropDownSelection__text">{list[0]}</p>
