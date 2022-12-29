@@ -20,9 +20,8 @@ function CustomDateDropdown({ setSelectedDates }) {
       displayCustomError("Please enter correct dates!");
       return;
     }
-    const res = {from: formValues.dateFrom, to: formValues.dateTo }
-    console.log(res)
-    setSelectedDates(...res);
+    setSelectedDates({ from: formValues.dateFrom, to: formValues.dateTo })
+    
   }
 
   return (
