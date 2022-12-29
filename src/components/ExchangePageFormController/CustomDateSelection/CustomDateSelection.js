@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import { Context } from "../../Context";
+import { Context } from "../../../Context";
 import "./CustomDateSelection.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import CustomDateDropdown from "../CustomDateDropdown/CustomDateDropdown";
+import CustomDateDropdown from "./CustomDateDropdown/CustomDateDropdown";
+
 
 function CustomDateSelection({
   displayedDropdown,

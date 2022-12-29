@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import { Context } from "../../Context";
+import { Context } from "../../../Context";
 import "./CustomDropDownSelection.css";
-import CustomDropdownList from "../CustomDropdownList/CustomDropdownList";
+import CustomDropdownList from "./CustomDropdownList/CustomDropdownList";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 function CustomDropdownSelection({

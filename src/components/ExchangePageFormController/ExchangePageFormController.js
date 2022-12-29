@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../Context";
-import ModeSelections from "../ModeSelections/ModeSelections";
+import ModeSelections from "./ModeSelections/ModeSelections";
 import StrategyForm from "../TestMode/StrategyForm/StrategyForm";
 import TestModeForm from "../TestMode/TestModeForm/TestModeForm";
 import ModeSelection from "./ModeSelection/ModeSelection";

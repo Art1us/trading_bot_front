@@ -1,13 +1,9 @@
-import React, { useState, useContext } from "react";
-import { Context } from "../../Context";
-import { modesList, dates } from "./data";
+import React, { useState } from "react";
 import "./ModeSelections.css";
 import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSelection";
 import CustomDateSelection from "../CustomDateSelection/CustomDateSelection";
 
 function ModeSelections({ formStep }) {
-  const { strategiesList, BOT_OPTIONS, selectedBotSettings } =
-    useContext(Context);
   const [displayedDropdown, setDisplayedDropdown] = useState("0");
 
   return (
