@@ -48,6 +48,7 @@ function ContextProvider({ children }) {
         setUserExchanges,
         strategiesList,
         setStrategiesList,
+        selectedBotSettings,
         setSelectedBotSettings,
       }}
     >

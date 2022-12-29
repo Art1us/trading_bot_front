@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../Context";
 import useForm from "../../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
 
-function TestModeForm({ setShowGraphs, setShowDateForm, setSelectedDates }) {
+function TestModeForm() {
   function compareDates(from, to) {
     let date1 = new Date(from).getTime();
     let date2 = new Date(to).getTime();
 
     if (date1 > date2) return true;
   }
+
+  const { setSelectedBotSettings } = useContext(Context);
 
   const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
     useForm(formInputsData);
@@ -22,11 +25,10 @@ function TestModeForm({ setShowGraphs, setShowDateForm, setSelectedDates }) {
       return;
     }
 
-    /* console.log(formValues); */
-
-    setShowDateForm(false);
-    setShowGraphs(true);
-    setSelectedDates(formValues);
+    setSelectedBotSettings((prev) => ({
+      ...prev,
+      date: { from: formValues.dateFrom, to: formValues.dateTo },
+    }));
   }
 
   return (

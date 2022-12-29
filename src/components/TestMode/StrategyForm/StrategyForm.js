@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../../../Context";
 import "./StrategyForm.css";
 
 const options = ["Standard", "Advanced", "Preliminary", "Intermediate"];
 
 function StrategyForm() {
   const [selected, setSelected] = useState(options[0]);
+  const { setSelectedBotSettings } = useContext(Context);
 
   const submit = () => {
-    console.log(selected);
+    setSelectedBotSettings((prev) => ({ ...prev, strategy: selected }));
   };
 
   return (
@@ -29,6 +31,6 @@ function StrategyForm() {
       </button>
     </div>
   );
-};
+}
 
 export default StrategyForm;
