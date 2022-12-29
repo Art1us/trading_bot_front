@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TestModeGraphs from "../TestModeGraphs/TestModeGraphs";
 import TestModeForm from "./TestModeForm/TestModeForm";
 import "./TestMode.css";
+import StrategyForm from "./StrategyForm/StrategyForm";
 
 function TestMode() {
   const [showGraphs, setShowGraphs] = useState(false);
@@ -11,6 +12,7 @@ function TestMode() {
   return (
     <div className="testMode">
       <div className="testMode__container">
+        <StrategyForm />
         {showDateForm ? (
           <TestModeForm
             setShowGraphs={setShowGraphs}
