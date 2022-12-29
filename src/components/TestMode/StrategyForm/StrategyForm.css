@@ -23,13 +23,6 @@
 }
 
 .strategyForm__btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.strategyForm__btn--btn {
   width: 65%;
   background-color: var(--secondary-color);
   border: none;
@@ -38,6 +31,6 @@
   margin-bottom: 20px;
 }
 
-.strategyForm__btn--btn:hover {
+.strategyForm__btn:hover {
   background-color: rgb(14, 14, 159);
 }

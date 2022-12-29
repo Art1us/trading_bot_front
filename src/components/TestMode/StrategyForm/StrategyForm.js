@@ -13,7 +13,7 @@ function StrategyForm() {
 
   return (
     <div className="strategyForm__wrapper">
-      <h1 className="strategyForm__title">Select trading strategy</h1>
+      <h3 className="strategyForm__title">Select trading strategy</h3>
       <select
         className="strategyForm__select"
         value={selected}
@@ -25,11 +25,11 @@ function StrategyForm() {
           </option>
         ))}
       </select>
-      <button className="strategyForm__btn--btn" type="button" onClick={submit}>
+      <button className="strategyForm__btn" type="button" onClick={submit}>
         Submit
       </button>
     </div>
   );
-}
+};
 
 export default StrategyForm;
