@@ -5,21 +5,22 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import CustomDateDropdown from "../CustomDateDropdown/CustomDateDropdown";
 
 function CustomDateSelection({
-  dates,
   displayedDropdown,
   setDisplayedDropdown,
   width,
   id,
 }) {
-  const [selectedDates, setSelectedDates] = useState(dates);
+  const { selectedBotSettings, setSelectedBotSettings } = useContext(Context);
+  const [selectedDates, setSelectedDates] = useState(selectedBotSettings.date);
   const dropdownRef = useRef();
-  const { setSelectedBotSettings } = useContext(Context);
 
   useEffect(() => {
-    setSelectedBotSettings((prev) => ({
-      ...prev,
-      date: { from: selectedDates.dateFrom, to: selectedDates.dateTo },
-    }));
+    if (selectedBotSettings.date.to) {
+      setSelectedBotSettings((prev) => ({
+        ...prev,
+        date: { from: selectedDates.from, to: selectedDates.to },
+      }));
+    }
   }, [selectedDates]);
 
   useEffect(() => {
@@ -60,8 +61,7 @@ function CustomDateSelection({
         style={{ width: width ? width : "200px" }}
       >
         <p>
-          {converDate(selectedDates.dateFrom)} -{" "}
-          {converDate(selectedDates.dateTo)}
+          {converDate(selectedDates.from)} - {converDate(selectedDates.to)}
         </p>
         <RiArrowDropDownLine
           fontSize={25}

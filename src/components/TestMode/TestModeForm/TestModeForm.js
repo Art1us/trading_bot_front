@@ -24,7 +24,6 @@ function TestModeForm() {
       displayCustomError("Please enter correct dates!");
       return;
     }
-
     setSelectedBotSettings((prev) => ({
       ...prev,
       date: { from: formValues.dateFrom, to: formValues.dateTo },

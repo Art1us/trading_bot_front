@@ -5,24 +5,36 @@ import CustomDropdownList from "../CustomDropdownList/CustomDropdownList";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 function CustomDropdownSelection({
-  list,
   displayedDropdown,
   setDisplayedDropdown,
   width,
   id,
 }) {
-  const [dropdownList, setDropdownList] = useState(list);
+  const { selectedBotSettings, setSelectedBotSettings, BOT_OPTIONS } =
+    useContext(Context);
+
+  const first = BOT_OPTIONS[id].filter(
+    (item) => item === selectedBotSettings[id]
+  );
+  const second = BOT_OPTIONS[id].filter(
+    (item) => item !== selectedBotSettings[id]
+  );
+  const final = [...first,...second]
+  /* const [pass, fail] = a.reduce(([p, f], e) => (e > 5 ? [[...p, e], f] : [p, [...f, e]]), [[], []]); */
+
+
+
+  const [list, setList] = useState(final);
   const dropdownRef = useRef();
-  const { selectedBotSettings, setSelectedBotSettings } = useContext(Context);
 
   useEffect(() => {
     if (selectedBotSettings[id]) {
       setSelectedBotSettings((prev) => ({
         ...prev,
-        [id]: dropdownList[0].name,
-      }))
+        [id]: list[0],
+      }));
     }
-  }, [dropdownList]);
+  }, [list]);
 
   useEffect(() => {
     function outsideClickHandler(e) {
@@ -56,7 +68,7 @@ function CustomDropdownSelection({
         className="customDropDownSelection__selection"
         style={{ width: width ? width : "200px" }}
       >
-        <p className="customDropDownSelection__text">{dropdownList[0].name}</p>
+        <p className="customDropDownSelection__text">{list[0]}</p>
         <RiArrowDropDownLine
           fontSize={25}
           color={displayedDropdown === id ? "gray" : "inherit"}
@@ -64,8 +76,8 @@ function CustomDropdownSelection({
       </div>
       {displayedDropdown === id && (
         <CustomDropdownList
-          dropdownList={dropdownList}
-          setDropdownList={setDropdownList}
+          dropdownList={list}
+          setDropdownList={setList}
         />
       )}
     </div>

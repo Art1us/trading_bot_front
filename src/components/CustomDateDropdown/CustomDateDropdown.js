@@ -3,8 +3,7 @@ import "./CustomDateDropdown.css";
 import useForm from "../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
 
-function CustomDateDropdown({  setSelectedDates }) {
-
+function CustomDateDropdown({ setSelectedDates }) {
   function compareDates(from, to) {
     let date1 = new Date(from).getTime();
     let date2 = new Date(to).getTime();
@@ -21,7 +20,9 @@ function CustomDateDropdown({  setSelectedDates }) {
       displayCustomError("Please enter correct dates!");
       return;
     }
-    setSelectedDates({...formValues});
+    const res = {from: formValues.dateFrom, to: formValues.dateTo }
+    console.log(res)
+    setSelectedDates(...res);
   }
 
   return (

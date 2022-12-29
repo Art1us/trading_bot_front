@@ -6,7 +6,8 @@ import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSe
 import CustomDateSelection from "../CustomDateSelection/CustomDateSelection";
 
 function ModeSelections({ formStep }) {
-  const { strategiesList, selectedBotSettings } = useContext(Context);
+  const { strategiesList, BOT_OPTIONS, selectedBotSettings } =
+    useContext(Context);
   const [displayedDropdown, setDisplayedDropdown] = useState("0");
 
   return (
@@ -14,7 +15,6 @@ function ModeSelections({ formStep }) {
       <div className="modeSelections__container">
         {formStep > 0 && (
           <CustomDropdownSelection
-            list={modesList}
             id="mode"
             displayedDropdown={displayedDropdown}
             setDisplayedDropdown={setDisplayedDropdown}
@@ -23,7 +23,6 @@ function ModeSelections({ formStep }) {
         {formStep > 1 && (
           <CustomDateSelection
             width="250px"
-            dates={dates}
             id="date"
             displayedDropdown={displayedDropdown}
             setDisplayedDropdown={setDisplayedDropdown}
@@ -31,7 +30,6 @@ function ModeSelections({ formStep }) {
         )}
         {formStep > 2 && (
           <CustomDropdownSelection
-            list={strategiesList}
             id="strategy"
             displayedDropdown={displayedDropdown}
             setDisplayedDropdown={setDisplayedDropdown}
