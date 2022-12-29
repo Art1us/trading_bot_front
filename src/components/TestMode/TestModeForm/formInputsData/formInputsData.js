@@ -5,7 +5,7 @@ const twoYearsAgo = new Date(
   .toISOString()
   .split("T")[0];
 
-export default [
+const formInputsData = [
   {
     id: 1,
     wrapperClassName: "testMode__dateFormInput",
@@ -18,18 +18,21 @@ export default [
         placeholder: "",
         min: twoYearsAgo,
         max: todayDate,
+        autoFocus: true,
       },
     },
     labelData: {
       className: "",
       text: "From:",
     },
-    errors: [
-      {
-        condition: "^s*$",
-        message: "Please enter date from!",
-      },
-    ],
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter date from!",
+        },
+      ],
+    },
   },
   {
     id: 2,
@@ -49,11 +52,15 @@ export default [
       className: "",
       text: "To:",
     },
-    errors: [
-      {
-        condition: "^s*$",
-        message: "Please enter date to!",
-      },
-    ],
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please enter date to!",
+        },
+      ],
+    },
   },
 ];
+
+export default formInputsData;

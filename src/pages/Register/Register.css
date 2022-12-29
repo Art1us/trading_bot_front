@@ -64,7 +64,3 @@
   .login__createAccBtn:hover {
     background-color: var(--hover-btn-color);
   }
-  
-  .alarmMsg {
-    position: relative;
-  }

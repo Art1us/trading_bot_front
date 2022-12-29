@@ -14,40 +14,11 @@
 
 .exchangePage__modes {
     margin-top: 30px;
-    height: 100px;
+    height: fit-content;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.exchangePage__mode {
-    width: 48%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    transition: transform 0.1s ease-in;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-.exchangePage__mode:hover {
-    background-color: rgb(228, 228, 228);
-    transform: scale(1.03);
-}
-
-.exchangePage__mode--selected {
-    background-color: blueviolet;
-    color: white;
-}
-
-.exchangePage__mode--selected:hover {
-    background-color: blueviolet;
-    color: white;
-    transform: none;
 }
 
 .exchangePage__body{
