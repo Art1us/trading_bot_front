@@ -5,7 +5,7 @@ const twoYearsAgo = new Date(
   .toISOString()
   .split("T")[0];
 
-export default [
+const formInputsData = [
   {
     id: 1,
     wrapperClassName: "customData__dateFormInputWrapper",
@@ -20,16 +20,15 @@ export default [
         max: todayDate,
       },
     },
-    errorsData:{
-      className: 'customDateDropdown__error',
+    errorsData: {
+      className: "customDateDropdown__error",
       errors: [
         {
           condition: "^s*$",
           message: "Please enter date",
         },
       ],
-    }
-    
+    },
   },
   {
     id: 2,
@@ -45,14 +44,16 @@ export default [
         max: todayDate,
       },
     },
-    errorsData:{
-      className: 'customDateDropdown__error',
+    errorsData: {
+      className: "customDateDropdown__error",
       errors: [
         {
           condition: "^s*$",
           message: "Please enter date",
         },
       ],
-    }
+    },
   },
 ];
+
+export default formInputsData;
