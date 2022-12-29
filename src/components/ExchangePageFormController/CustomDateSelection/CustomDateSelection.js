@@ -70,7 +70,7 @@ function CustomDateSelection({
         />
       </div>
       {displayedDropdown === id && (
-        <CustomDateDropdown setSelectedDates={setSelectedDates} />
+        <CustomDateDropdown setSelectedDates={setSelectedDates} setDisplayedDropdown={setDisplayedDropdown} />
       )}
     </div>
   );
