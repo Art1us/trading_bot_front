@@ -13,10 +13,15 @@ function CustomDropdownSelection({
 }) {
   const [dropdownList, setDropdownList] = useState(list);
   const dropdownRef = useRef();
-  const { setSelectedBotSettings } = useContext(Context);
+  const { selectedBotSettings, setSelectedBotSettings } = useContext(Context);
 
   useEffect(() => {
-    setSelectedBotSettings((prev) => ({ ...prev, [id]: dropdownList[0].name }));
+    if (selectedBotSettings[id]) {
+      setSelectedBotSettings((prev) => ({
+        ...prev,
+        [id]: dropdownList[0].name,
+      }))
+    }
   }, [dropdownList]);
 
   useEffect(() => {
@@ -49,7 +54,7 @@ function CustomDropdownSelection({
     >
       <div
         className="customDropDownSelection__selection"
-        style={{ width: width ? width : '200px'}}
+        style={{ width: width ? width : "200px" }}
       >
         <p className="customDropDownSelection__text">{dropdownList[0].name}</p>
         <RiArrowDropDownLine
