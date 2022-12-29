@@ -13,18 +13,15 @@ function CustomDropdownSelection({
   const { selectedBotSettings, setSelectedBotSettings, BOT_OPTIONS } =
     useContext(Context);
 
-  const first = BOT_OPTIONS[id].filter(
+  const firstOption = BOT_OPTIONS[id].filter(
     (item) => item === selectedBotSettings[id]
   );
-  const second = BOT_OPTIONS[id].filter(
+  const restOptions = BOT_OPTIONS[id].filter(
     (item) => item !== selectedBotSettings[id]
   );
-  const final = [...first,...second]
-  /* const [pass, fail] = a.reduce(([p, f], e) => (e > 5 ? [[...p, e], f] : [p, [...f, e]]), [[], []]); */
+  const optionsList = [...firstOption, ...restOptions];
 
-
-
-  const [list, setList] = useState(final);
+  const [list, setList] = useState(optionsList);
   const dropdownRef = useRef();
 
   useEffect(() => {
@@ -57,7 +54,7 @@ function CustomDropdownSelection({
       setDisplayedDropdown(id);
     }
   }
-  
+
   return (
     <div
       className="customDropDownSelection"
@@ -75,10 +72,7 @@ function CustomDropdownSelection({
         />
       </div>
       {displayedDropdown === id && (
-        <CustomDropdownList
-          dropdownList={list}
-          setDropdownList={setList}
-        />
+        <CustomDropdownList list={list} setList={setList} />
       )}
     </div>
   );

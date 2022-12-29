@@ -1,19 +1,19 @@
 import React from "react";
 import "./CustomDropdownList.css";
 
-function CustomDropdownList({ dropdownList, setDropdownList }) {
+function CustomDropdownList({ list, setList }) {
   function clickHandler(item) {
-    setDropdownList((prev) => {
-      const newDropdownList = prev.filter(
+    setList((prev) => {
+      const restListItems = prev.filter(
         (listItem) => listItem !== item
       );
-      return [item, ...newDropdownList];
+      return [item, ...restListItems];
     });
   }
 
   return (
     <ul className="customDropdownList">
-      {dropdownList.slice(1).map((item) => (
+      {list.slice(1).map((item) => (
         <li
           className="customDropdownList__item"
           key={item}
