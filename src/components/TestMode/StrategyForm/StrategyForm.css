@@ -8,11 +8,17 @@
   padding: 20px;
   align-items: center;
   width: 25%;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
 .strategyForm__title {
   font-weight: bold;
   font-size: 18px;
+}
+
+.strategyForm__select {
+  width: 65%;
+  height: 25px;
 }
 
 .strategyForm__btn {
