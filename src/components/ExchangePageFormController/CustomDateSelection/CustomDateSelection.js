@@ -3,7 +3,7 @@ import { Context } from "../../../Context";
 import "./CustomDateSelection.css";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import CustomDateDropdown from "./CustomDateDropdown/CustomDateDropdown";
-
+import convertDate from "../../../helpers/convertDate";
 
 function CustomDateSelection({
   displayedDropdown,
@@ -46,11 +46,6 @@ function CustomDateSelection({
     }
   }
 
-  function converDate(date) {
-    const [year, month, day] = date.split("-");
-    return [month, day, year].join("/");
-  }
-
   return (
     <div
       className="customDateSelection"
@@ -62,7 +57,7 @@ function CustomDateSelection({
         style={{ width: width ? width : "200px" }}
       >
         <p>
-          {converDate(selectedDates.from)} - {converDate(selectedDates.to)}
+          {convertDate(selectedDates.from)} - {convertDate(selectedDates.to)}
         </p>
         <RiArrowDropDownLine
           fontSize={25}
@@ -70,7 +65,10 @@ function CustomDateSelection({
         />
       </div>
       {displayedDropdown === id && (
-        <CustomDateDropdown setSelectedDates={setSelectedDates} setDisplayedDropdown={setDisplayedDropdown} />
+        <CustomDateDropdown
+          setSelectedDates={setSelectedDates}
+          setDisplayedDropdown={setDisplayedDropdown}
+        />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../../Context";
-import ModeSelections from "./ModeSelections/ModeSelections";
+import SelectionsHeader from "./SelectionsHeader/SelectionsHeader";
 import StrategyForm from "./StrategyForm/StrategyForm";
 import DateForm from "./DateForm/DateForm";
 import ModeSelection from "./ModeSelection/ModeSelection";
@@ -20,19 +20,19 @@ function ExchangePageFormController() {
       case !date.to:
         return (
           <>
-            <ModeSelections formStep={1} />
+            <SelectionsHeader formStep={1} />
             <DateForm />
           </>
         );
       case !strategy:
         return (
           <>
-            <ModeSelections formStep={2} />
+            <SelectionsHeader formStep={2} />
             <StrategyForm />
           </>
         );
       default:
-        return <ModeSelections formStep={3} />;
+        return <SelectionsHeader formStep={3} />;
     }
   }
   return conditionalComponent();

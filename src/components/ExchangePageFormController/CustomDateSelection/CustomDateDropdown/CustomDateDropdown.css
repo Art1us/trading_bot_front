@@ -14,7 +14,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-
 }
 
 .customDateDropdown__inputsContainer {
@@ -22,17 +21,6 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 10px;
-}
-
-.customData__dateFormInputWrapper {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.customData__dateFormInputWrapper input{
-    border-radius: 2px;
 }
 
 .customDateDropdown__dateInput {

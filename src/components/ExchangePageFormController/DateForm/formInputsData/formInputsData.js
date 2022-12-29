@@ -8,10 +8,10 @@ const twoYearsAgo = new Date(
 const formInputsData = [
   {
     id: 1,
-    wrapperClassName: "testMode__dateFormInput",
+    wrapperClassName: "dateForm__inputWrapper",
     element: "input",
     inputData: {
-      className: "",
+      className: "dateForm__input",
       props: {
         name: "dateFrom",
         type: "date",
@@ -22,7 +22,7 @@ const formInputsData = [
       },
     },
     labelData: {
-      className: "",
+      className: "dateForm__label",
       text: "From:",
     },
     errorsData: {
@@ -36,10 +36,10 @@ const formInputsData = [
   },
   {
     id: 2,
-    wrapperClassName: "testMode__dateFormInput",
+    wrapperClassName: "dateForm__inputWrapper",
     element: "input",
     inputData: {
-      className: "",
+      className: "dateForm__input",
       props: {
         name: "dateTo",
         type: "date",
@@ -49,7 +49,7 @@ const formInputsData = [
       },
     },
     labelData: {
-      className: "",
+      className: "dateForm__label",
       text: "To:",
     },
     errorsData: {

@@ -44,7 +44,7 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
               style={{ textDecoration: "none" }}
             >
               <li className="burgerMenu__item">
-                <p className="burgerMenu__paragraph">{item.value}</p>
+                <p>{item.value}</p>
               </li>
             </Link>
           ))}

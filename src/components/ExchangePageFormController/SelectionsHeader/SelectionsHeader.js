@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ModeSelections.css";
+import "./SelectionsHeader.css";
 import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSelection";
 import CustomDateSelection from "../CustomDateSelection/CustomDateSelection";
 
@@ -7,8 +7,8 @@ function ModeSelections({ formStep }) {
   const [displayedDropdown, setDisplayedDropdown] = useState("0");
 
   return (
-    <div className="modeSelections">
-      <div className="modeSelections__container">
+    <div className="selectionsHeader">
+      <div className="selectionsHeader__container">
         {formStep > 0 && (
           <CustomDropdownSelection
             id="mode"

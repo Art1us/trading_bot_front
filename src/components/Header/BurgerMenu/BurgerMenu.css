@@ -7,6 +7,7 @@
   transform: translateX(100%);
   transition: transform 0.2s ease-in-out;
   height: fit-content;
+  z-index: 100;
 }
 
 .activeMenu {
@@ -58,7 +59,7 @@
   cursor: pointer;
 }
 
-.burgerMenu__paragraph {
+.burgerMenu__item p {
   color: black;
   display: flex;
 }

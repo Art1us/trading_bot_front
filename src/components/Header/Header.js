@@ -42,7 +42,7 @@ function Header() {
           <h2>Trading Bot</h2>
         </Link>
         <div className="header__elements ">
-          <div className="themeToggle">
+          <div className="header__themeToggle">
             <ReactSwitch
               checked={theme}
               onChange={toggleTheme}
