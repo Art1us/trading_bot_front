@@ -42,6 +42,7 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
               to={item.link}
               key={item.id}
               style={{ textDecoration: "none" }}
+              onClick={() => setBurgerMenuActive(false)}
             >
               <li className="burgerMenu__item">
                 <p>{item.value}</p>
