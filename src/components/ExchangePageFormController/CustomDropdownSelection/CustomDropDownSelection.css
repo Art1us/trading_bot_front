@@ -3,7 +3,7 @@
     margin-right: 10px;
 }
 
-.customDropDownSelection__selection {
+.customDropDownSelection__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
