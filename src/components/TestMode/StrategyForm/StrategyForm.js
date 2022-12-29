@@ -2,7 +2,7 @@ import React from "react";
 import "./StrategyForm.css";
 import { useState } from "react";
 
-const options = ["Standard", "Advanced", "Preliminary", " Intermediate"];
+const options = ["Standard", "Advanced", "Preliminary", "Intermediate"];
 
 function StrategyForm() {
   const [selected, setSelected] = useState(options[0]);
@@ -13,7 +13,7 @@ function StrategyForm() {
 
   return (
     <div className="strategyForm__wrapper">
-      <div className="strategyForm__title">Select trading strategy</div>
+      <h1 className="strategyForm__title">Select trading strategy</h1>
       <select
         className="strategyForm__select"
         value={selected}
@@ -25,15 +25,9 @@ function StrategyForm() {
           </option>
         ))}
       </select>
-      <div className="strategyForm__btn">
-        <button
-          className="strategyForm__btn--btn"
-          type="button"
-          onClick={submit}
-        >
-          Submit
-        </button>
-      </div>
+      <button className="strategyForm__btn--btn" type="button" onClick={submit}>
+        Submit
+      </button>
     </div>
   );
 }

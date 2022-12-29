@@ -9,6 +9,7 @@
   align-items: center;
   width: 25%;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  border-radius: 5px;
 }
 
 .strategyForm__title {
