@@ -9,7 +9,11 @@ function ContextProvider({ children }) {
   };
   const EXCHANGES_LIST = "/exchange_list";
 
-  const [exchangesList, setExchangesList] = useState([]);
+  const [exchangesList, setExchangesList] = useState([
+    { id: 1, name: "Binance" },
+    { id: 2, name: "Kraken" },
+    { id: 3, name: "FTX" },
+  ]);
   const [userExchanges, setUserExchanges] = useState([]);
   const [selectedBotSettings, setSelectedBotSettings] = useState({
     mode: "",
