@@ -7,8 +7,8 @@ function LanguageDropdown({ setDisplayDropdownActive }) {
   const languageDropdownRef = useRef();
 
   const languageDropdownItems = [
-    { id: 1, value: "English", icon: russianLanguageImg },
-    { id: 2, value: "Russian", icon: englishLanguageImg },
+    { id: 1, value: "English", icon: englishLanguageImg },
+    { id: 2, value: "Russian", icon: russianLanguageImg },
   ];
 
   useEffect(() => {
