@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import './DateForm.css'
+import "./DateForm.css";
 import { Context } from "../../../Context";
 import useForm from "../../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
@@ -32,18 +32,20 @@ function DateForm() {
   }
 
   return (
-    <div className="dateForm__formContainer">
-      <form className="dateForm__form" onSubmit={handleSubmit}>
-        <h2 className="dateForm__title">Select date range</h2>
-        <div className="dateForm__inputsContainer">
-          {inputComponents}
-          <input type="submit" className="dateForm__btn" value="Test" />
-        </div>
-      </form>
-      <p className="dateForm__description">
-        *When you push Start Button, you will see how bot would act if it was
-        working during selected date period.
-      </p>
+    <div className="dateForm">
+      <div className="dateForm__formContainer">
+        <form className="dateForm__form" onSubmit={handleSubmit}>
+          <h2 className="dateForm__title">Select date range</h2>
+          <div className="dateForm__inputsContainer">
+            {inputComponents}
+            <input type="submit" className="dateForm__btn" value="Test" />
+          </div>
+        </form>
+        <p className="dateForm__description">
+          *When you push Start Button, you will see how bot would act if it was
+          working during selected date period.
+        </p>
+      </div>
     </div>
   );
 }

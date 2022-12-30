@@ -18,25 +18,25 @@ export default function LightweightChart() {
       height: 500, //"300px", //chartContainerRef.current.clientHeight,
       layout: {
         backgroundColor: "#253248",
-        textColor: "rgba(255, 255, 255, 0.9)"
+        textColor: "rgba(255, 255, 255, 0.9)",
       },
       grid: {
         vertLines: {
-          color: "#334158"
+          color: "#334158",
         },
         horzLines: {
-          color: "#334158"
-        }
+          color: "#334158",
+        },
       },
       crosshair: {
-        mode: CrosshairMode.Normal
+        mode: CrosshairMode.Normal,
       },
       priceScale: {
-        borderColor: "#485c7b"
+        borderColor: "#485c7b",
       },
       timeScale: {
-        borderColor: "#485c7b"
-      }
+        borderColor: "#485c7b",
+      },
     });
 
     console.log(chart.current);
@@ -47,7 +47,7 @@ export default function LightweightChart() {
       borderDownColor: "#ff4976",
       borderUpColor: "#4bffb5",
       wickDownColor: "#838ca1",
-      wickUpColor: "#838ca1"
+      wickUpColor: "#838ca1",
     });
 
     candleSeries.setData(priceData);
@@ -65,13 +65,13 @@ export default function LightweightChart() {
       color: "#182233",
       lineWidth: 2,
       priceFormat: {
-        type: "volume"
+        type: "volume",
       },
       overlay: true,
       scaleMargins: {
         top: 0.8,
-        bottom: 0
-      }
+        bottom: 0,
+      },
     });
 
     volumeSeries.setData(volumeData);
@@ -79,7 +79,7 @@ export default function LightweightChart() {
 
   // Resize chart on container resizes.
   useEffect(() => {
-    resizeObserver.current = new ResizeObserver(entries => {
+    resizeObserver.current = new ResizeObserver((entries) => {
       const { width, height } = entries[0].contentRect;
       chart.current.applyOptions({ width, height });
       setTimeout(() => {
@@ -94,11 +94,10 @@ export default function LightweightChart() {
 
   return (
     <div className="lightweightChart">
-      <h1>Lightweight Chart</h1>
       <div
         ref={chartContainerRef}
         className="chart-container"
-         style={{ height: "100%" }}
+        style={{ height: "100%" }}
       />
     </div>
   );
