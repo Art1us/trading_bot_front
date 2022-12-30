@@ -1,9 +1,16 @@
+.dateForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 .dateForm__formContainer {
   background-color: white;
   padding: 20px 40px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
-  width: 600px;
+  max-width: 700px;
 }
 
 .dateMode__form {
@@ -14,7 +21,7 @@
   align-items: center;
 }
 
-.dateForm__title{
+.dateForm__title {
   text-align: center;
 }
 
