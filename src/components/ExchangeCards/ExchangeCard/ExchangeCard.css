@@ -48,19 +48,16 @@
     justify-content: space-between;
 }
 
-.exchangeCard__currencyInfo--green{
-    color:green;
-}
-
-.exchangeCard__currencyInfo--red{
-    color:red;
-}
-
 .exchangeCard__pencil{
     position: absolute;
     top:15px;
     right:15px;
+    font-size: 20px;
     color: gray;
+}
+
+.exchangeCard__pencil:hover{
+    color: rgb(79, 79, 79);
 }
 
 .exchangeCard__currencyInfo--text,.exchangeCard__title,.exchangeCard__currencyInfo--number{

@@ -34,7 +34,7 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
     >
       <div className="burgerMenu__content">
         <div className="burgerMenu__header">
-          <AiOutlineClose onClick={() => setBurgerMenuActive(false)} />
+          <AiOutlineClose onClick={() => setBurgerMenuActive(false)} style={{cursor: 'pointer'}} />
         </div>
         <ul className="burgerMenu__list">
           {burgerMenuItems.map((item) => (

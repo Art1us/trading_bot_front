@@ -16,7 +16,7 @@ function MainPage() {
       {showNewModal && <NewExchangeModal setShowNewModal={setShowNewModal} />}
       <div className="main__container">
         <div className="main__titleContainer">
-          <h2>Выбрать биржу</h2>
+          <h2>Select your exchange</h2>
         </div>
         <div className="main__cardsContainer">
           {!!userExchanges.length &&
