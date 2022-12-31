@@ -14,10 +14,10 @@ function CustomDropdownSelection({
     useContext(Context);
 
   const firstOption = BOT_OPTIONS[id].filter(
-    (item) => item === selectedBotSettings[id]
+    (item) => item.id === selectedBotSettings[id].id
   );
   const restOptions = BOT_OPTIONS[id].filter(
-    (item) => item !== selectedBotSettings[id]
+    (item) => item.id !== selectedBotSettings[id].id
   );
   const optionsList = [...firstOption, ...restOptions];
 
@@ -65,7 +65,7 @@ function CustomDropdownSelection({
         className="customDropdownSelection__container"
         style={{ width: width ? width : "200px" }}
       >
-        <p className="customDropdownSelection__text">{list[0]}</p>
+        <p className="customDropdownSelection__text">{list[0].name}</p>
         <RiArrowDropDownLine
           fontSize={25}
           color={displayedDropdown === id ? "gray" : "inherit"}

@@ -1,7 +1,6 @@
 import React from "react";
 import "./BotTable.css";
-import data from '../botInfoTestData'
-
+import data from "../botInfoTestData";
 
 function Row(props) {
   const { name, profit, height } = props;

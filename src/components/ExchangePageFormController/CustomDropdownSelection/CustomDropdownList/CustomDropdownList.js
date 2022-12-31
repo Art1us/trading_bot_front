@@ -4,9 +4,7 @@ import "./CustomDropdownList.css";
 function CustomDropdownList({ list, setList }) {
   function clickHandler(item) {
     setList((prev) => {
-      const restListItems = prev.filter(
-        (listItem) => listItem !== item
-      );
+      const restListItems = prev.filter((listItem) => listItem.id !== item.id);
       return [item, ...restListItems];
     });
   }
@@ -16,10 +14,10 @@ function CustomDropdownList({ list, setList }) {
       {list.slice(1).map((item) => (
         <li
           className="customDropdownList__item"
-          key={item}
+          key={item.id}
           onClick={() => clickHandler(item)}
         >
-          {item}
+          {item.name}
         </li>
       ))}
     </ul>
