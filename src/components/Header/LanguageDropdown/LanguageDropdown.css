@@ -13,6 +13,7 @@
   border-width: 15px;
   border-style: solid;
   border-color: transparent transparent transparent transparent;
+  pointer-events: none;
 }
 
 .languageDropdown__topContainerBorder--triangle {
