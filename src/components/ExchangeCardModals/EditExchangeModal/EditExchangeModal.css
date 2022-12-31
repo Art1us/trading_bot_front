@@ -18,10 +18,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 290px;
   margin: auto;
   height: 420px;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   background-color: white;
   color: black;
 }
@@ -44,7 +44,8 @@
 }
 
 .editExchangeModal__formContainer {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 100%;
   margin-top: 10px;
 }
