@@ -7,25 +7,18 @@
 .languageDropdown__topContainer--triangle {
   position: absolute;
   top: -20px;
-  right: 55px;
+  right: 50px;
   width: 0;
   height: 0;
   border-width: 15px;
   border-style: solid;
   border-color: transparent transparent transparent transparent;
+  pointer-events: none;
 }
 
 .languageDropdown__topContainerBorder--triangle {
   top: -25px;
   border-color: transparent transparent white transparent;
-}
-
-.languageDropdown__topContainer--triangleOuter {
-  border-width: 20px;
-  top: -40px;
-  right: 50%;
-  transform: translateX(50%);
-  border-color: transparent transparent rgba(245, 245, 245, 0.3) transparent;
 }
 
 .languageDropdown__container {
