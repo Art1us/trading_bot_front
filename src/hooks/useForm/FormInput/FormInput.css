@@ -8,7 +8,7 @@
   outline: none;
 }
 
-.formInput__defaultInputStyles[type='password'] {
+.formInput__defaultInputStyles[type="password"] {
   padding-right: 20px;
 }
 
