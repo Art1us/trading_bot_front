@@ -1,23 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./EditExchangeModal.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { Context } from "../../../Context";
+import useForm from "../../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
 function EditExchangeModal({ setShowEditModal, exchangeData }) {
-  const { exchangeName } = exchangeData;
-
-  const [editedExchange, setEditedExchange] = useState(exchangeData);
   const { setUserExchanges } = useContext(Context);
+  const { exchange } = exchangeData;
+  const { inputComponents, isSubmitInvalid, formValues } = useForm(
+    formInputsData,
+    exchangeData
+  );
 
   function saveClickHandler() {
+    if (isSubmitInvalid()) return;
     setUserExchanges((prev) => {
       return [
         ...prev.filter((exch) => exch.id !== exchangeData.id),
-        editedExchange,
+        formValues,
       ];
     });
     setShowEditModal(false);
-  } 
+  }
 
   function deleteClickHandler() {
     setUserExchanges((prev) => [
@@ -30,6 +35,7 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
     e.preventDefault();
     setShowEditModal(false);
   }
+
   return (
     <div className="editExchangeModal">
       <div className="editExchangeModal__inner">
@@ -39,38 +45,11 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
         />
         <div className="editExchangeModal__container">
           <div className="editExchangeModal__title">
-            <h2>{exchangeName}</h2>
+            <h2>{exchange}</h2>
           </div>
           <div className="editExchangeModal__formContainer">
             <form className="editExchangeModal__keyForm" autoComplete="off">
-              <div className="editExchangeModal__keyFormInput--publicKey">
-                <label htmlFor="">Public Key</label>
-                <input
-                  type="text"
-                  placeholder="Enter your public key"
-                  value={editedExchange.publicKey}
-                  onChange={(e) =>
-                    setEditedExchange((prev) => ({
-                      ...prev,
-                      publicKey: e.target.value,
-                    }))
-                  }
-                />
-              </div>
-              <div className="editExchangeModal__keyFormInput--secretKey">
-                <label htmlFor="">Secret Key</label>
-                <input
-                  type="password"
-                  placeholder="Enter your Secret Key"
-                  value={editedExchange.secretKey}
-                  onChange={(e) =>
-                    setEditedExchange((prev) => ({
-                      ...prev,
-                      secretKey: e.target.value,
-                    }))
-                  }
-                />
-              </div>
+              {inputComponents}
               <div className="editExchangeModal_formBtn">
                 <button
                   type="button"
@@ -93,6 +72,6 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
       </div>
     </div>
   );
-} 
+}
 
 export default EditExchangeModal;

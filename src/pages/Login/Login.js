@@ -1,35 +1,35 @@
 import React from "react";
-import {Link} from 'react-router-dom'
 import "./Login.css";
+import { useNavigate, Link } from "react-router-dom";
+import useForm from "../../hooks/useForm/useForm";
+import formInputsData from "./formInputsData/formInputsData";
 
-export default function Login() {
+function Login() {
+  const navigate = useNavigate();
+  const { inputComponents, isSubmitInvalid } = useForm(formInputsData);
+
+  function submitHandler(e) {
+    e.preventDefault();
+    if (isSubmitInvalid()) return;
+    navigate("/main");
+  }
+
   return (
     <div className="login">
       <div className="login__container">
-        <form class="login__form">
+        <form className="login__form" onSubmit={submitHandler}>
           <div className="login__formTitle">Sign-in</div>
-          <div class="login__formRow">
-            <label class="login__formBlock">
-              <input
-                type="email"
-                class="login__formInput"
-                placeholder="Your Email"
-              />
-            </label>
-            <label class="login__formBlock">
-              <input
-                type="password"
-                class="login__formInput"
-                placeholder="Password"
-              />
-            </label>
-          </div>
-          <Link to="/main" style={{ textDecoration: "none" }}>
-            <button className="login__signInBtn">Sign in</button>
+          <div>{inputComponents}</div>
+          <button className="login__signInBtn">Sign in</button>
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <button type="button" className="login__createAccBtn">
+              Create a new account
+            </button>
           </Link>
-          <button className="login__createAccBtn">Create a new account</button>
         </form>
       </div>
     </div>
   );
 }
+
+export default Login;

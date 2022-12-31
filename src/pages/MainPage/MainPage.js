@@ -6,7 +6,6 @@ import NewExchangeModal from "../../components/ExchangeCardModals/NewExchangeMod
 import "./MainPage.css";
 
 function MainPage() {
-  
   const [showNewModal, setShowNewModal] = useState(false);
 
   const { userExchanges } = useContext(Context);
@@ -16,16 +15,16 @@ function MainPage() {
       {showNewModal && <NewExchangeModal setShowNewModal={setShowNewModal} />}
       <div className="main__container">
         <div className="main__titleContainer">
-          <h2>Выбрать биржу</h2>
+          <h2>Select your exchange</h2>
         </div>
         <div className="main__cardsContainer">
           {!!userExchanges.length &&
             userExchanges.map((exch) => {
-              const { exchangeName , secretKey, publicKey, id} = exch;
+              const { exchange, secretKey, publicKey, id } = exch;
               return (
                 <ExchangeCard
                   key={id}
-                  exchangeName={exchangeName}
+                  exchange={exchange}
                   publicKey={publicKey}
                   secretKey={secretKey}
                   id={id}

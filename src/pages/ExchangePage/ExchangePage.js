@@ -1,36 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./ExchangePage.css";
-import TestMode from "../../components/TestMode/TestMode";
-import StartMode from "../../components/StartMode/StartMode";
+import ExchangePageFormController from "../../components/ExchangePageFormController/ExchangePageFormController";
+import TestModeGraphs from "../../components/BotGraphs/TestModeGraphs";
+import { Context } from "../../Context";
 
 function ExchangePage() {
-  const [selectMode, setSelectMode] = useState("");
-
-  const testModeSelected =
-    selectMode === "test" ? "exchangePage__mode--selected" : "";
-  const startModeSelected =
-    selectMode === "start" ? "exchangePage__mode--selected" : "";
+  const { selectedBotSettings } = useContext(Context);
+  const { mode, date, strategy } = selectedBotSettings;
+  const displayGraphs = mode.id && date.from && date.to && strategy.id;
 
   return (
     <div className="exchangePage">
       <div className="exchangePage__container">
-        <div className="exchangePage__modes">
-          <div
-            className={`exchangePage__mode ${testModeSelected}`}
-            onClick={() => setSelectMode("test")}
-          >
-            Test MODE
-          </div>
-          <div
-            className={`exchangePage__mode ${startModeSelected}`}
-            onClick={() => setSelectMode("start")}
-          >
-            Start MODE
-          </div>
-        </div>
+        <ExchangePageFormController />
         <div className="exchangePage__body">
-          {selectMode === "test" && <TestMode />}
-          {selectMode === "start" && <StartMode />}
+          {!!displayGraphs && <TestModeGraphs />}
         </div>
       </div>
     </div>

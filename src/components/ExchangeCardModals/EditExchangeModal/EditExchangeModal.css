@@ -61,30 +61,33 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  font-weight: 700;
   font-size: 16;
+}
+
+.editExchangeModal__keyFormInput--title {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .editExchangeModal__keyFormInput--secretKey {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  font-weight: 700;
   font-size: 16;
 }
 
-input {
+.editExchangeModal__keyFormInput {
   height: 35px;
   border-radius: 5px;
   border: 1px solid grey;
-  margin-top: 2px;
   padding-left: 5px;
+  margin-bottom: 30px;
 }
 
 .editExchangeModal_formBtn {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .editExchangeModal__saveBtn {

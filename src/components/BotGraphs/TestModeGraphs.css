@@ -1,0 +1,10 @@
+.testModeGraphs__botInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testModeGraphs__botInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}

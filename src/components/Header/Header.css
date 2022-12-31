@@ -1,25 +1,105 @@
-.header{
-    width: 100vw;
-    border-bottom: 1px solid rgb(228, 228, 228);
-    background-color: whitesmoke;
+.header {
+  width: 100vw;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  background-color: var(--second-bg-color);
 }
 
-.header__container{
-    width:100%;
-    max-width: 1200px;
-    margin:0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:10px 20px;
-    height: 55px;
+.header__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 55px;
 }
 
-.header__burger, .header__help{
-    cursor: pointer;
+.header__elements {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.header h2{
-    color: black;
-    cursor: pointer;
+.header__title {
+  color: var(--primary-color);
+  cursor: pointer;
+  text-align: center;
+}
+
+.header__elments-item--right {
+  height: 23px;
+  width: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.header__elements--hover {
+  background-color: transparent;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__elements--hover:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.header__logo img {
+  margin-top: 5px;
+  cursor: pointer;
+  width: 100px;
+  -webkit-filter: drop-shadow(0px 0px 6px #222);
+  filter: drop-shadow(0px 0px 6px rgba(34, 34, 34, 0.804));
+}
+
+.header__help {
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.header h2 {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header__themeToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.header__toggleIcon--day {
+  height: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.header__toggleIcon--night {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  font-size: 12px;
+  color: var(--main-bg-color);
+}
+
+.header__handleIcon--day {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  font-size: 15px;
+}
+
+.header__handleIcon--night {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  color: var(--main-bg-color);
+  font-size: 12px;
 }
