@@ -4,9 +4,7 @@ import "./CustomDropdownList.css";
 function CustomDropdownList({ list, setList }) {
   function clickHandler(item) {
     setList((prev) => {
-      const restListItems = prev.filter(
-        (listItem) => listItem.id !== item.id
-      );
+      const restListItems = prev.filter((listItem) => listItem.id !== item.id);
       return [item, ...restListItems];
     });
   }

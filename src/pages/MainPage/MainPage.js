@@ -6,7 +6,6 @@ import NewExchangeModal from "../../components/ExchangeCardModals/NewExchangeMod
 import "./MainPage.css";
 
 function MainPage() {
-  
   const [showNewModal, setShowNewModal] = useState(false);
 
   const { userExchanges } = useContext(Context);
@@ -21,7 +20,7 @@ function MainPage() {
         <div className="main__cardsContainer">
           {!!userExchanges.length &&
             userExchanges.map((exch) => {
-              const { exchange , secretKey, publicKey, id} = exch;
+              const { exchange, secretKey, publicKey, id } = exch;
               return (
                 <ExchangeCard
                   key={id}
