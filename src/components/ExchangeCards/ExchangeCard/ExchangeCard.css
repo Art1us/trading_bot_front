@@ -1,8 +1,7 @@
 .exchangeCard {
   position: relative;
-  width: 100%;
-  max-width: 180px;
-  min-height: 280px;
+  width: 180px;
+  height: 280px;
   border-radius: 20px;
   margin-right: 20px;
   background-color: whitesmoke;

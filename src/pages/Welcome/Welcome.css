@@ -4,7 +4,6 @@
 }
 
 .welcome__container {
-  width: 100%;
   max-width: 700px;
   height: 100%;
   display: flex;
