@@ -10,12 +10,12 @@ function ModeSelection() {
     <div className="modeSelection">
       <TestModeDescription
         onClick={() =>
-          setSelectedBotSettings((prev) => ({ ...prev, mode: "test" }))
+          setSelectedBotSettings((prev) => ({ ...prev, mode: { id: 1, name: "Test Mode" } }))
         }
       />
       <StartModeDescription
         onClick={() =>
-          setSelectedBotSettings((prev) => ({ ...prev, mode: "start" }))
+          setSelectedBotSettings((prev) => ({ ...prev, mode: { id: 2, name: "Start Mode" } }))
         }
       />
     </div>

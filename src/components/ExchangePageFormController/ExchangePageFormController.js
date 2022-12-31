@@ -11,7 +11,7 @@ function ExchangePageFormController() {
 
   function conditionalComponent() {
     switch (true) {
-      case !mode:
+      case !mode.id:
         return (
           <>
             <ModeSelection />
@@ -24,7 +24,7 @@ function ExchangePageFormController() {
             <DateForm />
           </>
         );
-      case !strategy:
+      case !strategy.id:
         return (
           <>
             <SelectionsHeader formStep={2} />
