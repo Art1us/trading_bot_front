@@ -8,8 +8,7 @@
 }
 
 .login__form {
-  width: 100%;
-  max-width: 320px;
+  width: 320px;
   margin-top: 5%;
   padding: 35px 20px;
   border-radius: 5px;
