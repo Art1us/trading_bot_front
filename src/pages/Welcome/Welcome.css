@@ -1,9 +1,10 @@
 .welcome{
   width: 100vw;
-  height: calc(100vh - 60px);  
+  height: calc(100vh - 60px);
 }
 
 .welcome__container {
+  width: 100%;
   max-width: 700px;
   height: 100%;
   display: flex;

@@ -5,11 +5,18 @@
 }
 
 :root {
-  --main-bg-color: white;
+   --main-bg-color: white;
   --second-bg-color: whitesmoke;
   --primary-color: black;
   --secondary-color: royalblue;
   --hover-btn-color: rgb(14, 14, 159);
+ /*  --base-color-0: black, white;
+  --second-base-color: white, black;
+  --primary-color-0: white, #181d31; (day/dark bg color)
+  --primary-color-01: whitesmoke, #393e46; (day/dark color 10)
+  --primary-color-02: royalblue, #07102c; (royalblue day/dark)
+  --warning-color: #red; (color for validations and buttons)
+  --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 img {

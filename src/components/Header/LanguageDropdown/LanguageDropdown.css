@@ -41,8 +41,9 @@
 }
 
 .languageDropdown__selectLanguageContainer {
-  height: auto;
-  width: 100px;
+  min-height: auto;
+  width: 100%;
+  max-width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
