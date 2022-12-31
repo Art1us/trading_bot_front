@@ -3,7 +3,7 @@ import "./TestModeDescription.css";
 
 function testModeDescription({ onClick }) {
   return (
-    <div className="testModeDescription" >
+    <div className="testModeDescription">
       <h2 className="testModeDescription__title">Test Mode</h2>
       <div className="testModeDescription__description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum
@@ -21,7 +21,9 @@ function testModeDescription({ onClick }) {
         senectus et netus et malesuada fames ac turpis egestas. Nam porta nunc
         metus, nec ornare metus volutpat sed.
       </div>
-      <button className="testModeDescription__button" onClick={onClick}>Select Test Mode</button>
+      <button className="testModeDescription__button" onClick={onClick}>
+        Select Test Mode
+      </button>
     </div>
   );
 }
