@@ -21,14 +21,6 @@
   border-color: transparent transparent white transparent;
 }
 
-.languageDropdown__topContainer--triangleOuter {
-  border-width: 20px;
-  top: -40px;
-  right: 50%;
-  transform: translateX(50%);
-  border-color: transparent transparent rgba(245, 245, 245, 0.3) transparent;
-}
-
 .languageDropdown__container {
   display: flex;
   flex-direction: column;
