@@ -4,8 +4,16 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
   const BOT_OPTIONS = {
-    mode: ["Test Mode", "Start Mode"],
-    strategy: ["Standard", "Advanced", "Preliminary", "Intermediate"],
+    mode: [
+      { id: 1, name: "Test Mode" },
+      { id: 2, name: "Start Mode" },
+    ],
+    strategy: [
+      { id: 1, name: "Standard" },
+      { id: 2, name: "Advanced" },
+      { id: 3, name: "Preliminary" },
+      { id: 4, name: "Intermediate" },
+    ],
   };
   const EXCHANGES_LIST = "/exchange_list";
 
@@ -16,9 +24,9 @@ function ContextProvider({ children }) {
   ]);
   const [userExchanges, setUserExchanges] = useState([]);
   const [selectedBotSettings, setSelectedBotSettings] = useState({
-    mode: "",
+    mode: { id: "", name: "" },
     date: { from: "", to: "" },
-    strategy: "",
+    strategy: { id: "", name: "" },
   });
 
   useEffect(() => {
