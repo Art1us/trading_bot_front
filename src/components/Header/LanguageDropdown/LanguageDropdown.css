@@ -20,9 +20,9 @@
   border-color: transparent transparent white transparent;
 }
 
-.languageDropdown__topContainer--triangleOuter{
+.languageDropdown__topContainer--triangleOuter {
   border-width: 20px;
-  top:-40px;
+  top: -40px;
   right: 50%;
   transform: translateX(50%);
   border-color: transparent transparent rgba(245, 245, 245, 0.3) transparent;
@@ -41,8 +41,9 @@
 }
 
 .languageDropdown__selectLanguageContainer {
-  height: auto;
-  width: 100px;
+  min-height: auto;
+  width: 100%;
+  max-width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;

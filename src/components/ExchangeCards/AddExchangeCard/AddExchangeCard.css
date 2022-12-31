@@ -1,23 +1,24 @@
 .addExchangeCard {
-    width: 180px;
-    height: 280px;
-    border-radius: 20px;
-    margin-right: 20px;
-    background-color: var(--second-bg-color);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.1s ease-in;
+  width: 100%;
+  max-width: 180px;
+  min-height: 280px;
+  border-radius: 20px;
+  margin-right: 20px;
+  background-color: var(--second-bg-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
 }
 
 .addExchangeCard:hover {
-    background-color: rgb(228, 228, 228);
-    transform: scale(1.03);
+  background-color: rgb(228, 228, 228);
+  transform: scale(1.03);
 }
 
 .addExchangeCard--empty {
-    font-size: 64px;
-    color: rgba(128, 128, 128, 0.533);
+  font-size: 64px;
+  color: rgba(128, 128, 128, 0.533);
 }

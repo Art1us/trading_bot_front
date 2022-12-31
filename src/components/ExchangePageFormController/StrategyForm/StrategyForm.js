@@ -4,10 +4,15 @@ import "./StrategyForm.css";
 
 function StrategyForm() {
   const { setSelectedBotSettings, BOT_OPTIONS } = useContext(Context);
-  const [selected, setSelected] = useState(BOT_OPTIONS.strategy[0]);
+  const [selected, setSelected] = useState(BOT_OPTIONS.strategy[0].name);
 
   const submit = () => {
-    setSelectedBotSettings((prev) => ({ ...prev, strategy: selected }));
+    setSelectedBotSettings((prev) => ({
+      ...prev,
+      strategy: BOT_OPTIONS.strategy.filter(
+        (item) => item.name === selected
+      )[0],
+    }));
   };
 
   return (
@@ -20,8 +25,8 @@ function StrategyForm() {
           onChange={(e) => setSelected(e.target.value)}
         >
           {BOT_OPTIONS.strategy.map((item) => (
-            <option value={item} key={item}>
-              {item}
+            <option value={item.name} key={item.id}>
+              {item.name}
             </option>
           ))}
         </select>

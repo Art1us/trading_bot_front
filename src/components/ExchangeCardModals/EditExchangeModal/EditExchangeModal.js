@@ -6,8 +6,6 @@ import useForm from "../../../hooks/useForm/useForm";
 import formInputsData from "./formInputsData/formInputsData";
 
 function EditExchangeModal({ setShowEditModal, exchangeData }) {
-  
-
   const { setUserExchanges } = useContext(Context);
   const { exchange } = exchangeData;
   const { inputComponents, isSubmitInvalid, formValues } = useForm(

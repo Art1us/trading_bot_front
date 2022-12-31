@@ -7,7 +7,7 @@ import { Context } from "../../Context";
 function ExchangePage() {
   const { selectedBotSettings } = useContext(Context);
   const { mode, date, strategy } = selectedBotSettings;
-  const displayGraphs = mode && date.from && date.to && strategy;
+  const displayGraphs = mode.id && date.from && date.to && strategy.id;
 
   return (
     <div className="exchangePage">
