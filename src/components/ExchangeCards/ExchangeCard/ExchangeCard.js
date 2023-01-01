@@ -1,36 +1,35 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./ExchangeCard.css";
-import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal";
-import { BiPencil } from "react-icons/bi";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import "./ExchangeCard.css"
+import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
+import { BiPencil } from "react-icons/bi"
 
 function ExchangeCard(props) {
-  const { exchange, img, publicKey } = props;
+  const { exchange, img, publicKey } = props
 
-  const [hovered, setHovered] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
+  const [hovered, setHovered] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false)
 
   function mouseEnterHandler() {
-    setHovered(true);
+    setHovered(true)
   }
   function mouseLeaveHandler() {
-    setHovered(false);
+    setHovered(false)
   }
 
   function editClickHandler(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    setShowEditModal(true);
+    e.stopPropagation()
+    e.preventDefault()
+    setShowEditModal(true)
   }
 
   return (
     <>
-      {showEditModal && (
-        <EditExchangeModal
-          setShowEditModal={setShowEditModal}
-          exchangeData={props}
-        />
-      )}
+      <EditExchangeModal
+        showEditModal={showEditModal}
+        setShowEditModal={setShowEditModal}
+        exchangeData={props}
+      />
       <Link to="/exchange" style={{ textDecoration: "none" }}>
         <div
           className="exchangeCard"
@@ -64,7 +63,7 @@ function ExchangeCard(props) {
         </div>
       </Link>
     </>
-  );
+  )
 }
 
-export default ExchangeCard;
+export default ExchangeCard
