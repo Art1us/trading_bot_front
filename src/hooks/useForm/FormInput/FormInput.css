@@ -4,7 +4,7 @@
   padding-left: 5px;
   padding-right: 10px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--base-color-0);
   outline: none;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .formInput__defaultInputStyles:focus {
-  border: 2px solid black;
+  border: 2px solid var(--base-color-0);
 }
 
 .formInput__defaultInputStyles[type="password"] {

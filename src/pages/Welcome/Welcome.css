@@ -18,7 +18,7 @@
 }
 
 .welcome__button {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color-20);
   height: 200px;
   width: 260px;
   border-radius: 10px;

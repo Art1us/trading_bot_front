@@ -3,7 +3,7 @@
   height: 280px;
   border-radius: 20px;
   margin-right: 20px;
-  background-color: var(--second-bg-color);
+  background-color: var(--primary-bg-color-10);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   justify-content: center;

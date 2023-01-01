@@ -18,7 +18,7 @@
 
 .languageDropdown__topContainerBorder--triangle {
   top: -25px;
-  border-color: transparent transparent white transparent;
+  border-color: transparent transparent var(--base-color-100) transparent;
 }
 
 .languageDropdown__container {
@@ -26,7 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(253, 253, 253);
+  background-color: var(--base-color-100);
   border-bottom: 2px solid rgb(239.561, 239.561, 239.561);
   border-radius: 5px;
   padding: 20px;
@@ -61,5 +61,5 @@
 }
 
 .languageDropdown__languageRow:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color-20);
 }
