@@ -1,69 +1,67 @@
 .exchangeCard {
-    position: relative;
-    width: 180px;
-    height: 280px;
-    border-radius: 20px;
-    margin-right: 20px;
-    background-color: whitesmoke;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 30px;
-    transition: transform 0.1s ease-in;
-    text-align: center;
+  position: relative;
+  width: 180px;
+  height: 280px;
+  border-radius: 20px;
+  margin-right: 20px;
+  background-color: var(--primary-bg-color-10);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 30px;
+  transition: transform 0.1s ease-in;
+  text-align: center;
 }
 
 .exchangeCard:hover {
-    background-color: rgb(228, 228, 228);
-    transform: scale(1.03);
+  background-color: rgb(228, 228, 228);
+  transform: scale(1.03);
 }
 
 .exchangeCard__logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .exchangeCard__logo img {
-    max-width: 100px;
+  max-width: 100px;
 }
 
 .exchangeCard__info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .exchangeCard__info {
-    width: 100%;
-    color: black;
+  width: 100%;
+  color: var(--base-color-0);
 }
 
 .exchangeCard__currencyInfo {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.exchangeCard__currencyInfo--green{
-    color:green;
+.exchangeCard__pencil {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: gray;
 }
 
-.exchangeCard__currencyInfo--red{
-    color:red;
+.exchangeCard__pencil:hover {
+  color: rgb(79, 79, 79);
 }
 
-.exchangeCard__pencil{
-    position: absolute;
-    top:15px;
-    right:15px;
-    color: gray;
+.exchangeCard__currencyInfo--text,
+.exchangeCard__title,
+.exchangeCard__currencyInfo--number {
+  color: base-color-0;
 }
-
-.exchangeCard__currencyInfo--text,.exchangeCard__title,.exchangeCard__currencyInfo--number{
-color: black;
-}
-

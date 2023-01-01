@@ -1,0 +1,22 @@
+.customDropdownList {
+  list-style: none;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background-color: var(--primary-bg-color-10);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.customDropdownList__item {
+  width: fit-content;
+  padding: 10px;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  width: 100%;
+  cursor: pointer;
+}
+
+.customDropdownList__item:last-child {
+  border-bottom: 0;
+}

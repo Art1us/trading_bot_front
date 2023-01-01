@@ -3,20 +3,30 @@ import React, { useEffect, useState } from "react";
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
+  const BOT_OPTIONS = {
+    mode: [
+      { id: 1, name: "Test Mode" },
+      { id: 2, name: "Start Mode" },
+    ],
+    strategy: [
+      { id: 1, name: "Standard" },
+      { id: 2, name: "Advanced" },
+      { id: 3, name: "Preliminary" },
+      { id: 4, name: "Intermediate" },
+    ],
+  };
   const EXCHANGES_LIST = "/exchange_list";
 
-  const [exchangesList, setExchangesList] = useState([]);
-  const [strategiesList, setStrategiesList] = useState([
-    { id: "str_adv1", name: "Advanced" },
-    { id: "str_pro2", name: "Pro" },
-    { id: "str_spr3", name: "Super" },
-    { id: "str_xtr4", name: "Extra" },
+  const [exchangesList, setExchangesList] = useState([
+    { id: 1, name: "Binance" },
+    { id: 2, name: "Kraken" },
+    { id: 3, name: "FTX" },
   ]);
   const [userExchanges, setUserExchanges] = useState([]);
   const [selectedBotSettings, setSelectedBotSettings] = useState({
-    mode: "",
+    mode: { id: "", name: "" },
     date: { from: "", to: "" },
-    strategy: "",
+    strategy: { id: "", name: "" },
   });
 
   useEffect(() => {
@@ -46,9 +56,9 @@ function ContextProvider({ children }) {
         exchangesList,
         userExchanges,
         setUserExchanges,
-        strategiesList,
-        setStrategiesList,
+        selectedBotSettings,
         setSelectedBotSettings,
+        BOT_OPTIONS,
       }}
     >
       {children}

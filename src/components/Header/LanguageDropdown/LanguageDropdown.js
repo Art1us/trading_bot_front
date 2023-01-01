@@ -7,8 +7,8 @@ function LanguageDropdown({ setDisplayDropdownActive }) {
   const languageDropdownRef = useRef()
 
   const languageDropdownItems = [
-    { id: 1, value: "English", icon: russianLanguageImg },
-    { id: 2, value: "Russian", icon: englishLanguageImg },
+    { id: 1, value: "English", icon: englishLanguageImg },
+    { id: 2, value: "Russian", icon: russianLanguageImg },
   ]
 
   useEffect(() => {
@@ -35,7 +35,6 @@ function LanguageDropdown({ setDisplayDropdownActive }) {
       onClick={e => e.stopPropagation()}
       onMouseLeave={mouseLeaveHandler}
     >
-      <span className="languageDropdown__topContainer--triangle languageDropdown__topContainer--triangleOuter"></span>
       <span className="languageDropdown__topContainer--triangle languageDropdown__topContainerBorder--triangle"></span>
       <div className="languageDropdown__container">
         <div className="languageDropdown__selectLanguageContainer">

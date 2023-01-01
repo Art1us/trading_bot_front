@@ -1,0 +1,10 @@
+.selectionsHeader {
+  margin-top: 10px;
+}
+
+.selectionsHeader__container {
+  max-width: 1200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}

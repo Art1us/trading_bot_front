@@ -7,6 +7,7 @@
   transform: translateX(100%);
   transition: transform 0.2s ease-in-out;
   height: fit-content;
+  z-index: 100;
 }
 
 .activeMenu {
@@ -16,7 +17,7 @@
 .burgerMenu__content {
   width: 17vw;
   height: 100%;
-  background-color: whitesmoke;
+  background-color: var(--primary-bg-color-10);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -55,10 +56,9 @@
   width: 100%;
   padding: 20px 20px 0px 20px;
   font-size: larger;
-  cursor: pointer;
 }
 
-.burgerMenu__paragraph {
+.burgerMenu__item p {
   color: black;
   display: flex;
 }

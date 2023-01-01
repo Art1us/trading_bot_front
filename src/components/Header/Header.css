@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
   border-bottom: 1px solid rgb(228, 228, 228);
-  background-color: var(--second-bg-color);
+  background-color: var(--primary-bg-color-10);
 }
 
 .header__container {
@@ -22,7 +22,7 @@
 }
 
 .header__title {
-  color: var(--primary-color);
+  color: var(--base-color-0);
   cursor: pointer;
   text-align: center;
 }
@@ -64,11 +64,11 @@
 }
 
 .header h2 {
-  color: var(--primary-color);
+  color: var(--base-color-0);
   cursor: pointer;
 }
 
-.themeToggle {
+.header__themeToggle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +86,7 @@
   display: flex;
   margin: auto;
   font-size: 12px;
-  color: var(--main-bg-color);
+  color: var(--base-color-100);
 }
 
 .header__handleIcon--day {
@@ -100,6 +100,6 @@
   height: 100%;
   display: flex;
   margin: auto;
-  color: var(--main-bg-color);
+  color: var(--base-color-100);
   font-size: 12px;
 }
