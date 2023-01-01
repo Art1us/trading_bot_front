@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 
-const Context = React.createContext();
+const Context = React.createContext()
 
 function ContextProvider({ children }) {
   const BOT_OPTIONS = {
@@ -14,41 +14,43 @@ function ContextProvider({ children }) {
       { id: 3, name: "Preliminary" },
       { id: 4, name: "Intermediate" },
     ],
-  };
-  const EXCHANGES_LIST = "/exchange_list";
+  }
+  const EXCHANGES_LIST = "/exchange_list"
 
   const [exchangesList, setExchangesList] = useState([
     { id: 1, name: "Binance" },
     { id: 2, name: "Kraken" },
     { id: 3, name: "FTX" },
-  ]);
-  const [userExchanges, setUserExchanges] = useState([]);
+  ])
+  const [userExchanges, setUserExchanges] = useState([])
   const [selectedBotSettings, setSelectedBotSettings] = useState({
     mode: { id: "", name: "" },
     date: { from: "", to: "" },
     strategy: { id: "", name: "" },
-  });
+  })
+
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
 
   useEffect(() => {
     async function getExchangesList() {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_API_KEY}${EXCHANGES_LIST}`
-        );
+        )
 
         if (response.status !== 200) {
-          const message = `An error has occured: ${response.status}`;
-          throw new Error(message);
+          const message = `An error has occured: ${response.status}`
+          throw new Error(message)
         }
 
-        const data = await response.json();
-        setExchangesList(data);
+        const data = await response.json()
+        setExchangesList(data)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     }
-    getExchangesList();
-  }, []);
+    getExchangesList()
+  }, [])
 
   return (
     <Context.Provider
@@ -59,11 +61,13 @@ function ContextProvider({ children }) {
         selectedBotSettings,
         setSelectedBotSettings,
         BOT_OPTIONS,
+        isDarkTheme,
+        setIsDarkTheme,
       }}
     >
       {children}
     </Context.Provider>
-  );
+  )
 }
 
-export { ContextProvider, Context };
+export { ContextProvider, Context }

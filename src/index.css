@@ -13,15 +13,27 @@
   --warning-color: red;
   --hover-btn-color: rgb(14, 14, 159);
 
+  --base-color: white;
+  --reverse-base-color: black;
+  --base-bg-color-100: white;
+  --base-bg-color-90: whitesmoke;
+  --modal-bg-color: lightgrey;
+  --primary-color: royalblue;
+  --base-field-btns: white;
+  --warning-color: red;
+  --hover-btn-color: rgb(14, 14, 159);
+
   --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 [data-theme="dark"] {
-  --base-color-100: white;
-  --base-color-0: black;
-  --primary-bg-color-0: #181d31;
-  --primary-bg-color-10: #393e46;
-  --primary-color-20: #07102c;
+  --base-color: black;
+  --reverse-base-color: white;
+  --base-bg-color-100: black;
+  --base-bg-color-90: darkgrey;
+  --modal-bg-color: lightgrey;
+  --primary-color: darkblue;
+  --base-field-btns: whitesmoke;
   --warning-color: red;
   --hover-btn-color: rgb(14, 14, 159);
 

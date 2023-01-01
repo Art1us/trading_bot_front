@@ -1,6 +1,7 @@
 .welcome {
   width: 100vw;
   height: calc(100vh - 60px);
+  background-color: var(--base-bg-color-100);
 }
 
 .welcome__container {
@@ -18,7 +19,7 @@
 }
 
 .welcome__button {
-  background-color: var(--primary-color-20);
+  background-color: var(--primary-color);
   height: 200px;
   width: 260px;
   border-radius: 10px;
@@ -29,5 +30,5 @@
 }
 
 .welcome__buttonText {
-  color: white;
+  color: var(--base-field-btns);
 }

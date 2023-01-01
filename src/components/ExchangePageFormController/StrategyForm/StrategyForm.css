@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  background-color: var(--primary-bg-color-10);
+  background-color: var(--base-bg-color-90);
   padding: 20px;
   align-items: center;
   width: 250px;
@@ -30,9 +30,9 @@
 
 .strategyForm__btn {
   width: 65%;
-  background-color: var(--primary-color-20);
+  background-color: var(--primary-color);
   border: none;
-  color: white;
+  color: var(--base-color);
   height: 25px;
   margin-bottom: 20px;
   cursor: pointer;

@@ -17,7 +17,7 @@
 .burgerMenu__content {
   width: 17vw;
   height: 100%;
-  background-color: var(--primary-bg-color-10);
+  background-color: var(--base-bg-color-90);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -59,6 +59,6 @@
 }
 
 .burgerMenu__item p {
-  color: black;
+  color: var(--reverse-base-color);
   display: flex;
 }

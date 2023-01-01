@@ -8,14 +8,14 @@
   margin: auto;
   height: 420px;
   width: 350px;
-  background-color: var(--base-color-100) /* white */;
-  color: var(--base-color-0);
+  background-color: var(--base-bg-color-90);
+  color: var(--reverse-base-color);
   border-radius: 10px;
   z-index: 3;
 }
 
 .newExchangeModal__cross {
-  color: var(--base-color-0);
+  color: var(--reverse-base-color);
   position: absolute;
   top: 10px;
   right: 10px;
@@ -52,11 +52,11 @@
 .newExchangeModal__saveBtn {
   height: 30px;
   font-size: 17px;
-  background-color: var(--primary-color-20);
+  background-color: var(--primary-color);
   color: white;
   cursor: pointer;
   border: transparent;
-  border: 1px solid var(--primary-color-20);
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
 }
 

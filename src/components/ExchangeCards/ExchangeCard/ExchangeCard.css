@@ -4,7 +4,7 @@
   height: 280px;
   border-radius: 20px;
   margin-right: 20px;
-  background-color: var(--primary-bg-color-10);
+  background-color: var(--base-bg-color-90);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 
 .exchangeCard__info {
   width: 100%;
-  color: var(--base-color-0);
+  color: var(--reverse-base-color);
 }
 
 .exchangeCard__currencyInfo {
@@ -63,5 +63,5 @@
 .exchangeCard__currencyInfo--text,
 .exchangeCard__title,
 .exchangeCard__currencyInfo--number {
-  color: base-color-0;
+  color: var(--reverse-base-color);
 }
