@@ -5,11 +5,27 @@
 }
 
 :root {
-  --main-bg-color: white;
-  --second-bg-color: whitesmoke;
-  --primary-color: black;
-  --secondary-color: royalblue;
+  --base-color-100: white;
+  --base-color-0: black;
+  --primary-bg-color-0: #181d31;
+  --primary-bg-color-10: whitesmoke;
+  --primary-color-20: royalblue;
+  --warning-color: red;
   --hover-btn-color: rgb(14, 14, 159);
+
+  --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+[data-theme="dark"] {
+  --base-color-100: white;
+  --base-color-0: black;
+  --primary-bg-color-0: #181d31;
+  --primary-bg-color-10: #393e46;
+  --primary-color-20: #07102c;
+  --warning-color: red;
+  --hover-btn-color: rgb(14, 14, 159);
+
+  --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 img {

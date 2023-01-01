@@ -6,7 +6,7 @@
 .botTable,
 .botTable__header,
 .botTable__cell {
-  border: 1px solid black;
+  border: 1px solid var(--base-color-0);
   border-collapse: collapse;
 }
 
