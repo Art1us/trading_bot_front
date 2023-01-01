@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import "./BurgerMenu.css";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
+import "./BurgerMenu.css"
+import { AiOutlineClose } from "react-icons/ai"
 
 function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
   const burgerMenuItems = [
@@ -10,21 +10,21 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
     { id: 3, value: "Main", link: "/main" },
     { id: 4, value: "Exchange", link: "/exchange" },
     { id: 5, value: "Registration", link: "/register" },
-  ];
+  ]
 
-  const burgerMenuRef = useRef();
+  const burgerMenuRef = useRef()
 
   useEffect(() => {
     function burgerMenuOutsideClose(e) {
       if (e.target !== burgerMenuRef.current) {
-        setBurgerMenuActive(false);
+        setBurgerMenuActive(false)
       }
     }
 
-    document.body.addEventListener("click", burgerMenuOutsideClose);
+    document.body.addEventListener("click", burgerMenuOutsideClose)
     return () =>
-      document.body.removeEventListener("click", burgerMenuOutsideClose);
-  }, []);
+      document.body.removeEventListener("click", burgerMenuOutsideClose)
+  }, [])
 
   return (
     <div
@@ -34,7 +34,10 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
     >
       <div className="burgerMenu__content">
         <div className="burgerMenu__header">
-          <AiOutlineClose onClick={() => setBurgerMenuActive(false)} />
+          <AiOutlineClose
+            onClick={() => setBurgerMenuActive(false)}
+            className="aiOutlineClose"
+          />
         </div>
         <ul className="burgerMenu__list">
           {burgerMenuItems.map((item) => (
@@ -42,16 +45,17 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
               to={item.link}
               key={item.id}
               style={{ textDecoration: "none" }}
+              onClick={() => setBurgerMenuActive(false)}
             >
               <li className="burgerMenu__item">
-                <p className="burgerMenu__paragraph">{item.value}</p>
+                <p>{item.value}</p>
               </li>
             </Link>
           ))}
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-export default BurgerMenu;
+export default BurgerMenu
