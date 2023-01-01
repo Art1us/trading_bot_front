@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export function useMount({ opened }) {
+export const useMount = (opened, animationTime) => {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -9,9 +9,11 @@ export function useMount({ opened }) {
     } else if (!opened && mounted) {
       setTimeout(() => {
         setMounted(false)
-      }, ANIMATION_TIME)
+      }, animationTime)
     }
   }, [opened])
 
-  return { mounted }
+  return {
+    mounted,
+  }
 }

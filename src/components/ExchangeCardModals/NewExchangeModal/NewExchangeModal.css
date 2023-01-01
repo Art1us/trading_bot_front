@@ -12,6 +12,7 @@
   /* white */
   color: var(--primary-color);
   border-radius: 10px;
+  z-index: 3;
 }
 
 .newExchangeModal__cross {

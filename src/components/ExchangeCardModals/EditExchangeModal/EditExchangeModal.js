@@ -1,12 +1,12 @@
 import React, { useContext } from "react"
 import "./EditExchangeModal.css"
-import Portal from "../../../helpers/Portal"
 import { AiOutlineClose } from "react-icons/ai"
 import { Context } from "../../../Context"
 import useForm from "../../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
+import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 
-function EditExchangeModal({ setShowEditModal, exchangeData }) {
+function EditExchangeModal({ showEditModal, setShowEditModal, exchangeData }) {
   const { setUserExchanges } = useContext(Context)
   const { exchange } = exchangeData
   const { inputComponents, isSubmitInvalid, formValues } = useForm(
@@ -35,42 +35,42 @@ function EditExchangeModal({ setShowEditModal, exchangeData }) {
   }
 
   return (
-    <Portal>
-      <div className="editExchangeModal">
-        <div className="editExchangeModal__inner">
-          <AiOutlineClose
-            className="editExchangeModal__cross"
-            onClick={e => closeHandler(e)}
-          />
-          <div className="editExchangeModal__container">
-            <div className="editExchangeModal__title">
-              <h2>{exchange}</h2>
+    <SimpleAnimatedModal
+      opened={showEditModal}
+      onClose={() => setShowEditModal(false)}
+      innerClassName="editExchangeModal__inner"
+    >
+      <AiOutlineClose
+        className="editExchangeModal__cross"
+        onClick={e => closeHandler(e)}
+      />
+      <div className="editExchangeModal__container">
+        <div className="editExchangeModal__title">
+          <h2>{exchange}</h2>
+        </div>
+        <div className="editExchangeModal__formContainer">
+          <form className="editExchangeModal__keyForm" autoComplete="off">
+            {inputComponents}
+            <div className="editExchangeModal_formBtn">
+              <button
+                type="button"
+                className="editExchangeModal__saveBtn"
+                onClick={saveClickHandler}
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="editExchangeModal__deleteBtn"
+                onClick={deleteClickHandler}
+              >
+                Delete
+              </button>
             </div>
-            <div className="editExchangeModal__formContainer">
-              <form className="editExchangeModal__keyForm" autoComplete="off">
-                {inputComponents}
-                <div className="editExchangeModal_formBtn">
-                  <button
-                    type="button"
-                    className="editExchangeModal__saveBtn"
-                    onClick={saveClickHandler}
-                  >
-                    Save
-                  </button>
-                  <button
-                    type="button"
-                    className="editExchangeModal__deleteBtn"
-                    onClick={deleteClickHandler}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
-    </Portal>
+    </SimpleAnimatedModal>
   )
 }
 

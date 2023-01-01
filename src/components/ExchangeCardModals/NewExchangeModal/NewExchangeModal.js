@@ -5,8 +5,7 @@ import "./NewExchangeModal.css"
 import { v4 as uuidv4 } from "uuid"
 import useForm from "../../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
-
-import OverlayingPopup from "../../../helpers/OverlayingPopup/OverlayingPopup"
+import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
   const { exchangesList, setUserExchanges } = useContext(Context)
@@ -24,21 +23,20 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
   }
 
   return (
-    <OverlayingPopup
-      isOpened={showNewModal}
+    <SimpleAnimatedModal
+      opened={showNewModal}
       onClose={() => setShowNewModal(false)}
+      innerClassName="newExchangeModal__inner"
     >
-      <div className="newExchangeModal__inner">
-        <AiOutlineClose
-          className="newExchangeModal__cross"
-          onClick={() => setShowNewModal(false)}
-        />
-        <form className="newExchangeModal__form" onSubmit={submitHandler}>
-          <div className="newExchangeModal__formCol">{inputComponents}</div>
-          <button className="newExchangeModal__saveBtn">Save</button>
-        </form>
-      </div>
-    </OverlayingPopup>
+      <AiOutlineClose
+        className="newExchangeModal__cross"
+        onClick={() => setShowNewModal(false)}
+      />
+      <form className="newExchangeModal__form" onSubmit={submitHandler}>
+        <div className="newExchangeModal__formCol">{inputComponents}</div>
+        <button className="newExchangeModal__saveBtn">Save</button>
+      </form>
+    </SimpleAnimatedModal>
   )
 }
 
