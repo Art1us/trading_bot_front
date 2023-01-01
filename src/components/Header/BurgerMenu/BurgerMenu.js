@@ -29,18 +29,18 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
   return (
     <div
       ref={burgerMenuRef}
-      onClick={(e) => e.stopPropagation()}
+      onClick={e => e.stopPropagation()}
       className={`burgerMenu ${burgerMenuActive ? "activeMenu" : ""}`}
     >
       <div className="burgerMenu__content">
         <div className="burgerMenu__header">
           <AiOutlineClose
             onClick={() => setBurgerMenuActive(false)}
-            className="aiOutlineClose"
+            style={{ cursor: "pointer" }}
           />
         </div>
         <ul className="burgerMenu__list">
-          {burgerMenuItems.map((item) => (
+          {burgerMenuItems.map(item => (
             <Link
               to={item.link}
               key={item.id}
