@@ -50,15 +50,22 @@
   justify-content: space-between;
 }
 
-.exchangeCard__pencil {
+.exchangeCard__pencil,
+.exchangeCard__trash {
   position: absolute;
   top: 15px;
-  right: 15px;
+  left: 15px;
   font-size: 20px;
   color: var(--reverse-base-color);
 }
 
-.exchangeCard__pencil:hover {
+.exchangeCard__trash {
+  left: auto;
+  right: 15px;
+}
+
+.exchangeCard__pencil:hover,
+.exchangeCard__trash:hover {
   color: rgb(79, 79, 79);
 }
 
