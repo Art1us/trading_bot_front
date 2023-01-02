@@ -1,14 +1,18 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "./ExchangeCard.css"
 import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
 import { BiPencil } from "react-icons/bi"
+import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
 
 function ExchangeCard(props) {
   const { exchange, img, publicKey } = props
 
+  let navigate = useNavigate()
+
   const [hovered, setHovered] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
+  const [exchangeSelected, setExchangeSelected] = useState(false)
 
   function mouseEnterHandler() {
     setHovered(true)
@@ -23,18 +27,24 @@ function ExchangeCard(props) {
     setShowEditModal(true)
   }
 
+  function clickHandler() {
+    setExchangeSelected(true)
+    setTimeout(() => navigate("/exchange"), 100)
+  }
+
   return (
-    <>
-      <EditExchangeModal
-        showEditModal={showEditModal}
-        setShowEditModal={setShowEditModal}
-        exchangeData={props}
-      />
-      <Link to="/exchange" style={{ textDecoration: "none" }}>
+    <ExchangeOpenAnimation opened={!exchangeSelected}>
+      <>
+        <EditExchangeModal
+          showEditModal={showEditModal}
+          setShowEditModal={setShowEditModal}
+          exchangeData={props}
+        />
         <div
           className="exchangeCard"
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
+          onClick={clickHandler}
         >
           {hovered && (
             <BiPencil
@@ -61,8 +71,8 @@ function ExchangeCard(props) {
             </div>
           </div>
         </div>
-      </Link>
-    </>
+      </>
+    </ExchangeOpenAnimation>
   )
 }
 
