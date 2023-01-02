@@ -2,7 +2,6 @@
     animation: unfoldOut 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-
 @keyframes unfoldOut {
     0% {
         transform: scaleY(1) scaleX(1);
@@ -10,11 +9,9 @@
 
     80% {
         transform: scaleY(0.90) scaleX(0.90);
-
     }
 
     100% {
         transform: scaleY(1) scaleX(1);
-
     }
 }

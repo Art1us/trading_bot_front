@@ -7,10 +7,10 @@ const exchangeOpenAnimation = {
   exitActive: animationStyles.exchangeOpenAnimationExitActive,
 }
 
-export function ExchangeOpenAnimation({ children, exchangeSelected }) {
+export function ExchangeOpenAnimation({ children, opened }) {
   return (
     <CSSTransition
-      in={!exchangeSelected}
+      in={opened}
       timeout={ANIMATION_TIME}
       unmountOnExit
       classNames={exchangeOpenAnimation}

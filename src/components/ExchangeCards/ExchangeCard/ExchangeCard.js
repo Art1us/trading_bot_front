@@ -33,7 +33,7 @@ function ExchangeCard(props) {
   }
 
   return (
-    <ExchangeOpenAnimation exchangeSelected={exchangeSelected}>
+    <ExchangeOpenAnimation opened={!exchangeSelected}>
       <>
         <EditExchangeModal
           showEditModal={showEditModal}
