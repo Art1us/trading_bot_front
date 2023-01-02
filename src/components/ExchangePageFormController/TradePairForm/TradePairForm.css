@@ -1,0 +1,43 @@
+.tradePairForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.tradePairForm__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  background-color: var(--primary-bg-color-10);
+  padding: 20px;
+  align-items: center;
+  width: 250px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  border-radius: 5px;
+}
+
+.tradePairForm__title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tradePairForm__select {
+  width: 65%;
+  height: 25px;
+}
+
+.tradePairForm__btn {
+  width: 65%;
+  background-color: var(--primary-color-20);
+  border: none;
+  color: white;
+  height: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.tradePairForm__btn:hover {
+  background-color: var(--hover-btn-color);
+}

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./SelectionsHeader.css";
-import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSelection";
-import CustomDateSelection from "../CustomDateSelection/CustomDateSelection";
+import React, { useState } from "react"
+import "./SelectionsHeader.css"
+import CustomDropdownSelection from "../CustomDropdownSelection/CustomDropdownSelection"
+import CustomDateSelection from "../CustomDateSelection/CustomDateSelection"
 
 function ModeSelections({ formStep }) {
-  const [displayedDropdown, setDisplayedDropdown] = useState("0");
+  const [displayedDropdown, setDisplayedDropdown] = useState("0")
 
   return (
     <div className="selectionsHeader">
@@ -26,6 +26,13 @@ function ModeSelections({ formStep }) {
         )}
         {formStep > 2 && (
           <CustomDropdownSelection
+            id="pair"
+            displayedDropdown={displayedDropdown}
+            setDisplayedDropdown={setDisplayedDropdown}
+          />
+        )}
+        {formStep > 3 && (
+          <CustomDropdownSelection
             id="strategy"
             displayedDropdown={displayedDropdown}
             setDisplayedDropdown={setDisplayedDropdown}
@@ -33,7 +40,7 @@ function ModeSelections({ formStep }) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default ModeSelections;
+export default ModeSelections
