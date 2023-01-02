@@ -1,7 +1,6 @@
 import React from "react"
 import "./Welcome.css"
 import { Link } from "react-router-dom"
-<<<<<<< Updated upstream
 import imgWelcome from "../../assets/pictures/imgWelcome.png"
 
 function Welcome() {
@@ -51,41 +50,8 @@ function Welcome() {
           Privacy
         </Link>
       </footer>
-=======
-
-function Welcome() {
-  return (
-    <div className="welcome">
-      <div class="welcome__title-section">
-        <h1 class="welcome__main-title">Беспроводные наушники Beats Solo 3</h1>
-        <div class="welcome__title-desc">
-          Встречайте новую версию наушников из линейки Powerbeats.
-        </div>
-        <a href="#" class="welcome v--theme--red">
-          Заказать
-        </a>
-      </div>
->>>>>>> Stashed changes
     </div>
   )
 }
 
 export default Welcome
-<<<<<<< Updated upstream
-=======
-
-{
-  /* <div className="welcome__container">
-<Link to="/login" style={{ textDecoration: "none" }}>
-  <div className="welcome__button">
-    <h1 className="welcome__buttonText">Login</h1>
-  </div>
-</Link>
-<Link to="/register" style={{ textDecoration: "none" }}>
-  <div className="welcome__button">
-    <h1 className="welcome__buttonText">Register</h1>
-  </div>
-</Link>
-</div> */
-}
->>>>>>> Stashed changes
