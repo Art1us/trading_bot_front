@@ -1,17 +1,21 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import { Context } from "../../../Context"
 import "./ExchangeCard.css"
 import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
-import { BiPencil } from "react-icons/bi"
+import DeleteExchangeModal from "../../ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
+import { BiPencil, BiTrash } from "react-icons/bi"
 import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
 
-function ExchangeCard(props) {
-  const { exchange, img, publicKey } = props
+function ExchangeCard(exchangeData) {
+  const { id, exchange, img, publicKey } = exchangeData
+  const { setUserExchanges } = useContext(Context)
 
   let navigate = useNavigate()
 
   const [hovered, setHovered] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [exchangeSelected, setExchangeSelected] = useState(false)
 
   function mouseEnterHandler() {
@@ -23,8 +27,13 @@ function ExchangeCard(props) {
 
   function editClickHandler(e) {
     e.stopPropagation()
-    e.preventDefault()
     setShowEditModal(true)
+  }
+
+  function deleteCLickHandler(e) {
+    e.stopPropagation()
+    e.preventDefault()
+    setShowDeleteModal(true)
   }
 
   function clickHandler() {
@@ -38,7 +47,12 @@ function ExchangeCard(props) {
         <EditExchangeModal
           showEditModal={showEditModal}
           setShowEditModal={setShowEditModal}
-          exchangeData={props}
+          exchangeData={exchangeData}
+        />
+        <DeleteExchangeModal
+          showDeleteModal={showDeleteModal}
+          setShowDeleteModal={setShowDeleteModal}
+          exchangeData={exchangeData}
         />
         <div
           className="exchangeCard"
@@ -47,10 +61,17 @@ function ExchangeCard(props) {
           onClick={clickHandler}
         >
           {hovered && (
-            <BiPencil
-              className="exchangeCard__pencil"
-              onClick={editClickHandler}
-            />
+            <>
+              <BiPencil
+                className="exchangeCard__pencil"
+                onClick={editClickHandler}
+              />
+
+              <BiTrash
+                className="exchangeCard__trash"
+                onClick={deleteCLickHandler}
+              />
+            </>
           )}
           <div className="exchangeCard__logo">
             <img
