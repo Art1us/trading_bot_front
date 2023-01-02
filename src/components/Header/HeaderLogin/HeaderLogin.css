@@ -1,0 +1,68 @@
+.headerLogin__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+
+.headerLogin__btnLog {
+  -webkit-box-align: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid royalblue;
+  border-radius: 8px;
+  display: inline-flex;
+  color: #3861fb;
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 76px;
+  height: 34px;
+  font-size: 12px;
+}
+
+.headerLogin__btn:hover {
+  background-color: white;
+  color: royalblue;
+}
+
+.headerLogin__btnSign {
+  -webkit-box-align: center;
+  align-items: center;
+  background: rgb(56, 97, 251);
+  border: 0px;
+  border-radius: 8px;
+  display: inline-flex;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 76px;
+  height: 34px;
+  font-size: 12px;
+  border-radius: 2px solid royalblue;
+}
+
+.headerLogin__btnLog:hover {
+  background-color: #e7e7e8;
+}
+
+.headerLogin__btnSign:hover {
+  background: rgb(32, 79, 247);
+}
+
+.header__userName {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  line-height: 100%;
+}
+
+.headerUser__signIn {
+  width: 175px;
+  display: flex;
+}

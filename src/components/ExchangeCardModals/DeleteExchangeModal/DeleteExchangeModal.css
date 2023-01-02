@@ -1,0 +1,30 @@
+.deleteExchangeModal__inner {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 290px;
+    margin: auto;
+    height: fit-content;
+    background-color: var(--base-color-100);
+    color: var(--base-color-0);
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.deleteExchangeModal__container {
+    background-color: white;
+    margin: 15px;
+}
+
+.deleteExchangeModal__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteExchangeModal__button--del,
+.deleteExchangeModal__button--cncl {
+    cursor: pointer;
+    width: 45%;
+}

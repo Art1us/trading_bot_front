@@ -9,8 +9,10 @@ import { BsFillMoonFill } from "react-icons/bs"
 import botLogo from "../../assets/pictures/logo-bot.png"
 import LanguageDropdown from "./LanguageDropdown/LanguageDropdown"
 import ReactSwitch from "react-switch"
+import HeaderLogin from "./HeaderLogin/HeaderLogin"
 
 function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [burgerMenuActive, setBurgerMenuActive] = useState(false)
   const [displayDropdownActive, setDisplayDropdownActive] = useState(false)
   const [theme, setTheme] = useState(false)
@@ -84,15 +86,23 @@ function Header() {
               ""
             )}
           </div>
-          <div className="header__elements--hover">
-            <RxHamburgerMenu
-              className="header__elments-item--right"
-              onClick={burgerMenuClickHandler}
-            />
+          <div className="headerUser__signIn">
+            {isLoggedIn ? (
+              <>
+                <p className="header__userName">Hello username</p>
+                <div className="header__elements--hover">
+                  <RxHamburgerMenu
+                    className="header__elments-item--right"
+                    onClick={burgerMenuClickHandler}
+                  />
+                </div>
+              </>
+            ) : (
+              <HeaderLogin setIsLoggedIn={setIsLoggedIn} />
+            )}
           </div>
         </div>
       </div>
-
       <BurgerMenu
         burgerMenuActive={burgerMenuActive}
         setBurgerMenuActive={setBurgerMenuActive}
