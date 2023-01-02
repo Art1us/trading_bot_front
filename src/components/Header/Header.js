@@ -1,33 +1,35 @@
-import React, { useState } from "react";
-import "./Header.css";
-import BurgerMenu from "./BurgerMenu/BurgerMenu";
-import { Link } from "react-router-dom";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { RiGlobalLine } from "react-icons/ri";
-import { BsFillSunFill } from "react-icons/bs";
-import { BsFillMoonFill } from "react-icons/bs";
-import botLogo from "../../assets/pictures/logo-bot.png";
-import LanguageDropdown from "./LanguageDropdown/LanguageDropdown";
-import ReactSwitch from "react-switch";
+import React, { useState } from "react"
+import "./Header.css"
+import BurgerMenu from "./BurgerMenu/BurgerMenu"
+import { Link } from "react-router-dom"
+import { RxHamburgerMenu } from "react-icons/rx"
+import { RiGlobalLine } from "react-icons/ri"
+import { BsFillSunFill } from "react-icons/bs"
+import { BsFillMoonFill } from "react-icons/bs"
+import botLogo from "../../assets/pictures/logo-bot.png"
+import LanguageDropdown from "./LanguageDropdown/LanguageDropdown"
+import ReactSwitch from "react-switch"
+import HeaderLogin from "./HeaderLogin/HeaderLogin"
 
 function Header() {
-  const [burgerMenuActive, setBurgerMenuActive] = useState(false);
-  const [displayDropdownActive, setDisplayDropdownActive] = useState(false);
-  const [theme, setTheme] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [burgerMenuActive, setBurgerMenuActive] = useState(false)
+  const [displayDropdownActive, setDisplayDropdownActive] = useState(false)
+  const [theme, setTheme] = useState(false)
 
   function toggleTheme() {
-    setTheme((curr) => !curr);
-    console.log("he's alive!");
+    setTheme(curr => !curr)
+    console.log("he's alive!")
   }
 
   function languageClickHandler(e) {
-    e.stopPropagation();
-    setDisplayDropdownActive((prev) => !prev);
+    e.stopPropagation()
+    setDisplayDropdownActive(prev => !prev)
   }
 
   function burgerMenuClickHandler(e) {
-    e.stopPropagation();
-    setBurgerMenuActive((prev) => !prev);
+    e.stopPropagation()
+    setBurgerMenuActive(prev => !prev)
   }
 
   return (
@@ -84,21 +86,29 @@ function Header() {
               ""
             )}
           </div>
-          <div className="header__elements--hover">
-            <RxHamburgerMenu
-              className="header__elments-item--right"
-              onClick={burgerMenuClickHandler}
-            />
+          <div className="headerUser__signIn">
+            {isLoggedIn ? (
+              <>
+                <p className="header__userName">Hello username</p>
+                <div className="header__elements--hover">
+                  <RxHamburgerMenu
+                    className="header__elments-item--right"
+                    onClick={burgerMenuClickHandler}
+                  />
+                </div>
+              </>
+            ) : (
+              <HeaderLogin setIsLoggedIn={setIsLoggedIn} />
+            )}
           </div>
         </div>
       </div>
-
       <BurgerMenu
         burgerMenuActive={burgerMenuActive}
         setBurgerMenuActive={setBurgerMenuActive}
       />
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
