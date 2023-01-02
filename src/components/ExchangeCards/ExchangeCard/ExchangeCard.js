@@ -52,6 +52,7 @@ function ExchangeCard(exchangeData) {
         <DeleteExchangeModal
           showDeleteModal={showDeleteModal}
           setShowDeleteModal={setShowDeleteModal}
+          exchangeData={exchangeData}
         />
         <div
           className="exchangeCard"

@@ -1,11 +1,20 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./DeleteExchangeModal.css"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
+import { Context } from "../../../Context"
 
-function DeleteExchangeModal({ showDeleteModal, setShowDeleteModal }) {
+function DeleteExchangeModal({
+  showDeleteModal,
+  setShowDeleteModal,
+  exchangeData,
+}) {
+  const { setUserExchanges } = useContext(Context)
+
   function yesClickHandler() {
     setShowDeleteModal(false)
-    //setUserExchanges(prev => [...prev.filter(exch => exch.id !== id)])
+    setUserExchanges(prev => [
+      ...prev.filter(exch => exch.id !== exchangeData.id),
+    ])
   }
 
   function noClickHandler() {
