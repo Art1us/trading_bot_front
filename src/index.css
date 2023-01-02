@@ -5,39 +5,39 @@
 }
 
 :root {
-  --base-color-100: white;
-  --base-color-0: black;
-  --primary-bg-color-0: #181d31;
-  --primary-bg-color-10: whitesmoke;
-  --primary-color-20: royalblue;
-  --warning-color: red;
-  --hover-btn-color: rgb(14, 14, 159);
-
   --base-color: white;
   --reverse-base-color: black;
   --base-bg-color-100: white;
   --base-bg-color-90: whitesmoke;
-  --modal-bg-color: lightgrey;
+  --modal-bg-color: white;
+  --input-bg-color: white;
+  --placeholder-base-color: lightgrey;
   --primary-color: royalblue;
   --base-field-btns: white;
   --warning-color: red;
+  --hover-bg-color: rgb(228, 228, 228);
   --hover-btn-color: rgb(14, 14, 159);
 
   --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --logo-shadow: rgba(0, 0, 0, 0.804);
 }
 
 [data-theme="dark"] {
   --base-color: black;
   --reverse-base-color: white;
-  --base-bg-color-100: black;
-  --base-bg-color-90: darkgrey;
-  --modal-bg-color: lightgrey;
-  --primary-color: darkblue;
+  --base-bg-color-100: rgb(42, 42, 42);
+  --base-bg-color-90: rgb(76, 76, 76);
+  --modal-bg-color: darkgrey;
+  --input-bg-color: rgb(103, 103, 103);
+  --placeholder-base-color: darkgrey;
+  --primary-color: rgb(1, 1, 110);
   --base-field-btns: whitesmoke;
   --warning-color: red;
+  --hover-bg-color: rgb(138, 138, 138);
   --hover-btn-color: rgb(14, 14, 159);
 
-  --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --base-box-shadow: rgba(203, 203, 203, 0.329) 0px 3px 8px;
+  --logo-shadow: rgba(152, 152, 152, 0.804);
 }
 
 img {

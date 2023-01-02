@@ -8,7 +8,7 @@
   margin: auto;
   height: 420px;
   width: 350px;
-  background-color: var(--base-bg-color-90);
+  background-color: var(--base-bg-color-100);
   color: var(--reverse-base-color);
   border-radius: 10px;
   z-index: 3;

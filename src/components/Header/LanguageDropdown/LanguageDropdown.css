@@ -2,7 +2,7 @@
   position: absolute;
   top: 60px;
   z-index: 2;
-  color: var(--reverse-base-color);
+  color: black;
 }
 
 .languageDropdown__topContainer--triangle {
@@ -19,7 +19,7 @@
 
 .languageDropdown__topContainerBorder--triangle {
   top: -25px;
-  border-color: transparent transparent var(--base-bg-color-100) transparent;
+  border-color: transparent transparent var(--modal-bg-color) transparent;
 }
 
 .languageDropdown__container {
@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--base-bg-color-100);
+  background-color: var(--modal-bg-color);
   border-bottom: 2px solid rgb(239.561, 239.561, 239.561);
   border-radius: 5px;
   padding: 20px;

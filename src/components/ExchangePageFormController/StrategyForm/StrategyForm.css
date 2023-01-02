@@ -14,7 +14,7 @@
   padding: 20px;
   align-items: center;
   width: 250px;
-  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
   border-radius: 5px;
 }
 
@@ -32,7 +32,7 @@
   width: 65%;
   background-color: var(--primary-color);
   border: none;
-  color: var(--base-color);
+  color: white;
   height: 25px;
   margin-bottom: 20px;
   cursor: pointer;

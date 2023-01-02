@@ -1,17 +1,17 @@
-import React from "react";
-import "./Login.css";
-import { useNavigate, Link } from "react-router-dom";
-import useForm from "../../hooks/useForm/useForm";
-import formInputsData from "./formInputsData/formInputsData";
+import React from "react"
+import "./Login.css"
+import { useNavigate, Link } from "react-router-dom"
+import useForm from "../../hooks/useForm/useForm"
+import formInputsData from "./formInputsData/formInputsData"
 
 function Login() {
-  const navigate = useNavigate();
-  const { inputComponents, isSubmitInvalid } = useForm(formInputsData);
+  const navigate = useNavigate()
+  const { inputComponents, isSubmitInvalid } = useForm(formInputsData)
 
   function submitHandler(e) {
-    e.preventDefault();
-    if (isSubmitInvalid()) return;
-    navigate("/main");
+    e.preventDefault()
+    if (isSubmitInvalid()) return
+    navigate("/main")
   }
 
   return (
@@ -29,7 +29,7 @@ function Login() {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

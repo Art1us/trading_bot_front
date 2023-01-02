@@ -5,7 +5,7 @@
   border-radius: 20px;
   margin-right: 20px;
   background-color: var(--base-bg-color-90);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,11 +14,13 @@
   padding: 30px;
   transition: transform 0.1s ease-in;
   text-align: center;
+  color: var(--reverse-base-color);
 }
 
 .exchangeCard:hover {
-  background-color: rgb(228, 228, 228);
+  background-color: var(--hover-bg-color);
   transform: scale(1.03);
+  color: black;
 }
 
 .exchangeCard__logo {
@@ -53,7 +55,7 @@
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: gray;
+  color: var(--reverse-base-color);
 }
 
 .exchangeCard__pencil:hover {

@@ -1,6 +1,6 @@
 .welcome {
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 56px);
   background-color: var(--base-bg-color-100);
 }
 
@@ -27,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: var(--base-box-shadow);
 }
 
 .welcome__buttonText {

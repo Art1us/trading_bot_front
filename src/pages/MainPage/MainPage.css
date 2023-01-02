@@ -5,7 +5,7 @@
 
 .main__container {
   max-width: 1200px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 56px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
 }
 
 .main__titleContainer {
+  color: var(--reverse-base-color);
   margin-top: 40px;
 }
 
