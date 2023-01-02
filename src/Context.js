@@ -30,6 +30,9 @@ function ContextProvider({ children }) {
   })
 
   const [isDarkTheme, setIsDarkTheme] = useState(false)
+  useEffect(() => {
+    document.body.setAttribute("data-theme", isDarkTheme ? "dark" : "light")
+  }, [isDarkTheme])
 
   useEffect(() => {
     async function getExchangesList() {

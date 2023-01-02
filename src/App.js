@@ -1,6 +1,4 @@
 import "./App.css"
-import { useContext } from "react"
-import { Context } from "./Context"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./components/Header/Header"
 import Welcome from "./pages/Welcome/Welcome"
@@ -10,10 +8,8 @@ import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 
 function App() {
-  const { isDarkTheme } = useContext(Context)
-
   return (
-    <div className="app" data-theme={isDarkTheme ? "dark" : "light"}>
+    <div className="app">
       <BrowserRouter>
         <Header />
         <Routes>
