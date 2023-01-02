@@ -54,7 +54,7 @@
   background: rgb(32, 79, 247);
 }
 
-.heder__userName {
+.header__userName {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -62,7 +62,7 @@
   line-height: 100%;
 }
 
-.burgerMenu__user {
+.headerUser__signIn {
   width: 175px;
   display: flex;
 }

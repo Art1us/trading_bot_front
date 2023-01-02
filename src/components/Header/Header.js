@@ -86,10 +86,10 @@ function Header() {
               ""
             )}
           </div>
-          <div className="burgerMenu__user">
+          <div className="headerUser__signIn">
             {isLoggedIn ? (
               <>
-                <p className="heder__userName">Hello username</p>
+                <p className="header__userName">Hello username</p>
                 <div className="header__elements--hover">
                   <RxHamburgerMenu
                     className="header__elments-item--right"
