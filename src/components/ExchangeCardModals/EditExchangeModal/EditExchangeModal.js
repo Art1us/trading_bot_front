@@ -1,14 +1,14 @@
 import React, { useContext } from "react"
 import "./EditExchangeModal.css"
 import { AiOutlineClose } from "react-icons/ai"
-import { Context } from "../../../Context"
 import useForm from "../../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
+import { Context } from "../../../Context"
 
 function EditExchangeModal({ showEditModal, setShowEditModal, exchangeData }) {
-  const { setUserExchanges } = useContext(Context)
   const { exchange } = exchangeData
+  const { setUserExchanges } = useContext(Context)
   const { inputComponents, isSubmitInvalid, formValues } = useForm(
     formInputsData,
     exchangeData
@@ -22,13 +22,6 @@ function EditExchangeModal({ showEditModal, setShowEditModal, exchangeData }) {
     setShowEditModal(false)
   }
 
-  function deleteClickHandler() {
-    setUserExchanges(prev => [
-      ...prev.filter(exch => exch.id !== exchangeData.id),
-    ])
-    setShowEditModal(false)
-  }
-
   function closeHandler(e) {
     e.preventDefault()
     setShowEditModal(false)
@@ -37,7 +30,10 @@ function EditExchangeModal({ showEditModal, setShowEditModal, exchangeData }) {
   return (
     <SimpleAnimatedModal
       opened={showEditModal}
-      onClose={() => setShowEditModal(false)}
+      onClose={e => {
+        e.stopPropagation()
+        setShowEditModal(false)
+      }}
       innerClassName="editExchangeModal__inner"
     >
       <AiOutlineClose
@@ -58,13 +54,6 @@ function EditExchangeModal({ showEditModal, setShowEditModal, exchangeData }) {
                 onClick={saveClickHandler}
               >
                 Save
-              </button>
-              <button
-                type="button"
-                className="editExchangeModal__deleteBtn"
-                onClick={deleteClickHandler}
-              >
-                Delete
               </button>
             </div>
           </form>
