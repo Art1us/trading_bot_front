@@ -2,6 +2,7 @@ import React from "react"
 import "./Welcome.css"
 import { Link } from "react-router-dom"
 import imgWelcome from "../../assets/pictures/imgWelcome.png"
+import Footer from "../Footer/Footer"
 
 function Welcome() {
   return (
@@ -27,29 +28,18 @@ function Welcome() {
           <img src={imgWelcome} alt="bot" className="welcomeImg__img" />
         </div>
       </div>
-      <footer className="welcome__footer">
-        <div className="footerText">© 2023 TradingBot Inc</div>
-        <div className="footer__bullet"></div>
-        <Link href="" className="footer__link">
-          Developers
-        </Link>
-        <div className="footer__bullet"></div>
-        <Link to={""} className="footer__link">
-          Support
-        </Link>
-        <div className="footer__bullet"></div>
-        <Link to={""} className="footer__link">
-          Careers
-        </Link>
-        <div className="footer__bullet"></div>
-        <Link to={""} className="footer__link">
-          Terms
-        </Link>
-        <div className="footer__bullet"></div>
-        <Link to={""} className="footer__link">
-          Privacy
-        </Link>
-      </footer>
+
+      <Footer />
+      {/* <footer className="welcome__footer">
+        <ul className="footer__list">
+          <li className="footer__item footer__title">© 2023 TradingBot Inc</li>
+          <li className="footer__item">Developers</li>
+          <li className="footer__item">Developers</li>
+          <li className="footer__item">Developers</li>
+          <li className="footer__item">Developers</li>
+          <li className="footer__item">Developers</li>
+        </ul>
+      </footer> */}
     </div>
   )
 }

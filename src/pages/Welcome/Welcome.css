@@ -105,7 +105,6 @@
   align-items: center;
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  font-family: Ppagrandir, sans-serif;
 }
 
 .footerText {
@@ -126,4 +125,17 @@
   line-height: 20px;
   text-decoration: none;
   color: black;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__item {
+  margin-right: 30px;
+}
+
+.footer__title {
+  list-style: none;
 }
