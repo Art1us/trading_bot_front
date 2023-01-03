@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./Header.css"
 import BurgerMenu from "./BurgerMenu/BurgerMenu"
+import HeaderLogin from "./HeaderLogin/HeaderLogin"
 import { Link } from "react-router-dom"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { RiGlobalLine } from "react-icons/ri"
@@ -11,6 +12,7 @@ import ThemeToggle from "./ThemeToggle/ThemeToggle"
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false)
   const [displayDropdownActive, setDisplayDropdownActive] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   function languageClickHandler(e) {
     e.stopPropagation()

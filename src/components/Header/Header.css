@@ -63,3 +63,7 @@
   cursor: pointer;
   margin-left: 100px;
 }
+
+.header__userName {
+  color: var(--inversed-base-color);
+}

@@ -1,15 +1,13 @@
 .welcome {
   width: 100vw;
-  height: calc(100vh - 56px);
   background-color: var(--base-bg-color-100);
+  color: var(--inversed-base-color);
 }
 
 .welcome__container {
-  width: 100vw;
   max-width: 1100px;
   margin: 0 auto;
   height: calc(100vh - 56px);
-  background-color: var(--base-bg-color-100);
 }
 
 .welcome__wrapper {
