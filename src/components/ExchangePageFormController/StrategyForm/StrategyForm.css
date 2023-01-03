@@ -26,6 +26,7 @@
 .strategyForm__select {
   width: 65%;
   height: 25px;
+  background-color: var(--input-bg-color);
 }
 
 .strategyForm__btn {
