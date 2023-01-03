@@ -6,11 +6,20 @@
 .footer__item {
   margin-right: 30px;
   color: black;
+  font-weight: 600;
+}
+
+.footer__item:hover {
+  color: rgb(73, 73, 73);
+}
+
+.footer__title:hover {
+  color: black;
 }
 
 .footer__container {
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
   display: flex;
   align-items: center;
 }

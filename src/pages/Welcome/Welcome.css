@@ -1,14 +1,15 @@
 .welcome__container {
   max-width: 1100px;
   margin: 0 auto;
+  height: calc(100vh - 56px);
 }
 
 .welcome__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: calc(100vh - 56px);
   position: relative;
+  height: 90%;
 }
 
 .welcome__title-section {
