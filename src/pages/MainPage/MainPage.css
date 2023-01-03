@@ -13,7 +13,7 @@
 }
 
 .main__titleContainer {
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
   margin-top: 40px;
 }
 

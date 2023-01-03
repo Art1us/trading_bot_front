@@ -4,10 +4,10 @@
   padding-left: 5px;
   padding-right: 10px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   outline: none;
   background-color: var(--input-bg-color);
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
 }
 
 .formInput__defaultInputStyles::placeholder {
@@ -19,7 +19,7 @@
 }
 
 .formInput__defaultInputStyles:focus {
-  border: 2px solid black;
+  border: 2px solid var(--black-color);
 }
 
 .formInput__defaultInputStyles[type="password"] {

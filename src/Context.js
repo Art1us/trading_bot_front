@@ -29,9 +29,13 @@ function ContextProvider({ children }) {
     strategy: { id: "", name: "" },
   })
 
-  const [isDarkTheme, setIsDarkTheme] = useState(false)
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    JSON.parse(localStorage.getItem("isDarkTheme"))
+  )
+
   useEffect(() => {
     document.body.setAttribute("data-theme", isDarkTheme ? "dark" : "light")
+    JSON.stringify(localStorage.setItem("isDarkTheme", isDarkTheme))
   }, [isDarkTheme])
 
   useEffect(() => {

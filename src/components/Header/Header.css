@@ -22,7 +22,7 @@
 }
 
 .header__title {
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
   cursor: pointer;
   text-align: center;
 }
@@ -34,7 +34,7 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
 }
 
 .header__elements--hover {
@@ -48,7 +48,7 @@
 }
 
 .header__elements--hover:hover {
-  background-color: rgb(199, 199, 199);
+  background-color: var(--hover-bg-color);
 }
 
 .header__logo img {

@@ -14,13 +14,13 @@
   padding: 30px;
   transition: transform 0.1s ease-in;
   text-align: center;
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
 }
 
 .exchangeCard:hover {
   background-color: var(--hover-bg-color);
   transform: scale(1.03);
-  color: black;
+  color: var(--black-color);
 }
 
 .exchangeCard__logo {
@@ -41,7 +41,7 @@
 
 .exchangeCard__info {
   width: 100%;
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
 }
 
 .exchangeCard__currencyInfo {
@@ -56,7 +56,7 @@
   top: 15px;
   left: 15px;
   font-size: 20px;
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
 }
 
 .exchangeCard__trash {
@@ -72,5 +72,5 @@
 .exchangeCard__currencyInfo--text,
 .exchangeCard__title,
 .exchangeCard__currencyInfo--number {
-  color: var(--reverse-base-color);
+  color: var(--inversed-base-color);
 }

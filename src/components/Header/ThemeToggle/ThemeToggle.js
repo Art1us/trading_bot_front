@@ -1,9 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./ThemeToggle.css"
 import ReactSwitch from "react-switch"
 import { BsFillSunFill } from "react-icons/bs"
 import { BsFillMoonFill } from "react-icons/bs"
-import { useContext } from "react"
 import { Context } from "../../../Context"
 
 function ThemeToggle() {

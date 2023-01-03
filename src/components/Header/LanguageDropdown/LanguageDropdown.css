@@ -2,7 +2,7 @@
   position: absolute;
   top: 60px;
   z-index: 2;
-  color: black;
+  color: var(--black-color);
 }
 
 .languageDropdown__topContainer--triangle {

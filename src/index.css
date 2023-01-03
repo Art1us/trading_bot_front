@@ -5,8 +5,10 @@
 }
 
 :root {
+  --white-color: white;
+  --black-color: black;
   --base-color: white;
-  --reverse-base-color: black;
+  --inversed-base-color: black;
   --base-bg-color-100: white;
   --base-bg-color-90: whitesmoke;
   --modal-bg-color: white;
@@ -23,8 +25,10 @@
 }
 
 [data-theme="dark"] {
+  --white-color: white;
+  --black-color: black;
   --base-color: black;
-  --reverse-base-color: white;
+  --inversed-base-color: white;
   --base-bg-color-100: rgb(42, 42, 42);
   --base-bg-color-90: rgb(76, 76, 76);
   --modal-bg-color: darkgrey;

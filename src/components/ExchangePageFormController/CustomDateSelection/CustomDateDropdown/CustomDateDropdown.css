@@ -47,5 +47,5 @@
 
 .customDateDropdown__startBtn:hover {
   background-color: var(--hover-btn-color);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
 }
