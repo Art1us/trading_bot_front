@@ -48,15 +48,23 @@ function Header() {
               ""
             )}
           </div>
-          <div className="header__elements--hover">
-            <RxHamburgerMenu
-              className="header__elments-item--right"
-              onClick={burgerMenuClickHandler}
-            />
+          <div className="headerUser__signIn">
+            {isLoggedIn ? (
+              <>
+                <p className="header__userName">Hello username</p>
+                <div className="header__elements--hover">
+                  <RxHamburgerMenu
+                    className="header__elments-item--right"
+                    onClick={burgerMenuClickHandler}
+                  />
+                </div>
+              </>
+            ) : (
+              <HeaderLogin setIsLoggedIn={setIsLoggedIn} />
+            )}
           </div>
         </div>
       </div>
-
       <BurgerMenu
         burgerMenuActive={burgerMenuActive}
         setBurgerMenuActive={setBurgerMenuActive}

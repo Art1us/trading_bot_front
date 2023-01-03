@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import "./BurgerMenu.css";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
+import "./BurgerMenu.css"
+import { AiOutlineClose } from "react-icons/ai"
 
 function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
   const burgerMenuItems = [
@@ -10,26 +10,26 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
     { id: 3, value: "Main", link: "/main" },
     { id: 4, value: "Exchange", link: "/exchange" },
     { id: 5, value: "Registration", link: "/register" },
-  ];
+  ]
 
-  const burgerMenuRef = useRef();
+  const burgerMenuRef = useRef()
 
   useEffect(() => {
     function burgerMenuOutsideClose(e) {
       if (e.target !== burgerMenuRef.current) {
-        setBurgerMenuActive(false);
+        setBurgerMenuActive(false)
       }
     }
 
-    document.body.addEventListener("click", burgerMenuOutsideClose);
+    document.body.addEventListener("click", burgerMenuOutsideClose)
     return () =>
-      document.body.removeEventListener("click", burgerMenuOutsideClose);
-  }, []);
+      document.body.removeEventListener("click", burgerMenuOutsideClose)
+  }, [])
 
   return (
     <div
       ref={burgerMenuRef}
-      onClick={(e) => e.stopPropagation()}
+      onClick={e => e.stopPropagation()}
       className={`burgerMenu ${burgerMenuActive ? "activeMenu" : ""}`}
     >
       <div className="burgerMenu__content">
@@ -40,7 +40,7 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
           />
         </div>
         <ul className="burgerMenu__list">
-          {burgerMenuItems.map((item) => (
+          {burgerMenuItems.map(item => (
             <Link
               to={item.link}
               key={item.id}
@@ -55,7 +55,7 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-export default BurgerMenu;
+export default BurgerMenu

@@ -8,6 +8,11 @@ function ContextProvider({ children }) {
       { id: 1, name: "Test Mode" },
       { id: 2, name: "Start Mode" },
     ],
+    pair: [
+      { id: 1, name: "BTC/USDT" },
+      { id: 2, name: "ETH/USDT" },
+      { id: 3, name: "BNB/USDT" },
+    ],
     strategy: [
       { id: 1, name: "Standard" },
       { id: 2, name: "Advanced" },
@@ -26,6 +31,7 @@ function ContextProvider({ children }) {
   const [selectedBotSettings, setSelectedBotSettings] = useState({
     mode: { id: "", name: "" },
     date: { from: "", to: "" },
+    pair: { id: "", name: "" },
     strategy: { id: "", name: "" },
   })
 
