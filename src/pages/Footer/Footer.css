@@ -1,0 +1,16 @@
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__item {
+  margin-right: 30px;
+  color: black;
+}
+
+.footer__container {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+}

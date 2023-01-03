@@ -27,19 +27,8 @@ function Welcome() {
         <div className="welcome__img">
           <img src={imgWelcome} alt="bot" className="welcomeImg__img" />
         </div>
+        <Footer />
       </div>
-
-      <Footer />
-      {/* <footer className="welcome__footer">
-        <ul className="footer__list">
-          <li className="footer__item footer__title">© 2023 TradingBot Inc</li>
-          <li className="footer__item">Developers</li>
-          <li className="footer__item">Developers</li>
-          <li className="footer__item">Developers</li>
-          <li className="footer__item">Developers</li>
-          <li className="footer__item">Developers</li>
-        </ul>
-      </footer> */}
     </div>
   )
 }

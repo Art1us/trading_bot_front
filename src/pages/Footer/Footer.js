@@ -4,19 +4,20 @@ import { Link } from "react-router-dom"
 
 function Footer() {
   const footerItems = [
-    { id: 1, value: "Welcome", link: "/" },
-    { id: 2, value: "Login", link: "/login" },
-    { id: 3, value: "Main", link: "/main" },
-    { id: 4, value: "Exchange", link: "/exchange" },
-    { id: 5, value: "Registration", link: "/register" },
+    { id: 1, value: "Developers " },
+    { id: 2, value: "Support" },
+    { id: 3, value: "Careers " },
+    { id: 4, value: "Terms " },
+    { id: 5, value: "Privacy" },
   ]
 
   return (
-    <div className="burgerMenu__content">
-      <ul className="burgerMenu__list">
+    <div className="footer__container">
+      <div className=" footer__item">© 2023 TradingBot Inc</div>
+      <ul className="footer__list">
         {footerItems.map(item => (
           <Link to={item.link} key={item.id} style={{ textDecoration: "none" }}>
-            <li className="burgerMenu__item">{item.value}</li>
+            <li className="footer__item">{item.value}</li>
           </Link>
         ))}
       </ul>
