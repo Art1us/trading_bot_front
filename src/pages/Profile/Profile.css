@@ -16,11 +16,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px 20px;
+  /* padding: 20px 20px; */
   margin-bottom: 25px;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 40px;
+  /* margin-left: 40px; */
+  width: 100%;
 }
 
 .profile__item {
@@ -33,4 +34,19 @@
 .profile__item {
   color: black;
   display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 65px;
+}
+
+.profile__it {
+  width: 100%;
+  left: 22px;
+}
+
+.profile__item--active {
+  color: #d9552b;
+  background-color: white;
+  width: 100%;
+  border-left: 2px solid red;
 }
