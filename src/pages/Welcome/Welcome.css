@@ -1,7 +1,7 @@
 .welcome {
   width: 100vw;
   background-color: var(--base-bg-color-100);
-  color: var(--inversed-base-color);
+  color: var(--base-color);
 }
 
 .welcome__container {
@@ -26,7 +26,6 @@
   align-items: flex-start;
   flex: 1;
 }
-
 
 .welcome__img {
   justify-content: center;
@@ -57,10 +56,10 @@
   -webkit-box-align: center;
   align-items: center;
   background: transparent;
-  border: 2px solid royalblue;
-  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
   display: inline-flex;
-  color: #3861fb;
+  color: var(--primary-color);
   cursor: pointer;
   -webkit-box-pack: center;
   justify-content: center;
@@ -74,11 +73,11 @@
 .welcomeLogin__btnSign {
   -webkit-box-align: center;
   align-items: center;
-  background: rgb(56, 97, 251);
-  border: 0px;
-  border-radius: 8px;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
   display: inline-flex;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
   cursor: pointer;
   -webkit-box-pack: center;
   justify-content: center;
@@ -87,15 +86,14 @@
   width: 120px;
   height: 40px;
   font-size: 14px;
-  border-radius: 2px solid royalblue;
 }
 
 .welcomeLogin__btnLog:hover {
-  background-color: #e7e7e8;
+  background-color: var(--hover-bg-color);
 }
 
 .welcomeLogin__btnSign:hover {
-  background: rgb(32, 79, 247);
+  background: var(--hover-btn-color);
 }
 
 .heder__userName {

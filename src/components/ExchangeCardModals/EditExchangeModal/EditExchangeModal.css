@@ -9,13 +9,13 @@
   height: 420px;
   width: 350px;
   background-color: var(--base-bg-color-90);
-  color: var(--inversed-base-color);
+  color: var(--base-color);
   border-radius: 10px;
   z-index: 3;
 }
 
 .editExchangeModal__cross {
-  color: var(--inversed-base-color);
+  color: var(--base-color);
   position: absolute;
   top: 10px;
   right: 10px;
@@ -74,7 +74,7 @@
 
 .editExchangeModal_formBtn {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 5px;
 }
 
@@ -87,28 +87,11 @@
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
-  color: var(--base-color);
+  color: var(--white-color);
 }
 
 .editExchangeModal__saveBtn:hover {
   background-color: var(--hover-btn-color);
   border-color: var(--hover-btn-color);
-  color: var(--base-color);
-}
-
-.editExchangeModal__deleteBtn {
-  width: 140px;
-  height: 30px;
-  border-radius: 5px;
-  background-color: transparent;
-  border: 2px solid var(--warning-color);
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  color: var(--warning-color);
-}
-
-.editExchangeModal__deleteBtn:hover {
-  color: var(--base-color);
-  background-color: rgb(214, 1, 1);
+  color: var(--white-color);
 }

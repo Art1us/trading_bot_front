@@ -59,6 +59,6 @@
 }
 
 .burgerMenu__item p {
-  color: var(--inversed-base-color);
+  color: var(--base-color);
   display: flex;
 }

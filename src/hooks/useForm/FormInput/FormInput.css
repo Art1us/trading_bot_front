@@ -7,7 +7,7 @@
   border: 1px solid var(--black-color);
   outline: none;
   background-color: var(--input-bg-color);
-  color: var(--inversed-base-color);
+  color: var(--base-color);
 }
 
 .formInput__defaultInputStyles::placeholder {

@@ -22,7 +22,7 @@
 }
 
 .header__title {
-  color: var(--inversed-base-color);
+  color: var(--base-color);
   cursor: pointer;
   text-align: center;
 }
@@ -34,7 +34,7 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
-  color: var(--inversed-base-color);
+  color: var(--base-color);
 }
 
 .header__elements--hover {
@@ -65,5 +65,5 @@
 }
 
 .header__userName {
-  color: var(--inversed-base-color);
+  color: var(--base-color);
 }

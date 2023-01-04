@@ -9,13 +9,13 @@
   height: 420px;
   width: 350px;
   background-color: var(--base-bg-color-100);
-  color: var(--inversed-base-color);
+  color: var(--base-color);
   border-radius: 10px;
   z-index: 3;
 }
 
 .newExchangeModal__cross {
-  color: var(--inversed-base-color);
+  color: var(--base-color);
   position: absolute;
   top: 10px;
   right: 10px;

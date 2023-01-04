@@ -3,26 +3,24 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  color: var(--inversed-base-color);
+  color: var(base-color);
 }
 
 .footer__list {
   display: flex;
   justify-content: space-between;
-  color: var(--inversed-base-color);
+  color: var(base-color);
 }
 
 .footer__item {
   margin-right: 30px;
-  color: black;
   font-weight: 600;
-  color: var(--inversed-base-color);
 }
 
 .footer__item:hover {
-  color: rgb(73, 73, 73);
+  color: var(--hover-bg-color);
 }
 
 .footer__title:hover {
-  color: black;
+  color: var(--hover-bg-color);
 }

@@ -1,13 +1,13 @@
 .botTable {
   width: 300px;
   height: 50px;
-  color: var(--inversed-base-color);
+  color: var(--base-color);
 }
 
 .botTable,
 .botTable__header,
 .botTable__cell {
-  border: 1px solid var(--inversed-base-color);
+  border: 1px solid var(--base-color);
   border-collapse: collapse;
 }
 

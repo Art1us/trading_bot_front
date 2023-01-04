@@ -11,7 +11,7 @@
   border-radius: 5px;
   box-shadow: var(--base-box-shadow);
   max-width: 700px;
-  color: var(--inversed-base-color);
+  color: var(--base-color);
 }
 
 .dateMode__form {
