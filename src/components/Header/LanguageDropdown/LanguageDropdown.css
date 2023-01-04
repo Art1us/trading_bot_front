@@ -2,6 +2,7 @@
   position: absolute;
   top: 60px;
   z-index: 2;
+  color: var(--black-color);
 }
 
 .languageDropdown__topContainer--triangle {
@@ -18,7 +19,7 @@
 
 .languageDropdown__topContainerBorder--triangle {
   top: -25px;
-  border-color: transparent transparent var(--base-color-100) transparent;
+  border-color: transparent transparent var(--modal-bg-color) transparent;
 }
 
 .languageDropdown__container {
@@ -26,8 +27,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--base-color-100);
-  border-bottom: 2px solid rgb(239.561, 239.561, 239.561);
+  background-color: var(--modal-bg-color);
+  border-bottom: 2px solid var(--language-dropdown-border-color);
   border-radius: 5px;
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px -3px 8px 0px;
@@ -61,5 +62,5 @@
 }
 
 .languageDropdown__languageRow:hover {
-  color: var(--primary-color-20);
+  color: var(--primary-color);
 }

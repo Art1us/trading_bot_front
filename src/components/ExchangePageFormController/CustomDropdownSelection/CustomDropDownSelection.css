@@ -7,9 +7,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-bg-color-10);
+  background-color: var(--base-bg-color-90);
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
   padding: 10px;
   cursor: pointer;
 }

@@ -3,8 +3,8 @@
   height: 280px;
   border-radius: 20px;
   margin-right: 20px;
-  background-color: var(--primary-bg-color-10);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--base-bg-color-100);
+  box-shadow: var(--base-box-shadow);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,11 +13,11 @@
 }
 
 .addExchangeCard:hover {
-  background-color: rgb(228, 228, 228);
+  background-color: var(--hover-bg-color);
   transform: scale(1.03);
 }
 
 .addExchangeCard--empty {
   font-size: 64px;
-  color: rgba(128, 128, 128, 0.533);
+  color: rgba(81, 81, 81, 0.533);
 }

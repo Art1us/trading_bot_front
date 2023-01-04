@@ -1,0 +1,35 @@
+.themeToggle__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.themeToggle__icon--day {
+  height: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.themeToggle__icon--night {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  font-size: 12px;
+  color: var(--inversed-base-color);
+}
+
+.themeToggle__handleIcon--day {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  font-size: 15px;
+}
+
+.themeToggle__handleIcon--night {
+  height: 100%;
+  display: flex;
+  margin: auto;
+  color: var(--base-color);
+  font-size: 12px;
+}
