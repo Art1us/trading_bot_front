@@ -28,7 +28,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--modal-bg-color);
-  border-bottom: 2px solid rgb(239.561, 239.561, 239.561);
+  border-bottom: 2px solid var(--language-dropdown-border-color);
   border-radius: 5px;
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px -3px 8px 0px;

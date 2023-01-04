@@ -19,6 +19,7 @@
   --warning-color: red;
   --hover-bg-color: rgb(182, 182, 182);
   --hover-btn-color: rgb(14, 14, 159);
+  --language-dropdown-border-color: rgb(239.561, 239.561, 239.561);
 
   --base-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --logo-shadow: rgba(0, 0, 0, 0.804);
@@ -39,6 +40,7 @@
   --warning-color: red;
   --hover-bg-color: rgb(138, 138, 138);
   --hover-btn-color: rgb(0, 0, 163);
+  --language-dropdown-border-color: rgb(146, 146, 146);
 
   --base-box-shadow: rgba(203, 203, 203, 0.329) 0px 3px 8px;
   --logo-shadow: rgba(152, 152, 152, 0.804);
