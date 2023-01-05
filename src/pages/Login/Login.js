@@ -1,17 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./Login.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
+import AuthContext from "../../contexts/AuthProvider"
+
+import Fetcher from "../../api/Fetcher/Fetcher"
 
 function Login() {
+  const fetch = Fetcher()
   const navigate = useNavigate()
-  const { inputComponents, isSubmitInvalid } = useForm(formInputsData)
+  const { inputComponents, isSubmitInvalid, formValues } =
+    useForm(formInputsData)
+  const { setAuth } = useContext(AuthContext)
 
-  function submitHandler(e) {
+  async function submitHandler(e) {
     e.preventDefault()
-    if (isSubmitInvalid()) return
-    navigate("/main")
+    //if (isSubmitInvalid()) return
+    fetch.login(formValues.email, formValues.password)
   }
 
   return (

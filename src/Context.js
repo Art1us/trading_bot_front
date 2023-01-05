@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import Fetcher from "./api/Fetcher/Fetcher"
 
 const Context = React.createContext()
 
@@ -20,13 +21,10 @@ function ContextProvider({ children }) {
       { id: 4, name: "Intermediate" },
     ],
   }
-  const EXCHANGES_LIST = "/exchange_list"
+  const fetch = Fetcher()
 
-  const [exchangesList, setExchangesList] = useState([
-    { id: 1, name: "Binance" },
-    { id: 2, name: "Kraken" },
-    { id: 3, name: "FTX" },
-  ])
+  const [exchangesList, setExchangesList] = useState([])
+
   const [userExchanges, setUserExchanges] = useState([])
   const [selectedBotSettings, setSelectedBotSettings] = useState({
     mode: { id: "", name: "" },
@@ -45,26 +43,8 @@ function ContextProvider({ children }) {
   }, [isDarkTheme])
 
   useEffect(() => {
-    async function getExchangesList() {
-      try {
-        const response = await fetch(
-          `${process.env.REACT_APP_API_KEY}${EXCHANGES_LIST}`
-        )
-
-        if (response.status !== 200) {
-          const message = `An error has occured: ${response.status}`
-          throw new Error(message)
-        }
-
-        const data = await response.json()
-        setExchangesList(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getExchangesList()
-  }, [])
-
+    fetch.fetchExchanges(setExchangesList)
+  }, [isDarkTheme])
   return (
     <Context.Provider
       value={{
@@ -76,6 +56,7 @@ function ContextProvider({ children }) {
         BOT_OPTIONS,
         isDarkTheme,
         setIsDarkTheme,
+        setExchangesList,
       }}
     >
       {children}

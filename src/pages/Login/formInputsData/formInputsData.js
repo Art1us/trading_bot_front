@@ -22,12 +22,12 @@ const formInputsData = [
           condition: "^s*$",
           message: "Please enter your email!",
         },
-        {
+        /* {
           pattern:
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
             "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
           message: "Please enter a valid email",
-        },
+        }, */
       ],
     },
   },
@@ -49,7 +49,7 @@ const formInputsData = [
           condition: "^s*$",
           message: "Please enter your password!",
         },
-        {
+        /*  {
           condition: "^(.{1,7})$",
           message: "Your password is too short!",
         },
@@ -68,10 +68,10 @@ const formInputsData = [
         {
           condition: "^[^0-9]+$",
           message: "Please include a digit",
-        },
+        }, */
       ],
     },
   },
-];
+]
 
-export default formInputsData;
+export default formInputsData
