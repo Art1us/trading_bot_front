@@ -3,10 +3,13 @@ import "./Register.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
-import Fetcher from "../../api/Fetcher/Fetcher"
+
+import useApi from "../../hooks/useApi/useApi"
+import postRegistration from "../../api/register"
 
 function Register() {
-  const fetch = Fetcher()
+  const registration = useApi(postRegistration)
+
   const navigate = useNavigate()
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
@@ -14,7 +17,9 @@ function Register() {
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-    fetch.registrate(formValues.email, formValues.password)
+
+    registration.request(formValues.email, formValues.password)
+    console.log(registration.data)
     //navigate("/main")
   }
 

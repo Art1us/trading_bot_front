@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import Fetcher from "./api/Fetcher/Fetcher"
 
 const Context = React.createContext()
 
@@ -21,7 +20,6 @@ function ContextProvider({ children }) {
       { id: 4, name: "Intermediate" },
     ],
   }
-  const fetch = Fetcher()
 
   const [exchangesList, setExchangesList] = useState([])
 
@@ -42,9 +40,6 @@ function ContextProvider({ children }) {
     JSON.stringify(localStorage.setItem("isDarkTheme", isDarkTheme))
   }, [isDarkTheme])
 
-  useEffect(() => {
-    fetch.fetchExchanges(setExchangesList)
-  }, [isDarkTheme])
   return (
     <Context.Provider
       value={{
