@@ -42,7 +42,7 @@
   --hover-btn-color: rgb(0, 0, 163);
   --language-dropdown-border-color: rgb(146, 146, 146);
 
-  --base-box-shadow: rgba(203, 203, 203, 0.329) 0px 3px 8px;
+  --base-box-shadow: none;
   --logo-shadow: rgba(152, 152, 152, 0.804);
 }
 

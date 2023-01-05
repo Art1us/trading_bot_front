@@ -9,7 +9,7 @@ import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/Ex
 
 function ExchangeCard(exchangeData) {
   const { id, exchange, img, publicKey } = exchangeData
-  const { setUserExchanges } = useContext(Context)
+  const { setUserExchanges, setSelectedBotSettings } = useContext(Context)
 
   let navigate = useNavigate()
 
@@ -38,6 +38,10 @@ function ExchangeCard(exchangeData) {
 
   function clickHandler() {
     setExchangeSelected(true)
+    setSelectedBotSettings(prev => ({
+      ...prev,
+      exchange: { id: id, name: exchange },
+    }))
     setTimeout(() => navigate("/exchange"), 100)
   }
 

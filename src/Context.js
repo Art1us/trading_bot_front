@@ -33,6 +33,7 @@ function ContextProvider({ children }) {
     date: { from: "", to: "" },
     pair: { id: "", name: "" },
     strategy: { id: "", name: "" },
+    exchange: { id: "", name: "" },
   })
 
   const [isDarkTheme, setIsDarkTheme] = useState(
