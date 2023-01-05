@@ -21,21 +21,24 @@
 .strategyForm__title {
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .strategyForm__select {
   width: 65%;
-  height: 25px;
+  height: 40px;
   background-color: var(--input-bg-color);
+  border-radius: 5px;
 }
 
 .strategyForm__btn {
   width: 65%;
   background-color: var(--primary-color);
   border: none;
+  border-radius: 5px;
   color: var(--white-color);
-  height: 25px;
-  margin-bottom: 20px;
+  height: 40px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 

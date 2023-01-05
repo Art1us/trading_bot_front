@@ -80,7 +80,7 @@
 
 .editExchangeModal__saveBtn {
   width: 100%;
-  height: 35px;
+  height: 40px;
   border-radius: 5px;
   cursor: pointer;
   color: var(--base-field-btns);
