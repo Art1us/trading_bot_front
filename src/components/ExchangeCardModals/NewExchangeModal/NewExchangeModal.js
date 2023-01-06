@@ -17,12 +17,24 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
   const exchanges = useApi(fetchExchanges)
 
   useEffect(() => {
-    exchanges.request(auth?.access_token)
+    let mounted = true
+    const controller = new AbortController()
+    if (mounted) {
+      exchanges.request(auth?.access_token, controller)
+      //controller.abort()
+    }
+    return () => {
+      mounted = false
+    }
   }, [])
 
   useEffect(() => {
-    if (exchanges.data) {
-      formInputsData[0].list = [...exchanges.data.data]
+    let mounted = true
+    if (exchanges.data && mounted) {
+      formInputsData[0].list = [...exchanges.data.data] || []
+    }
+    return () => {
+      mounted = false
     }
   }, [exchanges.data])
 

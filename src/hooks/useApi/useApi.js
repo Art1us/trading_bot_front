@@ -5,6 +5,7 @@ export function useApi(apiFunc) {
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
+  //const controller = new AbortController()
   async function request(...args) {
     setLoading(true)
     try {
