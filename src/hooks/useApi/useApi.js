@@ -9,6 +9,7 @@ export function useApi(apiFunc) {
     setLoading(true)
     try {
       const result = await apiFunc(...args)
+      console.log(result)
       setData(result.data)
     } catch (err) {
       setError(err.message || "Unexpected Error!")
@@ -16,6 +17,7 @@ export function useApi(apiFunc) {
       setLoading(false)
     }
   }
+
   return {
     data,
     error,

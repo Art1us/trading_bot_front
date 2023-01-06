@@ -9,12 +9,16 @@ import { fetchRegistration } from "../../api/auth/fetchRegistration"
 
 function Register() {
   const registration = useApi(fetchRegistration)
+  const controller = new AbortController()
 
   useEffect(() => {
-    //check if status code 200
-    if (registration.data) {
-      //redirect to success page
-      console.log("registration successfull")
+    let mounted = true
+    if (registration.data && mounted) {
+      navigate("/login")
+    }
+    return () => {
+      mounted = false
+      controller.abort()
     }
   }, [registration.data])
 
@@ -27,8 +31,6 @@ function Register() {
     if (isSubmitInvalid()) return
 
     registration.request(formValues.email, formValues.password)
-    console.log(registration.loading)
-    //navigate("/main")
   }
 
   //show loading circle when loading

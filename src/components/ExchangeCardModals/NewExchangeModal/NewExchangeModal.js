@@ -9,21 +9,27 @@ import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/Simple
 
 import { useApi } from "../../../hooks/useApi/useApi"
 import { fetchExchanges } from "../../../api/services/fetchExchanges"
-import { AuthContext } from "../../../contexts/AuthContext"
+import { useAuth } from "../../../hooks/useAuth/useAuth"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
   const { setUserExchanges } = useContext(Context)
-  const { auth } = useContext(AuthContext)
+  const { auth } = useAuth()
   const exchanges = useApi(fetchExchanges)
 
   useEffect(() => {
-    exchanges.request(auth?.access_token)
+    let mounted = true
+    const controller = new AbortController()
+    if (mounted) {
+      exchanges.request(auth?.access_token, controller)
+    }
+    return () => {
+      mounted = false
+      controller.abort()
+    }
   }, [])
 
   useEffect(() => {
-    if (exchanges.data) {
-      formInputsData[0].list = [...exchanges.data.data]
-    }
+    formInputsData[0].list = exchanges?.data ? [...exchanges?.data?.data] : []
   }, [exchanges.data])
 
   const { inputComponents, isSubmitInvalid, formValues } =
