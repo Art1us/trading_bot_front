@@ -5,11 +5,12 @@
 
 .register__container {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   margin: 0 auto;
   width: 100%;
-  justify-content: center;
   height: 100%;
-  align-items: center;
+  padding-top: 60px;
 }
 
 .register__form {
