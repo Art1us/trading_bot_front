@@ -21,8 +21,6 @@ function ContextProvider({ children }) {
     ],
   }
 
-  const [exchangesList, setExchangesList] = useState([])
-
   const [userExchanges, setUserExchanges] = useState([])
   const [selectedBotSettings, setSelectedBotSettings] = useState({
     mode: { id: "", name: "" },
@@ -43,7 +41,6 @@ function ContextProvider({ children }) {
   return (
     <Context.Provider
       value={{
-        exchangesList,
         userExchanges,
         setUserExchanges,
         selectedBotSettings,
@@ -51,7 +48,6 @@ function ContextProvider({ children }) {
         BOT_OPTIONS,
         isDarkTheme,
         setIsDarkTheme,
-        setExchangesList,
       }}
     >
       {children}

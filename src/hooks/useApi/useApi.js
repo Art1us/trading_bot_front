@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function (apiFunc) {
+export function useApi(apiFunc) {
   const [data, setData] = useState(null)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)

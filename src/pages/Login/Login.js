@@ -1,45 +1,35 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect } from "react"
 import "./Login.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
-import AuthContext from "../../contexts/AuthProvider"
+import { AuthContext } from "../../contexts/AuthContext"
 
-import useApi from "../../hooks/useApi/useApi"
-import postLogin from "../../api/login"
-import postRefreshToken from "../../api/refreshToken"
+import { useApi } from "../../hooks/useApi/useApi"
+import { fetchLogin } from "../../api/auth/fetchLogin"
 
 function Login() {
-  const login = useApi(postLogin)
-
-  const refreshToken = useApi(postRefreshToken)
-
+  const login = useApi(fetchLogin)
   const navigate = useNavigate()
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
 
-  const { auth, setAuth } = useContext(AuthContext)
+  const { setAuth } = useContext(AuthContext)
+
+  useEffect(() => {
+    if (login.data) {
+      setAuth(login.data.data)
+    }
+  }, [login.data])
 
   function submitHandler(e) {
     e.preventDefault()
     //if (isSubmitInvalid()) return
-
-    const { data, error, loading, request } = login
-
-    request(formValues.email, formValues.password)
-    if (!error && !loading && data) {
-      setAuth(data.data)
-    }
+    login.request(formValues.email, formValues.password)
   }
 
   function refreshHandler(e) {
     e.preventDefault()
-
-    const { data, error, loading, request } = refreshToken
-    request(auth.access_token, auth.refresh_token)
-    if (!error && !loading && data) {
-      console.log(data.data)
-    }
   }
 
   return (

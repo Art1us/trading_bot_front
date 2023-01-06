@@ -1,8 +1,8 @@
-import client from "./client"
-import { REFRESH_TOKEN_URL } from "./apiConstants"
+import { apiClient } from "../apiClient"
+import { REFRESH_TOKEN_URL } from "../constantURLs"
 
-function postRefreshToken(accessToken, refreshToken) {
-  return client.post(
+export function fetchRefreshToken(accessToken, refreshToken) {
+  return apiClient.post(
     REFRESH_TOKEN_URL,
     JSON.stringify({
       refreshToken,
@@ -15,5 +15,3 @@ function postRefreshToken(accessToken, refreshToken) {
     }
   )
 }
-
-export default postRefreshToken
