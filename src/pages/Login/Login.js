@@ -11,21 +11,27 @@ import { useAuth } from "../../hooks/useAuth/useAuth"
 function Login() {
   const { setAuth } = useAuth()
   const login = useApi(fetchLogin)
+  const controller = new AbortController()
   const navigate = useNavigate()
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
 
   useEffect(() => {
-    if (login.data) {
+    let mounted = true
+    if (login.data && mounted) {
       setAuth(login.data.data)
       navigate("/main")
+    }
+    return () => {
+      mounted = false
+      controller.abort()
     }
   }, [login.data])
 
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-    login.request(formValues.email, formValues.password)
+    login.request(formValues.email, formValues.password, controller)
   }
 
   return (
@@ -35,11 +41,11 @@ function Login() {
           <div className="login__formTitle">Sign-in</div>
           <div>{inputComponents}</div>
           <button className="login__signInBtn">Sign in</button>
-          {/* <Link to="/register" style={{ textDecoration: "none" }}> */}
-          <button type="button" className="login__createAccBtn">
-            Create a new account
-          </button>
-          {/* </Link> */}
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <button type="button" className="login__createAccBtn">
+              Create a new account
+            </button>
+          </Link>
         </form>
       </div>
     </div>
