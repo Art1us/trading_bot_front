@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  color: var(--base-color);
 }
 
 .tradePairForm__wrapper {
@@ -29,6 +30,7 @@
   height: 40px;
   background-color: var(--input-bg-color);
   border-radius: 5px;
+  color: var(--base-color);
 }
 
 .tradePairForm__btn {

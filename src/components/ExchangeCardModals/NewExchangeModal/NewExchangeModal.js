@@ -20,11 +20,12 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
     exchanges.request(auth?.access_token)
   }, [])
 
-  useEffect(() => {
+  formInputsData[0].list = [{ id: 1, name: "Binance" }]
+  /* useEffect(() => {
     if (exchanges.data) {
-      formInputsData[0].list = [{ id: 1, name: "Binance" }] //[...exchanges.data.data]
+      formInputsData[0].list = [...exchanges.data.data]
     }
-  }, [exchanges.data])
+  }, [exchanges.data]) */
 
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
