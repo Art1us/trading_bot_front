@@ -1,19 +1,37 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./Register.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
 
+import { useApi } from "../../hooks/useApi/useApi"
+import { fetchRegistration } from "../../api/auth/fetchRegistration"
+
 function Register() {
+  const registration = useApi(fetchRegistration)
+
+  useEffect(() => {
+    //check if status code 200
+    if (registration.data) {
+      //redirect to success page
+      console.log("registration successfull")
+    }
+  }, [registration.data])
+
   const navigate = useNavigate()
-  const { inputComponents, isSubmitInvalid } = useForm(formInputsData)
+  const { inputComponents, isSubmitInvalid, formValues } =
+    useForm(formInputsData)
 
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-    navigate("/main")
+
+    registration.request(formValues.email, formValues.password)
+    console.log(registration.loading)
+    //navigate("/main")
   }
 
+  //show loading circle when loading
   return (
     <div className="register">
       <div className="register__container">

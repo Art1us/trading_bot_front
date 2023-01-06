@@ -20,13 +20,7 @@ function ContextProvider({ children }) {
       { id: 4, name: "Intermediate" },
     ],
   }
-  const EXCHANGES_LIST = "/exchange_list"
 
-  const [exchangesList, setExchangesList] = useState([
-    { id: 1, name: "Binance" },
-    { id: 2, name: "Kraken" },
-    { id: 3, name: "FTX" },
-  ])
   const [userExchanges, setUserExchanges] = useState([])
   const [selectedBotSettings, setSelectedBotSettings] = useState({
     mode: { id: "", name: "" },
@@ -45,31 +39,9 @@ function ContextProvider({ children }) {
     JSON.stringify(localStorage.setItem("isDarkTheme", isDarkTheme))
   }, [isDarkTheme])
 
-  useEffect(() => {
-    async function getExchangesList() {
-      try {
-        const response = await fetch(
-          `${process.env.REACT_APP_API_KEY}${EXCHANGES_LIST}`
-        )
-
-        if (response.status !== 200) {
-          const message = `An error has occured: ${response.status}`
-          throw new Error(message)
-        }
-
-        const data = await response.json()
-        setExchangesList(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getExchangesList()
-  }, [])
-
   return (
     <Context.Provider
       value={{
-        exchangesList,
         userExchanges,
         setUserExchanges,
         selectedBotSettings,
