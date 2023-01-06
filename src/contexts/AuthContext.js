@@ -19,8 +19,13 @@ function AuthProvider({ children }) {
     refreshToken.request(auth.access_token, auth.refresh_token)
   }
 
+  function logout() {
+    setAuth({})
+    localStorage.removeItem("auth")
+  }
+
   return (
-    <AuthContext.Provider value={{ auth, setAuth, getRefreshedTokens }}>
+    <AuthContext.Provider value={{ auth, setAuth, getRefreshedTokens, logout }}>
       {children}
     </AuthContext.Provider>
   )

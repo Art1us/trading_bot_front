@@ -6,6 +6,8 @@ import MainPage from "./pages/MainPage/MainPage"
 import ExchangePage from "./pages/ExchangePage/ExchangePage"
 import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
+import RequireAuth from "./helpers/Auth/RequireAuth"
+import RedirectLoggedInUser from "./helpers/Auth/RedirectLoggedInUser"
 
 function App() {
   return (
@@ -13,11 +15,15 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/main" element={<MainPage />} />
-          <Route path="/exchange" element={<ExchangePage />} />
+          <Route path="/" exact element={<Welcome />} />
+          <Route element={<RedirectLoggedInUser />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
+          <Route element={<RequireAuth />}>
+            <Route path="/main" element={<MainPage />} />
+            <Route path="/exchange" element={<ExchangePage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

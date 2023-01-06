@@ -1,32 +1,37 @@
-import React, { useContext, useEffect } from "react"
+import React, { useEffect } from "react"
 import "./Login.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
-import { AuthContext } from "../../contexts/AuthContext"
 
 import { useApi } from "../../hooks/useApi/useApi"
 import { fetchLogin } from "../../api/auth/fetchLogin"
+import { useAuth } from "../../hooks/useAuth/useAuth"
 
 function Login() {
+  const { setAuth } = useAuth()
   const login = useApi(fetchLogin)
+  const controller = new AbortController()
   const navigate = useNavigate()
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
 
-  const { setAuth } = useContext(AuthContext)
-
   useEffect(() => {
-    if (login.data) {
+    let mounted = true
+    if (login.data && mounted) {
       setAuth(login.data.data)
       navigate("/main")
+    }
+    return () => {
+      mounted = false
+      controller.abort()
     }
   }, [login.data])
 
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-    login.request(formValues.email, formValues.password)
+    login.request(formValues.email, formValues.password, controller)
   }
 
   return (
