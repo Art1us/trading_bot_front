@@ -9,11 +9,11 @@ import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/Simple
 
 import { useApi } from "../../../hooks/useApi/useApi"
 import { fetchExchanges } from "../../../api/services/fetchExchanges"
-import { AuthContext } from "../../../contexts/AuthContext"
+import { useAuth } from "../../../hooks/useAuth/useAuth"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
   const { setUserExchanges } = useContext(Context)
-  const { auth } = useContext(AuthContext)
+  const { auth } = useAuth()
   const exchanges = useApi(fetchExchanges)
 
   useEffect(() => {
