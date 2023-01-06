@@ -16,7 +16,6 @@ export function useApi(apiFunc) {
       setLoading(false)
     }
   }
-
   return {
     data,
     error,

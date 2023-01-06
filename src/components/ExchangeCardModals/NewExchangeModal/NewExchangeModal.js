@@ -17,7 +17,7 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
   const exchanges = useApi(fetchExchanges)
 
   useEffect(() => {
-    exchanges.request(auth.access_token)
+    exchanges.request(auth?.access_token)
   }, [])
 
   useEffect(() => {
