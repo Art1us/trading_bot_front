@@ -22,7 +22,7 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
 
   useEffect(() => {
     if (exchanges.data) {
-      formInputsData[0].list = [...exchanges.data.data]
+      formInputsData[0].list = [{ id: 1, name: "Binance" }] //[...exchanges.data.data]
     }
   }, [exchanges.data])
 
