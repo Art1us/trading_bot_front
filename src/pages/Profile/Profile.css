@@ -25,28 +25,27 @@
 }
 
 .profile__item {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 65px;
   list-style: none;
   text-decoration: none;
   height: 50px;
   width: 100%;
 }
 
-.profile__item {
-  color: black;
+.profile__item--active {
+  color: #d9552b;
+  background-color: white;
+  border-left: 2px solid red;
   display: flex;
   align-items: center;
   justify-content: left;
   padding-left: 65px;
-}
-
-.profile__it {
+  list-style: none;
+  text-decoration: none;
+  height: 50px;
   width: 100%;
-  left: 22px;
-}
-
-.profile__item--active {
-  color: #d9552b;
-  background-color: white;
-  width: 100%;
-  border-left: 2px solid red;
 }

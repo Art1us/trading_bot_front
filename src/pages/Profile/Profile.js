@@ -2,9 +2,7 @@ import "./Profile.css"
 import { useState } from "react"
 
 function Profile() {
-  // const [burgerMenuActive, setBurgerMenuActive] = useState(false)
-
-  const [activeState, setActiveState] = useState(false)
+  const [activeProfile, setActiveProfile] = useState()
 
   const profileItems = [
     { id: 1, value: "Dashboard" },
@@ -16,24 +14,22 @@ function Profile() {
     { id: 7, value: "API Keys" },
     { id: 8, value: "Tools" },
   ]
-  //setActiveState(prev => !prev)
 
   return (
     <div className="profile__wrapper">
       <ul className="profile__list">
         {profileItems.map(item => (
-          <div className="profile__it" key={item.id}>
-            <li
-              className={`profile__item ${
-                activeState ? "profile__item--active" : ""
-              }`}
-            >
-              <p
-                className="profile__paragraf"
-                onClick={() => setActiveState(!activeState)}
-              >
-                {item.value}
-              </p>
+          <div
+            key={item.id}
+            onClick={() => setActiveProfile(item.id)}
+            className={
+              activeProfile === item.id
+                ? "profile__item--active"
+                : "profile__item"
+            }
+          >
+            <li>
+              <p className="profile__paragraf">{item.value}</p>
             </li>
           </div>
         ))}
