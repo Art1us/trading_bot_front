@@ -5,11 +5,12 @@
 
 .register__container {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   margin: 0 auto;
   width: 100%;
-  justify-content: center;
   height: 100%;
-  align-items: center;
+  padding-top: 60px;
 }
 
 .register__form {
@@ -36,8 +37,8 @@
 
 .register__signInBtn {
   width: 100%;
-  height: 35px;
-  border: 1px solid var(--primary-color);
+  height: 40px;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -55,7 +56,7 @@
 
 .register__createAccBtn {
   width: 100%;
-  height: 35px;
+  height: 40px;
   border-radius: 5px;
   cursor: pointer;
   color: var(--base-field-btns);

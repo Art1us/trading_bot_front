@@ -21,21 +21,24 @@
 .tradePairForm__title {
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .tradePairForm__select {
   width: 65%;
-  height: 25px;
+  height: 40px;
   background-color: var(--input-bg-color);
+  border-radius: 5px;
 }
 
 .tradePairForm__btn {
   width: 65%;
   background-color: var(--primary-color);
   border: none;
-  color: white;
-  height: 25px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  color: var(--white-color);
+  height: 40px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 

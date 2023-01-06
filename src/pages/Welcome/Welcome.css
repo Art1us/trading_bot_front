@@ -96,7 +96,7 @@
   background: var(--hover-btn-color);
 }
 
-.heder__userName {
+.header__userName {
   justify-content: center;
   align-items: center;
   display: flex;
