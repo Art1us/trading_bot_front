@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "./Register.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
@@ -11,14 +11,13 @@ import RegistrationSuccess from "../../components/RegistrationSuccess/Registrati
 function Register() {
   const registration = useApi(fetchRegistration)
   const controller = new AbortController()
-  const navigate = useNavigate()
+
   const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
     useForm(formInputsData)
 
   useEffect(() => {
     let mounted = true
     if (registration.response?.status === 201 && mounted) {
-      navigate("/login")
     }
     return () => {
       mounted = false
@@ -40,7 +39,7 @@ function Register() {
 
   return (
     <>
-      {false ? (
+      {registration.response?.status === 201 ? (
         <RegistrationSuccess />
       ) : (
         <div className="register">
