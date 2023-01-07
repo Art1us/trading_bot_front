@@ -5,11 +5,12 @@ import { AiOutlineClose } from "react-icons/ai"
 
 function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
   const burgerMenuItems = [
-    { id: 1, value: "Welcome", link: "/" },
-    { id: 2, value: "Login", link: "/login" },
-    { id: 3, value: "Main", link: "/main" },
-    { id: 4, value: "Exchange", link: "/exchange" },
-    { id: 5, value: "Registration", link: "/register" },
+    { id: 1, value: "Personal Profile", link: "/profile" },
+    { id: 2, value: "Welcome", link: "/" },
+    { id: 3, value: "Login", link: "/login" },
+    { id: 4, value: "Main", link: "/main" },
+    { id: 5, value: "Exchange", link: "/exchange" },
+    { id: 6, value: "Registration", link: "/register" },
   ]
 
   const burgerMenuRef = useRef()
