@@ -13,20 +13,34 @@ function Login() {
   const login = useApi(fetchLogin)
   const controller = new AbortController()
   const navigate = useNavigate()
-  const { inputComponents, isSubmitInvalid, formValues } =
+  const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
     useForm(formInputsData)
 
   useEffect(() => {
     let mounted = true
-    if (login.data && mounted) {
-      setAuth(login.data.data)
+    if (login.response?.status === 200 && mounted) {
+      setAuth(login.response?.data?.data)
       navigate("/main")
     }
     return () => {
       mounted = false
       controller.abort()
     }
-  }, [login.data])
+  }, [login.response?.data])
+
+  useEffect(() => {
+    let errorText
+    if (login.error?.status === 404) {
+      errorText = "Username doesn't exist"
+    } else if (login.error?.status === 401) {
+      errorText = "Password is not correct"
+    } else {
+      errorText = login.error?.message || "Unexpected error"
+    }
+    if (login.error?.message) {
+      displayCustomError(errorText)
+    }
+  }, [login.error])
 
   function submitHandler(e) {
     e.preventDefault()
