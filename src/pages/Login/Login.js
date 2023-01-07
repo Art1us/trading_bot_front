@@ -29,7 +29,6 @@ function Login() {
   }, [login.data])
 
   function submitHandler(e) {
-    console.log("fired")
     e.preventDefault()
     if (isSubmitInvalid()) return
     login.request(formValues.email, formValues.password, controller)

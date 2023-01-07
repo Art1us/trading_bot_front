@@ -1,9 +1,9 @@
 import "./Profile.css"
 import { useState } from "react"
-import Dashboard from "../../components/ProfileItems/TradeStatistics/TradeStatistic"
+import Trade from "../../components/ProfileItems/TradeStatistics/TradeStatistics"
 import ProfileComponent from "../../components/ProfileItems/ProfileComponent/ProfileComponent"
-import Boots from "../../components/ProfileItems/Bots/Bots"
-import Trade from "../../components/ProfileItems/Dashboard/Dashboard"
+import Bots from "../../components/ProfileItems/Bots/Bots"
+import Dashboard from "../../components/ProfileItems/Dashboard/Dashboard"
 
 function Profile() {
   const [activeProfile, setActiveProfile] = useState()
@@ -12,7 +12,7 @@ function Profile() {
     { id: 1, value: "Dashboard" },
     { id: 2, value: "Profile" },
     { id: 3, value: "Bots" },
-    { id: 4, value: "Trade Statistic" },
+    { id: 4, value: "Trade Statistics" },
   ]
 
   return (
@@ -29,7 +29,7 @@ function Profile() {
             }
           >
             <li>
-              <div className="profileItem__paragraph">{item.value}</div>
+              <p className="profileItem__paragraph">{item.value}</p>
             </li>
           </div>
         ))}
@@ -37,7 +37,7 @@ function Profile() {
       <div className="profile__main">
         {activeProfile === 1 && <Dashboard />}
         {activeProfile === 2 && <ProfileComponent />}
-        {activeProfile === 3 && <Boots />}
+        {activeProfile === 3 && <Bots />}
         {activeProfile === 4 && <Trade />}
       </div>
     </div>
