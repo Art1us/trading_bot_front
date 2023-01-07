@@ -31,7 +31,7 @@ function DeleteExchangeModal({
       innerClassName="deleteExchangeModal__inner"
     >
       <div className="deleteExchangeModal__container">
-        <h2>Are you sure?</h2>
+        <h2 className="deleteExchangeModal__title">Are you sure?</h2>
         <div className="deleteExchangeModal__buttons">
           <button
             className="deleteExchangeModal__button--del"

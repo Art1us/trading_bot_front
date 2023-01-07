@@ -1,28 +1,33 @@
-.login__container {
+.register {
+  background-color: var(--base-bg-color-100);
+  height: calc(100vh - 56px);
+}
+
+.register__container {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   margin: 0 auto;
   width: 100%;
-  justify-content: center;
   height: 100%;
-  align-items: center;
+  padding-top: 60px;
 }
 
-.login__form {
+.register__form {
   width: 320px;
-  margin-top: 5%;
   padding: 35px 20px;
   border-radius: 5px;
-  background-color: var(--primary-bg-color-10);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--base-bg-color-90);
+  box-shadow: var(--base-box-shadow);
 }
 
-.login__formTitle {
+.register__formTitle {
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 25px;
 }
 
-.login__formInput {
+.register__formInput {
   width: 100%;
   height: 40px;
   font-size: 14px;
@@ -30,37 +35,37 @@
   margin-bottom: 30px;
 }
 
-.login__signInBtn {
+.register__signInBtn {
   width: 100%;
-  height: 35px;
-  border: 1px solid var(--primary-color-20);
+  height: 40px;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   margin-bottom: 15px;
   cursor: pointer;
   background-color: transparent;
-  color: var(--primary-color-20);
+  color: var(--primary-color);
   font-size: 16px;
   font-weight: 700;
 }
 
-.login__signInBtn:hover {
-  background-color: rgb(221, 221, 221);
+.register__signInBtn:hover {
+  background-color: var(--hover-bg-color);
   color: var(--hover-btn-color);
   border-color: var(--hover-btn-color);
 }
 
-.login__createAccBtn {
+.register__createAccBtn {
   width: 100%;
-  height: 35px;
+  height: 40px;
   border-radius: 5px;
   cursor: pointer;
-  color: var(--base-color-100);
-  background-color: var(--primary-color-20);
-  border: 1px solid var(--primary-color-20);
+  color: var(--base-field-btns);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   font-size: 16px;
   font-weight: 600;
 }
 
-.login__createAccBtn:hover {
+.register__createAccBtn:hover {
   background-color: var(--hover-btn-color);
 }

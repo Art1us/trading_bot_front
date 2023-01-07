@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
-  border-bottom: 1px solid rgb(228, 228, 228);
-  background-color: var(--primary-bg-color-10);
+  border-bottom: 1px solid var(--base-bg-color-90);
+  background-color: var(--base-bg-color-90);
 }
 
 .header__container {
@@ -22,7 +22,7 @@
 }
 
 .header__title {
-  color: var(--base-color-0);
+  color: var(--base-color);
   cursor: pointer;
   text-align: center;
 }
@@ -34,6 +34,7 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
+  color: var(--base-color);
 }
 
 .header__elements--hover {
@@ -47,15 +48,15 @@
 }
 
 .header__elements--hover:hover {
-  background-color: rgb(199, 199, 199);
+  background-color: var(--hover-bg-color);
 }
 
 .header__logo img {
   margin-top: 5px;
   cursor: pointer;
   width: 100px;
-  -webkit-filter: drop-shadow(0px 0px 6px #222);
-  filter: drop-shadow(0px 0px 6px rgba(34, 34, 34, 0.804));
+  -webkit-filter: drop-shadow(0px 0px 4px #222);
+  filter: drop-shadow(0px 0px 4px var(--logo-shadow));
 }
 
 .header__help {
@@ -63,43 +64,6 @@
   margin-left: 100px;
 }
 
-.header h2 {
-  color: var(--base-color-0);
-  cursor: pointer;
-}
-
-.header__themeToggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 5px;
-}
-
-.header__toggleIcon--day {
-  height: 100%;
-  display: flex;
-  margin: auto;
-}
-
-.header__toggleIcon--night {
-  height: 100%;
-  display: flex;
-  margin: auto;
-  font-size: 12px;
-  color: var(--base-color-100);
-}
-
-.header__handleIcon--day {
-  height: 100%;
-  display: flex;
-  margin: auto;
-  font-size: 15px;
-}
-
-.header__handleIcon--night {
-  height: 100%;
-  display: flex;
-  margin: auto;
-  color: var(--base-color-100);
-  font-size: 12px;
+.header__userName {
+  color: var(--base-color);
 }

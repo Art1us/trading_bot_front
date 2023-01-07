@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Context } from "../../../Context"
 import { AiOutlineClose } from "react-icons/ai"
 import "./NewExchangeModal.css"
@@ -7,10 +7,30 @@ import useForm from "../../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 
-function NewExchangeModal({ showNewModal, setShowNewModal }) {
-  const { exchangesList, setUserExchanges } = useContext(Context)
+import { useApi } from "../../../hooks/useApi/useApi"
+import { fetchExchanges } from "../../../api/services/fetchExchanges"
+import { useAuth } from "../../../hooks/useAuth/useAuth"
 
-  formInputsData[0].list = [...exchangesList]
+function NewExchangeModal({ showNewModal, setShowNewModal }) {
+  const { setUserExchanges } = useContext(Context)
+  const { auth } = useAuth()
+  const exchanges = useApi(fetchExchanges)
+
+  useEffect(() => {
+    let mounted = true
+    const controller = new AbortController()
+    if (mounted) {
+      exchanges.request(auth?.access_token, controller)
+    }
+    return () => {
+      mounted = false
+      controller.abort()
+    }
+  }, [])
+
+  useEffect(() => {
+    formInputsData[0].list = exchanges?.data ? [...exchanges?.data?.data] : []
+  }, [exchanges.data])
 
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)

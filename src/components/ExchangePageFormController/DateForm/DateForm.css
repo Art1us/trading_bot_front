@@ -6,11 +6,12 @@
 }
 
 .dateForm__formContainer {
-  background-color: var(--base-color-100);
+  background-color: var(--base-bg-color-90);
   padding: 20px 40px;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
   max-width: 700px;
+  color: var(--base-color);
 }
 
 .dateMode__form {
@@ -47,7 +48,7 @@
 }
 
 .dateForm__input {
-  height: 35px;
+  height: 40px;
   margin-top: 5px;
   margin-bottom: 30px;
   padding-left: 5px;
@@ -62,15 +63,15 @@
   width: 31%;
   margin-left: auto;
   margin-right: 0;
-  color: var(--base-color-100);
-  background-color: var(--primary-color-20);
+  color: var(--white-color);
+  background-color: var(--primary-color);
   border: 0;
   border-radius: 5px;
   font-size: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-  height: 35px;
+  height: 40px;
   margin-top: 5px;
   margin-bottom: 30px;
   padding-left: 5px;
@@ -78,5 +79,5 @@
 
 .dateForm__btn:hover {
   background-color: var(--hover-btn-color);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
 }

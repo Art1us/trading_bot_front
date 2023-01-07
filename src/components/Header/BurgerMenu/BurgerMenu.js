@@ -1,17 +1,22 @@
 import React, { useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../../../hooks/useAuth/useAuth"
+import { burgerMenuItems } from "./burgerMenuItems/burgerMenuItems"
 import "./BurgerMenu.css"
 import { AiOutlineClose } from "react-icons/ai"
 
 function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
-  const burgerMenuItems = [
+ const { logout } = useAuth()
+  const navigate = useNavigate()
+  
+ /* const burgerMenuItems = [
     { id: 1, value: "Personal Profile", link: "/profile" },
     { id: 2, value: "Welcome", link: "/" },
     { id: 3, value: "Login", link: "/login" },
     { id: 4, value: "Main", link: "/main" },
     { id: 5, value: "Exchange", link: "/exchange" },
     { id: 6, value: "Registration", link: "/register" },
-  ]
+  ] */
 
   const burgerMenuRef = useRef()
 
@@ -21,11 +26,17 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
         setBurgerMenuActive(false)
       }
     }
-
     document.body.addEventListener("click", burgerMenuOutsideClose)
     return () =>
       document.body.removeEventListener("click", burgerMenuOutsideClose)
   }, [])
+
+  function logoutClickHandler() {
+    setBurgerMenuActive(false)
+    logout()
+    navigate("/")
+  }
+
 
   return (
     <div
@@ -53,6 +64,9 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
               </li>
             </Link>
           ))}
+          <li className="burgerMenu__item" onClick={logoutClickHandler}>
+            <p>Log Out</p>
+          </li>
         </ul>
       </div>
     </div>

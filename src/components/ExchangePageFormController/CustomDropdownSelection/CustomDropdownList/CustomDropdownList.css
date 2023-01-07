@@ -3,8 +3,8 @@
   position: absolute;
   top: 50px;
   width: 100%;
-  background-color: var(--primary-bg-color-10);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--base-bg-color-90);
+  box-shadow: var(--base-box-shadow);
   border-radius: 5px;
   z-index: 5;
 }

@@ -4,8 +4,8 @@
   height: 280px;
   border-radius: 20px;
   margin-right: 20px;
-  background-color: var(--primary-bg-color-10);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--base-bg-color-90);
+  box-shadow: var(--base-box-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,11 +14,13 @@
   padding: 30px;
   transition: transform 0.1s ease-in;
   text-align: center;
+  color: var(--base-color);
 }
 
 .exchangeCard:hover {
-  background-color: rgb(228, 228, 228);
+  background-color: var(--hover-bg-color);
   transform: scale(1.03);
+  color: var(--black-color);
 }
 
 .exchangeCard__logo {
@@ -39,7 +41,7 @@
 
 .exchangeCard__info {
   width: 100%;
-  color: var(--base-color-0);
+  color: var(--base-color);
 }
 
 .exchangeCard__currencyInfo {
@@ -54,7 +56,7 @@
   top: 15px;
   left: 15px;
   font-size: 20px;
-  color: gray;
+  color: var(--base-color);
 }
 
 .exchangeCard__trash {
@@ -70,5 +72,5 @@
 .exchangeCard__currencyInfo--text,
 .exchangeCard__title,
 .exchangeCard__currencyInfo--number {
-  color: base-color-0;
+  color: var(--base-color);
 }

@@ -1,17 +1,37 @@
-import React from "react";
-import "./Login.css";
-import { useNavigate, Link } from "react-router-dom";
-import useForm from "../../hooks/useForm/useForm";
-import formInputsData from "./formInputsData/formInputsData";
+import React, { useEffect } from "react"
+import "./Login.css"
+import { useNavigate, Link } from "react-router-dom"
+import useForm from "../../hooks/useForm/useForm"
+import formInputsData from "./formInputsData/formInputsData"
+
+import { useApi } from "../../hooks/useApi/useApi"
+import { fetchLogin } from "../../api/auth/fetchLogin"
+import { useAuth } from "../../hooks/useAuth/useAuth"
 
 function Login() {
-  const navigate = useNavigate();
-  const { inputComponents, isSubmitInvalid } = useForm(formInputsData);
+  const { setAuth } = useAuth()
+  const login = useApi(fetchLogin)
+  const controller = new AbortController()
+  const navigate = useNavigate()
+  const { inputComponents, isSubmitInvalid, formValues } =
+    useForm(formInputsData)
+
+  useEffect(() => {
+    let mounted = true
+    if (login.data && mounted) {
+      setAuth(login.data.data)
+      navigate("/main")
+    }
+    return () => {
+      mounted = false
+      controller.abort()
+    }
+  }, [login.data])
 
   function submitHandler(e) {
-    e.preventDefault();
-    if (isSubmitInvalid()) return;
-    navigate("/main");
+    e.preventDefault()
+    if (isSubmitInvalid()) return
+    login.request(formValues.email, formValues.password, controller)
   }
 
   return (
@@ -29,7 +49,7 @@ function Login() {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

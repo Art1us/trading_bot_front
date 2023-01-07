@@ -1,33 +1,105 @@
 .welcome {
   width: 100vw;
-  height: calc(100vh - 60px);
+  background-color: var(--base-bg-color-100);
+  color: var(--base-color);
 }
 
 .welcome__container {
-  max-width: 700px;
-  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: calc(100vh - 56px);
+}
+
+.welcome__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-  margin: 0 auto;
+  position: relative;
+  height: 90%;
 }
 
-.welcome__button:hover {
-  background-color: var(--hover-btn-color);
-}
-
-.welcome__button {
-  background-color: var(--primary-color-20);
-  height: 200px;
-  width: 260px;
-  border-radius: 10px;
-  cursor: pointer;
+.welcome__title-section {
+  flex-direction: column;
+  justify-content: space-between;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex: 1;
 }
 
-.welcome__buttonText {
-  color: white;
+.welcome__img {
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+}
+
+.welcome__main-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  line-height: 110%;
+}
+
+.welcome__title-desc {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.welcome__btn {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.welcomeLogin__btnLog {
+  -webkit-box-align: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  display: inline-flex;
+  color: var(--primary-color);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.welcomeLogin__btnSign {
+  -webkit-box-align: center;
+  align-items: center;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  display: inline-flex;
+  color: var(--white-color);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.welcomeLogin__btnLog:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.welcomeLogin__btnSign:hover {
+  background: var(--hover-btn-color);
+}
+
+.header__userName {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  line-height: 100%;
 }

@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
-import { Context } from "../../../Context";
-import "./CustomDropDownSelection.css";
-import CustomDropdownList from "./CustomDropdownList/CustomDropdownList";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import React, { useState, useRef, useEffect, useContext } from "react"
+import { Context } from "../../../Context"
+import "./CustomDropDownSelection.css"
+import CustomDropdownList from "./CustomDropdownList/CustomDropdownList"
+import { RiArrowDropDownLine } from "react-icons/ri"
 
 function CustomDropdownSelection({
   displayedDropdown,
@@ -11,47 +11,47 @@ function CustomDropdownSelection({
   id,
 }) {
   const { selectedBotSettings, setSelectedBotSettings, BOT_OPTIONS } =
-    useContext(Context);
+    useContext(Context)
 
   const firstOption = BOT_OPTIONS[id].filter(
-    (item) => item.id === selectedBotSettings[id].id
-  );
+    item => item.id === selectedBotSettings[id].id
+  )
   const restOptions = BOT_OPTIONS[id].filter(
-    (item) => item.id !== selectedBotSettings[id].id
-  );
-  const optionsList = [...firstOption, ...restOptions];
+    item => item.id !== selectedBotSettings[id].id
+  )
+  const optionsList = [...firstOption, ...restOptions]
 
-  const [list, setList] = useState(optionsList);
-  const dropdownRef = useRef();
+  const [list, setList] = useState(optionsList)
+  const dropdownRef = useRef()
 
   useEffect(() => {
     if (selectedBotSettings[id]) {
-      setSelectedBotSettings((prev) => ({
+      setSelectedBotSettings(prev => ({
         ...prev,
         [id]: list[0],
-      }));
+      }))
     }
-  }, [list]);
+  }, [list])
 
   useEffect(() => {
     function outsideClickHandler(e) {
       if (e.target !== dropdownRef.current) {
-        setDisplayedDropdown("0");
+        setDisplayedDropdown("0")
       }
     }
 
-    document.addEventListener("click", outsideClickHandler);
+    document.addEventListener("click", outsideClickHandler)
     return () => {
-      document.removeEventListener("click", outsideClickHandler);
-    };
-  }, []);
+      document.removeEventListener("click", outsideClickHandler)
+    }
+  }, [])
 
   function clickHandler(e) {
-    e.stopPropagation();
+    e.stopPropagation()
     if (displayedDropdown === id) {
-      setDisplayedDropdown("0");
+      setDisplayedDropdown("0")
     } else {
-      setDisplayedDropdown(id);
+      setDisplayedDropdown(id)
     }
   }
 
@@ -75,7 +75,7 @@ function CustomDropdownSelection({
         <CustomDropdownList list={list} setList={setList} />
       )}
     </div>
-  );
+  )
 }
 
-export default CustomDropdownSelection;
+export default CustomDropdownSelection
