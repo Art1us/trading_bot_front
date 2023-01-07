@@ -1,7 +1,7 @@
 import React from "react"
 
-function Boots() {
+function Bots() {
   return <div className="wrapper__main">ssss</div>
 }
 
-export default Boots
+export default Bots

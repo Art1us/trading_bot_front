@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: whitesmoke;
 }
 
 .profile__item {
@@ -24,6 +25,7 @@
   height: 50px;
   width: 100%;
   cursor: pointer;
+  font-size: 21px;
 }
 
 .profile__item--active {
@@ -38,6 +40,7 @@
   text-decoration: none;
   height: 50px;
   width: 100%;
+  font-size: 21px;
 }
 
 .profile__main {
@@ -45,4 +48,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.profileItem__paragraph {
+  cursor: pointer;
 }

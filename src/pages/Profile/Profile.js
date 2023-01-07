@@ -1,18 +1,18 @@
 import "./Profile.css"
 import { useState } from "react"
-import Dashboard from "../../components/ProfileItems/TradeStatistics/Dashboard"
-import ProfileComponent from "../../components/ProfileItems/ProfileComponent/ProfileComponents"
-import Boots from "../../components/ProfileItems/Boots/Bots"
-import Trade from "../../components/ProfileItems/Dashboard/TradeStatistic"
+import Dashboard from "../../components/ProfileItems/TradeStatistics/TradeStatistic"
+import ProfileComponent from "../../components/ProfileItems/ProfileComponent/ProfileComponent"
+import Boots from "../../components/ProfileItems/Bots/Bots"
+import Trade from "../../components/ProfileItems/Dashboard/Dashboard"
 
 function Profile() {
   const [activeProfile, setActiveProfile] = useState()
 
   const profileItems = [
     { id: 1, value: "Dashboard" },
-    { id: 2, value: "ProfileComponent " },
+    { id: 2, value: "Profile" },
     { id: 3, value: "Bots" },
-    { id: 4, value: "Trade" },
+    { id: 4, value: "Trade Statistic" },
   ]
 
   return (
@@ -29,7 +29,7 @@ function Profile() {
             }
           >
             <li>
-              <p>{item.value}</p>
+              <div className="profileItem__paragraph">{item.value}</div>
             </li>
           </div>
         ))}
