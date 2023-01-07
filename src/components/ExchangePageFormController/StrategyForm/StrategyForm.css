@@ -22,6 +22,7 @@
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 10px;
+  color: var(--base-color);
 }
 
 .strategyForm__select {
@@ -29,6 +30,7 @@
   height: 40px;
   background-color: var(--input-bg-color);
   border-radius: 5px;
+  color: var(--base-color);
 }
 
 .strategyForm__btn {

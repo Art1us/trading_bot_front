@@ -10,7 +10,7 @@ const formInputsData = [
         placeholder: "",
       },
     },
-    list: "",
+    list: [],
     labelData: {
       className: "newExchangeModal__formTitle",
       text: "Select Exchanges",
@@ -82,6 +82,6 @@ const formInputsData = [
       ],
     },
   },
-];
+]
 
-export default formInputsData;
+export default formInputsData

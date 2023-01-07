@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from "react";
-import FormInput from "./FormInput/FormInput";
-import FormSelect from "./FormSelect";
+import React, { useEffect, useState } from "react"
+import FormInput from "./FormInput/FormInput"
+import FormSelect from "./FormSelect"
 
 function useForm(inputs, values) {
-  const initialFormValues = values ? { ...values } : {};
+  const initialFormValues = values ? { ...values } : {}
   if (!values) {
-    inputs.forEach((input) => {
-      initialFormValues[input.inputData.props.name] = "";
-    });
+    inputs.forEach(input => {
+      initialFormValues[input.inputData.props.name] = ""
+    })
   }
 
-  const initialFormErrors = {};
-  inputs.forEach((input) => {
-    initialFormErrors[input.inputData.props.name] = "";
-  });
+  const initialFormErrors = {}
+  inputs.forEach(input => {
+    initialFormErrors[input.inputData.props.name] = ""
+  })
 
-  const initialFormIsDirty = {};
-  inputs.forEach((input) => {
-    initialFormIsDirty[input.inputData.props.name] = values ? true : false;
-  });
+  const initialFormIsDirty = {}
+  inputs.forEach(input => {
+    initialFormIsDirty[input.inputData.props.name] = values ? true : false
+  })
 
-  const [formValues, setFormValues] = useState(initialFormValues);
-  const [errorMessages, setErrorMessages] = useState(initialFormErrors);
-  const [isDirty, setIsDirty] = useState(initialFormIsDirty);
+  const [formValues, setFormValues] = useState(initialFormValues)
+  const [errorMessages, setErrorMessages] = useState(initialFormErrors)
+  const [isDirty, setIsDirty] = useState(initialFormIsDirty)
 
   useEffect(() => {
-    inputs.forEach((input) => {
+    inputs.forEach(input => {
       function getError() {
         for (let error of input.errorsData.errors) {
           if (
@@ -33,7 +33,7 @@ function useForm(inputs, values) {
             formValues[input.inputData.props.name] !==
               formValues[error.equalsToInput]
           ) {
-            return "Passwords don't match";
+            return "Passwords don't match"
           } //error if input not equals to other input
 
           if (
@@ -42,7 +42,7 @@ function useForm(inputs, values) {
               formValues[input.inputData.props.name]
             )
           ) {
-            return error.message;
+            return error.message
           } //error if matching condition
 
           if (
@@ -51,60 +51,61 @@ function useForm(inputs, values) {
               formValues[input.inputData.props.name]
             )
           ) {
-            return error.message;
+            return error.message
           } //error if not matching pattern
         }
       }
 
       if (isDirty[input.inputData.props.name] && getError()) {
-        setErrorMessages((prev) => ({
+        setErrorMessages(prev => ({
           ...prev,
           [input.inputData.props.name]: getError(),
-        }));
+        }))
       } else {
-        setErrorMessages((prev) => ({
+        setErrorMessages(prev => ({
           ...prev,
           [input.inputData.props.name]: "",
-        }));
+        }))
       }
-    });
-  }, [formValues, isDirty]);
+    })
+  }, [formValues, isDirty])
 
   function isSubmitInvalid() {
-    const dirtyInputs = Object.values(isDirty).filter((i) => !!i === false);
+    const dirtyInputs = Object.values(isDirty).filter(i => !!i === false)
 
     if (dirtyInputs.length) {
-      const newIsDirty = {};
-      Object.keys(isDirty).forEach((key) => {
-        newIsDirty[key] = true;
-      });
+      const newIsDirty = {}
+      Object.keys(isDirty).forEach(key => {
+        newIsDirty[key] = true
+      })
 
-      setIsDirty({ ...newIsDirty });
-      return true;
+      setIsDirty({ ...newIsDirty })
+      return true
     }
 
-    const errors = Object.values(errorMessages).filter((i) => !!i === true);
-    if (errors.length) return true;
+    const errors = Object.values(errorMessages).filter(i => !!i === true)
+    if (errors.length) return true
   }
 
   function onChange(e) {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   function onBlur(e) {
-    setIsDirty((prev) => ({ ...prev, [e.target.name]: true }));
+    setIsDirty(prev => ({ ...prev, [e.target.name]: true }))
   }
 
   function displayCustomError(errorText) {
-    const newErrorMessages = {};
-    Object.keys({ ...errorMessages }).forEach((err) => {
-      newErrorMessages[err] = errorText;
-    });
+    if (!errorText) return
+    const newErrorMessages = {}
+    Object.keys({ ...errorMessages }).forEach(err => {
+      newErrorMessages[err] = errorText
+    })
 
-    setErrorMessages(newErrorMessages);
+    setErrorMessages(newErrorMessages)
   }
 
-  const inputComponents = inputs.map((input) =>
+  const inputComponents = inputs.map(input =>
     input.element === "select" ? (
       <FormSelect
         key={input.id}
@@ -136,9 +137,9 @@ function useForm(inputs, values) {
     ) : (
       ""
     )
-  );
+  )
 
-  return { inputComponents, isSubmitInvalid, formValues, displayCustomError };
+  return { inputComponents, isSubmitInvalid, formValues, displayCustomError }
 }
 
-export default useForm;
+export default useForm

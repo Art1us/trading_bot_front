@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "./Register.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
@@ -6,49 +6,58 @@ import formInputsData from "./formInputsData/formInputsData"
 
 import { useApi } from "../../hooks/useApi/useApi"
 import { fetchRegistration } from "../../api/auth/fetchRegistration"
+import RegistrationSuccess from "../../components/RegistrationSuccess/RegistrationSuccess"
 
 function Register() {
   const registration = useApi(fetchRegistration)
   const controller = new AbortController()
 
+  const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
+    useForm(formInputsData)
+
   useEffect(() => {
     let mounted = true
-    if (registration.data && mounted) {
-      navigate("/login")
+    if (registration.response?.status === 201 && mounted) {
     }
     return () => {
       mounted = false
       controller.abort()
     }
-  }, [registration.data])
+  }, [registration.response])
 
-  const navigate = useNavigate()
-  const { inputComponents, isSubmitInvalid, formValues } =
-    useForm(formInputsData)
+  useEffect(() => {
+    if (registration.error?.message) {
+      displayCustomError(registration.error?.message || "Unexpected error")
+    }
+  }, [registration.error])
 
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-
-    registration.request(formValues.email, formValues.password)
+    registration.request(formValues.email, formValues.password, controller)
   }
 
-  //show loading circle when loading
   return (
-    <div className="register">
-      <div className="register__container">
-        <form className="register__form" onSubmit={submitHandler}>
-          <div className="register__formTitle">Register</div>
-          <div>{inputComponents}</div>
-          <button className="register__signInBtn">Register</button>
-          <Link to="/login">
-            <button type="button" className="register__createAccBtn">
-              Back to Login
-            </button>
-          </Link>
-        </form>
-      </div>
-    </div>
+    <>
+      {registration.response?.status === 201 ? (
+        <RegistrationSuccess />
+      ) : (
+        <div className="register">
+          <div className="register__container">
+            <form className="register__form" onSubmit={submitHandler}>
+              <div className="register__formTitle">Register</div>
+              <div>{inputComponents}</div>
+              <button className="register__signInBtn">Register</button>
+              <Link to="/login">
+                <button type="button" className="register__createAccBtn">
+                  Back to Login
+                </button>
+              </Link>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
