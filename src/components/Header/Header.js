@@ -14,6 +14,7 @@ function Header() {
   const [displayDropdownActive, setDisplayDropdownActive] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+
   function languageClickHandler(e) {
     e.stopPropagation()
     setDisplayDropdownActive(prev => !prev)

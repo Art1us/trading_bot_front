@@ -16,6 +16,7 @@
   --input-bg-color: white;
   --placeholder-base-color: grey;
   --primary-color: royalblue;
+  --secondary-color: #d9552b;
   --base-field-btns: white;
   --warning-color: rgb(230, 1, 1);
   --hover-bg-color: #e3e2e2;
@@ -38,6 +39,8 @@
   --input-bg-color: rgb(103, 103, 103);
   --placeholder-base-color: darkgrey;
   --primary-color: royalblue;
+  --secondary-color: #d9552b;
+
   --base-field-btns: whitesmoke;
   --warning-color: rgb(214, 3, 3);
   --hover-bg-color: rgb(66, 66, 66);
