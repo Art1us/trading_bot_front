@@ -1,6 +1,6 @@
 import "./Profile.css"
 import { useState } from "react"
-import Trade from "../../components/ProfileItems/TradeStatistics/TradeStatistics"
+import TradeStatistics from "../../components/ProfileItems/TradeStatistics/TradeStatistics"
 import ProfileComponent from "../../components/ProfileItems/ProfileComponent/ProfileComponent"
 import Bots from "../../components/ProfileItems/Bots/Bots"
 import Dashboard from "../../components/ProfileItems/Dashboard/Dashboard"
@@ -38,7 +38,7 @@ function Profile() {
         {activeProfile === 1 && <Dashboard />}
         {activeProfile === 2 && <ProfileComponent />}
         {activeProfile === 3 && <Bots />}
-        {activeProfile === 4 && <Trade />}
+        {activeProfile === 4 && <TradeStatistics />}
       </div>
     </div>
   )
