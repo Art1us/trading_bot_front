@@ -27,9 +27,9 @@
 }
 
 .profile__item--active {
-  color: #d9552b;
+  color: var(--secondary-color);
   background-color: white;
-  border-left: 2px solid #d9552b;
+  border-left: 2px solid var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: left;
