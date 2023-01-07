@@ -19,6 +19,7 @@
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
+  width: 25%;
 }
 
 .header__title {
@@ -51,10 +52,15 @@
   background-color: var(--hover-bg-color);
 }
 
-.header__logo img {
+.headerLogo {
+  width: 25%;
+}
+
+.headerLogo__img {
   margin-top: 5px;
   cursor: pointer;
-  width: 100px;
+  max-width: 100px;
+  max-height: 100px;
   -webkit-filter: drop-shadow(0px 0px 4px #222);
   filter: drop-shadow(0px 0px 4px var(--logo-shadow));
 }
