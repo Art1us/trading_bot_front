@@ -18,11 +18,11 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" exact element={<Welcome />} />
+          <Route path="/unauth" element={<Unauthorized />} />
+          <Route path="/pagenotfound" element={<PageNotFound />} />
           <Route element={<RedirectLoggedInUser />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/unauth" element={<Unauthorized />} />
-            <Route path="/pagenotfound" element={<PageNotFound />} />
           </Route>
           <Route element={<RequireAuth />}>
             <Route path="/main" element={<MainPage />} />
