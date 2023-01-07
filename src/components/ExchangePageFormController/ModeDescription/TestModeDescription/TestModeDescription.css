@@ -19,6 +19,17 @@
 
 .testModeDescription__description {
   margin-bottom: 20px;
+  height: 100%;
+  padding: 10px;
+  color: var(--base-color-80);
+}
+
+.testModeDescription__description p {
+  margin-bottom: 10px;
+}
+
+.testModeDescription__description p:last-child {
+  margin-bottom: 0;
 }
 
 .testModeDescription__button {
