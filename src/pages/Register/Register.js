@@ -37,7 +37,7 @@ function Register() {
   //show loading circle when loading
   return (
     <>
-      {true ? (
+      {false ? (
         <RegistrationSuccess />
       ) : (
         <div className="register">
