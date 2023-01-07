@@ -6,6 +6,7 @@ import formInputsData from "./formInputsData/formInputsData"
 
 import { useApi } from "../../hooks/useApi/useApi"
 import { fetchRegistration } from "../../api/auth/fetchRegistration"
+import RegistrationSuccess from "../../components/RegistrationSuccess/RegistrationSuccess"
 
 function Register() {
   const registration = useApi(fetchRegistration)
@@ -38,20 +39,26 @@ function Register() {
   }
 
   return (
-    <div className="register">
-      <div className="register__container">
-        <form className="register__form" onSubmit={submitHandler}>
-          <div className="register__formTitle">Register</div>
-          <div>{inputComponents}</div>
-          <button className="register__signInBtn">Register</button>
-          <Link to="/login">
-            <button type="button" className="register__createAccBtn">
-              Back to Login
-            </button>
-          </Link>
-        </form>
-      </div>
-    </div>
+    <>
+      {false ? (
+        <RegistrationSuccess />
+      ) : (
+        <div className="register">
+          <div className="register__container">
+            <form className="register__form" onSubmit={submitHandler}>
+              <div className="register__formTitle">Register</div>
+              <div>{inputComponents}</div>
+              <button className="register__signInBtn">Register</button>
+              <Link to="/login">
+                <button type="button" className="register__createAccBtn">
+                  Back to Login
+                </button>
+              </Link>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
