@@ -25,7 +25,6 @@
 
 .customDateDropdown__dateInput {
   width: 100%;
-  height: 20px;
 }
 
 .customDateDropdown__error {
@@ -41,7 +40,7 @@
   color: var(--base-color);
   background-color: var(--primary-color);
   border: 0;
-  border-radius: 2px;
+  border-radius: 5px;
   cursor: pointer;
 }
 

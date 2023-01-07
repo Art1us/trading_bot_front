@@ -13,9 +13,9 @@ function ThemeToggle() {
       <ReactSwitch
         checked={isDarkTheme}
         onChange={() => setIsDarkTheme(prev => !prev)}
-        offColor="#000"
+        offColor="#323232"
         onColor="#fff"
-        onHandleColor="#000"
+        onHandleColor="#323232"
         offHandleColor="#fff"
         handleDiameter={20}
         uncheckedIcon={<BsFillMoonFill className="themeToggle__icon--night" />}

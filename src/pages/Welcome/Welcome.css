@@ -89,11 +89,14 @@
 }
 
 .welcomeLogin__btnLog:hover {
-  background-color: var(--hover-bg-color);
+  background-color: var(--hover-btn-color);
+  color: var(--white-color);
+  border-color: var(--hover-btn-color);
 }
 
 .welcomeLogin__btnSign:hover {
   background: var(--hover-btn-color);
+  border-color: var(--hover-btn-color);
 }
 
 .header__userName {
