@@ -6,7 +6,7 @@ import Bots from "../../components/ProfileItems/Bots/Bots"
 import Dashboard from "../../components/ProfileItems/Dashboard/Dashboard"
 
 function Profile() {
-  const [activeProfile, setActiveProfile] = useState()
+  const [activeProfile, setActiveProfile] = useState(1)
 
   const profileItems = [
     { id: 1, value: "Dashboard" },
