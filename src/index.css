@@ -8,6 +8,7 @@
   --white-color: white;
   --black-color: black;
   --base-color: black;
+  --base-color-80: rgb(80, 80, 80);
   --inversed-base-color: white;
   --base-bg-color-100: white;
   --base-bg-color-90: whitesmoke;
@@ -29,6 +30,7 @@
   --white-color: white;
   --black-color: black;
   --base-color: white;
+  --base-color-80: whitesmoke;
   --inversed-base-color: black;
   --base-bg-color-100: rgb(42, 42, 42);
   --base-bg-color-90: rgb(76, 76, 76);
