@@ -19,7 +19,6 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Welcome />} />
           <Route path="/unauth" element={<Unauthorized />} />
-          <Route path="/pagenotfound" element={<PageNotFound />} />
           <Route element={<RedirectLoggedInUser />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -28,6 +27,7 @@ function App() {
             <Route path="/main" element={<MainPage />} />
             <Route path="/exchange" element={<ExchangePage />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
