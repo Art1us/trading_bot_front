@@ -21,6 +21,11 @@
   color: var(--hover-bg-color);
 }
 
+.footer__title {
+  cursor: default;
+}
+
 .footer__title:hover {
-  color: var(--hover-bg-color);
+  color: var(--base-color);
+  cursor: default;
 }
