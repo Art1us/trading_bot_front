@@ -10,6 +10,9 @@ import { fetchRegistration } from "../../api/auth/fetchRegistration"
 function Register() {
   const registration = useApi(fetchRegistration)
   const controller = new AbortController()
+  const navigate = useNavigate()
+  const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
+    useForm(formInputsData)
 
   useEffect(() => {
     let mounted = true
@@ -22,9 +25,11 @@ function Register() {
     }
   }, [registration.response])
 
-  const navigate = useNavigate()
-  const { inputComponents, isSubmitInvalid, formValues } =
-    useForm(formInputsData)
+  useEffect(() => {
+    if (registration.error?.message) {
+      displayCustomError(registration.error?.message || "Unexpected error")
+    }
+  }, [registration.error])
 
   function submitHandler(e) {
     e.preventDefault()
@@ -32,10 +37,6 @@ function Register() {
     registration.request(formValues.email, formValues.password, controller)
   }
 
-  //422 user already exists
-  //404 - username doesn't exist
-  //server timeout
-  //unexpected error
   return (
     <div className="register">
       <div className="register__container">
