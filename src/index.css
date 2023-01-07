@@ -17,7 +17,7 @@
   --primary-color: royalblue;
   --base-field-btns: white;
   --warning-color: rgb(230, 1, 1);
-  --hover-bg-color: rgb(139, 139, 139);
+  --hover-bg-color: #e3e2e2;
   --hover-btn-color: rgb(14, 14, 159);
   --language-dropdown-border-color: rgb(239.561, 239.561, 239.561);
 
@@ -38,7 +38,7 @@
   --primary-color: royalblue;
   --base-field-btns: whitesmoke;
   --warning-color: rgb(214, 3, 3);
-  --hover-bg-color: rgb(138, 138, 138);
+  --hover-bg-color: rgb(66, 66, 66);
   --hover-btn-color: rgb(0, 0, 163);
   --language-dropdown-border-color: #484747;
 
