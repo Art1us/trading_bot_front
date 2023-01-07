@@ -13,14 +13,14 @@ function Register() {
 
   useEffect(() => {
     let mounted = true
-    if (registration.data && mounted) {
+    if (registration.response?.status === 201 && mounted) {
       navigate("/login")
     }
     return () => {
       mounted = false
       controller.abort()
     }
-  }, [registration.data])
+  }, [registration.response])
 
   const navigate = useNavigate()
   const { inputComponents, isSubmitInvalid, formValues } =
@@ -29,11 +29,13 @@ function Register() {
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-
-    registration.request(formValues.email, formValues.password)
+    registration.request(formValues.email, formValues.password, controller)
   }
 
-  //show loading circle when loading
+  //422 user already exists
+  //404 - username doesn't exist
+  //server timeout
+  //unexpected error
   return (
     <div className="register">
       <div className="register__container">

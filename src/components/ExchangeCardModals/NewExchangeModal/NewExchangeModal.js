@@ -26,11 +26,14 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
       mounted = false
       controller.abort()
     }
-  }, [])
+  }, []) //set up condition to reload if first load is not successfull
 
   useEffect(() => {
-    formInputsData[0].list = exchanges?.data ? [...exchanges?.data?.data] : []
-  }, [exchanges.data])
+    formInputsData[0].list =
+      exchanges.response?.status === 200
+        ? [...exchanges?.response?.data?.data]
+        : []
+  }, [exchanges.response])
 
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)

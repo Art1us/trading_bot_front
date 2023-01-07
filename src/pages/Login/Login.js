@@ -18,15 +18,20 @@ function Login() {
 
   useEffect(() => {
     let mounted = true
-    if (login.data && mounted) {
-      setAuth(login.data.data)
+
+    if (login.response?.status === 200 && mounted) {
+      setAuth(login.response?.data?.data)
       navigate("/main")
     }
+    //404 - username doesn't exist
+    //401 - correct email with incorrect password
+    //server timeout
+    //unexpected error
     return () => {
       mounted = false
       controller.abort()
     }
-  }, [login.data])
+  }, [login.response?.data])
 
   function submitHandler(e) {
     e.preventDefault()
