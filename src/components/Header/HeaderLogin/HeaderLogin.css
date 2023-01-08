@@ -55,16 +55,3 @@
   background: var(--hover-btn-color);
   border-color: var(--hover-btn-color);
 }
-
-.header__userName {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-weight: bold;
-  line-height: 100%;
-}
-
-.headerUser__signIn {
-  width: 175px;
-  display: flex;
-}

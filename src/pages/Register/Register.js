@@ -3,14 +3,17 @@ import "./Register.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
+import { useAuth } from "../../hooks/useAuth/useAuth"
 
 import { useApi } from "../../hooks/useApi/useApi"
 import { fetchRegistration } from "../../api/auth/fetchRegistration"
 import RegistrationSuccess from "../../components/RegistrationSuccess/RegistrationSuccess"
+import LoggedIn from "../../components/LoggedIn/LoggedIn"
 
 function Register() {
   const registration = useApi(fetchRegistration)
   const controller = new AbortController()
+  const { auth } = useAuth()
 
   const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
     useForm(formInputsData)
@@ -40,7 +43,9 @@ function Register() {
 
   return (
     <>
-      {registration.response?.status === 201 ? (
+      {auth?.access_token ? (
+        <LoggedIn />
+      ) : registration.response?.status === 201 ? (
         <RegistrationSuccess />
       ) : (
         <div className="register">
