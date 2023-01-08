@@ -20,12 +20,13 @@ function AuthProvider({ children }) {
     localStorage.removeItem("auth")
   }
 
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
   const refreshToken = useApi(fetchRefreshToken)
   const controller = new AbortController()
 
   function refreshTokens() {
     refreshToken.request(auth.access_token, auth.refresh_token, controller)
+    console.log("refresh fetched")
   }
 
   useEffect(() => {
@@ -35,7 +36,7 @@ function AuthProvider({ children }) {
       //setAuth(refreshToken.response?.data?.data)
       //continue with previous request
     } else {
-      navigate("/login")
+      //navigate("/login")
     }
     return () => {
       mounted = false
