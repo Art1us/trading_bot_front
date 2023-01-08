@@ -3,5 +3,9 @@ import { useAuth } from "../../hooks/useAuth/useAuth"
 
 export default function RequireAuth() {
   const { auth } = useAuth()
-  return auth?.access_token ? <Navigate to="/" /> : <Outlet />
+  return auth?.access_token ? <Outlet /> : <Outlet />
+}
+
+{
+  /* <Navigate to="/" /> */
 }
