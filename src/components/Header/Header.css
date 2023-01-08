@@ -71,5 +71,15 @@
 }
 
 .header__userName {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  line-height: 100%;
   color: var(--base-color);
+}
+
+.headerUser__signIn {
+  display: flex;
+  width: fit-content;
 }
