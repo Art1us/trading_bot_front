@@ -18,6 +18,7 @@ function Register() {
   useEffect(() => {
     let mounted = true
     if (registration.response?.status === 201 && mounted) {
+      //
     }
     return () => {
       mounted = false

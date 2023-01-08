@@ -34,6 +34,7 @@ export function useApi(apiFunc) {
       setError(error)
     } finally {
       setLoading(false)
+      // if error.status === 401 && getRefreshedToken()
     }
   }
 
