@@ -19,6 +19,7 @@
   border-radius: 5px;
   background-color: var(--base-bg-color-90);
   box-shadow: var(--base-box-shadow);
+  color: var(--base-color);
 }
 
 .login__formTitle {
@@ -49,8 +50,8 @@
 }
 
 .login__signInBtn:hover {
-  background-color: var(--hover-bg-color);
-  color: var(--hover-btn-color);
+  background-color: var(--hover-btn-color);
+  color: var(--white-color);
   border-color: var(--hover-btn-color);
 }
 
@@ -68,6 +69,7 @@
 
 .login__createAccBtn:hover {
   background-color: var(--hover-btn-color);
+  border-color: var(--hover-btn-color);
 }
 
 .login__formLabel {

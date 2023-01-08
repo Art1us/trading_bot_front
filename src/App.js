@@ -6,6 +6,7 @@ import MainPage from "./pages/MainPage/MainPage"
 import ExchangePage from "./pages/ExchangePage/ExchangePage"
 import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
+import Profile from "./pages/Profile/Profile"
 import RequireAuth from "./helpers/Auth/RequireAuth"
 import RedirectLoggedInUser from "./helpers/Auth/RedirectLoggedInUser"
 import Unauthorized from "./pages/Unauthorized/Unauthorized"
@@ -26,6 +27,7 @@ function App() {
           <Route element={<RequireAuth />}>
             <Route path="/main" element={<MainPage />} />
             <Route path="/exchange" element={<ExchangePage />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

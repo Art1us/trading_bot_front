@@ -8,6 +8,7 @@
   --white-color: white;
   --black-color: black;
   --base-color: black;
+  --base-color-80: rgb(80, 80, 80);
   --inversed-base-color: white;
   --base-bg-color-100: white;
   --base-bg-color-90: whitesmoke;
@@ -15,9 +16,10 @@
   --input-bg-color: white;
   --placeholder-base-color: grey;
   --primary-color: royalblue;
+  --secondary-color: #d9552b;
   --base-field-btns: white;
-  --warning-color: red;
-  --hover-bg-color: rgb(182, 182, 182);
+  --warning-color: rgb(230, 1, 1);
+  --hover-bg-color: #e3e2e2;
   --hover-btn-color: rgb(14, 14, 159);
   --language-dropdown-border-color: rgb(239.561, 239.561, 239.561);
 
@@ -29,18 +31,21 @@
   --white-color: white;
   --black-color: black;
   --base-color: white;
+  --base-color-80: whitesmoke;
   --inversed-base-color: black;
-  --base-bg-color-100: rgb(42, 42, 42);
-  --base-bg-color-90: rgb(76, 76, 76);
+  --base-bg-color-100: #1a120b;
+  --base-bg-color-90: #323232;
   --modal-bg-color: darkgrey;
   --input-bg-color: rgb(103, 103, 103);
   --placeholder-base-color: darkgrey;
-  --primary-color: rgb(0, 0, 204);
+  --primary-color: royalblue;
+  --secondary-color: #d9552b;
+
   --base-field-btns: whitesmoke;
-  --warning-color: red;
-  --hover-bg-color: rgb(138, 138, 138);
+  --warning-color: rgb(214, 3, 3);
+  --hover-bg-color: rgb(66, 66, 66);
   --hover-btn-color: rgb(0, 0, 163);
-  --language-dropdown-border-color: rgb(146, 146, 146);
+  --language-dropdown-border-color: #484747;
 
   --base-box-shadow: none;
   --logo-shadow: rgba(152, 152, 152, 0.804);

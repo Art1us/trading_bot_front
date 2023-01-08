@@ -14,6 +14,7 @@ function Header() {
   const [displayDropdownActive, setDisplayDropdownActive] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+
   function languageClickHandler(e) {
     e.stopPropagation()
     setDisplayDropdownActive(prev => !prev)
@@ -27,11 +28,11 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <div className="header__logo">
-            <img src={botLogo} alt="Logo" />
-          </div>
-        </Link>
+        <div className="headerLogo">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img src={botLogo} alt="Logo" className="headerLogo__img" />
+          </Link>
+        </div>
         <Link to="/" style={{ textDecoration: "none" }}>
           <h2 className="header__title">Trading Bot</h2>
         </Link>

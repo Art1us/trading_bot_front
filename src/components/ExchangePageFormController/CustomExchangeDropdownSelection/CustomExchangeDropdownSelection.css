@@ -41,3 +41,7 @@
   font-size: 16px;
   color: var(--white-color);
 }
+
+.customExchangeDropdownSelection__btn:hover {
+  background-color: rgb(162, 0, 0);
+}
