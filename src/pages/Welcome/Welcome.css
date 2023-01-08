@@ -70,7 +70,43 @@
   font-size: 14px;
 }
 
+.welcomeLogin__btnProfile {
+  -webkit-box-align: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  display: inline-flex;
+  color: var(--primary-color);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+}
+
 .welcomeLogin__btnSign {
+  -webkit-box-align: center;
+  align-items: center;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  display: inline-flex;
+  color: var(--white-color);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.welcomeLogin__btnNewBot {
   -webkit-box-align: center;
   align-items: center;
   background: var(--primary-color);
@@ -94,7 +130,18 @@
   border-color: var(--hover-btn-color);
 }
 
+.welcomeLogin__btnProfile:hover {
+  background-color: var(--hover-btn-color);
+  color: var(--white-color);
+  border-color: var(--hover-btn-color);
+}
+
 .welcomeLogin__btnSign:hover {
+  background: var(--hover-btn-color);
+  border-color: var(--hover-btn-color);
+}
+
+.welcomeLogin__btnNewBot:hover {
   background: var(--hover-btn-color);
   border-color: var(--hover-btn-color);
 }
