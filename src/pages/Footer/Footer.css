@@ -18,7 +18,7 @@
 }
 
 .footer__item:hover {
-  color: var(--hover-bg-color);
+  color: var(--primary-color);
 }
 
 .footer__title {
