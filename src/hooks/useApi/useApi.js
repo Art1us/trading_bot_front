@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { AuthContext } from "../../contexts/AuthContext"
 
 export function useApi(apiFunc) {
   const [response, setResponse] = useState(null)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+  const { refreshTokens } = useContext(AuthContext)
 
   async function request(...args) {
     setLoading(true)
@@ -17,6 +19,7 @@ export function useApi(apiFunc) {
       switch (status) {
         case 401:
           error.message = "You have no access"
+          refreshTokens()
           break
         case 404:
           error.message = "Page not found"
@@ -30,11 +33,10 @@ export function useApi(apiFunc) {
       if (!err?.response) {
         error.message = "No response from the server"
       }
-      console.log(error)
+
       setError(error)
     } finally {
       setLoading(false)
-      // if error.status === 401 && getRefreshedToken()
     }
   }
 
