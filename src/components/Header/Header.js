@@ -5,6 +5,7 @@ import HeaderLogin from "./HeaderLogin/HeaderLogin"
 import { Link } from "react-router-dom"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { RiGlobalLine } from "react-icons/ri"
+import { useAuth } from "../../hooks/useAuth/useAuth"
 import botLogo from "../../assets/pictures/logo-bot.png"
 import LanguageDropdown from "./LanguageDropdown/LanguageDropdown"
 import ThemeToggle from "./ThemeToggle/ThemeToggle"
@@ -12,8 +13,7 @@ import ThemeToggle from "./ThemeToggle/ThemeToggle"
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false)
   const [displayDropdownActive, setDisplayDropdownActive] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+  const { auth } = useAuth()
 
   function languageClickHandler(e) {
     e.stopPropagation()
@@ -52,7 +52,7 @@ function Header() {
             )}
           </div>
           <div className="headerUser__signIn">
-            {isLoggedIn ? (
+            {auth?.access_token ? (
               <>
                 <p className="header__userName">Hello username</p>
                 <div className="header__elements--hover">
@@ -63,7 +63,7 @@ function Header() {
                 </div>
               </>
             ) : (
-              <HeaderLogin setIsLoggedIn={setIsLoggedIn} />
+              <HeaderLogin />
             )}
           </div>
         </div>
