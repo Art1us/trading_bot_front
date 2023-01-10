@@ -1,0 +1,8 @@
+.exchangeAddAnimationEnter {
+    translate: -200px 0;
+}
+
+.exchangeAddAnimationEnterActive {
+    translate: 0 0;
+    transition: all 200ms ease-in;
+}
