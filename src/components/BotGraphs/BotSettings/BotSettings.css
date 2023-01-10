@@ -1,0 +1,45 @@
+.botSettings__container {
+  width: 445px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--base-box-shadow);
+  padding: 10px;
+}
+
+.botSettings__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.botSettings__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.botSettings__btnContainer {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.botSettings__btn {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.botSettings__btn:hover {
+  background-color: var(--hover-btn-color);
+  border-color: var(--hover-btn-color);
+}
