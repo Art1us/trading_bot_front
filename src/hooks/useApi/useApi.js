@@ -8,9 +8,7 @@ export function useApi(apiFunc) {
   const [response, setResponse] = useState(null)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-
   const { auth, setAuth, logout } = useAuth()
-  console.log("auth useApi", auth)
 
   useEffect(() => {
     const controller = new AbortController()
@@ -33,7 +31,6 @@ export function useApi(apiFunc) {
           setAuth(prev => ({ ...prev, access_token: newAccessToken }))
           return apiClient(prevRequest)
         } else {
-          console.log("logout")
           logout()
         }
         return Promise.reject(error)
