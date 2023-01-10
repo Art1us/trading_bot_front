@@ -13,10 +13,6 @@ function Greeting({ onClick }) {
     username.request(auth.access_token, controller)
   }, [auth])
 
-  useEffect(() => {
-    console.log(username.response?.data?.data?.email)
-  }, [username.response])
-
   return (
     <>
       <p className="header__userName" onClick={onClick}>

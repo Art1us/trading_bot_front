@@ -30,7 +30,7 @@ function ContextProvider({ children }) {
     exchange: { id: "", name: "" },
   })
 
-  const [isDarkTheme, setIsDarkTheme] = useState(
+  const [isDarkTheme, setIsDarkTheme] = useState(() =>
     JSON.parse(localStorage.getItem("isDarkTheme"))
   )
 
