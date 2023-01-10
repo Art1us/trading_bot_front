@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin-bottom: 100px;
+  width: 750px;
+  height: 250px;
 }
 
 .chart-container {

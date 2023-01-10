@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from "react";
-import "./LightweightChart.css";
+import React, { useEffect, useRef } from "react"
+import "./LightweightChart.css"
 
-import { priceData } from "./priceData";
+import { priceData } from "./priceData"
 // import { areaData } from './areaData';
-import { volumeData } from "./volumeData";
+import { volumeData } from "./volumeData"
 
-import { createChart, CrosshairMode } from "lightweight-charts";
+import { createChart, CrosshairMode } from "lightweight-charts"
 
 export default function LightweightChart() {
-  const chartContainerRef = useRef();
-  const chart = useRef();
-  const resizeObserver = useRef();
+  const chartContainerRef = useRef()
+  const chart = useRef()
+  const resizeObserver = useRef()
 
   useEffect(() => {
     chart.current = createChart(chartContainerRef.current, {
@@ -37,20 +37,20 @@ export default function LightweightChart() {
       timeScale: {
         borderColor: "#485c7b",
       },
-    });
+    })
 
-    console.log(chart.current);
+    console.log(chart.current)
 
     const candleSeries = chart.current.addCandlestickSeries({
       upColor: "#4bffb5",
-      downColor: "#ff4976",
-      borderDownColor: "#ff4976",
+      downColor: "#DA1212",
+      borderDownColor: "#DA1212",
       borderUpColor: "#4bffb5",
       wickDownColor: "#838ca1",
       wickUpColor: "#838ca1",
-    });
+    })
 
-    candleSeries.setData(priceData);
+    candleSeries.setData(priceData)
 
     // const areaSeries = chart.current.addAreaSeries({
     //   topColor: 'rgba(38,198,218, 0.56)',
@@ -72,25 +72,25 @@ export default function LightweightChart() {
         top: 0.8,
         bottom: 0,
       },
-    });
+    })
 
-    volumeSeries.setData(volumeData);
-  }, []);
+    volumeSeries.setData(volumeData)
+  }, [])
 
   // Resize chart on container resizes.
   useEffect(() => {
-    resizeObserver.current = new ResizeObserver((entries) => {
-      const { width, height } = entries[0].contentRect;
-      chart.current.applyOptions({ width, height });
+    resizeObserver.current = new ResizeObserver(entries => {
+      const { width, height } = entries[0].contentRect
+      chart.current.applyOptions({ width, height })
       setTimeout(() => {
-        chart.current.timeScale().fitContent();
-      }, 0);
-    });
+        chart.current.timeScale().fitContent()
+      }, 0)
+    })
 
-    resizeObserver.current.observe(chartContainerRef.current);
+    resizeObserver.current.observe(chartContainerRef.current)
 
-    return () => resizeObserver.current.disconnect();
-  }, []);
+    return () => resizeObserver.current.disconnect()
+  }, [])
 
   return (
     <div className="lightweightChart">
@@ -100,5 +100,5 @@ export default function LightweightChart() {
         style={{ height: "100%" }}
       />
     </div>
-  );
+  )
 }
