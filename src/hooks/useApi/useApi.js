@@ -1,9 +1,50 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useAuth } from "../useAuth/useAuth"
+import { apiClient } from "../../api/apiClient"
+
+import { fetchRefreshToken } from "../../api/auth/fetchRefreshToken"
 
 export function useApi(apiFunc) {
   const [response, setResponse] = useState(null)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+
+  const { auth, setAuth, logout } = useAuth()
+  console.log("auth useApi", auth)
+
+  useEffect(() => {
+    const controller = new AbortController()
+
+    const responseIntercept = apiClient.interceptors.response.use(
+      function (response) {
+        return response
+      },
+      async function (error) {
+        const prevRequest = error?.config
+        if (error?.response?.status === 401 && !prevRequest?.sent) {
+          prevRequest.sent = true
+          const resp = await fetchRefreshToken(
+            auth?.access_token,
+            auth?.refresh_token,
+            controller
+          )
+          const newAccessToken = resp?.data?.data?.access_token
+          prevRequest.headers["Authorization"] = `Bearer ${newAccessToken}`
+          setAuth(prev => ({ ...prev, access_token: newAccessToken }))
+          return apiClient(prevRequest)
+        } else {
+          console.log("logout")
+          logout()
+        }
+        return Promise.reject(error)
+      }
+    )
+
+    return () => {
+      apiClient.interceptors.response.eject(responseIntercept)
+      controller.abort()
+    }
+  }, [error])
 
   async function request(...args) {
     setLoading(true)
