@@ -5,12 +5,11 @@ import "./ExchangeCard.css"
 import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
 import { BiPencil, BiTrash } from "react-icons/bi"
 import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
-import DeleteExchangeModal from "../../ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
 import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
 
 function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   const { id, exchange, img, publicKey } = exchangeData
-  const { setUserExchanges, setSelectedBotSettings } = useContext(Context)
+  const { setSelectedBotSettings } = useContext(Context)
   const { setExchangeToDelete } = useContext(ExchangeCardsContext)
 
   let navigate = useNavigate()
