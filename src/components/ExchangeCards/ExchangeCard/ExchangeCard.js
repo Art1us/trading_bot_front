@@ -3,19 +3,20 @@ import { useNavigate } from "react-router-dom"
 import { Context } from "../../../Context"
 import "./ExchangeCard.css"
 import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
-import DeleteExchangeModal from "../../ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
 import { BiPencil, BiTrash } from "react-icons/bi"
 import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
+import DeleteExchangeModal from "../../ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
+import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
 
-function ExchangeCard(exchangeData) {
+function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   const { id, exchange, img, publicKey } = exchangeData
   const { setUserExchanges, setSelectedBotSettings } = useContext(Context)
+  const { setExchangeToDelete } = useContext(ExchangeCardsContext)
 
   let navigate = useNavigate()
 
   const [hovered, setHovered] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
-  const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [exchangeSelected, setExchangeSelected] = useState(false)
 
   function mouseEnterHandler() {
@@ -30,10 +31,11 @@ function ExchangeCard(exchangeData) {
     setShowEditModal(true)
   }
 
-  function deleteCLickHandler(e) {
+  function deleteClickHandler(e) {
     e.stopPropagation()
     e.preventDefault()
     setShowDeleteModal(true)
+    setExchangeToDelete(id)
   }
 
   function clickHandler() {
@@ -53,11 +55,6 @@ function ExchangeCard(exchangeData) {
           setShowEditModal={setShowEditModal}
           exchangeData={exchangeData}
         />
-        <DeleteExchangeModal
-          showDeleteModal={showDeleteModal}
-          setShowDeleteModal={setShowDeleteModal}
-          exchangeData={exchangeData}
-        />
         <div
           className="exchangeCard"
           onMouseEnter={mouseEnterHandler}
@@ -73,7 +70,7 @@ function ExchangeCard(exchangeData) {
 
               <BiTrash
                 className="exchangeCard__trash"
-                onClick={deleteCLickHandler}
+                onClick={deleteClickHandler}
               />
             </>
           )}

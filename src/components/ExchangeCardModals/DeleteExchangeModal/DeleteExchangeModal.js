@@ -2,18 +2,16 @@ import React, { useContext } from "react"
 import "./DeleteExchangeModal.css"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 import { Context } from "../../../Context"
+import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
 
-function DeleteExchangeModal({
-  showDeleteModal,
-  setShowDeleteModal,
-  exchangeData,
-}) {
+function DeleteExchangeModal({ showDeleteModal, setShowDeleteModal }) {
   const { setUserExchanges } = useContext(Context)
+  const { exchangeToDelete } = useContext(ExchangeCardsContext)
 
   function yesClickHandler() {
     setShowDeleteModal(false)
     setUserExchanges(prev => [
-      ...prev.filter(exch => exch.id !== exchangeData.id),
+      ...prev.filter(exch => exch.id !== exchangeToDelete),
     ])
   }
 
