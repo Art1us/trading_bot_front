@@ -25,3 +25,45 @@
   flex-wrap: wrap;
   row-gap: 20px;
 }
+
+.exchangeAddDeleteAnimation-enter {
+  animation: in 300ms ease-out;
+}
+
+.exchangeAddDeleteAnimation-exit {
+  animation: out 330ms ease-out;
+}
+
+@keyframes in {
+  0% {
+    opacity: 0.01;
+    translate: 0 -150px;
+  }
+
+  80% {
+    opacity: 0.8;
+    translate: 0 15px
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0
+  }
+}
+
+@keyframes out {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  20% {
+    opacity: 0.8;
+    translate: 0 10px
+  }
+
+  100% {
+    opacity: 0.01;
+    translate: 0 -250px
+  }
+}
