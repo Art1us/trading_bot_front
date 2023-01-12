@@ -1,9 +1,9 @@
-import React from "react";
-import "./BotTable.css";
-import data from "../botInfoTestData";
+import React from "react"
+import "./BotTable.css"
+import data from "../botInfoTestData"
 
 function Row(props) {
-  const { name, profit, height } = props;
+  const { name, profit, height } = props
 
   return (
     <tr className="botTable__row">
@@ -11,7 +11,7 @@ function Row(props) {
       <td className="botTable__cell">{profit}</td>
       <td className="botTable__cell">{height}</td>
     </tr>
-  );
+  )
 }
 
 function BotTable() {
@@ -35,7 +35,7 @@ function BotTable() {
         ))}
       </tbody>
     </table>
-  );
+  )
 }
 
-export default BotTable;
+export default BotTable
