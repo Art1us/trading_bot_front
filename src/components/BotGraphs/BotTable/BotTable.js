@@ -16,25 +16,27 @@ function Row(props) {
 
 function BotTable() {
   return (
-    <table className="botTable">
-      <thead>
-        <tr>
-          <th className="botTable__header">Name</th>
-          <th className="botTable__header">Profit</th>
-          <th className="botTable__header">Height</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, index) => (
-          <Row
-            key={index}
-            name={row.name}
-            profit={row.profit}
-            height={row.height}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <table className="botTable">
+        <thead>
+          <tr>
+            <th className="botTable__header">Name</th>
+            <th className="botTable__header">Profit</th>
+            <th className="botTable__header">Height</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <Row
+              key={index}
+              name={row.name}
+              profit={row.profit}
+              height={row.height}
+            />
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 

@@ -10,6 +10,7 @@ import Profile from "./pages/Profile/Profile"
 import RequireAuth from "./helpers/Auth/RequireAuth"
 import Unauthorized from "./pages/Unauthorized/Unauthorized"
 import PageNotFound from "./pages/PageNotFound/PageNotFound"
+import { ExchangeCardsProvider } from "./contexts/ExchangeCardsContext"
 
 function App() {
   return (
@@ -22,7 +23,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route element={<RequireAuth />}>
-            <Route path="/main" element={<MainPage />} />
+            <Route
+              path="/main"
+              element={
+                <ExchangeCardsProvider>
+                  <MainPage />
+                </ExchangeCardsProvider>
+              }
+            />
             <Route path="/exchange" element={<ExchangePage />} />
             <Route path="/profile" element={<Profile />} />
           </Route>
