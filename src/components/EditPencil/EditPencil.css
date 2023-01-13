@@ -1,0 +1,9 @@
+.editPencil {
+  font-size: 20px;
+  color: grey;
+  cursor: pointer;
+}
+
+.editPencil:hover {
+  color: var(--base-color);
+}

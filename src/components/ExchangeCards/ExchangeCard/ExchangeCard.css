@@ -64,7 +64,6 @@
   right: 15px;
 }
 
-.exchangeCard__pencil:hover,
 .exchangeCard__trash:hover {
   color: var(--base-color);
 }

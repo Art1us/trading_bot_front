@@ -1,0 +1,37 @@
+.tradeStatistics {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  background-color: var(--base-bg-color-100);
+  color: var(--base-color);
+}
+
+.tradeStatistics__wrapper {
+  height: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.tradeStatistics__tableContainer {
+  border-spacing: 0px;
+  border-collapse: separate;
+}
+
+.tradeStatistics__table--header {
+  border: 1px solid var(--base-color);
+  width: 200px;
+  height: 40px;
+}
+
+.tradeStatistics__table--content {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--base-color);
+}
