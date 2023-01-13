@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 import "./NewExchangeModal.css"
 import useForm from "../../../hooks/useForm/useForm"
@@ -7,14 +7,13 @@ import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/Simple
 import { useApi } from "../../../hooks/useApi/useApi"
 import { fetchExchanges } from "../../../api/services/fetchExchanges"
 import { useAuth } from "../../../hooks/useAuth/useAuth"
-import { postUserExchange } from "../../../api/userExchanges/postUserExchange"
-import { getUserExchanges } from "../../../api/userExchanges/getUserExchanges"
+import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
+  const { addExchange } = useContext(ExchangeCardsContext)
   const { auth } = useAuth()
   const exchanges = useApi(fetchExchanges)
-  const addExchange = useApi(postUserExchange)
-  const userExchanges = useApi(getUserExchanges)
+
   const addExchangeController = new AbortController()
 
   useEffect(() => {
@@ -35,7 +34,6 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
         ? [...exchanges?.response?.data?.data]
         : []
   }, [exchanges.response])
-  console.log("exchanges", exchanges?.response?.data?.data)
 
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
@@ -51,11 +49,6 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
       )[0].id || 0
     const body = { exchangeId, publicKey, secretKey }
     addExchange.request(body, auth.access_token, addExchangeController)
-
-    console.log(
-      "req",
-      userExchanges.request(auth.access_token, addExchangeController)
-    )
 
     setShowNewModal(false)
   }

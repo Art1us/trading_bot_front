@@ -7,36 +7,27 @@ import "./MainPage.css"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 import DeleteExchangeModal from "../../components/ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
 import { ExchangeCardsContext } from "../../contexts/ExchangeCardsContext"
-import { useApi } from "../../hooks/useApi/useApi"
-
-import { getUserExchanges } from "../../api/userExchanges/getUserExchanges"
 import { useAuth } from "../../hooks/useAuth/useAuth"
 
 function MainPage() {
   const [showNewModal, setShowNewModal] = useState(false)
 
-  const { showDeleteModal, setShowDeleteModal } =
+  const { showDeleteModal, setShowDeleteModal, userExchanges, addExchange } =
     useContext(ExchangeCardsContext)
 
   const { auth } = useAuth()
-  const userExchanges = useApi(getUserExchanges)
 
-  useEffect(
-    () => {
-      let mounted = true
-      const controller = new AbortController()
-      if (mounted) {
-        userExchanges.request(auth?.access_token, controller)
-      }
-      return () => {
-        mounted = false
-        controller.abort()
-      }
-    },
-    [
-      /* refersh */
-    ]
-  )
+  useEffect(() => {
+    let mounted = true
+    const controller = new AbortController()
+    if (mounted) {
+      userExchanges.request(auth?.access_token, controller)
+    }
+    return () => {
+      mounted = false
+      controller.abort()
+    }
+  }, [addExchange.response?.data?.data?.updatedAt])
 
   return (
     <main className="main">
