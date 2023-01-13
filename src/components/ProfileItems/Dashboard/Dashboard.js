@@ -1,11 +1,20 @@
 import React from "react"
 import "./Dashboard.css"
 import { VscAccount } from "react-icons/vsc"
-import { SiBitcoinsv } from "react-icons/si"
+import { useNavigate } from "react-router-dom"
+import { useAuth } from "../../../hooks/useAuth/useAuth"
 import happyBot from "../../../assets/pictures/smile.png"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
 function Dashboard() {
+  const { logout } = useAuth()
+  const navigate = useNavigate()
+
+  function logoutClickHandler() {
+    logout()
+    navigate("/")
+  }
+
   return (
     <div className="dashboard">
       <ProfileHeader title="Dashboard" />
@@ -20,7 +29,12 @@ function Dashboard() {
             <p className="dashboard__account--balance">
               Your balance: 2.228.228$
             </p>
-            <button className="dashboard__account--btn">Log Out</button>
+            <button
+              className="dashboard__account--btn"
+              onClick={logoutClickHandler}
+            >
+              Log Out
+            </button>
           </div>
         </div>
         <div className="dashboard__botsStatistics">

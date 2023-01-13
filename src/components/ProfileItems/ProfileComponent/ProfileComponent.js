@@ -18,7 +18,6 @@ function ProfileComponent() {
             <p>User name: Bulka228</p>
             <EditPencil />
           </div>
-
           <p className="profileComponent__generalInfo--balance">
             Balance: 228 BTC
           </p>
