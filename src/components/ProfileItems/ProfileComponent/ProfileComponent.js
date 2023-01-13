@@ -18,7 +18,6 @@ function ProfileComponent() {
             <p>User name: Bulka228</p>
             <EditPencil />
           </div>
-
           <p className="profileComponent__generalInfo--balance">
             Balance: 228 BTC
           </p>
@@ -28,10 +27,10 @@ function ProfileComponent() {
             Authentication
           </h3>
           <p className="profileComponent__authentication--email">
-            Email: 1488@228.37
+            Email: 1488@228.37 <EditPencil />
           </p>
           <p className="profileComponent__authentication--password">
-            Password: *******
+            Password: ******* <EditPencil />
           </p>
           <button className="profileComponent__authentication--btnChange">
             Change

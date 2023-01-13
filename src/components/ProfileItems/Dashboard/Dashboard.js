@@ -1,7 +1,6 @@
 import React from "react"
 import "./Dashboard.css"
 import { VscAccount } from "react-icons/vsc"
-import { SiBitcoinsv } from "react-icons/si"
 import happyBot from "../../../assets/pictures/smile.png"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 

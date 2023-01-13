@@ -6,7 +6,7 @@
   align-items: center;
   font-size: 20px;
   background-color: var(--base-bg-color-100);
-  padding: 0 30px 0 30px;
+  padding: 0 50px;
   border: 1px solid var(--inversed-base-color);
 }
 
@@ -25,4 +25,9 @@
   background-color: var(--hover-btn-color);
   border: var(--hover-btn-color);
   padding: 5px;
+}
+
+.profileHeader__title {
+  font-weight: 500;
+  font-size: 24px;
 }
