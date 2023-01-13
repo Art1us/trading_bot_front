@@ -1,13 +1,11 @@
 import React from "react"
 import "./Bots.css"
-import NewBotBtn from "../NewBotBtn/NewBotBtn"
+import ProfileHeader from "../ProfilesHeader/ProfileHeader"
 
 function Bots() {
   return (
     <div className="bots">
-      <div className="bots__header">
-        Bots <NewBotBtn />
-      </div>
+      <ProfileHeader title="Bots" />
       <div className="bots__wrapper">
         <table cellspacing="0">
           <tr>

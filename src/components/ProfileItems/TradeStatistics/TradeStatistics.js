@@ -1,13 +1,11 @@
 import React from "react"
 import "./TradeStatistics.css"
-import NewBotBtn from "../NewBotBtn/NewBotBtn"
+import ProfileHeader from "../ProfilesHeader/ProfileHeader"
 
 function TradeStatistics() {
   return (
     <div className="tradeStatistics">
-      <div className="tradeStatistics__header">
-        Trade Statistics <NewBotBtn />
-      </div>
+      <ProfileHeader title="Trade Statistics" />
       <div className="tradeStatistics__wrapper">
         <table cellspacing="0">
           <tr>

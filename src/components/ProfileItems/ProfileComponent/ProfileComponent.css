@@ -3,21 +3,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
   background-color: var(--base-bg-color-100);
   color: var(--base-color);
-}
-
-.profileComponent__header {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 20px;
-  background-color: var(--base-bg-color-90);
-  padding: 0 30px 0 30px;
-  border: 1px solid var(--inversed-base-color);
 }
 
 .profileComponent__wrapper {
@@ -25,24 +12,57 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 50px 0;
+}
+
+.profileComponent__generalInfo--title {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-bg-color-90);
+}
+
+.profileComponent__generalInfo--fullName {
+  display: flex;
+}
+
+.profileComponent__generalInfo--userName {
+  display: flex;
 }
 
 .profileComponent__generalInfo {
-  padding-left: 30px;
+  width: 500px;
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding-bottom: 20px;
+  box-shadow: var(--base-box-shadow);
 }
 
 .profileComponent__authentication {
-  padding-left: 30px;
   height: 200px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  box-shadow: var(--base-box-shadow);
+  padding-bottom: 20px;
+}
+
+.profileComponent__authentication--title {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-bg-color-90);
 }
 
 .profileComponent__authentication--btnChange {
@@ -51,4 +71,11 @@
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
   color: var(--white-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profileComponent__authentication--btnChange:hover {
+  background-color: var(--hover-btn-color);
+  border: var(--hover-btn-color);
 }

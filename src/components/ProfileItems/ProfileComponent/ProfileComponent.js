@@ -1,22 +1,24 @@
 import React from "react"
 import "./ProfileComponent.css"
-import NewBotBtn from "../NewBotBtn/NewBotBtn"
+import ProfileHeader from "../ProfilesHeader/ProfileHeader"
+import EditPencil from "../../EditPencil/EditPencil"
 
 function ProfileComponent() {
   return (
     <div className="profileComponent">
-      <div className="profileComponent__header">
-        Profile <NewBotBtn />
-      </div>
+      <ProfileHeader title="Profile" />
       <div className="profileComponent__wrapper">
         <div className="profileComponent__generalInfo">
           <h3 className="profileComponent__generalInfo--title">General Info</h3>
-          <p className="profileComponent__generalInfo--fullName">
-            Full name: Vasya Bulkin
-          </p>
-          <p className="profileComponent__generalInfo--userName">
-            User name: Bulka228
-          </p>
+          <div className="profileComponent__generalInfo--fullName">
+            <p>Full name: Vasya Bulkin</p>
+            <EditPencil />
+          </div>
+          <div className="profileComponent__generalInfo--userName">
+            <p>User name: Bulka228</p>
+            <EditPencil />
+          </div>
+
           <p className="profileComponent__generalInfo--balance">
             Balance: 228 BTC
           </p>

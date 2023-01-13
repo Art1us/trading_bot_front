@@ -6,6 +6,7 @@ import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditEx
 import { BiPencil, BiTrash } from "react-icons/bi"
 import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
 import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
+import EditPencil from "../../EditPencil/EditPencil"
 
 function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   const { id, exchange, img, publicKey } = exchangeData
@@ -62,8 +63,8 @@ function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
         >
           {hovered && (
             <>
-              <BiPencil
-                className="exchangeCard__pencil"
+              <EditPencil
+                stylings="exchangeCard__pencil"
                 onClick={editClickHandler}
               />
 
