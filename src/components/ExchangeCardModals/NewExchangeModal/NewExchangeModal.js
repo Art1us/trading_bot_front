@@ -1,20 +1,21 @@
-import React, { useContext, useEffect } from "react"
-import { Context } from "../../../Context"
+import React, { useEffect } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 import "./NewExchangeModal.css"
-import { v4 as uuidv4 } from "uuid"
 import useForm from "../../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
-
 import { useApi } from "../../../hooks/useApi/useApi"
 import { fetchExchanges } from "../../../api/services/fetchExchanges"
 import { useAuth } from "../../../hooks/useAuth/useAuth"
+import { postUserExchange } from "../../../api/userExchanges/postUserExchange"
+import { getUserExchanges } from "../../../api/userExchanges/getUserExchanges"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
-  const { setUserExchanges } = useContext(Context)
   const { auth } = useAuth()
   const exchanges = useApi(fetchExchanges)
+  const addExchange = useApi(postUserExchange)
+  const userExchanges = useApi(getUserExchanges)
+  const addExchangeController = new AbortController()
 
   useEffect(() => {
     let mounted = true
@@ -26,7 +27,7 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
       mounted = false
       controller.abort()
     }
-  }, []) //set up condition to reload if first load is not successfull
+  }, [])
 
   useEffect(() => {
     formInputsData[0].list =
@@ -34,6 +35,7 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
         ? [...exchanges?.response?.data?.data]
         : []
   }, [exchanges.response])
+  console.log("exchanges", exchanges?.response?.data?.data)
 
   const { inputComponents, isSubmitInvalid, formValues } =
     useForm(formInputsData)
@@ -41,7 +43,20 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-    setUserExchanges(prev => [...prev, { ...formValues, id: uuidv4() }])
+
+    const { publicKey, secretKey } = formValues
+    const exchangeId =
+      exchanges?.response?.data?.data?.filter(
+        item => item.name === formValues.exchange
+      )[0].id || 0
+    const body = { exchangeId, publicKey, secretKey }
+    addExchange.request(body, auth.access_token, addExchangeController)
+
+    console.log(
+      "req",
+      userExchanges.request(auth.access_token, addExchangeController)
+    )
+
     setShowNewModal(false)
   }
 

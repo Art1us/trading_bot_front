@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom"
 import { Context } from "../../../Context"
 import "./ExchangeCard.css"
 import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
-import { BiPencil, BiTrash } from "react-icons/bi"
+import { BiTrash } from "react-icons/bi"
 import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
 import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
 import EditPencil from "../../EditPencil/EditPencil"
 
 function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
-  const { id, exchange, img, publicKey } = exchangeData
+  const { id, name, img, publicKey } = exchangeData
   const { setSelectedBotSettings } = useContext(Context)
   const { setExchangeToDelete } = useContext(ExchangeCardsContext)
 
@@ -42,7 +42,7 @@ function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
     setExchangeSelected(true)
     setSelectedBotSettings(prev => ({
       ...prev,
-      exchange: { id: id, name: exchange },
+      exchange: { id, name },
     }))
     setTimeout(() => navigate("/exchange"), 100)
   }
@@ -81,15 +81,15 @@ function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
             />
           </div>
           <div className="exchangeCard__title">
-            <h3>{exchange}</h3>
+            <h3>{name}</h3>
           </div>
           <div className="exchangeCard__curentinfo">
             <div className="exchangeCard__currencyInfo--text">
               Your public key:
             </div>
             <div className="exchangeCard__currencyInfo--number">
-              {publicKey.slice(0, 8)}
-              {publicKey.length > 8 ? "..." : ""}
+              {publicKey?.slice(0, 8)}
+              {publicKey?.length > 8 ? "..." : ""}
             </div>
           </div>
         </div>
