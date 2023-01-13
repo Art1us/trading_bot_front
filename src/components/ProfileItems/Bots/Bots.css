@@ -16,6 +16,11 @@
   padding: 10px;
 }
 
+.bots_tableContainer {
+  border-spacing: 0px;
+  border-collapse: separate;
+}
+
 .bots__table--header {
   border: 1px solid var(--base-color);
   width: 200px;

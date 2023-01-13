@@ -1,13 +1,13 @@
 import React from "react"
 import "./Bots.css"
-import ProfileHeader from "../ProfilesHeader/ProfileHeader"
+import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
 function Bots() {
   return (
     <div className="bots">
       <ProfileHeader title="Bots" />
       <div className="bots__wrapper">
-        <table cellspacing="0">
+        <table className="bots_tableContainer">
           <tr>
             <th className="bots__table--header">ID</th>
             <th className="bots__table--header">Name</th>

@@ -3,7 +3,7 @@ import "./Dashboard.css"
 import { VscAccount } from "react-icons/vsc"
 import { SiBitcoinsv } from "react-icons/si"
 import happyBot from "../../../assets/pictures/smile.png"
-import ProfileHeader from "../ProfilesHeader/ProfileHeader"
+import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
 function Dashboard() {
   return (
