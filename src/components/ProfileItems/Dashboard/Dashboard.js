@@ -1,18 +1,15 @@
 import React from "react"
 import "./Dashboard.css"
 import { VscAccount } from "react-icons/vsc"
-import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../../hooks/useAuth/useAuth"
 import happyBot from "../../../assets/pictures/smile.png"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
 function Dashboard() {
   const { logout } = useAuth()
-  const navigate = useNavigate()
 
   function logoutClickHandler() {
     logout()
-    navigate("/")
   }
 
   return (
