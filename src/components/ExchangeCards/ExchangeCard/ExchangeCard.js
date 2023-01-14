@@ -11,7 +11,8 @@ import EditPencil from "../../EditPencil/EditPencil"
 function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   const { id, name, img, publicKey } = exchangeData
   const { setSelectedBotSettings } = useContext(Context)
-  const { setExchangeToDelete } = useContext(ExchangeCardsContext)
+  const { setExchangeToDelete, setSelectedExchangeId } =
+    useContext(ExchangeCardsContext)
 
   let navigate = useNavigate()
 
@@ -39,12 +40,10 @@ function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   }
 
   function clickHandler() {
-    setExchangeSelected(true)
-    setSelectedBotSettings(prev => ({
-      ...prev,
-      exchange: { id, name },
-    }))
-    setTimeout(() => navigate("/exchange"), 100)
+    //setExchangeSelected(true)
+    setSelectedExchangeId(id)
+
+    //setTimeout(() => navigate("/exchange"), 100)
   }
 
   return (
