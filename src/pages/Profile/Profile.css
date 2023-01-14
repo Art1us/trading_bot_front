@@ -7,15 +7,14 @@
   font-size: 1.1rem;
   width: 19vw;
   height: calc(100vh - 56px);
-  background-color: var(--primary-bg-color-10);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: whitesmoke;
+  background-color: var(--base-bg-color-90);
 }
 
 .profile__item {
-  color: black;
+  color: var(--base-color);
   display: flex;
   align-items: center;
   justify-content: left;
@@ -29,9 +28,9 @@
 }
 
 .profile__item--active {
-  color: var(--secondary-color);
-  background-color: white;
-  border-left: 2px solid var(--secondary-color);
+  color: var(--primary-color);
+  background-color: var(--base-bg-color-100);
+  border-left: 2px solid var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: left;
