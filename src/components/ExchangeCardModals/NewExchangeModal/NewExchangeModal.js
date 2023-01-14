@@ -42,14 +42,7 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
     e.preventDefault()
     if (isSubmitInvalid()) return
 
-    const { publicKey, secretKey } = formValues
-    const exchangeId =
-      exchanges?.response?.data?.data?.filter(
-        item => item.name === formValues.exchange
-      )[0].id || 0
-    const body = { exchangeId, publicKey, secretKey }
-    addExchange.request(body, auth.access_token, addExchangeController)
-
+    addExchange.request(formValues, auth.access_token, addExchangeController)
     setShowNewModal(false)
   }
 
