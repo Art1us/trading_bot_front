@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import FormInput from "./FormInput/FormInput"
 import FormSelect from "./FormSelect/FormSelect"
 
 function useForm(inputs, values) {
-  const initializationInputs = []
-  for (let input of inputs) {
-    console.log("fired expensive for loop")
-    if (input.element === "inputsRow") {
-      for (let innerInput of input.inputs) {
-        initializationInputs.push(innerInput)
+  const initializationInputs = useMemo(() => {
+    const initializationInputs = []
+    for (let input of inputs) {
+      console.log("fired expensive for loop")
+      if (input.element === "inputsRow") {
+        for (let innerInput of input.inputs) {
+          initializationInputs.push(innerInput)
+        }
+      } else {
+        initializationInputs.push(input)
       }
-    } else {
-      initializationInputs.push(input)
     }
-  }
+    return initializationInputs
+  }, [inputs])
 
   const initialFormValues = values ? { ...values } : {}
   if (!values) {

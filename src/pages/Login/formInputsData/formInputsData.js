@@ -28,63 +28,6 @@ const formInputsData = [
   {
     id: 2,
     wrapperClassName: "login__formBlock",
-    element: "inputsRow",
-    inputs: [
-      {
-        id: 2.1,
-        wrapperClassName: "login__formBlock",
-        element: "input",
-        inputData: {
-          className: "login__formInput",
-          props: {
-            name: "password",
-            type: "password",
-            placeholder: "Password",
-          },
-        },
-        labelData: {
-          className: "login__formLabel",
-          text: "Password",
-        },
-        errorsData: {
-          errors: [
-            {
-              condition: "^s*$",
-              message: "Please enter your password!",
-            },
-          ],
-        },
-      },
-      {
-        id: 2.2,
-        wrapperClassName: "login__formBlock",
-        element: "input",
-        inputData: {
-          className: "login__formInput",
-          props: {
-            name: "password",
-            type: "password",
-            placeholder: "Password",
-          },
-        },
-        labelData: {
-          className: "login__formLabel",
-          text: "Password",
-        },
-        errorsData: {
-          errors: [
-            {
-              condition: "^s*$",
-              message: "Please enter your password!",
-            },
-          ],
-        },
-      },
-    ],
-  },
-  /* {
-    id: 2,
-    wrapperClassName: "login__formBlock",
     element: "input",
     inputData: {
       className: "login__formInput",
@@ -102,7 +45,7 @@ const formInputsData = [
         },
       ],
     },
-  }, */
+  },
 ]
 
 export default formInputsData

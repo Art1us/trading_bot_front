@@ -45,8 +45,9 @@ function Login() {
 
   function submitHandler(e) {
     e.preventDefault()
+    console.log(formValues)
     if (isSubmitInvalid()) return
-    login.request(formValues.email, formValues.password, controller)
+    //login.request(formValues.email, formValues.password, controller)
   }
 
   return (
