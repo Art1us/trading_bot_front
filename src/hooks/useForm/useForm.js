@@ -1,22 +1,37 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import FormInput from "./FormInput/FormInput"
-import FormSelect from "./FormSelect"
+import FormSelect from "./FormSelect/FormSelect"
 
 function useForm(inputs, values) {
+  const initializationInputs = useMemo(() => {
+    const initializationInputs = []
+    for (let input of inputs) {
+      console.log("fired expensive for loop")
+      if (input.element === "inputsRow") {
+        for (let innerInput of input.inputs) {
+          initializationInputs.push(innerInput)
+        }
+      } else {
+        initializationInputs.push(input)
+      }
+    }
+    return initializationInputs
+  }, [inputs])
+
   const initialFormValues = values ? { ...values } : {}
   if (!values) {
-    inputs.forEach(input => {
+    initializationInputs.forEach(input => {
       initialFormValues[input.inputData.props.name] = ""
     })
   }
 
   const initialFormErrors = {}
-  inputs.forEach(input => {
+  initializationInputs.forEach(input => {
     initialFormErrors[input.inputData.props.name] = ""
   })
 
   const initialFormIsDirty = {}
-  inputs.forEach(input => {
+  initializationInputs.forEach(input => {
     initialFormIsDirty[input.inputData.props.name] = values ? true : false
   })
 
@@ -25,7 +40,7 @@ function useForm(inputs, values) {
   const [isDirty, setIsDirty] = useState(initialFormIsDirty)
 
   useEffect(() => {
-    inputs.forEach(input => {
+    initializationInputs.forEach(input => {
       function getError() {
         for (let error of input.errorsData.errors) {
           if (
@@ -95,14 +110,21 @@ function useForm(inputs, values) {
     setIsDirty(prev => ({ ...prev, [e.target.name]: true }))
   }
 
-  function displayCustomError(errorText) {
+  function displayCustomError(errorText, elementName) {
     if (!errorText) return
-    const newErrorMessages = {}
-    Object.keys({ ...errorMessages }).forEach(err => {
-      newErrorMessages[err] = errorText
-    })
-
-    setErrorMessages(newErrorMessages)
+    if (
+      elementName &&
+      elementName in errorMessages &&
+      typeof elementName === "string"
+    ) {
+      setErrorMessages(prev => ({ ...prev, [elementName]: errorText }))
+    } else {
+      const newErrorMessages = {}
+      Object.keys({ ...errorMessages }).forEach(err => {
+        newErrorMessages[err] = errorText
+      })
+      setErrorMessages(newErrorMessages)
+    }
   }
 
   const inputComponents = inputs.map(input =>
@@ -134,6 +156,32 @@ function useForm(inputs, values) {
         onBlur={onBlur}
         value={formValues[input.inputData.props.name]}
       />
+    ) : input.element === "inputsRow" ? (
+      <div
+        className={
+          input.wrapperClassName
+            ? input.wrapperClassName
+            : "fromInputRow__defaultStyles"
+        }
+        key={input.id}
+      >
+        {input.inputs.map(input => (
+          <FormInput
+            key={input.id}
+            className={input.wrapperClassName}
+            inputClassName={input.inputData.className}
+            inputProps={{ ...input.inputData.props }}
+            label={input.labelData ? input.labelData : null}
+            error={{
+              className: input.errorsData.className,
+              errorMessage: errorMessages[input.inputData.props.name],
+            }}
+            onChange={onChange}
+            onBlur={onBlur}
+            value={formValues[input.inputData.props.name]}
+          />
+        ))}
+      </div>
     ) : (
       ""
     )
