@@ -1,11 +1,18 @@
 .exchangePage {
-  height: calc(100vh - 56px);
-  width: 100vw;
+  height: 100%;
+  min-height: calc(100vh - 56px);
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--base-bg-color-100);
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  margin: 0 auto;
+  color: var(--base-color);
 }
 
-.exchangePage__container {
+/* .exchangePage__container {
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -16,3 +23,4 @@
 .exchangePage__body {
   margin-top: 20px;
 }
+ */

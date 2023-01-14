@@ -101,6 +101,6 @@ const formInputsData = [
       ],
     },
   },
-];
+]
 
-export default formInputsData;
+export default formInputsData

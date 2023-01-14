@@ -6,7 +6,6 @@ function useForm(inputs, values) {
   const initializationInputs = useMemo(() => {
     const initializationInputs = []
     for (let input of inputs) {
-      console.log("fired expensive for loop")
       if (input.element === "inputsRow") {
         for (let innerInput of input.inputs) {
           initializationInputs.push(innerInput)
@@ -173,7 +172,7 @@ function useForm(inputs, values) {
             inputProps={{ ...input.inputData.props }}
             label={input.labelData ? input.labelData : null}
             error={{
-              className: input.errorsData.className,
+              className: input.errorsData?.className,
               errorMessage: errorMessages[input.inputData.props.name],
             }}
             onChange={onChange}
