@@ -173,7 +173,7 @@ function useForm(inputs, values) {
             inputProps={{ ...input.inputData.props }}
             label={input.labelData ? input.labelData : null}
             error={{
-              className: input.errorsData.className,
+              className: input.errorsData?.className,
               errorMessage: errorMessages[input.inputData.props.name],
             }}
             onChange={onChange}
