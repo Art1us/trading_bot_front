@@ -18,7 +18,7 @@ function ExchangeForm() {
 
   function submitHandler(e) {
     e.preventDefault()
-    if (areDatesInvalid(formValues.dateStart, formValues.scanFrom)) {
+    if (areDatesInvalid(formValues.dateStart, formValues.analysisDepth)) {
       displayCustomError("Please enter correct dates!")
       return
     }

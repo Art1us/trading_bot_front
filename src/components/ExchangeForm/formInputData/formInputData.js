@@ -40,7 +40,7 @@ const formInputsData = [
     inputData: {
       className: "exchangePage__formInput",
       props: {
-        name: "scanFrom",
+        name: "analysisDepth",
         type: "datetime-local",
         placeholder: "",
       },
@@ -88,21 +88,46 @@ const formInputsData = [
   {
     id: 4,
     wrapperClassName: "exchangePage__formBlock",
-    element: "input",
-    inputData: {
-      className: "exchangePage__formInput",
-      props: {
-        name: "takeProfit",
-        type: "number",
-        min: "1",
-        max: "100",
-        placeholder: "%",
+    element: "inputsRow",
+    inputs: [
+      {
+        id: 4.1,
+        wrapperClassName: "exchangePage__formBlock",
+        element: "input",
+        inputData: {
+          className: "exchangePage__formInput",
+          props: {
+            name: "takeProfit",
+            type: "number",
+            min: "1",
+            max: "100",
+            placeholder: "%",
+          },
+        },
+        labelData: {
+          className: "exchangePage__formLabel",
+          text: "Take profit",
+        },
       },
-    },
-    labelData: {
-      className: "exchangePage__formLabel",
-      text: "Take profit",
-    },
+      {
+        id: 4.2,
+        wrapperClassName: "exchangePage__formBlock",
+        element: "input",
+        inputData: {
+          className: "exchangePage__formInput",
+          props: {
+            name: "stopLose",
+            type: "number",
+            placeholder: "%",
+          },
+        },
+        labelData: {
+          className: "exchangePage__formLabel",
+          text: "Stop lose",
+        },
+      },
+    ],
+
     errorsData: {
       className: "exchangePage__errorMsg",
       errors: [
