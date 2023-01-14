@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "./FormInput.css";
-import "./InputErrorStyles.css";
-import PasswordEyeBtn from "../PasswordEyeBtn/PasswordEyeBtn";
+import React, { useEffect, useState } from "react"
+import "./FormInput.css"
+import "./InputErrorStyles.css"
+import PasswordEyeBtn from "../PasswordEyeBtn/PasswordEyeBtn"
 
 function FormInput({
   className,
@@ -13,16 +13,16 @@ function FormInput({
   onBlur,
   value,
 }) {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [isPasswordFilled, setIsPasswordFilled] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+  const [isPasswordFilled, setIsPasswordFilled] = useState(false)
 
   useEffect(() => {
     if (value) {
-      setIsPasswordFilled(true);
+      setIsPasswordFilled(true)
     } else {
-      setIsPasswordFilled(false);
+      setIsPasswordFilled(false)
     }
-  }, [inputProps.type === "password" && value]);
+  }, [inputProps.type === "password" && value])
 
   return (
     <div className={className}>
@@ -56,7 +56,7 @@ function FormInput({
         *{error.errorMessage}
       </p>
     </div>
-  );
+  )
 }
 
-export default FormInput;
+export default FormInput

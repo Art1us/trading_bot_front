@@ -1,0 +1,7 @@
+.questionCircle {
+  color: var(--base-color);
+}
+
+.questionCircle:hover {
+  color: var(--hover-bg-color);
+}
