@@ -1,18 +1,20 @@
 import React, { useContext } from "react"
 import "./DeleteExchangeModal.css"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
-import { Context } from "../../../Context"
+
 import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
+import { useAuth } from "../../../hooks/useAuth/useAuth"
 
 function DeleteExchangeModal({ showDeleteModal, setShowDeleteModal }) {
-  const { setUserExchanges } = useContext(Context)
-  const { exchangeToDelete } = useContext(ExchangeCardsContext)
+  const { exchangeToDelete, deleteExchange } = useContext(ExchangeCardsContext)
+  const { auth } = useAuth()
 
   function yesClickHandler() {
-    setShowDeleteModal(false)
-    setUserExchanges(prev => [
-      ...prev.filter(exch => exch.id !== exchangeToDelete),
-    ])
+    const controller = new AbortController()
+    if (auth?.access_token) {
+      deleteExchange.request(exchangeToDelete, auth.access_token, controller)
+      setShowDeleteModal(false)
+    }
   }
 
   function noClickHandler() {

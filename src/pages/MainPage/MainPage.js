@@ -12,8 +12,13 @@ import { useAuth } from "../../hooks/useAuth/useAuth"
 function MainPage() {
   const [showNewModal, setShowNewModal] = useState(false)
 
-  const { showDeleteModal, setShowDeleteModal, userExchanges, addExchange } =
-    useContext(ExchangeCardsContext)
+  const {
+    showDeleteModal,
+    setShowDeleteModal,
+    userExchanges,
+    addExchange,
+    deleteExchange,
+  } = useContext(ExchangeCardsContext)
 
   const { auth } = useAuth()
 
@@ -27,7 +32,10 @@ function MainPage() {
       mounted = false
       controller.abort()
     }
-  }, [addExchange.response?.data?.data?.updatedAt])
+  }, [
+    addExchange.response?.data?.data?.id,
+    deleteExchange?.response?.config?.data,
+  ])
 
   return (
     <main className="main">
@@ -55,8 +63,8 @@ function MainPage() {
                 >
                   <ExchangeCard
                     name={name}
-                    /* publicKey={publicKey}
-                    secretKey={secretKey} */
+                    //publicKey={publicKey}       Temporary decided to comment out,
+                    //secretKey={secretKey}        to be fixed in future releases
                     id={id}
                     img="binance.png"
                     setShowDeleteModal={setShowDeleteModal}

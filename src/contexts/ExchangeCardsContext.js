@@ -1,6 +1,7 @@
 import { createContext, useState } from "react"
 import { getUserExchanges } from "../api/userExchanges/getUserExchanges"
 import { postUserExchange } from "../api/userExchanges/postUserExchange"
+import { deleteUserExchange } from "../api/userExchanges/deleteUserExchange"
 import { useApi } from "../hooks/useApi/useApi"
 
 const ExchangeCardsContext = createContext({})
@@ -11,6 +12,7 @@ function ExchangeCardsProvider({ children }) {
 
   const userExchanges = useApi(getUserExchanges)
   const addExchange = useApi(postUserExchange)
+  const deleteExchange = useApi(deleteUserExchange)
 
   return (
     <ExchangeCardsContext.Provider
@@ -19,10 +21,9 @@ function ExchangeCardsProvider({ children }) {
         setShowDeleteModal,
         exchangeToDelete,
         setExchangeToDelete,
-        exchangeToDelete,
-        setExchangeToDelete,
         userExchanges,
         addExchange,
+        deleteExchange,
       }}
     >
       {children}
