@@ -1,0 +1,36 @@
+.testModeTables {
+    height: 100%;
+    min-height: calc(100vh - 56px);
+}
+
+.testModeTables__container {
+    margin: 0 auto;
+    width: 700px;
+    height: 400px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testModeTables__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testModeTables__tableContainer {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.testModeTables__tableContainer tr {
+    height: 30px;
+}
+
+.testModeTables__tableContainer th,
+.testModeTables__tableContainer td {
+    border: 1px solid black;
+}
