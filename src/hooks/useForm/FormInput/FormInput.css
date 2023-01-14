@@ -27,3 +27,7 @@
   font-size: 13px;
   letter-spacing: 0;
 }
+
+.fromInputRow__defaultStyles {
+  display: flex;
+}
