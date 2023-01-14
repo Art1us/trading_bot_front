@@ -1,20 +1,20 @@
 import React, { useContext, useEffect } from "react"
-import { Context } from "../../../Context"
 import { AiOutlineClose } from "react-icons/ai"
 import "./NewExchangeModal.css"
-import { v4 as uuidv4 } from "uuid"
 import useForm from "../../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
-
 import { useApi } from "../../../hooks/useApi/useApi"
 import { fetchExchanges } from "../../../api/services/fetchExchanges"
 import { useAuth } from "../../../hooks/useAuth/useAuth"
+import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
-  const { setUserExchanges } = useContext(Context)
+  const { addExchange } = useContext(ExchangeCardsContext)
   const { auth } = useAuth()
   const exchanges = useApi(fetchExchanges)
+
+  const addExchangeController = new AbortController()
 
   useEffect(() => {
     let mounted = true
@@ -26,7 +26,7 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
       mounted = false
       controller.abort()
     }
-  }, []) //set up condition to reload if first load is not successfull
+  }, [])
 
   useEffect(() => {
     formInputsData[0].list =
@@ -41,7 +41,8 @@ function NewExchangeModal({ showNewModal, setShowNewModal }) {
   function submitHandler(e) {
     e.preventDefault()
     if (isSubmitInvalid()) return
-    setUserExchanges(prev => [...prev, { ...formValues, id: uuidv4() }])
+
+    addExchange.request(formValues, auth.access_token, addExchangeController)
     setShowNewModal(false)
   }
 

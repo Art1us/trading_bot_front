@@ -25,7 +25,11 @@ function FormSelect({
         <option className="formSelect__option"></option>
         {list.map(item => {
           return (
-            <option key={item.id} className="formSelect__option">
+            <option
+              key={item.id}
+              className="formSelect__option"
+              value={item.id}
+            >
               {item.name}
             </option>
           )

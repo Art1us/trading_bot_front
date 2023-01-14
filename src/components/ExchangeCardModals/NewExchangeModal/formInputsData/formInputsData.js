@@ -6,7 +6,7 @@ const formInputsData = [
     inputData: {
       className: "newExchangeModal__formInput",
       props: {
-        name: "exchange",
+        name: "exchangeId",
         placeholder: "",
       },
     },

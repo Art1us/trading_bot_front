@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { Context } from "../../Context"
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard"
 import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard"
@@ -7,13 +7,35 @@ import "./MainPage.css"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 import DeleteExchangeModal from "../../components/ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
 import { ExchangeCardsContext } from "../../contexts/ExchangeCardsContext"
+import { useAuth } from "../../hooks/useAuth/useAuth"
 
 function MainPage() {
   const [showNewModal, setShowNewModal] = useState(false)
 
-  const { userExchanges } = useContext(Context)
-  const { showDeleteModal, setShowDeleteModal } =
-    useContext(ExchangeCardsContext)
+  const {
+    showDeleteModal,
+    setShowDeleteModal,
+    userExchanges,
+    addExchange,
+    deleteExchange,
+  } = useContext(ExchangeCardsContext)
+
+  const { auth } = useAuth()
+
+  useEffect(() => {
+    let mounted = true
+    const controller = new AbortController()
+    if (mounted) {
+      userExchanges.request(auth?.access_token, controller)
+    }
+    return () => {
+      mounted = false
+      controller.abort()
+    }
+  }, [
+    addExchange.response?.data?.data?.id,
+    deleteExchange?.response?.config?.data,
+  ])
 
   return (
     <main className="main">
@@ -30,9 +52,9 @@ function MainPage() {
           <h2>Select your exchange</h2>
         </div>
         <TransitionGroup className="main__cardsContainer">
-          {!!userExchanges.length &&
-            userExchanges.map(exch => {
-              const { exchange, secretKey, publicKey, id } = exch
+          {!!userExchanges.response?.data?.data?.length &&
+            userExchanges.response?.data?.data.map(exch => {
+              const { name, secretKey, publicKey, id } = exch
               return (
                 <CSSTransition
                   key={id}
@@ -40,9 +62,9 @@ function MainPage() {
                   classNames="exchangeAddDeleteAnimation"
                 >
                   <ExchangeCard
-                    exchange={exchange}
-                    publicKey={publicKey}
-                    secretKey={secretKey}
+                    name={name}
+                    //publicKey={publicKey}       Temporary decided to comment out,
+                    //secretKey={secretKey}        to be fixed in future releases
                     id={id}
                     img="binance.png"
                     setShowDeleteModal={setShowDeleteModal}
