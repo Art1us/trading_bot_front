@@ -110,13 +110,21 @@ function useForm(inputs, values) {
     setIsDirty(prev => ({ ...prev, [e.target.name]: true }))
   }
 
-  function displayCustomError(errorText) {
+  function displayCustomError(errorText, elementName) {
     if (!errorText) return
-    const newErrorMessages = {}
-    Object.keys({ ...errorMessages }).forEach(err => {
-      newErrorMessages[err] = errorText
-    })
-    setErrorMessages(newErrorMessages)
+    if (
+      elementName &&
+      elementName in errorMessages &&
+      typeof elementName === "string"
+    ) {
+      setErrorMessages(prev => ({ ...prev, [elementName]: errorText }))
+    } else {
+      const newErrorMessages = {}
+      Object.keys({ ...errorMessages }).forEach(err => {
+        newErrorMessages[err] = errorText
+      })
+      setErrorMessages(newErrorMessages)
+    }
   }
 
   const inputComponents = inputs.map(input =>
