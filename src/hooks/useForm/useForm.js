@@ -6,7 +6,6 @@ function useForm(inputs, values) {
   const initializationInputs = useMemo(() => {
     const initializationInputs = []
     for (let input of inputs) {
-      console.log("fired expensive for loop")
       if (input.element === "inputsRow") {
         for (let innerInput of input.inputs) {
           initializationInputs.push(innerInput)

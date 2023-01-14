@@ -13,7 +13,6 @@ const formInputsData = [
       props: {
         name: "dateStart",
         type: "date",
-        min: twoMonthAgo,
         max: todayDate,
         placeholder: "",
         autoFocus: true,
@@ -87,7 +86,7 @@ const formInputsData = [
   },
   {
     id: 4,
-    wrapperClassName: "exchangePage__formBlock",
+    wrapperClassName: "exchangePage__takeStopBlock",
     element: "inputsRow",
     inputs: [
       {
@@ -95,12 +94,10 @@ const formInputsData = [
         wrapperClassName: "exchangePage__formBlock",
         element: "input",
         inputData: {
-          className: "exchangePage__formInput",
+          className: "exchangePage__TakeInput",
           props: {
             name: "takeProfit",
             type: "number",
-            min: "1",
-            max: "100",
             placeholder: "%",
           },
         },
@@ -108,13 +105,26 @@ const formInputsData = [
           className: "exchangePage__formLabel",
           text: "Take profit",
         },
+        errorsData: {
+          className: "exchangePage__errorMsg",
+          errors: [
+            {
+              condition: "^s*$",
+              message: "Please enter take profit!",
+            },
+            {
+              pattern: "^[1-9][0-9]?$|^100$",
+              message: "Please enter 1-100%",
+            },
+          ],
+        },
       },
       {
         id: 4.2,
         wrapperClassName: "exchangePage__formBlock",
         element: "input",
         inputData: {
-          className: "exchangePage__formInput",
+          className: "exchangePage__stopInput",
           props: {
             name: "stopLose",
             type: "number",
@@ -125,47 +135,24 @@ const formInputsData = [
           className: "exchangePage__formLabel",
           text: "Stop lose",
         },
+        errorsData: {
+          className: "exchangePage__errorMsg",
+          errors: [
+            {
+              condition: "^s*$",
+              message: "Please enter stop lose!",
+            },
+            {
+              pattern: "^[1-9][0-9]?$|^100$",
+              message: "Please enter 1-100%",
+            },
+          ],
+        },
       },
     ],
-
-    errorsData: {
-      className: "exchangePage__errorMsg",
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please enter!",
-        },
-      ],
-    },
   },
   {
     id: 5,
-    wrapperClassName: "exchangePage__formBlock",
-    element: "input",
-    inputData: {
-      className: "exchangePage__formInput",
-      props: {
-        name: "stopLose",
-        type: "number",
-        placeholder: "%",
-      },
-    },
-    labelData: {
-      className: "exchangePage__formLabel",
-      text: "Stop lose",
-    },
-    errorsData: {
-      className: "exchangePage__errorMsg",
-      errors: [
-        {
-          condition: "^s*$",
-          message: "Please enter your parameter!",
-        },
-      ],
-    },
-  },
-  {
-    id: 6,
     wrapperClassName: "exchangePage__formBlock",
     element: "input",
     inputData: {
@@ -186,6 +173,10 @@ const formInputsData = [
         {
           condition: "^s*$",
           message: "Please enter holding time!",
+        },
+        {
+          pattern: "^[1-9][0-9]?$|^48$",
+          message: "Please enter 1-48hrs !",
         },
       ],
     },

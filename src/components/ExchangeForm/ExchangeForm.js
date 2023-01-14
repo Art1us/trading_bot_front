@@ -19,10 +19,21 @@ function ExchangeForm() {
   function submitHandler(e) {
     e.preventDefault()
     if (areDatesInvalid(formValues.dateStart, formValues.analysisDepth)) {
-      displayCustomError("Please enter correct dates!")
+      displayCustomError("Please enter correct dates!", "dateStart")
+      displayCustomError("Please enter correct dates!", "analysisDepth")
       return
     }
     if (isSubmitInvalid()) return
+
+    let body = {
+      dateStart: new Date(formValues.dateStart).getTime(),
+      analysisDepth: new Date(formValues.analysisDepth).getTime(),
+      deposit: formValues.deposit,
+      takeProfit: formValues.takeProfit,
+      stopLose: formValues.stopLose,
+      holdingTime: new Date(formValues.holdingTime).getTime(),
+    }
+    console.log(body)
   }
 
   return (
