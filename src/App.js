@@ -11,11 +11,13 @@ import RequireAuth from "./helpers/Auth/RequireAuth"
 import Unauthorized from "./pages/Unauthorized/Unauthorized"
 import PageNotFound from "./pages/PageNotFound/PageNotFound"
 import { ExchangeCardsProvider } from "./contexts/ExchangeCardsContext"
+import Modals from "./components/Modals/Modals"
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
+        <Modals />
         <Header />
         <Routes>
           <Route path="/" exact element={<Welcome />} />

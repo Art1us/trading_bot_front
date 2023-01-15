@@ -1,15 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./Dashboard.css"
 import { VscAccount } from "react-icons/vsc"
-import { useAuth } from "../../../hooks/useAuth/useAuth"
 import happyBot from "../../../assets/pictures/smile.png"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
+import { Context } from "../../../Context"
 
 function Dashboard() {
-  const { logout } = useAuth()
+  const { setShowLogoutModal } = useContext(Context)
 
   function logoutClickHandler() {
-    logout()
+    setShowLogoutModal(true)
   }
 
   return (

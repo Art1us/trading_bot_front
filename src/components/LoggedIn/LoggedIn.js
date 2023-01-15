@@ -1,15 +1,13 @@
-import React from "react"
-import { useAuth } from "../../hooks/useAuth/useAuth"
-import { Link, useNavigate } from "react-router-dom"
+import React, { useContext } from "react"
+import { Link } from "react-router-dom"
+import { Context } from "../../Context"
 import "./LoggedIn.css"
 
 function LoggedIn() {
-  const { logout } = useAuth()
-  const navigate = useNavigate()
+  const { setShowLogoutModal } = useContext(Context)
 
   function logOutClickHandler() {
-    logout()
-    navigate("/")
+    setShowLogoutModal(true)
   }
 
   return (
