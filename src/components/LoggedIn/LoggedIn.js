@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
-import { Context } from "../../Context"
+import { useModalContext } from "../../hooks/contextHooks/useModalContext/useModalContext"
 import "./LoggedIn.css"
 
 function LoggedIn() {
-  const { setShowLogoutModal } = useContext(Context)
+  const { setShowLogoutModal } = useModalContext()
 
   function logOutClickHandler() {
     setShowLogoutModal(true)

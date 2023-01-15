@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react"
-import { Context } from "../../Context"
 import ExchangeCard from "../../components/ExchangeCards/ExchangeCard/ExchangeCard"
 import AddExchangeCard from "../../components/ExchangeCards/AddExchangeCard/AddExchangeCard"
 import NewExchangeModal from "../../components/ExchangeCardModals/NewExchangeModal/NewExchangeModal"

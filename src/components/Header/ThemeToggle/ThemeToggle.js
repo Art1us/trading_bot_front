@@ -1,12 +1,12 @@
-import React, { useContext } from "react"
+import React from "react"
 import "./ThemeToggle.css"
 import ReactSwitch from "react-switch"
 import { BsFillSunFill } from "react-icons/bs"
 import { BsFillMoonFill } from "react-icons/bs"
-import { Context } from "../../../Context"
+import { useThemeContext } from "../../../hooks/contextHooks/useThemeContext/useThemeContext"
 
 function ThemeToggle() {
-  const { isDarkTheme, setIsDarkTheme } = useContext(Context)
+  const { isDarkTheme, setIsDarkTheme } = useThemeContext()
 
   return (
     <div className="themeToggle__container">

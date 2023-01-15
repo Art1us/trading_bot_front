@@ -1,12 +1,12 @@
-import React, { useContext } from "react"
+import React from "react"
 import "./Dashboard.css"
 import { VscAccount } from "react-icons/vsc"
 import happyBot from "../../../assets/pictures/smile.png"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
-import { Context } from "../../../Context"
+import { useModalContext } from "../../../hooks/contextHooks/useModalContext/useModalContext"
 
 function Dashboard() {
-  const { setShowLogoutModal } = useContext(Context)
+  const { setShowLogoutModal } = useModalContext()
 
   function logoutClickHandler() {
     setShowLogoutModal(true)
