@@ -13,10 +13,14 @@ function Greeting({ onClick }) {
     username.request(auth.access_token, controller)
   }, [auth])
 
+  const userName = username.response?.data?.data?.email?.split("@")[0]
+  
   return (
     <>
       <p className="header__userName">
-        Hello {username.response?.data?.data?.email || "username"}
+        {userName?.length > 15
+          ? `${userName.substring(0, 13)}...`
+          : userName || "username"}
       </p>
       <div className="header__elements--hover" onClick={onClick}>
         <RxHamburgerMenu className="header__elments-item--right" />
