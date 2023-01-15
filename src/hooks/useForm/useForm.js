@@ -40,46 +40,48 @@ function useForm(inputs, values) {
 
   useEffect(() => {
     initializationInputs.forEach(input => {
-      function getError() {
-        for (let error of input.errorsData.errors) {
-          if (
-            error.equalsToInput &&
-            formValues[input.inputData.props.name] !==
-              formValues[error.equalsToInput]
-          ) {
-            return "Passwords don't match"
-          } //error if input not equals to other input
+      if (input.errorsData) {
+        function getError() {
+          for (let error of input.errorsData.errors) {
+            if (
+              error.equalsToInput &&
+              formValues[input.inputData.props.name] !==
+                formValues[error.equalsToInput]
+            ) {
+              return "Passwords don't match"
+            } //error if input not equals to other input
 
-          if (
-            error.condition &&
-            new RegExp(error.condition).test(
-              formValues[input.inputData.props.name]
-            )
-          ) {
-            return error.message
-          } //error if matching condition
+            if (
+              error.condition &&
+              new RegExp(error.condition).test(
+                formValues[input.inputData.props.name]
+              )
+            ) {
+              return error.message
+            } //error if matching condition
 
-          if (
-            error.pattern &&
-            !new RegExp(error.pattern).test(
-              formValues[input.inputData.props.name]
-            )
-          ) {
-            return error.message
-          } //error if not matching pattern
+            if (
+              error.pattern &&
+              !new RegExp(error.pattern).test(
+                formValues[input.inputData.props.name]
+              )
+            ) {
+              return error.message
+            } //error if not matching pattern
+          }
         }
-      }
 
-      if (isDirty[input.inputData.props.name] && getError()) {
-        setErrorMessages(prev => ({
-          ...prev,
-          [input.inputData.props.name]: getError(),
-        }))
-      } else {
-        setErrorMessages(prev => ({
-          ...prev,
-          [input.inputData.props.name]: "",
-        }))
+        if (isDirty[input.inputData.props.name] && getError()) {
+          setErrorMessages(prev => ({
+            ...prev,
+            [input.inputData.props.name]: getError(),
+          }))
+        } else {
+          setErrorMessages(prev => ({
+            ...prev,
+            [input.inputData.props.name]: "",
+          }))
+        }
       }
     })
   }, [formValues, isDirty])
@@ -148,7 +150,7 @@ function useForm(inputs, values) {
         inputProps={{ ...input.inputData.props }}
         label={input.labelData ? input.labelData : null}
         error={{
-          className: input.errorsData.className,
+          className: input.errorsData?.className,
           errorMessage: errorMessages[input.inputData.props.name],
         }}
         onChange={onChange}
@@ -186,7 +188,12 @@ function useForm(inputs, values) {
     )
   )
 
-  return { inputComponents, isSubmitInvalid, formValues, displayCustomError }
+  return {
+    inputComponents,
+    isSubmitInvalid,
+    formValues,
+    displayCustomError,
+  }
 }
 
 export default useForm

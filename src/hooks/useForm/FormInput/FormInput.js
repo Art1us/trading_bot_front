@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./FormInput.css"
 import "./InputErrorStyles.css"
 import PasswordEyeBtn from "../PasswordEyeBtn/PasswordEyeBtn"
+import HintIcon from "../FormInput/Label/HintIcon/HintIcon"
 
 function FormInput({
   className,
@@ -26,7 +27,11 @@ function FormInput({
 
   return (
     <div className={className}>
-      {label && <div className={label.className}>{label.text}</div>}
+      {label && (
+        <div className={label.className}>
+          {label.text} {label.hint && <HintIcon text={label.hint} />}
+        </div>
+      )}
       <div style={{ position: "relative" }} className={inputClassName}>
         <input
           className={`formInput__defaultInputStyles ${
