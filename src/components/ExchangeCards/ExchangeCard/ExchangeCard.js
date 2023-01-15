@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { Context } from "../../../Context"
 import "./ExchangeCard.css"
 import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
 import { BiTrash } from "react-icons/bi"
@@ -10,7 +9,6 @@ import EditPencil from "../../EditPencil/EditPencil"
 
 function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   const { id, name, img, publicKey } = exchangeData
-  const { setSelectedBotSettings } = useContext(Context)
   const { setExchangeToDelete, setSelectedExchangeId } =
     useContext(ExchangeCardsContext)
 
