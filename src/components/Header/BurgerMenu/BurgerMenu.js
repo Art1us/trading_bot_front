@@ -1,13 +1,12 @@
-import React, { useEffect, useRef } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { useAuth } from "../../../hooks/useAuth/useAuth"
+import React, { useContext, useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { burgerMenuItems } from "./burgerMenuItems/burgerMenuItems"
 import "./BurgerMenu.css"
 import { AiOutlineClose } from "react-icons/ai"
+import { Context } from "../../../Context"
 
 function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
-  const { logout } = useAuth()
-  const navigate = useNavigate()
+  const { setShowLogoutModal } = useContext(Context)
   const burgerMenuRef = useRef()
 
   useEffect(() => {
@@ -23,8 +22,7 @@ function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
 
   function logoutClickHandler() {
     setBurgerMenuActive(false)
-    logout()
-    navigate("/")
+    setShowLogoutModal(true)
   }
 
   return (
