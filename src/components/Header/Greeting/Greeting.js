@@ -14,8 +14,7 @@ function Greeting({ onClick }) {
   }, [auth])
 
   const userName = username.response?.data?.data?.email?.split("@")[0]
-  /*  console.log(email?.substr(0, 5)) */
-
+  
   return (
     <>
       <p className="header__userName">
