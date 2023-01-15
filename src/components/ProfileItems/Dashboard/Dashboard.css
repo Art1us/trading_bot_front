@@ -137,13 +137,18 @@
 
 .dashboard__topBot--content {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dashboard__topBot--firstBot,
 .dashboard__topBot--secondBot {
   width: 100%;
   max-width: 1000px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-row-end: auto;
+  grid-template-columns: 240px 240px 240px 240px;
+  grid-template-rows: 25px;
 }
