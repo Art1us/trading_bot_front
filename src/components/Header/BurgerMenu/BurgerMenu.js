@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { burgerMenuItems } from "./burgerMenuItems/burgerMenuItems"
 import "./BurgerMenu.css"
 import { AiOutlineClose } from "react-icons/ai"
-import { Context } from "../../../Context"
+import { useModalContext } from "../../../hooks/contextHooks/useModalContext/useModalContext"
 
 function BurgerMenu({ burgerMenuActive, setBurgerMenuActive }) {
-  const { setShowLogoutModal } = useContext(Context)
+  const { setShowLogoutModal } = useModalContext()
   const burgerMenuRef = useRef()
 
   useEffect(() => {

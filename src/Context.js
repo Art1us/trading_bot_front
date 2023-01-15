@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 const Context = React.createContext()
 
@@ -30,17 +30,6 @@ function ContextProvider({ children }) {
     exchange: { id: "", name: "" },
   })
 
-  const [isDarkTheme, setIsDarkTheme] = useState(() =>
-    JSON.parse(localStorage.getItem("isDarkTheme"))
-  )
-
-  useEffect(() => {
-    document.body.setAttribute("data-theme", isDarkTheme ? "dark" : "light")
-    JSON.stringify(localStorage.setItem("isDarkTheme", isDarkTheme))
-  }, [isDarkTheme])
-
-  const [showLogoutModal, setShowLogoutModal] = useState(false)
-
   return (
     <Context.Provider
       value={{
@@ -49,10 +38,6 @@ function ContextProvider({ children }) {
         selectedBotSettings,
         setSelectedBotSettings,
         BOT_OPTIONS,
-        isDarkTheme,
-        setIsDarkTheme,
-        showLogoutModal,
-        setShowLogoutModal,
       }}
     >
       {children}

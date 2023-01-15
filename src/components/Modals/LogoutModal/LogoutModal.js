@@ -1,13 +1,12 @@
-import React, { useContext } from "react"
-import { AiOutlineClose } from "react-icons/ai"
+import React from "react"
 import { useNavigate } from "react-router-dom"
-import { Context } from "../../../Context"
 import { SimpleAnimatedModal } from "../../../helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 import { useAuth } from "../../../hooks/useAuth/useAuth"
 import "./LogoutModal.css"
+import { useModalContext } from "../../../hooks/contextHooks/useModalContext/useModalContext"
 
 function LogoutModal() {
-  const { showLogoutModal, setShowLogoutModal } = useContext(Context)
+  const { showLogoutModal, setShowLogoutModal } = useModalContext()
   const { logout } = useAuth()
   const navigate = useNavigate()
 
