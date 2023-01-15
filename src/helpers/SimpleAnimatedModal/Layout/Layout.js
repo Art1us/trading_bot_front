@@ -49,7 +49,10 @@ export const Layout = ({ onClose, children, opened, innerClassName }) => {
         unmountOnExit
         classNames={contentAnimation}
       >
-        <div ref={contentRef} className={innerClassName}>
+        <div
+          ref={contentRef}
+          className={innerClassName ? innerClassName : styles.content}
+        >
           {children}
         </div>
       </CSSTransition>

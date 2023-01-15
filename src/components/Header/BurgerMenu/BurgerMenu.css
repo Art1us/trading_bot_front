@@ -17,7 +17,7 @@
 .burgerMenu__content {
   width: 17vw;
   height: 100%;
-  background-color: var(--base-bg-color-90);
+  background-color: var(--modal-bg-color);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

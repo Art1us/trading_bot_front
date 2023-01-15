@@ -28,7 +28,6 @@ function DeleteExchangeModal({ showDeleteModal, setShowDeleteModal }) {
         e.stopPropagation()
         setShowDeleteModal(false)
       }}
-      innerClassName="deleteExchangeModal__inner"
     >
       <div className="deleteExchangeModal__container">
         <h2 className="deleteExchangeModal__title">Are you sure?</h2>

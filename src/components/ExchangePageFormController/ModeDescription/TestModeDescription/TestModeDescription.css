@@ -46,4 +46,5 @@
 
 .testModeDescription__button:hover {
   background-color: var(--hover-btn-color);
+  border-color: var(--hover-btn-color);
 }

@@ -39,6 +39,8 @@ function ContextProvider({ children }) {
     JSON.stringify(localStorage.setItem("isDarkTheme", isDarkTheme))
   }, [isDarkTheme])
 
+  const [showLogoutModal, setShowLogoutModal] = useState(false)
+
   return (
     <Context.Provider
       value={{
@@ -49,6 +51,8 @@ function ContextProvider({ children }) {
         BOT_OPTIONS,
         isDarkTheme,
         setIsDarkTheme,
+        showLogoutModal,
+        setShowLogoutModal,
       }}
     >
       {children}

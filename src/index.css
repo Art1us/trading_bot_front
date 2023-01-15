@@ -35,7 +35,7 @@
   --inversed-base-color: black;
   --base-bg-color-100: #1a120b;
   --base-bg-color-90: #323232;
-  --modal-bg-color: darkgrey;
+  --modal-bg-color: rgb(95, 95, 95);
   --input-bg-color: rgb(103, 103, 103);
   --placeholder-base-color: darkgrey;
   --primary-color: royalblue;

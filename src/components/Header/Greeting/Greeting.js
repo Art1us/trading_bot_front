@@ -15,7 +15,7 @@ function Greeting({ onClick }) {
 
   return (
     <>
-      <p className="header__userName" onClick={onClick}>
+      <p className="header__userName">
         Hello {username.response?.data?.data?.email || "username"}
       </p>
       <div className="header__elements--hover" onClick={onClick}>

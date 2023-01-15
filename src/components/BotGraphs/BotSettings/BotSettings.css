@@ -5,6 +5,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: var(--base-color);
+  background-color: var(--base-bg-color-90);
   box-shadow: var(--base-box-shadow);
   padding: 10px;
 }
@@ -37,6 +39,7 @@
   border: 1px solid var(--primary-color);
   color: var(--white-color);
   cursor: pointer;
+  font-weight: 600;
 }
 
 .botSettings__btn:hover {
