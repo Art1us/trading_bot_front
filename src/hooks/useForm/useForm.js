@@ -146,16 +146,17 @@ function useForm(inputs, values) {
       <FormInput
         key={input.id}
         className={input.wrapperClassName}
-        inputClassName={input.inputData.className}
-        inputProps={{ ...input.inputData.props }}
         label={input.labelData ? input.labelData : null}
+        input={{
+          ...input.inputData,
+          value: formValues[input.inputData.props.name],
+          onChange,
+          onBlur,
+        }}
         error={{
           className: input.errorsData?.className,
           errorMessage: errorMessages[input.inputData.props.name],
         }}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={formValues[input.inputData.props.name]}
       />
     ) : input.element === "inputsRow" ? (
       <div
@@ -170,16 +171,17 @@ function useForm(inputs, values) {
           <FormInput
             key={input.id}
             className={input.wrapperClassName}
-            inputClassName={input.inputData.className}
-            inputProps={{ ...input.inputData.props }}
             label={input.labelData ? input.labelData : null}
+            input={{
+              ...input.inputData,
+              value: formValues[input.inputData.props.name],
+              onChange,
+              onBlur,
+            }}
             error={{
               className: input.errorsData?.className,
               errorMessage: errorMessages[input.inputData.props.name],
             }}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={formValues[input.inputData.props.name]}
           />
         ))}
       </div>
