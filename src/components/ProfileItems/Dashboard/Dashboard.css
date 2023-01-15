@@ -1,0 +1,154 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  background-color: var(--base-bg-color-100);
+  color: var(--base-color);
+}
+
+.dashboard__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.dashboard__account {
+  width: 900px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--base-box-shadow);
+}
+
+.dashboard__account--title {
+  width: inherit;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-bg-color-90);
+}
+
+.dashboard__account--person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+  height: 100%;
+  padding: 0 100px 0 100px;
+  background-color: var(--modal-bg-color);
+}
+
+.dashboard__account--name {
+  width: 100%;
+  max-width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard__account--balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 180px;
+}
+
+.dashboard__account--btn {
+  width: 100px;
+  height: 30px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard__account--btn:hover {
+  background-color: var(--hover-btn-color);
+  border: var(--hover-btn-color);
+}
+
+.dashboard__botsStatistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 900px;
+  box-shadow: var(--base-box-shadow);
+}
+
+.dashboard__botsStatistics--title {
+  width: inherit;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-bg-color-90);
+}
+
+.dashboard__botStatistics--bots {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  background-color: var(--modal-bg-color);
+}
+
+.dashboard__botEmotion {
+  width: 150px;
+}
+
+.dashboard__botsStatistics--total,
+.dashboard__botsStatistics--running,
+.dashboard__botsStatistics--stopped {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard__topBot {
+  width: 900px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--modal-bg-color);
+  box-shadow: var(--base-box-shadow);
+}
+
+.dashboard__topBot--title {
+  width: inherit;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-bg-color-90);
+}
+
+.dashboard__topBot--content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard__topBot--firstBot,
+.dashboard__topBot--secondBot {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-row-end: auto;
+  grid-template-columns: 240px 240px 240px 240px;
+  grid-template-rows: 25px;
+}

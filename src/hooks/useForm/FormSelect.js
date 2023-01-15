@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import "./FormSelect.css"
 
 function FormSelect({
   className,
@@ -21,9 +22,13 @@ function FormSelect({
         onChange={onChange}
         onBlur={onBlur}
       >
-        <option></option>
-        {list.map((item) => {
-          return <option key={item.id}>{item.name}</option>;
+        <option className="formSelect__option"></option>
+        {list.map(item => {
+          return (
+            <option key={item.id} className="formSelect__option">
+              {item.name}
+            </option>
+          )
         })}
       </select>
       <p
@@ -33,7 +38,7 @@ function FormSelect({
         *{errorMessage}
       </p>
     </div>
-  );
+  )
 }
 
-export default FormSelect;
+export default FormSelect

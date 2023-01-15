@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: whitesmoke;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--base-bg-color-90);
+  color: var(--base-color);
+  box-shadow: var(--base-box-shadow);
   transition: transform 0.1s ease-in;
   cursor: pointer;
   border-radius: 10px;
@@ -18,19 +19,31 @@
 
 .StartModeDescription__description {
   margin-bottom: 20px;
+  height: 100%;
+  padding: 10px;
+  color: var(--base-color-80);
+}
+
+.StartModeDescription__description p {
+  margin-bottom: 10px;
+}
+
+.StartModeDescription__description p:last-child {
+  margin-bottom: 0;
 }
 
 .StartModeDescription__button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
-  background-color: rgb(228, 3, 3);
-  border: 1px solid rgb(228, 3, 3);
+  color: var(--white-color);
+  background-color: var(--warning-color);
+  border: 1px solid var(--warning-color);
   font-size: 16px;
   font-weight: 600;
+  height: 40px;
 }
 
 .StartModeDescription__button:hover {
-  background-color: rgb(185, 2, 2);
+  background-color: var(--warning-color);
 }

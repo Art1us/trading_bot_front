@@ -1,17 +1,3 @@
-.editExchangeModal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border-radius: 5px;
-  box-shadow: 0px 0px 6px 2px #666;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: whitesmoke;
-  z-index: 3;
-}
-
 .editExchangeModal__inner {
   position: fixed;
   top: 0;
@@ -22,12 +8,14 @@
   margin: auto;
   height: 420px;
   width: 350px;
-  background-color: white;
-  color: black;
+  background-color: var(--base-bg-color-90);
+  color: var(--base-color);
+  border-radius: 10px;
+  z-index: 3;
 }
 
 .editExchangeModal__cross {
-  color: black;
+  color: var(--base-color);
   position: absolute;
   top: 10px;
   right: 10px;
@@ -86,40 +74,24 @@
 
 .editExchangeModal_formBtn {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 5px;
 }
 
 .editExchangeModal__saveBtn {
-  width: 140px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
   border-radius: 5px;
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
-  font-weight: 700;
-  font-size: 14px;
   cursor: pointer;
-  color: var(--main-bg-color);
+  color: var(--base-field-btns);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .editExchangeModal__saveBtn:hover {
   background-color: var(--hover-btn-color);
   border-color: var(--hover-btn-color);
-}
-
-.editExchangeModal__deleteBtn {
-  width: 140px;
-  height: 30px;
-  border-radius: 5px;
-  background-color: transparent;
-  border: 2px solid red;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  color: red;
-}
-
-.editExchangeModal__deleteBtn:hover {
-  color: white;
-  background-color: rgb(214, 1, 1);
+  color: var(--white-color);
 }

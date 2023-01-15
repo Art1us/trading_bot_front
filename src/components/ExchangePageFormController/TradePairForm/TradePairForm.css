@@ -1,0 +1,49 @@
+.tradePairForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  color: var(--base-color);
+}
+
+.tradePairForm__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  background-color: var(--base-bg-color-90);
+  padding: 20px;
+  align-items: center;
+  width: 250px;
+  box-shadow: var(--base-box-shadow);
+  border-radius: 5px;
+}
+
+.tradePairForm__title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tradePairForm__select {
+  width: 65%;
+  height: 40px;
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+  color: var(--base-color);
+}
+
+.tradePairForm__btn {
+  width: 65%;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  height: 40px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tradePairForm__btn:hover {
+  background-color: var(--hover-btn-color);
+}

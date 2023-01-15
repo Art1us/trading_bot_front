@@ -1,12 +1,13 @@
 .botTable {
-  width: 300px;
-  height: 50px;
+  width: 445px;
+  height: 250px;
+  color: var(--base-color);
 }
 
 .botTable,
 .botTable__header,
 .botTable__cell {
-  border: 1px solid black;
+  border: 1px solid var(--base-color);
   border-collapse: collapse;
 }
 
@@ -15,5 +16,4 @@
 }
 
 .botTable tr {
-  height: 50px;
 }

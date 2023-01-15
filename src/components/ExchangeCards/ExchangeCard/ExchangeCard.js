@@ -1,47 +1,78 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./ExchangeCard.css";
-import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal";
-import { BiPencil } from "react-icons/bi";
+import React, { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { Context } from "../../../Context"
+import "./ExchangeCard.css"
+import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
+import { BiPencil, BiTrash } from "react-icons/bi"
+import { ExchangeOpenAnimation } from "../../../helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
+import { ExchangeCardsContext } from "../../../contexts/ExchangeCardsContext"
+import EditPencil from "../../EditPencil/EditPencil"
 
-function ExchangeCard(props) {
-  const { exchange, img, publicKey } = props;
+function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
+  const { id, exchange, img, publicKey } = exchangeData
+  const { setSelectedBotSettings } = useContext(Context)
+  const { setExchangeToDelete } = useContext(ExchangeCardsContext)
 
-  const [hovered, setHovered] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
+  let navigate = useNavigate()
+
+  const [hovered, setHovered] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false)
+  const [exchangeSelected, setExchangeSelected] = useState(false)
 
   function mouseEnterHandler() {
-    setHovered(true);
+    setHovered(true)
   }
   function mouseLeaveHandler() {
-    setHovered(false);
+    setHovered(false)
   }
 
   function editClickHandler(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    setShowEditModal(true);
+    e.stopPropagation()
+    setShowEditModal(true)
+  }
+
+  function deleteClickHandler(e) {
+    e.stopPropagation()
+    e.preventDefault()
+    setShowDeleteModal(true)
+    setExchangeToDelete(id)
+  }
+
+  function clickHandler() {
+    setExchangeSelected(true)
+    setSelectedBotSettings(prev => ({
+      ...prev,
+      exchange: { id: id, name: exchange },
+    }))
+    setTimeout(() => navigate("/exchange"), 100)
   }
 
   return (
-    <>
-      {showEditModal && (
+    <ExchangeOpenAnimation opened={!exchangeSelected}>
+      <>
         <EditExchangeModal
+          showEditModal={showEditModal}
           setShowEditModal={setShowEditModal}
-          exchangeData={props}
+          exchangeData={exchangeData}
         />
-      )}
-      <Link to="/exchange" style={{ textDecoration: "none" }}>
         <div
           className="exchangeCard"
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
+          onClick={clickHandler}
         >
           {hovered && (
-            <BiPencil
-              className="exchangeCard__pencil"
-              onClick={editClickHandler}
-            />
+            <>
+              <EditPencil
+                stylings="exchangeCard__pencil"
+                onClick={editClickHandler}
+              />
+
+              <BiTrash
+                className="exchangeCard__trash"
+                onClick={deleteClickHandler}
+              />
+            </>
           )}
           <div className="exchangeCard__logo">
             <img
@@ -62,9 +93,9 @@ function ExchangeCard(props) {
             </div>
           </div>
         </div>
-      </Link>
-    </>
-  );
+      </>
+    </ExchangeOpenAnimation>
+  )
 }
 
-export default ExchangeCard;
+export default ExchangeCard

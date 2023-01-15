@@ -1,0 +1,57 @@
+.headerLogin__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+
+.headerLogin__btnLog {
+  -webkit-box-align: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  display: inline-flex;
+  color: var(--primary-color);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 76px;
+  height: 34px;
+  font-size: 12px;
+}
+
+.headerLogin__btn:hover {
+  background-color: var(--hover-bg-color);
+  color: var(--white-color);
+}
+
+.headerLogin__btnSign {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  display: inline-flex;
+  color: var(--white-color);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  justify-content: center;
+  outline: 0px;
+  font-weight: 600;
+  width: 76px;
+  height: 34px;
+  font-size: 12px;
+  border: 2px solid var(--primary-color);
+}
+
+.headerLogin__btnLog:hover {
+  background-color: var(--hover-btn-color);
+  color: var(--white-color);
+  border-color: var(--hover-btn-color);
+}
+
+.headerLogin__btnSign:hover {
+  background: var(--hover-btn-color);
+  border-color: var(--hover-btn-color);
+}

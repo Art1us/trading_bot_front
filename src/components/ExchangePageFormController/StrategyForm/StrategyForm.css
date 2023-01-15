@@ -10,34 +10,40 @@
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  background-color: whitesmoke;
+  background-color: var(--base-bg-color-90);
   padding: 20px;
   align-items: center;
   width: 250px;
-  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  box-shadow: var(--base-box-shadow);
   border-radius: 5px;
 }
 
 .strategyForm__title {
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--base-color);
 }
 
 .strategyForm__select {
   width: 65%;
-  height: 25px;
+  height: 40px;
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+  color: var(--base-color);
 }
 
 .strategyForm__btn {
   width: 65%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border: none;
-  color: white;
-  height: 25px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  color: var(--white-color);
+  height: 40px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
 .strategyForm__btn:hover {
-  background-color: rgb(14, 14, 159);
+  background-color: var(--hover-btn-color);
 }

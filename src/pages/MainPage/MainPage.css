@@ -1,25 +1,71 @@
 .main {
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
+  background: var(--base-bg-color-100);
 }
 
 .main__container {
   max-width: 1200px;
-  height: calc(100vh - 60px);
+  height: 100%;
+  min-height: calc(100vh - 56px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .main__titleContainer {
+  color: var(--base-color);
   margin-top: 40px;
 }
 
 .main__cardsContainer {
   width: 100%;
-  padding: 0 30px;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   row-gap: 20px;
+}
+
+.exchangeAddDeleteAnimation-enter {
+  animation: in 300ms ease-out;
+}
+
+.exchangeAddDeleteAnimation-exit {
+  animation: out 330ms ease-out;
+}
+
+@keyframes in {
+  0% {
+    opacity: 0.01;
+    translate: 0 -150px;
+  }
+
+  80% {
+    opacity: 0.8;
+    translate: 0 15px;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes out {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  20% {
+    opacity: 0.8;
+    translate: 0 10px;
+  }
+
+  100% {
+    opacity: 0.01;
+    translate: 0 -250px;
+  }
 }

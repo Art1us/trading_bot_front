@@ -3,8 +3,8 @@
   position: absolute;
   top: 50px;
   width: 100%;
-  background-color: whitesmoke;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--base-bg-color-90);
+  box-shadow: var(--base-box-shadow);
   border-radius: 5px;
   z-index: 5;
 }
@@ -25,11 +25,10 @@
 
 .customDateDropdown__dateInput {
   width: 100%;
-  height: 20px;
 }
 
 .customDateDropdown__error {
-  color: red;
+  color: var(--warning-color);
   font-size: 12px;
   margin-top: 5px;
   padding-left: 5px;
@@ -38,14 +37,14 @@
 .customDateDropdown__startBtn {
   width: 100%;
   height: 20px;
-  color: white;
-  background-color: royalblue;
+  color: var(--white-color);
+  background-color: var(--primary-color);
   border: 0;
-  border-radius: 2px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .customDateDropdown__startBtn:hover {
-  background-color: rgb(61, 98, 210);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  background-color: var(--hover-btn-color);
+  box-shadow: var(--base-box-shadow);
 }
