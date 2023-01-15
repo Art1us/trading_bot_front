@@ -23,6 +23,10 @@ const formInputsData = [
           message: "Please enter your email!",
         },
         {
+          condition: "[^\x00-\x7F]+",
+          message: "Only english, digits and special characters allowed",
+        },
+        {
           pattern:
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
             "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
@@ -48,6 +52,10 @@ const formInputsData = [
         {
           condition: "^s*$",
           message: "Please enter your password!",
+        },
+        {
+          condition: "[^\x00-\x7F]+",
+          message: "Only english, digits and special characters allowed",
         },
         {
           condition: "^(.{1,7})$",
