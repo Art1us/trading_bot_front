@@ -24,7 +24,6 @@ function ExchangeCardsProvider({ children }) {
       )
     }
   }, [selectedExchangeId])
-  console.log(selectedExchangeId)
   return (
     <ExchangeCardsContext.Provider
       value={{
