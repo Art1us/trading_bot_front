@@ -1,6 +1,6 @@
 .exchangePage__form {
   width: 100%;
-  max-width: 320px;
+  max-width: 350px;
   height: 100%;
   min-height: 500px;
   display: flex;
@@ -28,11 +28,12 @@
 
 .exchangePage__formLabel {
   width: fit-content;
+  display: flex;
 }
 
 .exchangePage__TakeInput,
 .exchangePage__stopInput {
-  width: 130px;
+  width: 150px;
 }
 
 .exchangePage__startBotBtn {
