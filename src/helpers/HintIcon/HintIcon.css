@@ -1,7 +1,31 @@
+.hintIcon__container {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+}
+
 .hintIcon {
+  margin: 0 3px 1px;
   color: var(--base-color);
 }
 
 .hintIcon:hover {
-  color: var(--hover-bg-color);
+  color: var(--secondary-color);
+}
+
+.hintIcon__description {
+  position: absolute;
+  left: 10px;
+  bottom: 20px;
+  width: 200px;
+  font-size: 12px;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  background-color: var(--white-color);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: var(--base-box-shadow);
 }
