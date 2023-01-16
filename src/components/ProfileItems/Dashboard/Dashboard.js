@@ -4,6 +4,7 @@ import { VscAccount } from "react-icons/vsc"
 import happyBot from "../../../assets/pictures/smile.png"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 import { useModalContext } from "../../../hooks/contextHooks/useModalContext/useModalContext"
+import InfoCard from "../InfoCard/InfoCard"
 
 function Dashboard() {
   const { setShowLogoutModal } = useModalContext()
@@ -80,6 +81,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
+        <InfoCard title={"Hui"} content={<div>Pizda</div>} />
       </div>
     </div>
   )

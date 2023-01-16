@@ -1,9 +1,13 @@
 import React from "react"
 import "./InfoCard.css"
-import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
-function InfoCard() {
-  return <div>InfoCard</div>
+function InfoCard({ title, content }) {
+  return (
+    <div className="profileComponent__authentication">
+      <h3 className="profileComponent__authentication--title">{title}</h3>
+      <div className="content">{content}</div>
+    </div>
+  )
 }
 
 export default InfoCard
