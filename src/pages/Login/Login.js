@@ -1,13 +1,12 @@
 import React, { useEffect } from "react"
 import "./Login.css"
 import { useNavigate, Link } from "react-router-dom"
-import useForm from "../../hooks/useForm/useForm"
+import useForm from "hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
-import LoggedIn from "../common/components/LoggedIn/LoggedIn"
-
-import { useApi } from "../../hooks/useApi/useApi"
-import { fetchLogin } from "../../api/auth/fetchLogin"
-import { useAuth } from "../../hooks/useAuth/useAuth"
+import LoggedIn from "pages/common/components/LoggedIn/LoggedIn"
+import { fetchLogin } from "api/auth/fetchLogin"
+import { useApi } from "hooks/useApi/useApi"
+import { useAuth } from "hooks/useAuth/useAuth"
 
 function Login() {
   const { auth, setAuth } = useAuth()
