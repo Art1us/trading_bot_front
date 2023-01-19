@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import "./Register.css"
-import { useNavigate, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
 import { useAuth } from "../../hooks/useAuth/useAuth"
 
 import { useApi } from "../../hooks/useApi/useApi"
 import { fetchRegistration } from "../../api/auth/fetchRegistration"
-import RegistrationSuccess from "../../components/RegistrationSuccess/RegistrationSuccess"
-import LoggedIn from "../../components/LoggedIn/LoggedIn"
+import RegistrationSuccess from "./components/RegistrationSuccess/RegistrationSuccess"
+import LoggedIn from "../common/components/LoggedIn/LoggedIn"
 
 function Register() {
   const registration = useApi(fetchRegistration)
@@ -21,7 +21,6 @@ function Register() {
   useEffect(() => {
     let mounted = true
     if (registration.response?.status === 201 && mounted) {
-      //
     }
     return () => {
       mounted = false

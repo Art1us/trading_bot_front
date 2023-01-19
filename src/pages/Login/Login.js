@@ -3,7 +3,7 @@ import "./Login.css"
 import { useNavigate, Link } from "react-router-dom"
 import useForm from "../../hooks/useForm/useForm"
 import formInputsData from "./formInputsData/formInputsData"
-import LoggedIn from "../../components/LoggedIn/LoggedIn"
+import LoggedIn from "../common/components/LoggedIn/LoggedIn"
 
 import { useApi } from "../../hooks/useApi/useApi"
 import { fetchLogin } from "../../api/auth/fetchLogin"

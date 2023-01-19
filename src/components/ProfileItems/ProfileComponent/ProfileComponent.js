@@ -1,7 +1,7 @@
 import React from "react"
 import "./ProfileComponent.css"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
-import EditPencil from "../../EditPencil/EditPencil"
+import EditPencil from "../../../pages/common/ui/EditPencil/EditPencil"
 
 function ProfileComponent() {
   return (

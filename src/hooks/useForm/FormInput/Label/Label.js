@@ -1,5 +1,5 @@
 import React from "react"
-import HintIcon from "../../../../helpers/HintIcon/HintIcon"
+import HintIcon from "pages/common/ui/HintIcon/HintIcon"
 
 function Label({ data }) {
   if (!data) return null
