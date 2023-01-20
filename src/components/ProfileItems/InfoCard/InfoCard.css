@@ -1,0 +1,28 @@
+.infoCard__wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--base-box-shadow);
+  border-radius: 5px;
+  background-color: var(--modal-bg-color);
+}
+
+.infoCard__title {
+  width: 100%;
+  height: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-bg-color-90);
+  border-radius: 5px 5px 0 0;
+}
+
+.infoCard__content {
+  background-color: var(--modal-bg-color);
+  width: 100%;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+}
