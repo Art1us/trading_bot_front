@@ -9,6 +9,7 @@ import botLogo from "assets/pictures/logo-bot.png"
 import LanguageDropdown from "./LanguageDropdown/LanguageDropdown"
 import ThemeToggle from "./ThemeToggle/ThemeToggle"
 import Greeting from "./Greeting/Greeting"
+import { LangMenuAnimation } from "helpers/LangMenuAnimation/LangMenuAnimation"
 
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false)
@@ -44,9 +45,11 @@ function Header() {
           >
             <RiGlobalLine className="header__elments-item--right" />
             {displayDropdownActive ? (
-              <LanguageDropdown
-                setDisplayDropdownActive={setDisplayDropdownActive}
-              />
+              <LangMenuAnimation opened={true}>
+                <LanguageDropdown
+                  setDisplayDropdownActive={setDisplayDropdownActive}
+                />
+              </LangMenuAnimation>
             ) : (
               ""
             )}

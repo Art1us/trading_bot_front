@@ -3,7 +3,7 @@ import "./LanguageDropdown.css"
 import russianLanguageImg from "assets/pictures/languageFlags/russian-language.png"
 import englishLanguageImg from "assets/pictures/languageFlags/english-language.png"
 
-function LanguageDropdown({ setDisplayDropdownActive }) {
+function LanguageDropdown({ setDisplayDropdownActive, nodeRef }) {
   const languageDropdownRef = useRef()
 
   const languageDropdownItems = [
