@@ -1,6 +1,6 @@
 import React from "react"
 import "./ProfileAuthentication.css"
-import EditPencil from "../../../EditPencil/EditPencil"
+import EditPencil from "pages/common/ui/EditPencil/EditPencil"
 
 function ProfileAuthentication() {
   return (

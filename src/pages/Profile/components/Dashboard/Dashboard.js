@@ -4,7 +4,7 @@ import DashboardAccount from "./DashboardAccount/DashboardAccount"
 import DashboardStatistics from "./DashboardStatistics/DashboardStatistics"
 import DashboardTopBot from "./DashboardTopBot/DashboardTopBot"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
-import InfoCard from "../InfoCard/InfoCard"
+import InfoCard from "pages/common/ui/InfoCard/InfoCard"
 
 function Dashboard() {
   return (

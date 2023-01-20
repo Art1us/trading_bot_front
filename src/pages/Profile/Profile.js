@@ -1,9 +1,9 @@
 import "./Profile.css"
 import { useState } from "react"
-import TradeStatistics from "../../components/ProfileItems/TradeStatistics/TradeStatistics"
-import ProfileComponent from "../../components/ProfileItems/ProfileComponent/ProfileComponent"
-import Bots from "../../components/ProfileItems/Bots/Bots"
-import Dashboard from "../../components/ProfileItems/Dashboard/Dashboard"
+import TradeStatistics from "./components/TradeStatistics/TradeStatistics"
+import ProfileComponent from "./components/ProfileComponent/ProfileComponent"
+import Bots from "./components/Bots/Bots"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 function Profile() {
   const [activeProfile, setActiveProfile] = useState(1)
