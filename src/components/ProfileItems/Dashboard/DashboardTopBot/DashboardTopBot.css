@@ -1,0 +1,16 @@
+.dashboardTopBot--content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboardTopBot--firstBot,
+.dashboardTopBot--secondBot {
+  width: 100%;
+  display: grid;
+  grid-row-end: auto;
+  grid-template-columns: 230px 230px 230px 230px;
+  grid-template-rows: 25px;
+}

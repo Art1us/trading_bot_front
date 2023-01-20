@@ -1,0 +1,18 @@
+.dashboardStatistics__bots {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: var(--modal-bg-color);
+}
+
+.dashboardStatistics__botEmotion {
+  width: 150px;
+}
+
+.dashboardStatistics__total,
+.dashboardStatistics__running,
+.dashboardStatistics__stopped {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
