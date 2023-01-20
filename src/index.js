@@ -8,13 +8,11 @@ import { ThemeContextProvider } from "./contexts/ThemeContext"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
-    <AuthProvider>
-      <ModalContextProvider>
-        <ThemeContextProvider>
-          <App />
-        </ThemeContextProvider>
-      </ModalContextProvider>
-    </AuthProvider>
-  </React.StrictMode>
+  <AuthProvider>
+    <ModalContextProvider>
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
+    </ModalContextProvider>
+  </AuthProvider>
 )
