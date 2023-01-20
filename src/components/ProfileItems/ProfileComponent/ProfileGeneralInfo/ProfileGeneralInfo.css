@@ -1,0 +1,19 @@
+.profileComponent__generalInfo {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--modal-bg-color);
+}
+
+.profileComponent__generalInfo--fullName {
+  display: flex;
+}
+
+.profileComponent__generalInfo--userName {
+  display: flex;
+}
