@@ -1,11 +1,13 @@
 import React from "react"
-import useForm from "hooks/useForm/useForm"
-import formInputData from "./formInputData/formInputData"
+
 import "./ExchangeForm.css"
+
+import { useForm } from "hooks"
+import { formInputsData } from "./data"
 
 function ExchangeForm() {
   const { inputComponents, isSubmitInvalid, formValues, displayCustomError } =
-    useForm(formInputData)
+    useForm(formInputsData)
 
   function areDatesInvalid(dateStart, scanFrom) {
     let dateMax = new Date(dateStart)

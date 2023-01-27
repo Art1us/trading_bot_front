@@ -1,7 +1,9 @@
 import React from "react"
+
 import "./ProfileComponent.css"
+import { InfoCard } from "pages/common/ui"
+
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
-import InfoCard from "pages/common/ui/InfoCard/InfoCard"
 import ProfileGeneralInfo from "./ProfileGeneralInfo/ProfileGeneralInfo"
 import ProfileAuthentication from "./ProfileAuthentication/ProfileAuthentication"
 

@@ -1,9 +1,12 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import { SimpleAnimatedModal } from "helpers/SimpleAnimatedModal/SimpleAnimatedModal"
-import { useAuth } from "hooks/useAuth/useAuth"
+
 import "./LogoutModal.css"
+
+import { useAuth } from "hooks"
 import { useModalContext } from "hooks/contextHooks/useModalContext/useModalContext"
+
+import { SimpleAnimatedModal } from "helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 
 function LogoutModal() {
   const { showLogoutModal, setShowLogoutModal } = useModalContext()

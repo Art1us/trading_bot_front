@@ -1,9 +1,10 @@
 import React, { useContext } from "react"
+
 import "./DeleteExchangeModal.css"
 import { SimpleAnimatedModal } from "helpers/SimpleAnimatedModal/SimpleAnimatedModal"
 
+import { useAuth } from "hooks"
 import { ExchangeCardsContext } from "contexts/ExchangeCardsContext"
-import { useAuth } from "hooks/useAuth/useAuth"
 
 function DeleteExchangeModal({ showDeleteModal, setShowDeleteModal }) {
   const { exchangeToDelete, deleteExchange } = useContext(ExchangeCardsContext)

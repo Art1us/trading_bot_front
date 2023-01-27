@@ -1,14 +1,14 @@
 import React, { useEffect } from "react"
-import "./Register.css"
 import { Link } from "react-router-dom"
-import useForm from "hooks/useForm/useForm"
-import formInputsData from "./formInputsData/formInputsData"
-import { useAuth } from "hooks/useAuth/useAuth"
 
-import { useApi } from "hooks/useApi/useApi"
-import { fetchRegistration } from "api/auth/fetchRegistration"
+import "./Register.css"
+
 import RegistrationSuccess from "./components/RegistrationSuccess/RegistrationSuccess"
-import LoggedIn from "pages/common/components/LoggedIn/LoggedIn"
+
+import { useAuth, useApi, useForm } from "hooks"
+import { fetchRegistration } from "api/auth/fetchRegistration"
+import { LoggedIn } from "pages/common/components"
+import { formInputsData } from "./data"
 
 function Register() {
   const registration = useApi(fetchRegistration)

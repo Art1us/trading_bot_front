@@ -1,8 +1,10 @@
 import React from "react"
-import "./ThemeToggle.css"
 import ReactSwitch from "react-switch"
+
+import "./ThemeToggle.css"
 import { BsFillSunFill } from "react-icons/bs"
 import { BsFillMoonFill } from "react-icons/bs"
+
 import { useThemeContext } from "hooks/contextHooks/useThemeContext/useThemeContext"
 
 function ThemeToggle() {

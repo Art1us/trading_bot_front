@@ -1,6 +1,8 @@
 import React from "react"
+
 import "./DashboardAccount.css"
 import { VscAccount } from "react-icons/vsc"
+
 import { useModalContext } from "hooks/contextHooks/useModalContext/useModalContext"
 
 function DashboardAccount() {

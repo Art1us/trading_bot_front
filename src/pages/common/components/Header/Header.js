@@ -1,14 +1,19 @@
 import React, { useState } from "react"
-import "./Header.css"
-import BurgerMenu from "./BurgerMenu/BurgerMenu"
-import HeaderLogin from "./HeaderLogin/HeaderLogin"
 import { Link } from "react-router-dom"
+
+import "./Header.css"
 import { RiGlobalLine } from "react-icons/ri"
-import { useAuth } from "hooks/useAuth/useAuth"
 import botLogo from "assets/pictures/logo-bot.png"
-import LanguageDropdown from "./LanguageDropdown/LanguageDropdown"
-import ThemeToggle from "./ThemeToggle/ThemeToggle"
-import Greeting from "./Greeting/Greeting"
+
+import {
+  BurgerMenu,
+  Greeting,
+  HeaderLogin,
+  LanguageDropdown,
+  ThemeToggle,
+} from "./components"
+
+import { useAuth } from "hooks"
 
 function Header() {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false)

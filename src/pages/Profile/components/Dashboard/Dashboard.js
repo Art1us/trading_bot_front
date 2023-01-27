@@ -1,10 +1,12 @@
 import React from "react"
+
 import "./Dashboard.css"
+import { InfoCard } from "pages/common/ui"
+
 import DashboardAccount from "./DashboardAccount/DashboardAccount"
 import DashboardStatistics from "./DashboardStatistics/DashboardStatistics"
 import DashboardTopBot from "./DashboardTopBot/DashboardTopBot"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
-import InfoCard from "pages/common/ui/InfoCard/InfoCard"
 
 function Dashboard() {
   return (

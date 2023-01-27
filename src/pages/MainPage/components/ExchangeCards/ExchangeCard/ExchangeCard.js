@@ -1,11 +1,14 @@
 import React, { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
+
 import "./ExchangeCard.css"
-import EditExchangeModal from "../../ExchangeCardModals/EditExchangeModal/EditExchangeModal"
 import { BiTrash } from "react-icons/bi"
 import { ExchangeOpenAnimation } from "helpers/ExchangeOpenAnimation/ExchangeOpenAnimation"
+import { EditPencil } from "pages/common/ui"
+
+import { EditExchangeModal } from "../../../components"
+
 import { ExchangeCardsContext } from "contexts/ExchangeCardsContext"
-import EditPencil from "pages/common/ui/EditPencil/EditPencil"
 
 function ExchangeCard({ setShowDeleteModal, ...exchangeData }) {
   const { id, name, img, publicKey } = exchangeData

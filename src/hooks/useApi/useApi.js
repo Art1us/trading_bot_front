@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useAuth } from "../useAuth/useAuth"
-import { apiClient } from "../../api/apiClient"
+import { apiClient } from "api/apiClient"
 
-import { fetchRefreshToken } from "../../api/auth/fetchRefreshToken"
+import { fetchRefreshToken } from "api/auth/fetchRefreshToken"
 
 export function useApi(apiFunc) {
   const [response, setResponse] = useState(null)

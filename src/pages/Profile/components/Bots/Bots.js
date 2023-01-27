@@ -1,5 +1,6 @@
 import React from "react"
 import "./Bots.css"
+
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
 function Bots() {

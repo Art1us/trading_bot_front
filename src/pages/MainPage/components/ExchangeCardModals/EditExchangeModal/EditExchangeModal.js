@@ -1,9 +1,11 @@
 import React from "react"
+
 import "./EditExchangeModal.css"
 import { AiOutlineClose } from "react-icons/ai"
-import useForm from "hooks/useForm/useForm"
-import formInputsData from "./formInputsData/formInputsData"
 import { SimpleAnimatedModal } from "helpers/SimpleAnimatedModal/SimpleAnimatedModal"
+
+import { useForm } from "hooks"
+import { formInputsData } from "./data"
 
 function EditExchangeModal({ showEditModal, setShowEditModal, exchangeData }) {
   const { exchange } = exchangeData

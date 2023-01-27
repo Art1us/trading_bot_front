@@ -1,5 +1,7 @@
 import React from "react"
+
 import "./TradeStatistics.css"
+
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
 function TradeStatistics() {

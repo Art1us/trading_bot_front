@@ -1,12 +1,17 @@
-import "./MainPage.css"
 import React, { useState, useContext, useEffect } from "react"
-import ExchangeCard from "./components/ExchangeCards/ExchangeCard/ExchangeCard"
-import AddExchangeCard from "./components/ExchangeCards/AddExchangeCard/AddExchangeCard"
-import NewExchangeModal from "./components/ExchangeCardModals/NewExchangeModal/NewExchangeModal"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
-import DeleteExchangeModal from "./components/ExchangeCardModals/DeleteExchangeModal/DeleteExchangeModal"
+
+import "./MainPage.css"
+
+import {
+  DeleteExchangeModal,
+  NewExchangeModal,
+  AddExchangeCard,
+  ExchangeCard,
+} from "./components"
+
+import { useAuth } from "hooks"
 import { ExchangeCardsContext } from "contexts/ExchangeCardsContext"
-import { useAuth } from "hooks/useAuth/useAuth"
 
 function MainPage() {
   const [showNewModal, setShowNewModal] = useState(false)

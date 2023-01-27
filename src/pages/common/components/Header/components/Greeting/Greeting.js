@@ -1,8 +1,9 @@
 import React, { useEffect } from "react"
+
 import { RxHamburgerMenu } from "react-icons/rx"
-import { useAuth } from "hooks/useAuth/useAuth"
+
 import { fetchUsername } from "api/auth/fetchUsername"
-import { useApi } from "hooks/useApi/useApi"
+import { useApi, useAuth } from "hooks"
 
 function Greeting({ onClick }) {
   const username = useApi(fetchUsername)

@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react"
-import { AiOutlineClose } from "react-icons/ai"
+
 import "./NewExchangeModal.css"
-import useForm from "hooks/useForm/useForm"
-import formInputsData from "./formInputsData/formInputsData"
+import { AiOutlineClose } from "react-icons/ai"
 import { SimpleAnimatedModal } from "helpers/SimpleAnimatedModal/SimpleAnimatedModal"
-import { useApi } from "hooks/useApi/useApi"
-import { fetchExchanges } from "api/services/fetchExchanges"
-import { useAuth } from "hooks/useAuth/useAuth"
+
+import { useForm, useAuth, useApi } from "hooks"
 import { ExchangeCardsContext } from "contexts/ExchangeCardsContext"
+import { fetchExchanges } from "api/services/fetchExchanges"
+import { formInputsData } from "./data"
 
 function NewExchangeModal({ showNewModal, setShowNewModal }) {
   const { addExchange } = useContext(ExchangeCardsContext)

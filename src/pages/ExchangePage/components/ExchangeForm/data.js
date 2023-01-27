@@ -3,7 +3,7 @@ const twoMonthAgo = new Date(new Date().setMonth(new Date().getMonth() - 2))
   .toISOString()
   .split("T")[0]
 
-const formInputsData = [
+export const formInputsData = [
   {
     id: 1,
     wrapperClassName: "exchangePage__formBlock",
@@ -188,5 +188,3 @@ const formInputsData = [
     },
   },
 ]
-
-export default formInputsData

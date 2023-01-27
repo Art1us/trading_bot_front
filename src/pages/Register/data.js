@@ -1,4 +1,4 @@
-const formInputsData = [
+export const formInputsData = [
   {
     id: 1,
     wrapperClassName: "login__formBlock",
@@ -110,5 +110,3 @@ const formInputsData = [
     },
   },
 ]
-
-export default formInputsData

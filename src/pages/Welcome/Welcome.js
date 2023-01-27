@@ -1,9 +1,12 @@
 import React from "react"
-import "./Welcome.css"
 import { Link } from "react-router-dom"
-import { useAuth } from "hooks/useAuth/useAuth"
+
+import "./Welcome.css"
 import imgWelcome from "assets/pictures/imgWelcome.png"
+
 import Footer from "./components/Footer/Footer"
+
+import { useAuth } from "hooks/useAuth/useAuth"
 
 function Welcome() {
   const { auth } = useAuth()

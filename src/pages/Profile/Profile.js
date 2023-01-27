@@ -1,9 +1,13 @@
-import "./Profile.css"
 import { useState } from "react"
-import TradeStatistics from "./components/TradeStatistics/TradeStatistics"
-import ProfileComponent from "./components/ProfileComponent/ProfileComponent"
-import Bots from "./components/Bots/Bots"
-import Dashboard from "./components/Dashboard/Dashboard"
+
+import "./Profile.css"
+
+import {
+  Bots,
+  Dashboard,
+  ProfileComponent,
+  TradeStatistics,
+} from "./components"
 
 function Profile() {
   const [activeProfile, setActiveProfile] = useState(1)

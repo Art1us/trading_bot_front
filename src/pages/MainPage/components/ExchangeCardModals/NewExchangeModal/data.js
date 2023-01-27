@@ -1,6 +1,31 @@
-const formInputsData = [
+export const formInputsData = [
   {
     id: 1,
+    wrapperClassName: "login__formBlock",
+    element: "select",
+    inputData: {
+      className: "newExchangeModal__formInput",
+      props: {
+        name: "exchangeId",
+        placeholder: "",
+      },
+    },
+    list: [],
+    labelData: {
+      className: "newExchangeModal__formTitle",
+      text: "Select Exchanges",
+    },
+    errorsData: {
+      errors: [
+        {
+          condition: "^s*$",
+          message: "Please select your exchange!",
+        },
+      ],
+    },
+  },
+  {
+    id: 2,
     wrapperClassName: "login__formBlock",
     element: "input",
     inputData: {
@@ -9,7 +34,6 @@ const formInputsData = [
         name: "publicKey",
         type: "text",
         placeholder: "Enter your public key",
-        autoFocus: true,
       },
     },
     labelData: {
@@ -30,7 +54,7 @@ const formInputsData = [
     },
   },
   {
-    id: 2,
+    id: 3,
     wrapperClassName: "login__formBlock",
     element: "input",
     inputData: {
@@ -58,6 +82,4 @@ const formInputsData = [
       ],
     },
   },
-];
-
-export default formInputsData;
+]
